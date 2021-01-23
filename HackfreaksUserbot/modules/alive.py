@@ -53,9 +53,7 @@ pm_caption += "✯ **Heroku Database** : `AWS - Working Properly`\n\n"
 pm_caption += "✯**[Join Our Channel]**(https://t.me/HackfreaksOT)\n"
 pm_caption += "✯ **License** : [GNU General Public License v3.0](https://github.com/swatv3nub/HackfreaksTelethonUserbot/blob/main/LICENSE)\n"
 pm_caption += "✯ **Copyright** : By [Hackfreaks](https://t.me/HackfreaksUserbot)\n"
-pm_caption += (
-    "[🇮🇳 Deploy HackfreaksUserbot 🇮🇳](https://Hackfreaks-org.github.io/HackfreaksUserbot/)\n"
-)
+pm_caption += "[🇮🇳 Deploy HackfreaksUserbot 🇮🇳](https://Hackfreaks-org.github.io/HackfreaksUserbot/)\n"
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"online"))

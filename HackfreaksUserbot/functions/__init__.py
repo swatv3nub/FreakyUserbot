@@ -538,7 +538,8 @@ async def _ytdl(url, is_it, event, tgbot):
             ),
         )
         await event.edit(
-            file=lol_m, text=f"{ytdl_data['title']} \n**Uploaded Using @HackfreaksUserbot**"
+            file=lol_m,
+            text=f"{ytdl_data['title']} \n**Uploaded Using @HackfreaksUserbot**",
         )
         os.remove(f"{ytdl_data['id']}.mp3")
     elif video:
@@ -561,6 +562,7 @@ async def _ytdl(url, is_it, event, tgbot):
             ),
         )
         await event.edit(
-            file=hmmo, text=f"{ytdl_data['title']} \n**Uploaded Using @HackfreaksUserbot**"
+            file=hmmo,
+            text=f"{ytdl_data['title']} \n**Uploaded Using @HackfreaksUserbot**",
         )
         os.remove(f"{ytdl_data['id']}.mp4")

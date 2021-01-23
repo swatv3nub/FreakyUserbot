@@ -77,7 +77,9 @@ async def device_info(request):
 @Hackfreaks.on(
     Hackfreaks_on_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)")
 )
-@Hackfreaks.on(sudo_cmd(pattern="codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
+@Hackfreaks.on(
+    sudo_cmd(pattern="codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True)
+)
 async def codename_info(request):
     """ search for android codename """
     textx = await request.get_reply_message()

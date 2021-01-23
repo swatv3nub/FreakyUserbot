@@ -17,9 +17,9 @@ import re
 
 from telethon import events
 
-from var import Var
 from HackfreaksUserbot import bot
 from HackfreaksUserbot.Configs import Config
+from var import Var
 
 
 def ignore_fwd():

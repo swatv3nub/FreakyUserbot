@@ -22,10 +22,10 @@ from sys import argv
 import telethon.utils
 from telethon import TelegramClient
 
-from var import Var
 from HackfreaksUserbot import bot
 from HackfreaksUserbot.Configs import Config
 from HackfreaksUserbot.utils import load_module, start_assistant
+from var import Var
 
 sed = logging.getLogger("Hackfreaks")
 
@@ -67,9 +67,7 @@ if Config.ENABLE_ASSISTANTBOT == "ENABLE":
             path1 = Path(f.name)
             shortname = path1.stem
             start_assistant(shortname.replace(".py", ""))
-    sed.info(
-        """\n @ProjectHackfreaks   """
-    )
+    sed.info("""\n @ProjectHackfreaks   """)
 else:
     sed.info("Hackfreaks Has Been Installed Sucessfully !")
     sed.info("You Can Visit @HackfreaksUserbot For Any Support Or Doubts")

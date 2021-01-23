@@ -1,6 +1,6 @@
-from var import Var
 from HackfreaksUserbot import CMD_HELP
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from var import Var
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="stat$"))

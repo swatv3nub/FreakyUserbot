@@ -17,8 +17,8 @@ from pathlib import Path
 
 from telethon.tl.types import InputMessagesFilterDocument
 
-from var import Var
 from HackfreaksUserbot.utils import command, load_module
+from var import Var
 
 
 @command(pattern="^.extdl", outgoing=True)
