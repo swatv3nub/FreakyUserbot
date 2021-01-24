@@ -20,9 +20,9 @@ import asyncio
 import io
 import os
 
-import hackfreaksbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
-from hackfreaksbot import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
-from hackfreaksbot.utils import hackfreaks_on_cmd
+import HackfreaksUserbot.modules.sql_helper.pmpermit_sql as pmpermit_sql
+from HackfreaksUserbot import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
+from HackfreaksUserbot.utils import hackfreaks_on_cmd
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
