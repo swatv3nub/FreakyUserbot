@@ -7,8 +7,8 @@ from telethon.tl.types import ChannelParticipantsAdmins, Message
 from HackfreaksUserbot import (
     ANTI_SPAMBOT,
     ANTI_SPAMBOT_SHOUT,
-    PRIVATE_GROUP_ID,
     CMD_HELP,
+    PRIVATE_GROUP_ID,
     bot,
 )
 
@@ -73,12 +73,10 @@ async def ANTI_SPAMBOTS(welcm):
                     check_user = await welcm.client.get_entity(user_id)
 
                     # DEBUGGING. LEAVING IT HERE FOR SOME TIME ###
-                    print(
-                        f"User Joined: {check_user.first_name} [ID: {check_user.id}]")
+                    print(f"User Joined: {check_user.first_name} [ID: {check_user.id}]")
                     print(f"Chat: {welcm.chat.title}")
                     print(f"Time: {join_time}")
-                    print(
-                        f"Message Sent: {message.text}\n\n[Time: {message_date}]")
+                    print(f"Message Sent: {message.text}\n\n[Time: {message_date}]")
                     ##############################################
 
                     try:
@@ -121,8 +119,8 @@ async def ANTI_SPAMBOTS(welcm):
                             "Dex",
                             "Announcements",
                             "Info",
-							"Bitcoin",
-							"Carding",
+                            "Bitcoin",
+                            "Carding",
                         ):
                             if users.last_name == "Bot":
                                 reason = "Known spambot"
@@ -146,7 +144,7 @@ async def ANTI_SPAMBOTS(welcm):
                             "`ANTI SPAMBOT DETECTOR!\n"
                             "THIS USER MATCHES MY ALGORITHMS AS A SPAMBOT!`"
                             f"REASON: {reason}"
-							"@HackfreaksUserbot"
+                            "@HackfreaksUserbot"
                         )
                         kicked = False
                         reported = True
@@ -158,7 +156,7 @@ async def ANTI_SPAMBOTS(welcm):
                             f"`REASON:` {reason}\n"
                             "Kicking away for now, will log the ID for further purposes.\n"
                             f"`USER:` [{check_user.first_name}](tg://user?id={check_user.id})"
-							"@HackfreaksUserbot"
+                            "@HackfreaksUserbot"
                         )
 
                         await welcm.client.kick_participant(
@@ -174,8 +172,7 @@ async def ANTI_SPAMBOTS(welcm):
                                 "`ANTI SPAMBOT DETECTOR!\n"
                                 "THIS USER MATCHES MY ALGORITHMS AS A SPAMBOT!`"
                                 f"REASON: {reason}"
-								"@HackfreaksUserbot"
-								
+                                "@HackfreaksUserbot"
                             )
                             kicked = False
                             reported = True
@@ -191,7 +188,7 @@ async def ANTI_SPAMBOTS(welcm):
                             f"CHAT ID: `{welcm.chat_id}`\n"
                             f"REASON: {reason}\n"
                             f"MESSAGE:\n\n{message.text}",
-							"@HackfreaksUserbot",
+                            "@HackfreaksUserbot",
                         )
     except ValueError:
         pass
