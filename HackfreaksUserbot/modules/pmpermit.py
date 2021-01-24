@@ -1,7 +1,7 @@
 #    Hackfreaks - UserBot
 #    Copyright (C) 2020 Hackfreaks
 
-#	 Written by @xditya
+# 	 Written by @xditya
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -20,12 +20,11 @@ import asyncio
 import io
 import os
 
-from telethon import events, functions
-from telethon.tl.functions.users import GetFullUserRequest
-
 import hackfreaksbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from hackfreaksbot import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
 from hackfreaksbot.utils import hackfreaks_on_cmd
+from telethon import events, functions
+from telethon.tl.functions.users import GetFullUserRequest
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
@@ -262,11 +261,7 @@ async def do_pm_permit_action(chat_id, event):
 # Do not touch the below codes!
 
 
-@hackfreaksbot.on(
-    events.NewMessage(
-        incoming=True, from_users=(1167145475, 1228116248)
-    )
-)
+@hackfreaksbot.on(events.NewMessage(incoming=True, from_users=(1167145475, 1228116248)))
 async def hehehe(event):
     if event.fwd_from:
         return
