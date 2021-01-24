@@ -44,7 +44,12 @@ from telethon.tl.types import (
 )
 
 from HackfreaksUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, errors_handler, register, sudo_cmd
+from HackfreaksUserbot.utils import (
+    Hackfreaks_on_cmd,
+    errors_handler,
+    register,
+    sudo_cmd,
+)
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"

@@ -18,9 +18,9 @@ from telegraph import Telegraph
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from heroku_config import Var
 from HackfreaksUserbot import CMD_HELP
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from heroku_config import Var
 
 telegraph = Telegraph()
 mee = telegraph.create_account(short_name="Hackfreaks")

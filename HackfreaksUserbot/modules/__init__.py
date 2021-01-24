@@ -1,6 +1,6 @@
-from var import Var
 from HackfreaksUserbot.Configs import Config
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from var import Var
 
 issudousing = Config.SUDO_USERS
 islogokay = Config.PRIVATE_GROUP_ID

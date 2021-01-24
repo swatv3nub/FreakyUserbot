@@ -23,7 +23,6 @@ from pathlib import Path
 
 from telethon import events
 
-from var import Var
 from HackfreaksUserbot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from HackfreaksUserbot.Configs import Config
 from HackfreaksUserbot.wraptools import (
@@ -33,6 +32,7 @@ from HackfreaksUserbot.wraptools import (
     ignore_grp,
     ignore_pm,
 )
+from var import Var
 
 sedprint = logging.getLogger("PLUGINS")
 cmdhandler = Config.COMMAND_HAND_LER
