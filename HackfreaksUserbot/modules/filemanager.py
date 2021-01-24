@@ -35,7 +35,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**Files in [Hackfreaks](tg://HackfreaksOT/) DOWNLOADS Folder:**\n"
+    OUTPUT = f"**Files in [Hackfreaks](tg://HackfreaksUserbot/) DOWNLOADS Folder:**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:

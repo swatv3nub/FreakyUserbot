@@ -56,7 +56,7 @@ async def _(event):
                     await Hackfreaks.send_file(
                         event.chat_id,
                         audio,
-                        caption=f"List of feds {user} has been banned in.\n\nCollected using Hackfreaks.",
+                        caption=f"List of feds {user} has been banned in.\n\nCollected using @HackfreaksUserbot.",
                     )
                 else:
                     await borg.send_message(event.chat_id, audio.text)
@@ -78,7 +78,7 @@ async def _(event):
             await conv.get_response()
             await conv.send_message("/fedinfo " + sysarg)
             audio = await conv.get_response()
-            await ok.edit(audio.text + "\n\nFedInfo Excracted by Hackfreaks")
+            await ok.edit(audio.text + "\n\nFedInfo Excracted by @HackfreaksUserbot")
         except YouBlockedUserError:
             await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")
 

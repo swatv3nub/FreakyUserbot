@@ -20,7 +20,7 @@ from HackfreaksUserbot import CMD_HELP
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd
 
 UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
-UPSTREAM_REPO_BRANCH = "master"
+UPSTREAM_REPO_BRANCH = "Alpha"
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 requirements_path = path.join(
@@ -99,7 +99,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         else:
             remote = repo.create_remote("heroku", heroku_git_url)
         try:
-            remote.push(refspec="HEAD:refs/heads/master", force=True)
+            remote.push(refspec="HEAD:refs/heads/Alpha", force=True)
         except Exception as error:
             await event.edit(f"{txt}\nHere is the error log:\n`{error}`")
             return repo.__del__()
@@ -161,15 +161,15 @@ async def upstream(event):
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
         force_update = True
-        repo.create_head("master", origin.refs.master)
-        repo.heads.master.set_tracking_branch(origin.refs.master)
-        repo.heads.master.checkout(True)
+        repo.create_head("Alpha", origin.refs.Alpha)
+        repo.heads.Alpha.set_tracking_branch(origin.refs.Alpha)
+        repo.heads.Alpha.checkout(True)
 
     ac_br = repo.active_branch.name
     if ac_br != UPSTREAM_REPO_BRANCH:
         await event.edit(
             f"**Looks like you are using your own custom branch: ({ac_br}). \n"
-            "Please switch to** `master` **branch.**"
+            "Please switch to** `Alpha` **branch.**"
         )
         return repo.__del__()
     try:

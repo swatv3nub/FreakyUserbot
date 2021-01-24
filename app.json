@@ -2,7 +2,7 @@
 {
   "name": "Hackfreaks-Userbot",
   "description": "A Userbot Based On Telethon",
-  "logo": "https://telegra.ph/file/63d2f8bcdae4da2ec5e7e.jpg",
+  "logo": "https://telegra.ph/file/c7a25fb6a8dc5d086f607.png",
   "keywords": [
     "telegram",
     "HackfreaksUserbot",
@@ -50,8 +50,16 @@
       "value": ""
     },
     "STRING_SESSION": {
-      "description": "Get From Repl.run Or Run Locally",
+      "description": "Get From https://repl.it/@swatv3nub/UserbotSessionGenerator#main.py",
       "value": ""
+    },
+    "ANTI_SPAMBOT": {
+      "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
+      "value": "True"
+    },
+    "ANTI_SPAMBOT_SHOUT": {
+      "description": "Report spambots to @admins in groups after they join, just in case when you don't have admin powers to kick that shit yourself.",
+      "value": "True"
     },
     "TESSDATA_PREFIX": {
       "description": "Pytesserct Path. Don't Edit Until You Know What Are You Doing..",
@@ -68,7 +76,7 @@
       "required": false
     },
     "LYDIA_API_KEY": {
-      "description": "Needed for Lydia AI. Follow https://telegra.ph/Lydia-09-05 to get your API.",
+      "description": "Needed for Lydia AI. Get it from  https://coffeehouse.intellivoid.net/ .",
       "value": "",
       "required": false
     },

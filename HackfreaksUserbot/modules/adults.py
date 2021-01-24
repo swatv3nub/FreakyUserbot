@@ -1,5 +1,5 @@
 # credits to userge
-# ported to Hackfreaks by @mrdayamzaidi
+# ported to Hackfreaks by @swatv3nub
 # will be adding more soon
 
 import asyncio

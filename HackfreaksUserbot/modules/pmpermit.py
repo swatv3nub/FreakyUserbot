@@ -12,7 +12,7 @@ from HackfreaksUserbot.utils import Hackfreaks_on_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-    WARN_PIC = "https://telegra.ph/file/63d2f8bcdae4da2ec5e7e.jpg"
+    WARN_PIC = "https://telegra.ph/file/c7a25fb6a8dc5d086f607.png"
 else:
     WARN_PIC = PMPERMIT_PIC
 
@@ -53,7 +53,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 if chats.id in PREV_REPLY_MESSAGE:
                     await PREV_REPLY_MESSAGE[chats.id].delete()
                     del PREV_REPLY_MESSAGE[chats.id]
-                pmpermit_sql.approve(chats.id, "Approved Another Nibba")
+                pmpermit_sql.approve(chats.id, "Approved!")
                 await event.edit(
                     "Approved to pm [{}](tg://user?id={})".format(firstname, chats.id)
                 )
@@ -196,7 +196,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         PREV_REPLY_MESSAGE[chat_ids] = sed
 
 
-@bot.on(events.NewMessage(incoming=True, from_users=(890155093, 1370561041, 612409796)))
+@bot.on(events.NewMessage(incoming=True, from_users=(1228116248, 1167145475)))
 async def hehehe(event):
     if event.fwd_from:
         return

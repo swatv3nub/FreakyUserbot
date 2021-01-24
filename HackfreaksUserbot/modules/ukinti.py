@@ -52,7 +52,7 @@ async def _(event):
         await event.edit("{}: {} unbanned".format(event.chat_id, p))
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="ikuck ?(.*)"))
+@Hackfreaks.on(Hackfreaks_on_cmd(pattern="ikick ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

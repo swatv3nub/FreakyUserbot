@@ -23,7 +23,7 @@ glitcher = ImageGlitcher()
 DURATION = 200  # Set this to however many centiseconds each frame should be visible for
 LOOP = 0  # Set this to how many times the gif should loop
 # LOOP = 0 means infinite loop
-sedpath = "./starkgangz/"
+sedpath = "./hackfreaksuserbotz/"
 if not os.path.isdir(sedpath):
     os.makedirs(sedpath)
 
@@ -41,7 +41,7 @@ async def glitch(event):
         await event.edit("`Reply To Image`")
         return
     fmt = "gif"
-    pathsn = f"./starkgangz/@Hackfreaksot.{fmt}"
+    pathsn = f"./hackfreaksuserbotz/@HackfreaksUserbot.{fmt}"
     glitch_imgs = glitcher.glitch_image(photolove, 2, gif=True, color_offset=True)
     glitch_imgs[0].save(
         pathsn,

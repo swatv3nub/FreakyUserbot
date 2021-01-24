@@ -1,6 +1,6 @@
 # AutoBio plugin for Hackfreaks
 # Using this might lead to ban of your account, use at your own risk.
-# Re-Written by @MrDayamZaidi
+# Re-Written by @swatv3nub
 
 import asyncio
 import time

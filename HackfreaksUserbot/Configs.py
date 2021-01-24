@@ -75,7 +75,7 @@ if ENV:
         # DO NOT EDIT BELOW THIS LINE IF YOU DO NOT KNOW WHAT YOU ARE DOING
         # TG API limit. A message can have maximum 4096 characters!
         MAX_MESSAGE_SIZE_LIMIT = 4095
-        # set blacklist_chats where you do not want fridaybot's features
+        # set blacklist_chats where you do not want HackfreakUserbot's features
         UB_BLACK_LIST_CHAT = set(
             int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split()
         )
@@ -175,11 +175,11 @@ if ENV:
             "UPSTREAM_REPO", "https://github.com/swatv3nub/HackfreaksTelethonUserbot"
         )
         ALIVE_IMAGE = os.environ.get(
-            "ALIVE_IMAGE", "https://telegra.ph/file/63d2f8bcdae4da2ec5e7e.jpg"
+            "ALIVE_IMAGE", "https://telegra.ph/file/c7a25fb6a8dc5d086f607.png"
         )
         ASSISTANT_START_PIC = os.environ.get(
             "ASSISTANT_START_PIC",
-            "https://telegra.ph/file/63d2f8bcdae4da2ec5e7e.jpg",
+            "https://telegra.ph/file/c7a25fb6a8dc5d086f607.png",
         )
         TESSDATA_PREFIX = os.environ.get(
             "TESSDATA_PREFIX", "/usr/share/tesseract-ocr/4.00/tessdata"

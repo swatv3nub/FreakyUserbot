@@ -9,7 +9,7 @@ from HackfreaksUserbot.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-    WARN_PIC = "https://telegra.ph/file/63d2f8bcdae4da2ec5e7e.jpg"
+    WARN_PIC = "https://telegra.ph/file/c7a25fb6a8dc5d086f607.png"
 else:
     WARN_PIC = PMPERMIT_PIC
 LOG_CHAT = Config.PRIVATE_GROUP_ID
@@ -146,7 +146,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             else:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
-            reply_pop_up_alert = "Please Get Your Own HackfreaksUserbot And Dont Use Mine Nedd Any Support Ask [HackfreaksUserbot](https://t.me/HackfreaksUserbot)"
+            reply_pop_up_alert = "Please Get Your Own HackfreaksUserbot And Dont Use Mine Need Any Support Ask [HackfreaksUserbot](https://t.me/HackfreaksUserbot)"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))

@@ -31,9 +31,9 @@ jobs:
           commit_message: 'pylint: Hackfreaks🇮🇳'
           commit_options: '--no-verify'
           repository: .
-          commit_user_name: mrdayamzaidi
-          commit_user_email: dayamali975@gmail.com
-          commit_author: mrdayamzaidi <dayamali975@gmail.com>
+          commit_user_name: swatv3nub
+          commit_user_email: swatv3nub@gmail.com
+          commit_author: swatv3nub <swatv3nub@gmail.com>
 
 
 # Kangers Stay Away.

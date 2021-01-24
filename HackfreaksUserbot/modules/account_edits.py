@@ -1,8 +1,8 @@
 # Ported from other Telegram UserBots for TeleBot//Made for TeleBot
 # Kangers, don't remove this line
 # @xditya
-# Rewriten by @mrdayamzaidi
-# Made for @HackfreaksOT
+# Rewriten by @swatv3nub
+# Made for @HackfreaksUserbot
 # Knagers keep the credit
 
 #    Hackfreaks - UserBot

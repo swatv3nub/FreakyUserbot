@@ -189,6 +189,6 @@ CMD_HELP.update(
 \n\n**Syntax : **`.info <mention a username/reply to a message>`\
 \n**Usage :** Gives you information about the username.\
 \n\n**Syntax : **`.wru <mention a username/reply to a message>`\
-\n**Usage :** Shows if the person is banned in NospamPlus or not."
+\n**Usage :** Shows if the person is banned in CAS or not."
     }
 )

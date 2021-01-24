@@ -60,13 +60,13 @@ async def _(event):
         end = datetime.now()
         ms = (end - start).seconds
         await event.edit(
-            "Removed image's Background in {} seconds, powered by @HackfreaksOT".format(
+            "Removed image's Background in {} seconds, powered by @HackfreaksUserbot".format(
                 ms
             )
         )
     else:
         await event.edit(
-            "ReMove.BG API returned Errors. Please report to @HackfreaksOT\n`{}".format(
+            "ReMove.BG API returned Errors. Please report to @HackfreaksUserbot\n`{}".format(
                 output_file_name.content.decode("UTF-8")
             )
         )

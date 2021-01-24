@@ -1,4 +1,4 @@
-# Lel, Didn't Get Time To Make New One So Used Plugin Made br @mrconfused and @sandy1709 dont edit credits
+# Lel, Didn't Get Time To Make New One So Used Plugin Made by @mrconfused and @sandy1709 dont edit credits
 import io
 import os
 
@@ -60,7 +60,7 @@ async def lyrics(lyric):
     else:
         await lyric.edit(
             "`Error: please use '-' as divider for <artist> and <song>`\n"
-            "eg: `.glyrics Nicki Minaj - Super Bass`"
+            "eg: `.glyrics Neffex - Fight Back`"
         )
         return
 
@@ -101,7 +101,7 @@ async def lyrics(lyric):
             "lyrics.txt",
             reply_to=lyric.id,
         )
-        os.remove("lyrics.txt")
+        os.remove("Hackfreakslyrics.txt")
     else:
         await lyric.edit(
             f"**Search query**: \n`{artist} - {song}`\n\n```{songs.lyrics}```"

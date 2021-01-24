@@ -23,8 +23,8 @@ async def _(event):
         await event.edit(input_str)
 
         animation_chars = [
-            "https://github.com/mrdayamzaidi/HackfreaksUserbot",
-            "https://github.com/mrdayamzaidi/HackfreaksUserbot",
+            "https://github.com/swatv3nub/HackfreaksUserbot",
+            "https://github.com/swatv3nub/HackfreaksUserbot",
         ]
 
         for i in animation_ttl:

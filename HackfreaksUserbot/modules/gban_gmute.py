@@ -56,7 +56,7 @@ async def gspider(HackfreaksUserbot):
     else:
         Hackfreaks = await lol.edit("Wait Processing.....")
     me = await HackfreaksUserbot.client.get_me()
-    await Hackfreaks.edit(f"Global Ban Is Coming ! Wait And Watch You Nigga")
+    await Hackfreaks.edit(f"Global Banning!")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await HackfreaksUserbot.get_chat()
@@ -76,7 +76,7 @@ async def gspider(HackfreaksUserbot):
     except:
         return await Hackfreaks.edit(f"**Something W3NT Wrong 🤔**")
     if user:
-        if user.id == 1263617196:
+        if user.id == 1228116248:
             return await Hackfreaks.edit(
                 f"**Didn't , Your Father Teach You ? That You Cant Gban Dev**"
             )
@@ -144,7 +144,7 @@ async def gspider(HackfreaksUserbot):
     except:
         return await Hackfreaks.edit("Someting Went Wrong 🤔")
     if user:
-        if user.id == 1263617196:
+        if user.id == 1228116248:
             return await Hackfreaks.edit("**You Cant Ungban A Dev !**")
         try:
             from HackfreaksUserbot.modules.sql_helper.gmute_sql import ungmute

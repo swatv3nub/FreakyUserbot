@@ -30,6 +30,6 @@ CMD_HELP.update(
     {
         "indianflag": "**IndianFlag**\
 \n\n**Syntax : **`.inflag`\
-\n**Usage :** Downloads songs from ytmusic"
+\n**Usage :** Indian Flag"
     }
 )

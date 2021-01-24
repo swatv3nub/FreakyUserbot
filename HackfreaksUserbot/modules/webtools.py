@@ -18,13 +18,13 @@ async def _(event):
     sedlyfstarky = await edit_or_reply(event, "Capturing Webshot, Stay Tuned.")
     driver = webdriver.Chrome()
     driver.get(urlissed)
-    driver.get_screenshot_as_file("Webshot-@Hackfreaksot.png")
-    imgpath = "Webshot-@Hackfreaksot.png"
+    driver.get_screenshot_as_file("Webshot-@HackfreaksUserbot.png")
+    imgpath = "Webshot-@HackfreaksUserbot.png"
     await sedlyfstarky.edit("Completed. Uploading in Telegram..")
     await borg.send_file(
         event.chat_id,
         file=imgpath,
-        caption=f"**WEBSHOT OF** `{urlissed}` \n**Powered By @Hackfreaksot**",
+        caption=f"**WEBSHOT OF** `{urlissed}` \n**Powered By @HackfreaksUserbot**",
     )
 
 

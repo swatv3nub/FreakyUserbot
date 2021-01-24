@@ -1,8 +1,8 @@
 # Made By @TelebotSupport Keep Credits If You Are Goanna Kang This Lol
 # And Thanks To The Creator Of Autopic This Script Was Made from Snippets From That Script
 # Usage .animedp I'm Not Responsible For Any Ban caused By This
-# Rewriten by @mrdayamzaidi
-# Made for @HackfreaksOT
+# Rewriten by @swatv3nub
+# Made for @HackfreaksUserbot
 
 import asyncio
 import os

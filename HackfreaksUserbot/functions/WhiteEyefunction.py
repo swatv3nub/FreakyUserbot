@@ -1,4 +1,4 @@
-# Copyright (C) By @mrdayamzaidi And @ZeltraxRockz
+# Copyright (C) By @swatv3nub And @ZeltraxRockz
 # Powered By @Nemo_Projects
 import random
 import string

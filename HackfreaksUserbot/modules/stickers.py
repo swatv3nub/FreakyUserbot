@@ -55,24 +55,24 @@ async def _(event):
     userid = event.sender_id
     # packname = f"Hackfreaks PACK"
     # packshortname = f"Hackfreaks_{userid}_ns"  # format: Uni_Borg_userid
-    if userid == 1263617196:
-        packname = f"@StarkGang Packs 🎭"
-        packshortname = "StarkGangPack"
+    if userid == 1228116248:
+        packname = f"@HackfreaksUserbot 🎭"
+        packshortname = "HackfreaksUserbotPack"
     else:
         packname = f"@{user.username} KangPack {pack}"
         packshortname = f"Hackfreaks_{userid}_Pack"
     await moods.edit("`This Sticker is Gonna Get Stolen.....`")
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "@HackfreaksOT.png"
+    file_ext_ns_ion = "@HackfreaksUserbot.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
         if userid == 813878981:
-            packname = f"StarkGang Ka Pack"
-            packshortname = "StarkGangisgreat"
+            packname = f"HackfreaksUserbot Pack"
+            packshortname = "Hackfreaks"
         else:
             packname = f"@{user.username} KangPack {pack}"
             packshortname = f"Hackfreaks_{userid}"  # format: Uni_Borg_userid

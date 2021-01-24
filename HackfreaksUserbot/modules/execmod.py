@@ -430,6 +430,6 @@ CMD_HELP.update(
     {
         "execmod": "**ExecMod**\
 \n\n**Syntax : **`.pips, suicide, .plugins, .date, .env, .fast, .fortune, .qquote, .fakeid, .kwot, .qpro`\
-\n**Usage :** A Helpfull Plugin Made for @HackfreaksOT."
+\n**Usage :** A Helpfull Plugin Made for @HackfreaksUserbot."
     }
 )

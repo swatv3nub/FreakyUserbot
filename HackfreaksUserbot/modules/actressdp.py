@@ -1,8 +1,7 @@
 # Ported from other Telegram UserBots for TeleBot//Made for TeleBot
 # Kangers, don't remove this line
-# @its_xditya
-# Rewriten by @mrdayamzaidi
-# For @HackfreaksOT
+# @xditya
+# For @HackfreaksUserbot
 
 # Usage .actressdp Im Not Responsible For Any Ban caused By This
 

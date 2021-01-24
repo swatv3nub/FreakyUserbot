@@ -93,8 +93,8 @@ async def download_video(v_url):
     """ For .ytdl command, download media from YouTube and many other sites. """
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
-    friday = await edit_or_reply(v_url, "Trying To Download......")
-    await friday.edit("`Preparing to download...`")
+    hackfreaksuserbot = await edit_or_reply(v_url, "Trying To Download......")
+    await hackfreaksuserbot.edit("`Preparing to download...`")
 
     if type == "a":
         opts = {
@@ -142,13 +142,13 @@ async def download_video(v_url):
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url)
     except DownloadError as DE:
-        await friday.edit(f"`{str(DE)}`")
+        await hackfreaksuserbot.edit(f"`{str(DE)}`")
         return
     except ContentTooShortError:
         await Hackfreaks.edit("`The download content was too short.`")
         return
     except GeoRestrictedError:
-        await friday.edit(
+        await hackfreaksuserbot.edit(
             "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
         )
         return
@@ -197,7 +197,7 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await friday.edit(
+        await hackfreaksuserbot.edit(
             f"`Preparing to upload video:`\
         \n**{ytdl_data['title']}**\
         \nby *{ytdl_data['uploader']}*"

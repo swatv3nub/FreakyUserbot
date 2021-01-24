@@ -1,6 +1,6 @@
 """
 Created by @Jisan7509
-plugin for @HackfreaksOT
+plugin for @HackfreaksUserbot
 """
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError

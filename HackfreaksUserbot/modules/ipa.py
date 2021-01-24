@@ -1,7 +1,7 @@
 """ 
 Credit :- Unknown 
 Just Kidding Credit To X-Tra Telegram For Base 
-And A Noob @mrdayamzaidi For This Fucking Waste Plugin
+And A Noob @swatv3nub For This Fucking Waste Plugin
 """
 import os
 from pathlib import Path
