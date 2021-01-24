@@ -25,7 +25,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 import HackfreaksUserbot.modules.sql_helper.pmpermit_sql as pmpermit_sql
 from HackfreaksUserbot import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
-from HackfreaksUserbot.utils import hackfreaks_on_cmd
+from HackfreaksUserbot.utils import Hackfreaks_on_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
@@ -51,8 +51,8 @@ USER_BOT_NO_WARN = (
 )
 
 
-@hackfreaksbot.on(hackfreaks_on_cmd(pattern="a ?(.*)"))
-@hackfreaksbot.on(hackfreaks_on_cmd(pattern="approve ?(.*)"))
+@hackfreaksbot.on(Hackfreaks_on_cmd(pattern="a ?(.*)"))
+@hackfreaksbot.on(Hackfreaks_on_cmd(pattern="approve ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -96,7 +96,7 @@ async def you_dm_niqq(event):
                     pass
 
 
-@hackfreaksbot.on(hackfreaks_on_cmd(pattern="block ?(.*)"))
+@hackfreaksbot.on(Hackfreaks_on_cmd(pattern="block ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -120,8 +120,8 @@ async def approve_p_m(event):
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
 
-@hackfreaksbot.on(hackfreaks_on_cmd(pattern="da ?(.*)"))
-@hackfreaksbot.on(hackfreaks_on_cmd(pattern="disapprove ?(.*)"))
+@hackfreaksbot.on(Hackfreaks_on_cmd(pattern="da ?(.*)"))
+@hackfreaksbot.on(Hackfreaks_on_cmd(pattern="disapprove ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -142,7 +142,7 @@ async def approve_p_m(event):
                 )
 
 
-@hackfreaksbot.on(hackfreaks_on_cmd(pattern="listapproved"))
+@hackfreaksbot.on(Hackfreaks_on_cmd(pattern="listapproved"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
