@@ -21,9 +21,7 @@
 
 # GET APP_ID AND API_HASH
 
-[![APP_ID](https://telegra.ph/file/71f07091512ebcdce11c9.png)](https://my.telegram.org/auth)
-
-
+Get API_ID and API_HASH from [@HackfreaksScrapperRobot](https://telegram.dog/HackfreaksScrapperRobot)
 
 
 
@@ -79,17 +77,13 @@ python3 -m HackfreaksBot
 
 # CREDIT'S
 
-[TELEBOT](https://t.me/telebothelp)
+TELEBOT
 
-[CATUSERBOT](https://t.me/catuserbot17)
+CATUSERBOT
 
-[DARKCOBRA USERBOT](https://t.me/dark_cobra_support)
+DARKCOBRA USERBOT
 
-[PAPERPLANE USERBOT](https://t.me/paperplanechannel)
-
-[WHITE EYE USERBOT](https://WhiteEye-ORG/WhiteEyeUserbot)
-
-
+PAPERPLANE REMIX USERBOT
 
 
 
