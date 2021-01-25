@@ -3,7 +3,7 @@ from datetime import datetime
 
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
 
-Hackfreaksthumb = "./resources/20201201_001148.jpg"
+Hackfreaksthumb = "./resources/hackfreaksuserbot.png"
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="send ?(.*)"))

@@ -28,9 +28,9 @@ def rmfed(feds):
 
 
 def get_all_feds():
-    stark = SESSION.query(Fed).all()
+    noobfreaks = SESSION.query(Fed).all()
     SESSION.close()
-    return stark
+    return noobfreaks
 
 
 def is_fed_indb(feds):

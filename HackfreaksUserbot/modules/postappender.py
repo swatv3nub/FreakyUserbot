@@ -21,11 +21,11 @@ from HackfreaksUserbot.modules.sql_helper.PostAppender_sql import (
 )
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd
 
-lulstark = [".", ",", "!", "'"]
+lulfreaks = [".", ",", "!", "'"]
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="spf (.*)"))
-async def mstark(event):
+async def mfreaks(event):
     await event.edit("`Processing..`")
     lul_id = event.chat_id
     append_text = event.pattern_match.group(1)
@@ -48,7 +48,7 @@ async def mstark(event):
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="sph (.*)"))
-async def _starky(event):
+async def _freaky(event):
     await event.edit("`Processing..`")
     lul_id = event.chat_id
     append_text = event.pattern_match.group(1)
@@ -87,7 +87,7 @@ async def luli(event):
     event.chat_id
     lol_text = event.text
     if is_data_indbs(event.chat_id):
-        if event.text.startswith(tuple(lulstark)):
+        if event.text.startswith(tuple(lulfreaks)):
             return
         if is_footer(event.chat_id):
             await event.edit(f"{lol_text} \n{is_data_indbs(event.chat_id)}")

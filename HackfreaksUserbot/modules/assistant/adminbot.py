@@ -48,7 +48,7 @@ UNBAN_RIGHTS = ChatBannedRights(
 )
 
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
-serena = hackfreaksbot
+mrhackfreaks = hackfreaksbot
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 
@@ -61,7 +61,7 @@ async def ban(event):
     chat.admin_rights
     chat.creator
     user, reason = await get_user_from_event(event)
-    kekme = await serena.get_permissions(event.chat_id, user)
+    kekme = await mrhackfreaks.get_permissions(event.chat_id, user)
     momos = user
     momoz = momos.first_name
     if kekme.is_admin:
@@ -121,7 +121,7 @@ async def promote(event):
         pin_messages=True,
     )
     user, rank = await get_user_from_event(event)
-    kekme = await serena.get_permissions(event.chat_id, user)
+    kekme = await mrhackfreaks.get_permissions(event.chat_id, user)
     if kekme.is_admin:
         await event.reply("Oh, Yeah? Promote A Admin?")
         return
@@ -209,7 +209,7 @@ async def kick(event):
     chat.admin_rights
     chat.creator
     user, reason = await get_user_from_event(event)
-    kekme = await serena.get_permissions(event.chat_id, user)
+    kekme = await mrhackfreaks.get_permissions(event.chat_id, user)
     momos = user
     momos.first_name
     if kekme.is_admin:
@@ -240,7 +240,7 @@ async def mute(event):
     chat.admin_rights
     chat.creator
     user, reason = await get_user_from_event(event)
-    kekme = await serena.get_permissions(event.chat_id, user)
+    kekme = await mrhackfreaks.get_permissions(event.chat_id, user)
     momos = user
     momos.first_name
     if kekme.is_admin:

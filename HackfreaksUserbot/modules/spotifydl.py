@@ -11,7 +11,7 @@ from HackfreaksUserbot import CMD_HELP
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("spotifydl ?(.*)"))
+@Hackfreaks.on(Hackfreaks_on_cmd("spdl ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -37,7 +37,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 songh,
-                caption="🔆**Here's the requested song!**🔆\n`Check out` [ HackfreaksUserbot](https://github.com/swatv3nub/HackfreaksUserbot)",
+                caption="🔆**Here's the requested song!**🔆\n`Check out` [ HackfreaksUserbot](https://github.com/swatv3nub/HackfreaksTelethonUserbot)",
             )
             await event.delete()
         except YouBlockedUserError:
@@ -47,7 +47,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "spotify": "**Spotify**\
-\n\n**Syntax : **`.Spotifydl <link> .spotifydl <song>`\
+\n\n**Syntax : **`.spdl <link> .spdl <song>`\
 \n**Usage :** Downloads A Song And Searches Songs For You"
     }
 )

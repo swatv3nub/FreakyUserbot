@@ -13,31 +13,31 @@ from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
 @Hackfreaks.on(Hackfreaks_on_cmd("dns (.*)"))
 @Hackfreaks.on(sudo_cmd("dns (.*)", allow_sudo=True))
 async def _(event):
-    starky = await edit_or_reply(event, "Processing.....")
+    freaky = await edit_or_reply(event, "Processing.....")
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
     sample_url = "https://da.gd/dns/{}".format(input_str)
     response_api = requests.get(sample_url).text
     if response_api:
-        await starky.edit("DNS records of {} are \n{}".format(input_str, response_api))
+        await freaky.edit("DNS records of {} are \n{}".format(input_str, response_api))
     else:
-        await starky.edit("i can't seem to find {} on the internet".format(input_str))
+        await freaky.edit("i can't seem to find {} on the internet".format(input_str))
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd("url (.*)"))
 @Hackfreaks.on(sudo_cmd("dns (.*)", allow_sudo=True))
 async def _(event):
-    starkxd = await edit_or_reply(event, "Processing....")
+    sofreaky = await edit_or_reply(event, "Processing....")
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
     sample_url = "https://da.gd/s?url={}".format(input_str)
     response_api = requests.get(sample_url).text
     if response_api:
-        await starkxd.edit("Generated {} for {}.".format(response_api, input_str))
+        await sofreaky.edit("Generated {} for {}.".format(response_api, input_str))
     else:
-        await starkxd.edit("something is wrong. please try again later.")
+        await sofreaky.edit("something is wrong. please try again later.")
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd("unshort (.*)"))

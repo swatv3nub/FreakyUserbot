@@ -184,7 +184,7 @@ def time_formatter(milliseconds: int) -> str:
 
 
 # Thanks To Userge-X
-# Ported By @STARKXD
+
 async def convert_to_image(event, borg):
     lmao = await event.get_reply_message()
     if not (
@@ -237,8 +237,8 @@ async def convert_to_image(event, borg):
         lmao_final = image_new_path
     elif lmao.audio:
         sed_p = downloaded_file_name
-        hmmyes = sedpath + "stark.mp3"
-        imgpath = sedpath + "starky.jpg"
+        hmmyes = sedpath + "noobfreaks.mp3"
+        imgpath = sedpath + "freaky.jpg"
         os.rename(sed_p, hmmyes)
         await runcmd(f"ffmpeg -i {hmmyes} -filter:v scale=500:500 -an {imgpath}")
         os.remove(sed_p)

@@ -464,6 +464,6 @@ CMD_HELP.update(
 \n\n**Syntax : **`.packinfo <reply to a sticker>`\
 \n**Usage :** Shows info about the pack.\
 \n\n**Syntax : **`.getsticker <reply to sticker>`\
-\n**Usage :** Downloada the sticker."
+\n**Usage :** Download the sticker."
     }
 )

@@ -1,5 +1,5 @@
 # Originally By @DeletedUser420
-# Ported - @StarkxD
+# Ported - @swatv3nub
 
 import asyncio
 import os

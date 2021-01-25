@@ -16,7 +16,7 @@ from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="gps ?(.*)"))
 @Hackfreaks.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
 async def gps(event):
-    starkislub = await edit_or_reply(event, "Processing")
+    hackfreaksbot = await edit_or_reply(event, "Processing")
     if event.fwd_from:
         return
     reply_to_id = event.message
@@ -25,11 +25,11 @@ async def gps(event):
     input_str = event.pattern_match.group(1)
 
     if not input_str:
-        return await starkislub.edit("what should i find give me location.")
+        return await hackfreaksbot.edit("what should i find give me location.")
 
-    await starkislub.edit("finding")
+    await hackfreaksbot.edit("finding")
 
-    geolocator = Nominatim(user_agent="catHackfreaksUserbot")
+    geolocator = Nominatim(user_agent="HackfreaksUserbot")
     geoloc = geolocator.geocode(input_str)
 
     if geoloc:
@@ -40,7 +40,7 @@ async def gps(event):
         )
         await event.delete()
     else:
-        await starkislub.edit("i coudn't find it")
+        await hackfreaksbot.edit("i coudn't find it")
 
 
 CMD_HELP.update(

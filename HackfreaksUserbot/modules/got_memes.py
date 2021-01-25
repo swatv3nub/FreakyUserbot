@@ -240,6 +240,6 @@ CMD_HELP.update(
     {
         "nono": "**nono**\
 \n\n**Syntax : **`.non`\
-\n**Usage :** Tells You Abour Chat id, Group id."
+\n**Usage :** Game Of Throne Meme Supplier."
     }
 )

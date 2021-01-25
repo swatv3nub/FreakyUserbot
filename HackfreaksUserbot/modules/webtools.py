@@ -15,12 +15,12 @@ async def _(event):
     if event.fwd_from:
         return
     urlissed = event.pattern_match.group(1)
-    sedlyfstarky = await edit_or_reply(event, "Capturing Webshot, Stay Tuned.")
+    sedlyffreaky = await edit_or_reply(event, "Capturing Webshot, Stay Tuned.")
     driver = webdriver.Chrome()
     driver.get(urlissed)
     driver.get_screenshot_as_file("Webshot-@HackfreaksUserbot.png")
     imgpath = "Webshot-@HackfreaksUserbot.png"
-    await sedlyfstarky.edit("Completed. Uploading in Telegram..")
+    await sedlyffreaky.edit("Completed. Uploading in Telegram..")
     await borg.send_file(
         event.chat_id,
         file=imgpath,
@@ -115,12 +115,12 @@ async def _(event):
         sed = event.pattern_match.group(1)
         if sed:
             if " " in sed:
-                stark = inputs.split(" ", 2)
-        gitusername = stark[0]
-        gitrepo = stark[1]
-        gitbranch = stark[2]
+                noobfreaks = inputs.split(" ", 2)
+        gitusername = noobfreaks[0]
+        gitrepo = noobfreaks[1]
+        gitbranch = noobfreaks[2]
         link = f"https://github.com/{gitusername}/{gitrepo}/archive/{gitbranch}.zip"
-        await kekman.edit("Uploading... Stark Tuned.")
+        await kekman.edit("Uploading... Stay Tuned.")
         await event.delete()
         await borg.send_file(event.chat_id, file=link, caption="You Repo Achieve File.")
     except:
@@ -136,24 +136,24 @@ async def _(event):
         return
     try:
         fin = event.pattern_match.group(1)
-        stark_result = await edit_or_reply(event, "Fectching Result this May Take Time")
+        freaks_result = await edit_or_reply(event, "Fectching Result this May Take Time")
         results = YoutubeSearch(f"{fin}", max_results=5).to_dict()
         noob = "<b>YOUTUBE SEARCH</b> \n\n"
         for moon in results:
             hmm = moon["id"]
             kek = f"https://www.youtube.com/watch?v={hmm}"
-            stark_name = moon["title"]
-            stark_chnnl = moon["channel"]
-            total_stark = moon["duration"]
-            stark_views = moon["views"]
+            freaks_name = moon["title"]
+            freaks_chnnl = moon["channel"]
+            total_freaks = moon["duration"]
+            freaks_views = moon["views"]
             noob += (
-                f"<b><u>VIDEO-TITLE</u></b> ➠ <code>{stark_name}</code> \n"
+                f"<b><u>VIDEO-TITLE</u></b> ➠ <code>{freaks_name}</code> \n"
                 f"<b><u>LINK</u></b> ➠ <code>{kek}</code> \n"
-                f"<b><u>CHANNEL</u></b> ➠ <code>{stark_chnnl}</code> \n"
-                f"<b><u>DURATION</u></b> ➠ <code>{total_stark}</code> \n"
-                f"<b><u>TOTAL-VIEWS</u></b> ➠ <code>{stark_views}</code> \n\n"
+                f"<b><u>CHANNEL</u></b> ➠ <code>{freaks_chnnl}</code> \n"
+                f"<b><u>DURATION</u></b> ➠ <code>{total_freaks}</code> \n"
+                f"<b><u>TOTAL-VIEWS</u></b> ➠ <code>{freaks_views}</code> \n\n"
             )
-        await stark_result.edit(noob, parse_mode="HTML")
+        await freaks_result.edit(noob, parse_mode="HTML")
     except:
         await event.edit("Some Thing Went Wrong.")
 

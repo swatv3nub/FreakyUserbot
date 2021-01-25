@@ -27,11 +27,11 @@ def progress(current, total):
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="search (.*)"))
 @Hackfreaks.on(sudo_cmd(pattern="search (.*)", allow_sudo=True))
 async def _(event):
-    stark = await edit_or_reply(event, "`Processing Your Request`")
+    noobfreaks = await edit_or_reply(event, "`Processing Your Request`")
     if event.fwd_from:
         return
     start = datetime.now()
-    await stark.edit("`Trying To Connect...`")
+    await noobfreaks.edit("`Trying To Connect...`")
     # SHOW_DESCRIPTION = False
     input_str = event.pattern_match.group(
         1
@@ -48,12 +48,12 @@ async def _(event):
         output_str += "📃  [{}]({}) \n\n".format(text, url)
     end = datetime.now()
     ms = (end - start).seconds
-    await stark.edit(
+    await noobfreaks.edit(
         "searched Google for {} in {} seconds. \n{}".format(input_str, ms, output_str),
         link_preview=False,
     )
     await asyncio.sleep(5)
-    await stark.edit("Google: {}\n{}".format(input_str, output_str), link_preview=False)
+    await noobfreaks.edit("Google: {}\n{}".format(input_str, output_str), link_preview=False)
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="image (.*)"))

@@ -23,9 +23,9 @@ async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    stark = input_str.split(" ", 1)
-    curreo = stark[0]
-    currency1 = stark[1]
+    noobfreaks = input_str.split(" ", 1)
+    curreo = noobfreaks[0]
+    currency1 = noobfreaks[1]
     curre = curreo.upper()
     currency = currency1.upper()
     take = ""

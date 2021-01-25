@@ -6,7 +6,7 @@ from telethon import custom
 
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd
 
-# regex obtained from: https://github.com/PaulSonOfLars/hackfreaksbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
+# regex obtained from: https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
 BTN_URL_REGEX = re.compile(r"(\{([^\[]+?)\}\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 

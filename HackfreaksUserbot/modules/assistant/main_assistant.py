@@ -69,7 +69,7 @@ async def start(event):
 # Data's
 
 
-@hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deploy")))
+@Hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deploy")))
 async def help(event):
     await event.delete()
     if event.query.user_id is not bot.uid:
@@ -83,14 +83,14 @@ async def help(event):
         )
 
 
-@hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"users")))
+@Hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"users")))
 async def users(event):
     if event.query.user_id == bot.uid:
         await event.delete()
         total_users = get_all_users()
         users_list = "List Of Total Users In Bot. \n\n"
-        for starked in total_users:
-            users_list += ("==> {} \n").format(int(starked.chat_id))
+        for freaked in total_users:
+            users_list += ("==> {} \n").format(int(freaked.chat_id))
         with io.BytesIO(str.encode(users_list)) as tedt_file:
             tedt_file.name = "userlist.txt"
             await hackfreaksbot.send_file(
@@ -104,7 +104,7 @@ async def users(event):
         pass
 
 
-@hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"gibcmd")))
+@Hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"gibcmd")))
 async def users(event):
     await event.delete()
     grabon = "Hello Here Are Some Commands \n➤ /start - Check if I am Alive \n➤ /ping - Pong! \n➤ /tr <lang-code> \n➤ /broadcast - Sends Message To all Users In Bot \n➤ /id - Shows ID of User And Media. \n➤ /addnote - Add Note \n➤ /notes - Shows Notes \n➤ /rmnote - Remove Note \n➤ /alive - Am I Alive? \n➤ /bun - Works In Group , Bans A User. \n➤ /unbun - Unbans A User in Group \n➤ /prumote - Promotes A User \n➤ /demute - Demotes A User \n➤ /pin - Pins A Message \n➤ /stats - Shows Total Users In Bot"
@@ -112,7 +112,7 @@ async def users(event):
 
 
 # Bot Permit.
-@hackfreaksbot.on(events.NewMessage(func=lambda e: e.is_private))
+@Hackfreaksbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def all_messages_catcher(event):
     if is_he_added(event.sender_id):
         return
@@ -129,7 +129,7 @@ async def all_messages_catcher(event):
         add_me_in_db(sed.id, event.sender_id, event.id)
 
 
-@hackfreaksbot.on(events.NewMessage(func=lambda e: e.is_private))
+@Hackfreaksbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def sed(event):
     msg = await event.get_reply_message()
     if msg is None:
@@ -171,14 +171,14 @@ async def sedlyfsir(event):
     elif msgtobroadcast == " ":
         await event.reply("`Wait. What? Broadcast None?`")
         return
-    for starkcast in userstobc:
+    for freakcast in userstobc:
         try:
             sent_count += 1
             await hackfreaksbot.send_message(
-                int(starkcast.chat_id),
+                int(freakcast.chat_id),
                 "**Hey, You Have Received A New Broadcast Message**",
             )
-            await hackfreaksbot.send_message(int(starkcast.chat_id), msgtobroadcast)
+            await hackfreaksbot.send_message(int(freakcast.chat_id), msgtobroadcast)
             await asyncio.sleep(0.2)
         except Exception as e:
             hmmok += f"Errors : {e} \n"
@@ -191,10 +191,10 @@ async def sedlyfsir(event):
 
 @assistant_cmd("stats", is_args=False)
 @peru_only
-async def starkisnoob(event):
-    dayamisnoob = get_all_users()
+async def freakispro(event):
+    dayamispro = get_all_users()
     await event.reply(
-        f"**Stats Of Your Bot** \nTotal Users In Bot => {len(dayamisnoob)}"
+        f"**Stats Of Your Bot** \nTotal Users In Bot => {len(dayamispro)}"
     )
 
 

@@ -49,10 +49,10 @@ async def _(event):
             url = "https://del.dog/documents"
             r = requests.post(url, data=out_file.encode("UTF-8")).json()
             url2 = f"https://del.dog/{r['key']}"
-            starky = f"Translated Text Was Too Big, Never Mind I Have Pasted It [Here]({url2})"
+            freaky = f"Translated Text Was Too Big, Never Mind I Have Pasted It [Here]({url2})"
         else:
-            starky = output_str
-        await edit_or_reply(event, starky)
+            freaky = output_str
+        await edit_or_reply(event, freaky)
     except Exception as e:
         print(e)
 

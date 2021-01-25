@@ -218,9 +218,9 @@ async def _(givelogs):
     with open("logs.txt", "w") as log:
         log.write(app.get_log())
     hmm = app.get_log()
-    starky = f"<code> {hmm} </code>"
+    freaky = f"<code> {hmm} </code>"
     title_of_page = "Hackfreaks UserBot Logs"
-    response = telegraph.create_page(title_of_page, html_content=starky)
+    response = telegraph.create_page(title_of_page, html_content=freaky)
     km = response["path"]
     suger = f"`Logs Can Be Found` [Here](https://telegra.ph/{km})"
     await givelogs.client.send_file(

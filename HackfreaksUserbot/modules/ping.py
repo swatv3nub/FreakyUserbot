@@ -36,15 +36,15 @@ def get_readable_time(seconds: int) -> str:
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="ping$"))
 @Hackfreaks.on(sudo_cmd(pattern="ping$", allow_sudo=True))
 async def _(event):
-    starkislub = await edit_or_reply(event, "`Pong !`")
+    hackfreaksbot = await edit_or_reply(event, "`Pong !`")
     if event.fwd_from:
         return
     start = datetime.now()
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - Lastupdate))
-    await starkislub.edit(
-        f"""**█▓█▓▒▒░░░PONG░░░▒▒▓█▓█
+    await hackfreaksbot.edit(
+        f"""**PONG
 **\n ➲ `{ms}` \n ➲ `{uptime}`"""
     )
 
@@ -53,6 +53,6 @@ CMD_HELP.update(
     {
         "ping": "Ping**\
 \n\n**Syntax : .ping\
-\nUsage : Shows If The Bot Is Working Or Not"
+\nUsage : Shows Server Ping and Uptime"
     }
 )

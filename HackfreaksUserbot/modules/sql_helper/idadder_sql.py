@@ -23,9 +23,9 @@ def add_usersid_in_db(chat_id: int):
 
 
 def get_all_users():
-    stark = SESSION.query(Moidata).all()
+    noobfreaks = SESSION.query(Moidata).all()
     SESSION.close()
-    return stark
+    return noobfreaks
 
 
 def already_added(chat_id):

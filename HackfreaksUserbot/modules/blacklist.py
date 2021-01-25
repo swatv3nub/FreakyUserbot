@@ -34,14 +34,14 @@ async def on_new_message(event):
 @Hackfreaks.on(Hackfreaks_on_cmd("textblacklist ((.|\n)*)"))
 @Hackfreaks.on(sudo_cmd("textblacklist ((.|\n)*)", allow_sudo=True))
 async def on_add_black_list(event):
-    starksayxd = await edit_or_reply(event, "Trying To Set This Text As Blacklist xD")
+    noobfreaks = await edit_or_reply(event, "Trying To Set This Text As Blacklist xD")
     text = event.pattern_match.group(1)
     to_blacklist = list(
         set(trigger.strip() for trigger in text.split("\n") if trigger.strip())
     )
     for trigger in to_blacklist:
         sql.add_to_blacklist(event.chat_id, trigger.lower())
-    await starksayxd.edit(
+    await noobfreaks.edit(
         "Added {} triggers to the blacklist in the current chat".format(
             len(to_blacklist)
         )

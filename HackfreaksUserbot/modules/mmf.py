@@ -11,7 +11,7 @@ sedpath = Config.TMP_DOWNLOAD_DIRECTORY
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="memify (.*)"))
-async def starkmeme(event):
+async def freakmeme(event):
     hmm = event.pattern_match.group(1)
     if hmm == None:
         await event.edit("Give Some Text")
@@ -31,9 +31,9 @@ async def starkmeme(event):
             await event.reply("This is Not Supported Yet.")
             return
         if ";" in hmm:
-            stark = hmm.split(";", 1)
-            first_txt = stark[0]
-            second_txt = stark[1]
+            noobfreaks = hmm.split(";", 1)
+            first_txt = noobfreaks[0]
+            second_txt = noobfreaks[1]
             top_text = first_txt
             bottom_text = second_txt
             generate_meme(seds, top_text=top_text, bottom_text=bottom_text)

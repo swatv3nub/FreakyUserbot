@@ -41,9 +41,9 @@ async def glitch(event):
     )
     await borg.send_file(event.chat_id, pathsn)
     await okbruh.delete()
-    for starky in (pathsn, photolove):
-        if starky and os.path.exists(starky):
-            os.remove(starky)
+    for freaky in (pathsn, photolove):
+        if freaky and os.path.exists(freaky):
+            os.remove(freaky)
 
 
 CMD_HELP.update(

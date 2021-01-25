@@ -1,6 +1,6 @@
 """Download & Upload Images on Telegram\n
 Syntax: `.img <Name>` or `.img (replied message)`
-\n Upgraded and Google Image Error Fixed
+\n Google Image 
 """
 
 import os
@@ -23,7 +23,7 @@ async def img_sampler(event):
         query = reply.message
     else:
         await edit_or_reply(
-            event, "`um, mind mentioning what I actually need to search for ;_;`"
+            event, "`Umm, mind mentioning what I actually need to search for!`"
         )
         return
 

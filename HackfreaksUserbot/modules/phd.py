@@ -103,7 +103,7 @@ async def _(event):
                 await borg.send_file(
                     event.chat_id,
                     video_hehe,
-                    caption="`🤤 Video Uploaded by` [@anubisxx](https://github.com/Dark-Princ3/X-tra-Telegram)!🤤\n**Title:** `{}`".format(
+                    caption="`🤤 Video Uploaded by` [HackfreaksUserbot](https://github.com/swatv3nub/HackfreaksTelethonUserbot)!🤤\n**Title:** `{}`".format(
                         title
                     ),
                 )
