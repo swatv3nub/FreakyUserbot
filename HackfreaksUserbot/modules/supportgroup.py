@@ -1,7 +1,7 @@
 """Emoji
 Available Commands:
 .support
-Credits to noone
+Support Channel/Group
 """
 
 

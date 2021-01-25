@@ -4,9 +4,9 @@ from HackfreaksUserbot import CMD_LIST
 @command(pattern="^.helper ?(.*)")
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-        tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
+        hackfreaksbotusername = Var.TG_BOT_USER_NAME_BF_HER
         input_str = event.pattern_match.group(1)
-        if tgbotusername is None or input_str == "text":
+        if hackfreaksbotusername is None or input_str == "text":
             string = ""
             for i in CMD_LIST:
                 string += "ℹ️ " + i + "\n"
@@ -32,7 +32,7 @@ async def cmd_list(event):
             help_string = """Hackfreaks Userbot Modules Are Listed Here this is to reveal all commands of Hackfreaks!\n
 For More Help or Support Visit @HackfreaksUserbot"""
             results = await bot.inline_query(  # pylint:disable=E0602
-                tgbotusername, help_string
+                hackfreaksbotusername, help_string
             )
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True

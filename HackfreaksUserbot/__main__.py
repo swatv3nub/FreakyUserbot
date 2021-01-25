@@ -1,19 +1,7 @@
 #    Hackfreaks - UserBot
 #    Copyright (C) 2020 Hackfreaks @ProjectHackfreaks
 
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
 
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-#    you may not use this file except in compliance with the License.
 
 import logging
 from pathlib import Path
@@ -39,9 +27,9 @@ async def add_bot(bot_token):
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
-    bot.tgbot = None
+    bot.hackfreaksbot = None
     if Var.TG_BOT_USER_NAME_BF_HER is not None:
-        bot.tgbot = TelegramClient(
+        bot.hackfreaksbot = TelegramClient(
             "TG_BOT_TOKEN", api_id=Var.APP_ID, api_hash=Var.API_HASH
         ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
         bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))

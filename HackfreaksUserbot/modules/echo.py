@@ -28,7 +28,7 @@ async def _(event):
     bxt = Var.TG_BOT_USER_NAME_BF_HER
     try:
         tex = str(event.text[6:])
-        await tgbot.send_message(event.chat_id, tex)
+        await hackfreaksbot.send_message(event.chat_id, tex)
         await event.delete()
     except BaseException:
         await event.client.send_message(event.chat_id, f"Please add @{bxt} here first!")

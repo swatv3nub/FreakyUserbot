@@ -1,20 +1,6 @@
 #    Hackfreaks - UserBot
 #    Copyright (C) 2020 Hackfreaks
 
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-# you may not use this file except in compliance with the License.
-
 import functools
 import inspect
 import logging
@@ -137,7 +123,7 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
-        mod.tgbot = bot.tgbot
+        mod.hackfreaksbot = bot.hackfreaksbot
         mod.Var = Var
         mod.command = command
         mod.logger = logging.getLogger(shortname)
@@ -499,23 +485,11 @@ async def edit_or_reply(event, text):
     return await event.edit(text)
 
 
-#    Copyright (C) Midhun KM 2020
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
 def assistant_cmd(add_cmd, is_args=False):
     def cmd(func):
-        serena = bot.tgbot
+        serena = bot.hackfreaksbot
         if is_args:
             pattern = bothandler + add_cmd + "(?: |$)(.*)"
         elif is_args == "stark":
@@ -537,7 +511,7 @@ def is_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            serena = bot.tgbot
+            serena = bot.hackfreaksbot
             sed = await serena.get_permissions(event.chat_id, event.sender_id)
             user = event.sender_id
             kek = bot.uid
@@ -559,7 +533,7 @@ def is_bot_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            serena = bot.tgbot
+            serena = bot.hackfreaksbot
             pep = await serena.get_me()
             sed = await serena.get_permissions(event.chat_id, pep)
             if sed.is_admin:
@@ -689,8 +663,8 @@ def start_assistant(shortname):
         name = "HackfreaksUserbot.modules.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
-        mod.tgbot = bot.tgbot
-        mod.serena = bot.tgbot
+        mod.hackfreaksbot = bot.hackfreaksbot
+        mod.serena = bot.hackfreaksbot
         mod.assistant_cmd = assistant_cmd
         mod.god_only = god_only()
         mod.only_groups = only_groups()

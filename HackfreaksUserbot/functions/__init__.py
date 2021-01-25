@@ -1,16 +1,3 @@
-#    Copyright (C) Midhun KM 2020
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 import asyncio
 import json
 import math
@@ -468,7 +455,7 @@ async def check_if_subbed(channel_id, event, bot):
         return False
 
 
-async def _ytdl(url, is_it, event, tgbot):
+async def _ytdl(url, is_it, event, hackfreaksbot):
     await event.edit(
         "`Ok Downloading This Video / Audio - Please Wait.` \n**Powered By @HackfreaksUserbot**"
     )
@@ -524,7 +511,7 @@ async def _ytdl(url, is_it, event, tgbot):
         \n**Title :** `{ytdl_data['title']}`\
         \n**Video Uploader :** `{ytdl_data['uploader']}`"
         )
-        lol_m = await tgbot.upload_file(
+        lol_m = await hackfreaksbot.upload_file(
             file=f"{ytdl_data['id']}.mp3",
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(
@@ -548,7 +535,7 @@ async def _ytdl(url, is_it, event, tgbot):
         \n**Title :** `{ytdl_data['title']}`\
         \n**Video Uploader :** `{ytdl_data['uploader']}`"
         )
-        hmmo = await tgbot.upload_file(
+        hmmo = await hackfreaksbot.upload_file(
             file=f"{ytdl_data['id']}.mp4",
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(

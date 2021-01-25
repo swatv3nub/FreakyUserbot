@@ -1,17 +1,3 @@
-#    Copyright (C) Dayam Zaidi 2020
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-
 from telethon import events, utils
 from telethon.tl import types
 
@@ -28,7 +14,7 @@ TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
 
 
-@tgbot.on(events.NewMessage(pattern=r"\#(\S+)"))
+@hackfreaksbot.on(events.NewMessage(pattern=r"\#(\S+)"))
 async def on_snip(event):
     name = event.pattern_match.group(1)
     snip = get_snips(name)
@@ -50,7 +36,7 @@ async def on_snip(event):
         message_id = event.message.id
         if event.reply_to_msg_id:
             message_id = event.reply_to_msg_id
-        await tgbot.send_message(
+        await hackfreaksbot.send_message(
             event.chat_id, snip.reply, reply_to=message_id, file=media
         )
 

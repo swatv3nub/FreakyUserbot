@@ -1,16 +1,3 @@
-#    Copyright (C) Dayam Zaidi 2020
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 import asyncio
 import io
 import os
@@ -36,7 +23,7 @@ from HackfreaksUserbot.modules.sql_helper.idadder_sql import (
 
 @assistant_cmd("start", is_args=False)
 async def start(event):
-    dayambot = await tgbot.get_me()
+    dayambot = await hackfreaksbot.get_me()
     bot_id = dayambot.first_name
     bot_username = dayambot.username
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
@@ -47,7 +34,7 @@ async def start(event):
     mypic = Config.ASSISTANT_START_PIC
     starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy Master [{hmmwow}](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [Hackfreaks Userbot](t.me/HackfreaksUserbot)"
     if event.sender_id == bot.uid:
-        await tgbot.send_message(
+        await hackfreaksbot.send_message(
             vent,
             message=f"Hi Master, It's Me {bot_id}, Your Assistant ! \nWhat You Wanna Do today ?",
             buttons=[
@@ -65,7 +52,7 @@ async def start(event):
             pass
         elif not already_added(event.sender_id):
             add_usersid_in_db(event.sender_id)
-        await tgbot.send_file(
+        await hackfreaksbot.send_file(
             event.chat_id,
             file=mypic,
             caption=starttext,
@@ -82,21 +69,21 @@ async def start(event):
 # Data's
 
 
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deploy")))
+@hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deploy")))
 async def help(event):
     await event.delete()
     if event.query.user_id is not bot.uid:
-        await tgbot.send_message(
+        await hackfreaksbot.send_message(
             event.chat_id,
             message="You Can Deploy Hackfreaks In Heroku By Following Steps Bellow, You Can See Some Quick Guides On Support Channel Or On Your Own Assistant Bot. \nThank You For Contacting Me.",
             buttons=[
-                [Button.url("Deploy Tutorial 📺", "hey")],
-                [Button.url("Need Help ❓", "t.me/HackfreaksUserbot")],
+                [Button.url("Deploy Tutorial 📺", "t.me/HackfreaksUserbot")],
+                [Button.url("Need Help ❓", "t.me/HackfreaksSupport")],
             ],
         )
 
 
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"users")))
+@hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"users")))
 async def users(event):
     if event.query.user_id == bot.uid:
         await event.delete()
@@ -106,7 +93,7 @@ async def users(event):
             users_list += ("==> {} \n").format(int(starked.chat_id))
         with io.BytesIO(str.encode(users_list)) as tedt_file:
             tedt_file.name = "userlist.txt"
-            await tgbot.send_file(
+            await hackfreaksbot.send_file(
                 event.chat_id,
                 tedt_file,
                 force_document=True,
@@ -117,15 +104,15 @@ async def users(event):
         pass
 
 
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"gibcmd")))
+@hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"gibcmd")))
 async def users(event):
     await event.delete()
     grabon = "Hello Here Are Some Commands \n➤ /start - Check if I am Alive \n➤ /ping - Pong! \n➤ /tr <lang-code> \n➤ /broadcast - Sends Message To all Users In Bot \n➤ /id - Shows ID of User And Media. \n➤ /addnote - Add Note \n➤ /notes - Shows Notes \n➤ /rmnote - Remove Note \n➤ /alive - Am I Alive? \n➤ /bun - Works In Group , Bans A User. \n➤ /unbun - Unbans A User in Group \n➤ /prumote - Promotes A User \n➤ /demute - Demotes A User \n➤ /pin - Pins A Message \n➤ /stats - Shows Total Users In Bot"
-    await tgbot.send_message(event.chat_id, grabon)
+    await hackfreaksbot.send_message(event.chat_id, grabon)
 
 
 # Bot Permit.
-@tgbot.on(events.NewMessage(func=lambda e: e.is_private))
+@hackfreaksbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def all_messages_catcher(event):
     if is_he_added(event.sender_id):
         return
@@ -142,7 +129,7 @@ async def all_messages_catcher(event):
         add_me_in_db(sed.id, event.sender_id, event.id)
 
 
-@tgbot.on(events.NewMessage(func=lambda e: e.is_private))
+@hackfreaksbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def sed(event):
     msg = await event.get_reply_message()
     if msg is None:
@@ -155,7 +142,7 @@ async def sed(event):
             return
         if event.text is not None and event.media:
             bot_api_file_id = pack_bot_file_id(event.media)
-            await tgbot.send_file(
+            await hackfreaksbot.send_file(
                 user_id,
                 file=bot_api_file_id,
                 caption=event.text,
@@ -163,7 +150,7 @@ async def sed(event):
             )
         else:
             msg_s = event.raw_text
-            await tgbot.send_message(
+            await hackfreaksbot.send_message(
                 user_id,
                 msg_s,
                 reply_to=reply_message_id,
@@ -187,16 +174,16 @@ async def sedlyfsir(event):
     for starkcast in userstobc:
         try:
             sent_count += 1
-            await tgbot.send_message(
+            await hackfreaksbot.send_message(
                 int(starkcast.chat_id),
                 "**Hey, You Have Received A New Broadcast Message**",
             )
-            await tgbot.send_message(int(starkcast.chat_id), msgtobroadcast)
+            await hackfreaksbot.send_message(int(starkcast.chat_id), msgtobroadcast)
             await asyncio.sleep(0.2)
         except Exception as e:
             hmmok += f"Errors : {e} \n"
             error_count += 1
-    await tgbot.send_message(
+    await hackfreaksbot.send_message(
         event.chat_id,
         f"Broadcast Done in {sent_count} Group/Users and I got {error_count} Error and Total Number Was {len(userstobc)}",
     )
@@ -231,7 +218,7 @@ async def dayamisnoob(event):
     elif not is_he_added(user_id):
         add_nibba_in_db(user_id)
         await event.reply("Blacklisted This Dumb Person")
-        await tgbot.send_message(
+        await hackfreaksbot.send_message(
             user_id, "You Have Been Blacklisted And You Can't Message My Master Now."
         )
 
@@ -249,6 +236,6 @@ async def dayamisnoob(event):
     elif is_he_added(user_id):
         removenibba(user_id)
         await event.reply("DisBlacklisted This Dumb Person")
-        await tgbot.send_message(
+        await hackfreaksbot.send_message(
             user_id, "Congo! You Have Been Unblacklisted By My Master."
         )

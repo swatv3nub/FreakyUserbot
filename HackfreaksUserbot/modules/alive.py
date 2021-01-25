@@ -40,20 +40,20 @@ def get_readable_time(seconds: int) -> str:
 uptime = get_readable_time((time.time() - Lastupdate))
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 PM_IMG = Config.ALIVE_IMAGE
-pm_caption = "👑 My Hackfreaks Is WORKING Successfully 👑\n\n"
+pm_caption = "👑 My HackfreaksUserbot is Working Successfully 👑\n\n"
 pm_caption += "✯ **Hackfreaks STATS**\n"
-pm_caption += "✯ **Telethon Version:** `1.15.0` \n"
+pm_caption += "✯ **Telethon Version:** `Latest` \n"
 pm_caption += f"➥ **Hackfreaks Version** : `{currentversion}`\n"
-pm_caption += "✯ **Python:** `3.7.4` \n"
+pm_caption += "✯ **Python:** `3.8.5` \n"
 pm_caption += f"✯ **Uptime** : `{uptime}` \n"
 pm_caption += "✯ **Database Status:**  `Functional`\n"
-pm_caption += "✯ **Current Branch** : `master`\n"
+pm_caption += "✯ **Current Branch** : `Alpha`\n"
 pm_caption += f"✯ **My Boss** : {DEFAULTUSER} \n"
-pm_caption += "✯ **Heroku Database** : `AWS - Working Properly`\n\n"
+pm_caption += "✯ **Database** : `AWS - Working Properly`\n\n"
 pm_caption += "✯**[Join Our Channel]**(https://t.me/HackfreaksUserbot)\n"
 pm_caption += "✯ **License** : [GNU General Public License v3.0](https://github.com/swatv3nub/HackfreaksTelethonUserbot/blob/main/LICENSE)\n"
 pm_caption += "✯ **Copyright** : By [Hackfreaks](https://t.me/HackfreaksUserbot)\n"
-pm_caption += "[🇮🇳 Deploy HackfreaksUserbot 🇮🇳](https://Hackfreaks-org.github.io/HackfreaksUserbot/)\n"
+pm_caption += "[🇮🇳 Deploy HackfreaksUserbot 🇮🇳](https://heroku.com/deploy?template=https://github.com/swatv3nub/HackfreaksTelethonUserbot)\n"
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"online"))

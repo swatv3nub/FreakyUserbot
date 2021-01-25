@@ -57,7 +57,7 @@ async def all_messages_catcher(event):
 
     ammoca_message += f"User {who_m} Have Tagged You Here -> [{where_m}]({message_link}) \nCheck Message 👇 "
     log_chat = Config.PRIVATE_GROUP_ID
-    await tgbot.send_message(
+    await hackfreaksbot.send_message(
         log_chat,
         message=ammoca_message,
         link_preview=False,

@@ -9,7 +9,7 @@ from telethon.tl import functions
 
 from HackfreaksUserbot import CMD_HELP
 
-FONT_FILE_TO_USE = "Fonts/digital.ttf"
+FONT_FILE_TO_USE = "resources/Fonts/digital.ttf"
 
 
 @command(pattern="^.autopic", outgoing=True)

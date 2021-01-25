@@ -43,11 +43,11 @@ COLORS = [
 
 class Quote:
     async def process(msg, user, client, reply, replied=None):
-        font = ImageFont.truetype("Fonts/Roboto-Medium.ttf", 43, encoding="utf-16")
-        font2 = ImageFont.truetype("Fonts/Roboto-Regular.ttf", 33, encoding="utf-16")
-        mono = ImageFont.truetype("Fonts/DroidSansMono.ttf", 30, encoding="utf-16")
-        italic = ImageFont.truetype("Fonts/Roboto-Italic.ttf", 33, encoding="utf-16")
-        fallback = ImageFont.truetype("Fonts/Quivira.otf", 43, encoding="utf-16")
+        font = ImageFont.truetype("resources/Fonts/Roboto-Medium.ttf", 43, encoding="utf-16")
+        font2 = ImageFont.truetype("resources/Fonts/Roboto-Regular.ttf", 33, encoding="utf-16")
+        mono = ImageFont.truetype("resources/Fonts/DroidSansMono.ttf", 30, encoding="utf-16")
+        italic = ImageFont.truetype("resources/Fonts/Roboto-Italic.ttf", 33, encoding="utf-16")
+        fallback = ImageFont.truetype("resources/Fonts/Quivira.otf", 43, encoding="utf-16")
         # Splitting text
         maxlength = 0
         width = 0
@@ -225,7 +225,7 @@ class Quote:
 
         # Writing User's Name
         space = pfpbg.width + 30
-        namefallback = ImageFont.truetype("Fonts/Quivira.otf", 43, encoding="utf-16")
+        namefallback = ImageFont.truetype("resources/Fonts/Quivira.otf", 43, encoding="utf-16")
         for letter in tot:
             if letter in emoji.UNICODE_EMOJI:
                 newemoji, mask = await Quote.emoji_fetch(letter)
@@ -249,7 +249,7 @@ class Quote:
         bold, mono, italic, link = await Quote.get_entity(reply)
         index = 0
         emojicount = 0
-        textfallback = ImageFont.truetype("Fonts/Quivira.otf", 33, encoding="utf-16")
+        textfallback = ImageFont.truetype("resources/Fonts/Quivira.otf", 33, encoding="utf-16")
         textcolor = "white"
         for line in text:
             for letter in line:
@@ -261,25 +261,25 @@ class Quote:
                 for offset, length in bold.items():
                     if index in range(offset, length):
                         font2 = ImageFont.truetype(
-                            "Fonts/Roboto-Medium.ttf", 33, encoding="utf-16"
+                            "resources/Fonts/Roboto-Medium.ttf", 33, encoding="utf-16"
                         )
                         textcolor = "white"
                 for offset, length in italic.items():
                     if index in range(offset, length):
                         font2 = ImageFont.truetype(
-                            "Fonts/Roboto-Italic.ttf", 33, encoding="utf-16"
+                            "resources/Fonts/Roboto-Italic.ttf", 33, encoding="utf-16"
                         )
                         textcolor = "white"
                 for offset, length in mono.items():
                     if index in range(offset, length):
                         font2 = ImageFont.truetype(
-                            "Fonts/DroidSansMono.ttf", 30, encoding="utf-16"
+                            "resources/Fonts/DroidSansMono.ttf", 30, encoding="utf-16"
                         )
                         textcolor = "white"
                 for offset, length in link.items():
                     if index in range(offset, length):
                         font2 = ImageFont.truetype(
-                            "Fonts/Roboto-Regular.ttf", 30, encoding="utf-16"
+                            "resources/Fonts/Roboto-Regular.ttf", 30, encoding="utf-16"
                         )
                         textcolor = "#898989"
                 if letter in emoji.UNICODE_EMOJI:
@@ -318,7 +318,7 @@ class Quote:
         return top, middle, bottom
 
     async def fontTest(letter):
-        test = TTFont("Fonts/Roboto-Medium.ttf")
+        test = TTFont("resources/Fonts/Roboto-Medium.ttf")
         for table in test["cmap"].tables:
             if ord(letter) in table.cmap.keys():
                 return True
@@ -346,7 +346,7 @@ class Quote:
         return bold, mono, italic, link
 
     async def doctype(name, size, type, canvas):
-        font = ImageFont.truetype("Fonts/Roboto-Medium.ttf", 38)
+        font = ImageFont.truetype("resources/Fonts/Roboto-Medium.ttf", 38)
         doc = Image.new("RGBA", (130, 130), (29, 29, 29, 255))
         draw = ImageDraw.Draw(doc)
         draw.ellipse((0, 0, 130, 130), fill="#434343")
@@ -365,7 +365,7 @@ class Quote:
         color = random.choice(COLORS)
         pen.ellipse((0, 0, 105, 105), fill=color)
         letter = "" if not tot else tot[0]
-        font = ImageFont.truetype("Fonts/Roboto-Regular.ttf", 60)
+        font = ImageFont.truetype("resources/Fonts/Roboto-Regular.ttf", 60)
         pen.text((32, 17), letter, font=font, fill="white")
         return pfp, color
 
@@ -399,10 +399,10 @@ class Quote:
         return emoji, mask
 
     async def replied_user(draw, tot, text, maxlength, title):
-        namefont = ImageFont.truetype("Fonts/Roboto-Medium.ttf", 38)
-        namefallback = ImageFont.truetype("Fonts/Quivira.otf", 38)
-        textfont = ImageFont.truetype("Fonts/Roboto-Regular.ttf", 32)
-        textfallback = ImageFont.truetype("Fonts/Roboto-Medium.ttf", 38)
+        namefont = ImageFont.truetype("resources/Fonts/Roboto-Medium.ttf", 38)
+        namefallback = ImageFont.truetype("resources/Fonts/Quivira.otf", 38)
+        textfont = ImageFont.truetype("resources/Fonts/Roboto-Regular.ttf", 32)
+        textfallback = ImageFont.truetype("resources/Fonts/Roboto-Medium.ttf", 38)
         maxlength = maxlength + 7 if maxlength < 10 else maxlength
         text = text[: maxlength - 2] + ".." if len(text) > maxlength else text
         draw.line((165, 90, 165, 170), width=5, fill="white")
