@@ -8,7 +8,6 @@ import asyncio
 from HackfreaksUserbot import CMD_HELP
 
 
-
 @Hackfreaksbot.on(Hackfreaks_on_cmd("superfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
@@ -141,7 +140,6 @@ async def _(event):
     )
 
 
-
 @Hackfreaksbot.on(Hackfreaks_on_cmd("superunfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
@@ -212,7 +210,9 @@ async def _(event):
         await asyncio.sleep(5)
         await hackfreaksuserbot.send_message(chat, f"/unfban {FBAN}")
         await asyncio.sleep(5)
-    await event.edit(f"SuperUnFBan Completed. Affected {len(fedList)} feds.\n#HackfreaksUserbot")
+    await event.edit(
+        f"SuperUnFBan Completed. Affected {len(fedList)} feds.\n#HackfreaksUserbot"
+    )
 
 
 CMD_HELP.update(

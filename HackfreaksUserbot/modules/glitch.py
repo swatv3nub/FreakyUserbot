@@ -1,4 +1,3 @@
-
 import os
 
 from glitch_this import ImageGlitcher

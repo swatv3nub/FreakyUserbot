@@ -2,7 +2,6 @@
 #    Copyright (C) 2020 Hackfreaks @ProjectHackfreaks
 
 
-
 import logging
 from pathlib import Path
 from sys import argv

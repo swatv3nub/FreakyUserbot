@@ -305,5 +305,3 @@ CMD_HELP.update(
 
 #    Hackfreaks - UserBot
 #    Copyright (C) 2020 Hackfreaks
-
-

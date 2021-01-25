@@ -136,7 +136,9 @@ async def _(event):
         return
     try:
         fin = event.pattern_match.group(1)
-        freaks_result = await edit_or_reply(event, "Fectching Result this May Take Time")
+        freaks_result = await edit_or_reply(
+            event, "Fectching Result this May Take Time"
+        )
         results = YoutubeSearch(f"{fin}", max_results=5).to_dict()
         noob = "<b>YOUTUBE SEARCH</b> \n\n"
         for moon in results:
