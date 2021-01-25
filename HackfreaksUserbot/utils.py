@@ -123,7 +123,7 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
-        mod.hackfreaksbot = bot.hackfreaksbot
+        mod.tgbot = bot.tgbot
         mod.Var = Var
         mod.command = command
         mod.logger = logging.getLogger(shortname)
@@ -487,7 +487,7 @@ async def edit_or_reply(event, text):
 
 def assistant_cmd(add_cmd, is_args=False):
     def cmd(func):
-        mrhackfreaks = bot.hackfreaksbot
+        mrhackfreaks = bot.tgbot
         if is_args:
             pattern = bothandler + add_cmd + "(?: |$)(.*)"
         elif is_args == "noobfreaks":
