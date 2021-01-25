@@ -1,7 +1,7 @@
 from HackfreaksUserbot import ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "HackfreaksUserbot Admeme"
-PM_IMG = "https://telegra.ph/file/c7a25fb6a8dc5d086f607.png"
+PM_IMG = "https://telegra.ph/file/bb3741b7596bf90f47568.png"
 pm_caption = "👑 Hackfreaks's Assistant IS: WORKING 👑\n\n"
 pm_caption += "✯ **Hackfreaks Stats**\n"
 pm_caption += "✯ **Telethon Version:** `Latest` \n"
