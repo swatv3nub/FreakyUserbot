@@ -2,7 +2,6 @@
 #    Copyright (C) 2020 Hackfreaks
 
 
-
 import os
 
 from telethon.tl.types import ChatBannedRights

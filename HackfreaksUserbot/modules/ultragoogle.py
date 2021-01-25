@@ -53,7 +53,9 @@ async def _(event):
         link_preview=False,
     )
     await asyncio.sleep(5)
-    await noobfreaks.edit("Google: {}\n{}".format(input_str, output_str), link_preview=False)
+    await noobfreaks.edit(
+        "Google: {}\n{}".format(input_str, output_str), link_preview=False
+    )
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="image (.*)"))

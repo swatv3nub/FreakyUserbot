@@ -185,6 +185,7 @@ def time_formatter(milliseconds: int) -> str:
 
 # Thanks To Userge-X
 
+
 async def convert_to_image(event, borg):
     lmao = await event.get_reply_message()
     if not (

@@ -485,8 +485,6 @@ async def edit_or_reply(event, text):
     return await event.edit(text)
 
 
-
-
 def assistant_cmd(add_cmd, is_args=False):
     def cmd(func):
         mrhackfreaks = bot.hackfreaksbot
