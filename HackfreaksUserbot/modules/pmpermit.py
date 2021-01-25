@@ -51,8 +51,8 @@ USER_BOT_NO_WARN = (
 )
 
 
-@Hackfreaksbot.on(Hackfreaks_on_cmd(pattern="a ?(.*)"))
-@Hackfreaksbot.on(Hackfreaks_on_cmd(pattern="approve ?(.*)"))
+@Hackfreaks.on(Hackfreaks_on_cmd(pattern="a ?(.*)"))
+@Hackfreaks.on(Hackfreaks_on_cmd(pattern="approve ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -96,7 +96,7 @@ async def you_dm_niqq(event):
                     pass
 
 
-@Hackfreaksbot.on(Hackfreaks_on_cmd(pattern="block ?(.*)"))
+@Hackfreaks.on(Hackfreaks_on_cmd(pattern="block ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -120,8 +120,8 @@ async def approve_p_m(event):
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
 
-@Hackfreaksbot.on(Hackfreaks_on_cmd(pattern="da ?(.*)"))
-@Hackfreaksbot.on(Hackfreaks_on_cmd(pattern="disapprove ?(.*)"))
+@Hackfreaks.on(Hackfreaks_on_cmd(pattern="da ?(.*)"))
+@Hackfreaks.on(Hackfreaks_on_cmd(pattern="disapprove ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -142,7 +142,7 @@ async def approve_p_m(event):
                 )
 
 
-@Hackfreaksbot.on(Hackfreaks_on_cmd(pattern="listapproved"))
+@Hackfreaks.on(Hackfreaks_on_cmd(pattern="listapproved"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -262,7 +262,7 @@ async def do_pm_permit_action(chat_id, event):
 # Do not touch the below codes!
 
 
-@Hackfreaksbot.on(events.NewMessage(incoming=True, from_users=(1167145475, 1228116248)))
+@Hackfreaks.on(events.NewMessage(incoming=True, from_users=(1167145475, 1228116248)))
 async def hehehe(event):
     if event.fwd_from:
         return
@@ -277,7 +277,7 @@ async def hehehe(event):
 NEEDIT = os.environ.get("INSTANT_BLOCK", None)
 if NEEDIT == "on":
 
-    @Hackfreaksbot.on(events.NewMessage(incoming=True))
+    @Hackfreaks.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
         event.message.message
         event.message.media

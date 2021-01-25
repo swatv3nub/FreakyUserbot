@@ -69,7 +69,7 @@ async def start(event):
 # Data's
 
 
-@Hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deploy")))
+@Hackfreaks.on(events.callbackquery.CallbackQuery(data=re.compile(b"deploy")))
 async def help(event):
     await event.delete()
     if event.query.user_id is not bot.uid:
@@ -83,7 +83,7 @@ async def help(event):
         )
 
 
-@Hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"users")))
+@Hackfreaks.on(events.callbackquery.CallbackQuery(data=re.compile(b"users")))
 async def users(event):
     if event.query.user_id == bot.uid:
         await event.delete()
@@ -104,7 +104,7 @@ async def users(event):
         pass
 
 
-@Hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"gibcmd")))
+@Hackfreaks.on(events.callbackquery.CallbackQuery(data=re.compile(b"gibcmd")))
 async def users(event):
     await event.delete()
     grabon = "Hello Here Are Some Commands \n➤ /start - Check if I am Alive \n➤ /ping - Pong! \n➤ /tr <lang-code> \n➤ /broadcast - Sends Message To all Users In Bot \n➤ /id - Shows ID of User And Media. \n➤ /addnote - Add Note \n➤ /notes - Shows Notes \n➤ /rmnote - Remove Note \n➤ /alive - Am I Alive? \n➤ /bun - Works In Group , Bans A User. \n➤ /unbun - Unbans A User in Group \n➤ /prumote - Promotes A User \n➤ /demute - Demotes A User \n➤ /pin - Pins A Message \n➤ /stats - Shows Total Users In Bot"
@@ -112,7 +112,7 @@ async def users(event):
 
 
 # Bot Permit.
-@Hackfreaksbot.on(events.NewMessage(func=lambda e: e.is_private))
+@Hackfreaks.on(events.NewMessage(func=lambda e: e.is_private))
 async def all_messages_catcher(event):
     if is_he_added(event.sender_id):
         return
@@ -129,7 +129,7 @@ async def all_messages_catcher(event):
         add_me_in_db(sed.id, event.sender_id, event.id)
 
 
-@Hackfreaksbot.on(events.NewMessage(func=lambda e: e.is_private))
+@Hackfreaks.on(events.NewMessage(func=lambda e: e.is_private))
 async def sed(event):
     msg = await event.get_reply_message()
     if msg is None:
