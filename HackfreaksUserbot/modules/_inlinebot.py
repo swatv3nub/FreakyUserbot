@@ -149,9 +149,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             reply_pop_up_alert = "Please Get Your Own HackfreaksUserbot And Dont Use Mine Need Any Support Ask [HackfreaksUserbot](https://t.me/HackfreaksUserbot)"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @Hackfreaks.on(
-        events.callbackquery.CallbackQuery(data=re.compile(b"terminator"))
-    )
+    @Hackfreaks.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
     async def rip(event):
         if event.query.user_id == bot.uid:
             text = inlinestats
