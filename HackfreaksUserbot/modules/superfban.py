@@ -8,7 +8,7 @@ import asyncio
 from HackfreaksUserbot import CMD_HELP
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("superfban ?(.*)"))
+@Hackfreaks.on(admin_cmd("superfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -140,7 +140,7 @@ async def _(event):
     )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("superunfban ?(.*)"))
+@Hackfreaks.on(admin_cmd("superunfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
