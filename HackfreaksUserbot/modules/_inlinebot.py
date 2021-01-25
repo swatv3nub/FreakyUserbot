@@ -166,9 +166,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
         await borg.send_message(event.query.user_id, text1)
         await borg(functions.contacts.BlockRequest(event.query.user_id))
 
-    @Htgbot.on(
-        events.callbackquery.CallbackQuery(data=re.compile(b"casualbitching"))
-    )
+    @Htgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"casualbitching")))
     async def rip(event):
         await event.get_chat()
         him_id = event.query.user_id
