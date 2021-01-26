@@ -8,7 +8,7 @@ pyseoanalyzer
 pokedex.py
 faker
 deep_translator
-pornhub-api
+pornhub
 countryinfo
 mal-api
 youtube-search-python
