@@ -4,11 +4,11 @@
 # Ported to HackfreaksUserbot by @swatv3nub ->> @ProjectHackfreaks
 
 # import asyncio
-# 
+#
 # from HackfreaksUserbot import CMD_HELP
 # from HackfreaksUserbot.utils import Hackfreaks_on_cmd
-# 
-# 
+#
+#
 # @Hackfreaks.on(Hackfreaks_on_cmd("superfban ?(.*)"))
 # async def _(event):
 #     if event.fwd_from:
@@ -109,7 +109,7 @@
 #                     tempFedId = ""
 #                 else:
 #                     In = True
-# 
+#
 #             elif In:
 #                 tempFedId += x
 #         if len(fedList) == 0:
@@ -139,8 +139,8 @@
 #     await event.edit(
 #         f"MassFedBan Completed. Affected {len(fedList) - exCount} feds.\n#HackfreaksUserbot"
 #     )
-# 
-# 
+#
+#
 # @Hackfreaks.on(Hackfreaks_on_cmd("superunfban ?(.*)"))
 # async def _(event):
 #     if event.fwd_from:
@@ -151,7 +151,7 @@
 #         FBAN = previous_message.sender_id
 #     else:
 #         FBAN = event.pattern_match.group(1)
-# 
+#
 #     if Config.FBAN_GROUP_ID:
 #         chat = Config.FBAN_GROUP_ID
 #     else:
@@ -195,10 +195,10 @@
 #                 tempFedId = ""
 #             else:
 #                 In = True
-# 
+#
 #         elif In:
 #             tempFedId += x
-# 
+#
 #     await event.edit(f"UnFbaning in {len(fedList)} feds.")
 #     try:
 #         await hackfreaksuserbot.send_message(chat, f"/start")
@@ -214,8 +214,8 @@
 #     await event.edit(
 #         f"SuperUnFBan Completed. Affected {len(fedList)} feds.\n#HackfreaksUserbot"
 #     )
-# 
-# 
+#
+#
 # CMD_HELP.update(
 #     {
 #         "superban": ".superfban <username/userid> <reason>\
@@ -225,4 +225,4 @@
 #         \n\nGet help - @HackfreaksUserbot."
 #     }
 # )
-# 
+#
