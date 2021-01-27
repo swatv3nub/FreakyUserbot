@@ -14,7 +14,7 @@ TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
 
 
-@tgbot.on(events.NewMessage(pattern=r"\#(\S+)"))
+@hackfreaksbot.on(events.NewMessage(pattern=r"\#(\S+)"))
 async def on_snip(event):
     name = event.pattern_match.group(1)
     snip = get_snips(name)

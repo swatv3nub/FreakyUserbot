@@ -120,7 +120,7 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
-        mod.tgbot = bot.tgbot
+        mod.hackfreaksbot = bot.hackfreaksbot
         mod.Var = Var
         mod.command = command
         mod.logger = logging.getLogger(shortname)
@@ -484,7 +484,7 @@ async def edit_or_reply(event, text):
 
 def assistant_cmd(add_cmd, is_args=False):
     def cmd(func):
-        mrhackfreaks = bot.tgbot
+        mrhackfreaks = bot.hackfreaksbot
         if is_args:
             pattern = bothandler + add_cmd + "(?: |$)(.*)"
         elif is_args == "freak":
@@ -506,7 +506,7 @@ def is_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            mrhackfreaks = bot.tgbot
+            mrhackfreaks = bot.hackfreaksbot
             sed = await mrhackfreaks.get_permissions(event.chat_id, event.sender_id)
             user = event.sender_id
             kek = bot.uid
@@ -528,7 +528,7 @@ def is_bot_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            mrhackfreaks = bot.tgbot
+            mrhackfreaks = bot.hackfreaksbot
             pep = await mrhackfreaks.get_me()
             sed = await mrhackfreaks.get_permissions(event.chat_id, pep)
             if sed.is_admin:
@@ -658,8 +658,8 @@ def start_assistant(shortname):
         name = "HackfreaksUserbot.modules.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
-        mod.tgbot = bot.tgbot
-        mod.mrhackfreaks = bot.tgbot
+        mod.hackfreaksbot = bot.hackfreaksbot
+        mod.mrhackfreaks = bot.hackfreaksbot
         mod.assistant_cmd = assistant_cmd
         mod.god_only = god_only()
         mod.only_groups = only_groups()

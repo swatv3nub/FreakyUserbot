@@ -16,7 +16,7 @@ LOG_CHAT = Config.PRIVATE_GROUP_ID
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hackfreaks"
 if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
 
-    @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+    @hackfreaksbot.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
@@ -62,7 +62,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             )
         await event.answer([result] if result else None)
 
-    @tgbot.on(
+    @hackfreaksbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"helpme_next\((.+?)\)")
         )
@@ -77,7 +77,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             reply_popp_up_alert = "Please get your own HackfreaksUserbot, and don't use mine Any Support [HackfreaksUserbot](https://t.me/HackfreaksUserbot)!"
             await event.answer(reply_popp_up_alert, cache_time=0, alert=True)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await event.edit(
@@ -87,7 +87,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             reply_pop_up_alert = "Please get your own HackfreaksUserbot from [HackfreaksUserbot](https://t.me/HackfreaksUserbot) "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @tgbot.on(
+    @hackfreaksbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"helpme_prev\((.+?)\)")
         )
@@ -104,7 +104,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             reply_pop_up_alert = "Please get your own HackfreaksUserbot, and don't use mine Any Support Ask [HackfreaksUserbot](https://t.me/HackfreaksUserbot)!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @tgbot.on(
+    @hackfreaksbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"us_plugin_(.*)")
         )
@@ -149,7 +149,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             reply_pop_up_alert = "Please Get Your Own HackfreaksUserbot And Dont Use Mine Need Any Support Ask [HackfreaksUserbot](https://t.me/HackfreaksUserbot)"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
+    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
     async def rip(event):
         if event.query.user_id == bot.uid:
             text = inlinestats
@@ -158,7 +158,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             txt = "You Can't View My Masters Stats"
             await event.answer(txt, alert=True)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"wannaspam")))
+    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"wannaspam")))
     async def rip(event):
         await event.get_chat()
         text1 = "You Have Chosed A Probhited Option. Therefore, You Have Been Blocked By Hackfreaks. 💢"
@@ -166,7 +166,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
         await borg.send_message(event.query.user_id, text1)
         await borg(functions.contacts.BlockRequest(event.query.user_id))
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"casualbitching")))
+    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"casualbitching")))
     async def rip(event):
         await event.get_chat()
         him_id = event.query.user_id
@@ -179,14 +179,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
         )
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
+    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
     async def rip(event):
         await event.get_chat()
         await event.edit("Choice Accepted ✔️")
         text3 = "Ok, Wait. You can Ask After Master Approves You. Kindly, Wait."
         await borg.send_message(event.query.user_id, text3)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"others")))
+    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"others")))
     async def rip(event):
         await event.get_chat()
         await event.edit("Choice Accepted ✔️")
