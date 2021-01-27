@@ -8,9 +8,9 @@
 
 # SUPPORT
 
-<a href="https://t.me/HackfreaksUpdates"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
+<a href="https://t.me/HackfreaksUpdates"><img src="https://img.shields.io/badge/Join-Updates%20Channel-green.svg?logo=Telegram"></a>
 
-<a href="https://t.me/HackfreaksSupport"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
+<a href="https://t.me/HackfreaksSupport"><img src="https://img.shields.io/badge/Join-Support%20Group-blue.svg?logo=telegram"></a>
 
 
 
