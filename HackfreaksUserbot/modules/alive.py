@@ -3,7 +3,7 @@
 import time
 
 from HackfreaksUserbot import ALIVE_NAME, CMD_HELP, Lastupdate
-from HackfreaksUserbot.Configs import Config
+from HackfreaksUserbot.Configs import Config, Var
 from HackfreaksUserbot.modules import currentversion
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
 
@@ -40,7 +40,7 @@ def get_readable_time(seconds: int) -> str:
 uptime = get_readable_time((time.time() - Lastupdate))
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 
-PM_IMG = Config.ALIVE_IMAGE
+PM_IMG = Var.ALIVE_IMAGE if Var.ALIVE_IMAGE else None
 
 pm_caption = "**✗ Hackfreaks Userbot is Alive ✗**\n\n"
 pm_caption += f"**✗ Owner **: {DEFAULTUSER}\n\n"
