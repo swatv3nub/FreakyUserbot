@@ -1,7 +1,7 @@
 from HackfreaksUserbot import CMD_LIST
 
 
-@command(pattern="^.helper ?(.*)")
+@command(pattern="^.help ?(.*)")
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         hackfreaksbotusername = Var.TG_BOT_USER_NAME_BF_HER
