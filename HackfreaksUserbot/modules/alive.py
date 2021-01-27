@@ -43,7 +43,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 PM_IMG = Config.ALIVE_IMAGE
 
 pm_caption = "**✗ Hackfreaks Userbot is Alive ✗**\n\n"
-pm_caption += "**✗ Owner **: {DEFAULTUSER}\n\n"
+pm_caption += f"**✗ Owner **: {DEFAULTUSER}\n\n"
 pm_caption += "**✗ Telethon Version:** `Latest` \n"
 pm_caption += f"**✗ Hackfreaks Version**: `{currentversion} Alpha`\n"
 pm_caption += "**✗ Python:** `3.8.5` \n"
