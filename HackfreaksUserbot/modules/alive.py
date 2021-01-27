@@ -3,7 +3,7 @@
 import time
 
 from HackfreaksUserbot import ALIVE_NAME, CMD_HELP, Lastupdate
-from HackfreaksUserbot.Configs import Config, Var
+from HackfreaksUserbot.Configs import Config
 from HackfreaksUserbot.modules import currentversion
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
 
@@ -40,7 +40,7 @@ def get_readable_time(seconds: int) -> str:
 uptime = get_readable_time((time.time() - Lastupdate))
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 
-PM_IMG = Var.ALIVE_IMAGE if Var.ALIVE_IMAGE else None
+PM_IMG = Config.ALIVE_IMAGE
 
 pm_caption = "**✗ Hackfreaks Userbot is Alive ✗**\n\n"
 pm_caption += f"**✗ Owner **: {DEFAULTUSER}\n\n"
@@ -62,11 +62,6 @@ pm_caption += "**[✗ Deploy Hackfreaks ✗](https://heroku.com/deploy?template=
 async def Hackfreaks(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
-    if PM_IMG == None
-        await borg.send_message(alive.chat_id, pm_caption)
-        await alive.delete()
-        await alive.delete()
-    else:
         await both.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
         await alive.delete()
         await alive.delete()
