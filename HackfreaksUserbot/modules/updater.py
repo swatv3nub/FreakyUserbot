@@ -124,7 +124,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     await event.edit(
-        "**⚜️Updating Hackfreaks⚜️\n\nYou Are The 👑KING👑 Boss!!\n\nPlease Wait 2min\nThen Try .online To Check If I Am Online` \n\n**Powered by :-**\n©[HackfreaksUserbot](https://t.me/HackfreaksUserbot)**"
+        "**⚜️Updating Hackfreaks⚜️\n\nYou Are The **✗ Freak ✗** !!\n\nPlease Wait 2min\nThen Try .alive To Check If I Am Online` \n\n**Powered by :-**\n©[HackfreaksUserbot](https://t.me/HackfreaksUserbot)**"
     )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "HackfreaksUserbot"]
