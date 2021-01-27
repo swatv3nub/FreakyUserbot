@@ -1,6 +1,3 @@
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
-
 import functools
 import inspect
 import logging
@@ -9,6 +6,7 @@ from pathlib import Path
 
 from telethon import events
 
+from var import Var
 from HackfreaksUserbot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from HackfreaksUserbot.Configs import Config
 from HackfreaksUserbot.wraptools import (
@@ -18,7 +16,6 @@ from HackfreaksUserbot.wraptools import (
     ignore_grp,
     ignore_pm,
 )
-from var import Var
 
 sedprint = logging.getLogger("PLUGINS")
 cmdhandler = Config.COMMAND_HAND_LER
@@ -141,7 +138,7 @@ def load_module(shortname):
         mod.am_i_admin = am_i_admin()
         mod.ignore_fwd = ignore_fwd()
         mod.borg = bot
-        mod.Hackfreaks = bot
+        mod.WhiteEye = bot
         # support for paperplaneextended
         sys.modules["HackfreaksUserbot.events"] = HackfreaksUserbot.utils
         spec.loader.exec_module(mod)
@@ -212,7 +209,7 @@ def admin_cmd(pattern=None, **args):
     return events.NewMessage(**args)
 
 
-def Hackfreaks_on_cmd(pattern=None, **args):
+def WhiteEye_on_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
 
     stack = inspect.stack()
@@ -329,7 +326,7 @@ def errors_handler(func):
 
             text = "**USERBOT CRASH REPORT**\n\n"
 
-            link = "[Here](https://t.me/HackfreaksUserbot)"
+            link = "[Here](https://t.me/WhiteEyeDevs)"
             text += "If you wanna you can report it"
             text += f"- just forward this message {link}.\n"
             text += "Nothing is logged except the fact of error and date\n"
@@ -340,7 +337,7 @@ def errors_handler(func):
             ftext += "\nyou may not report this error if you've"
             ftext += "\nany confidential data here, no one will see your data\n\n"
 
-            ftext += "--------BEGIN Hackfreaks USERBOT TRACEBACK LOG--------"
+            ftext += "--------BEGIN WhiteEye USERBOT TRACEBACK LOG--------"
             ftext += "\nDate: " + date
             ftext += "\nGroup ID: " + str(errors.chat_id)
             ftext += "\nSender ID: " + str(errors.sender_id)
@@ -485,12 +482,13 @@ async def edit_or_reply(event, text):
     return await event.edit(text)
 
 
+
 def assistant_cmd(add_cmd, is_args=False):
     def cmd(func):
         mrhackfreaks = bot.tgbot
         if is_args:
             pattern = bothandler + add_cmd + "(?: |$)(.*)"
-        elif is_args == "noobfreaks":
+        elif is_args == "freak":
             pattern = bothandler + add_cmd + " (.*)"
         elif is_args == "heck":
             pattern = bothandler + add_cmd
@@ -509,7 +507,7 @@ def is_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            mrhackfreaks = bot.hackfreaksbot
+            mrhackfreaks = bot.tgbot
             sed = await mrhackfreaks.get_permissions(event.chat_id, event.sender_id)
             user = event.sender_id
             kek = bot.uid
@@ -531,7 +529,7 @@ def is_bot_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            mrhackfreaks = bot.hackfreaksbot
+            mrhackfreaks = bot.tgbot
             pep = await mrhackfreaks.get_me()
             sed = await mrhackfreaks.get_permissions(event.chat_id, pep)
             if sed.is_admin:
@@ -661,8 +659,8 @@ def start_assistant(shortname):
         name = "HackfreaksUserbot.modules.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
-        mod.hackfreaksbot = bot.hackfreaksbot
-        mod.mrhackfreaks = bot.hackfreaksbot
+        mod.tgbot = bot.tgbot
+        mod.mrhackfreaks = bot.tgbot
         mod.assistant_cmd = assistant_cmd
         mod.god_only = god_only()
         mod.only_groups = only_groups()
