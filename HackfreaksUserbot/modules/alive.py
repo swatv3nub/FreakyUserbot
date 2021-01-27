@@ -53,6 +53,7 @@ pm_caption += "**[✗ Support](https://t.meHackfreaksSupport)**\n\n"
 pm_caption += "**[✗ GitHub Respiratory ✗](https://github.com/swatv3nub/HackfreaksTelethonUserbot/)**\n"
 pm_caption += "**[✗ Deploy Hackfreaks ✗](https://heroku.com/deploy?template=https://github.com/swatv3nub/HackfreaksTelethonUserbot)**"
 
+
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"alive"))
 @Hackfreaks.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 async def Hackfreaks(alive):
