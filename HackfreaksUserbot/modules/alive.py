@@ -40,17 +40,18 @@ def get_readable_time(seconds: int) -> str:
 uptime = get_readable_time((time.time() - Lastupdate))
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 PM_IMG = Config.ALIVE_IMAGE
-pm_caption = "✗ Hackfreaks Userbot is Alive ✗\n\n"
-pm_caption += "✯ **✗ Owner **: {DEFAULTUSER}\n"
-pm_caption += "✯ **✗Telethon Version:** `Latest` \n"
-pm_caption += f"➥ **✗ Hackfreaks Version** : `{currentversion}`\n"
-pm_caption += "✯ **✗ Python:** `3.8.5` \n"
-pm_caption += f"✯ **Uptime** : `{uptime}` \n"
-pm_caption += "✯ **Current Branch** : `Alpha`\n\n"
-pm_caption += "✯ **License** : [GNU General Public License v3.0](https://github.com/swatv3nub/HackfreaksTelethonUserbot/blob/main/LICENSE)\n"
-pm_caption += "✯ **✗Copyright** : [Hackfreaks](https://t.me/HackfreaksUserbot)\n\n"
-pm_caption += "[✗ Deploy HackfreaksUserbot ✗](https://heroku.com/deploy?template=https://github.com/swatv3nub/HackfreaksTelethonUserbot)\n"
-
+pm_caption = "**✗ Hackfreaks Userbot is Alive ✗**\n\n"
+pm_caption += "**✗ Owner **: {DEFAULTUSER}\n\n"
+pm_caption += "**✗ Telethon Version:** `Latest` \n"
+pm_caption += f"**✗ Hackfreaks Version**: `{currentversion} Alpha`\n"
+pm_caption += "**✗ Python:** `3.8.5` \n"
+pm_caption += f"**✗ Uptime** : `{uptime}` \n\n"
+pm_caption += "**✗ Copyright** : [Hackfreaks](https://t.me/HackfreaksUserbot)\n\n"
+pm_caption += "**✗ License** : [GNU General Public License v3.0](https://github.com/swatv3nub/HackfreaksTelethonUserbot/blob/main/LICENSE)\n\n"
+pm_caption += "**[✗ Updates](https://t.me/HackfreaksUserbot)**\n"
+pm_caption += "**[✗ Support](https://t.meHackfreaksSupport)**\n\n"
+pm_caption += "**[✗ GitHub Respiratory ✗](https://github.com/swatv3nub/HackfreaksTelethonUserbot/)**\n"
+pm_caption += "**[✗ Deploy Hackfreaks ✗](https://heroku.com/deploy?template=https://github.com/swatv3nub/HackfreaksTelethonUserbot)**"
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"alive"))
 @Hackfreaks.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
