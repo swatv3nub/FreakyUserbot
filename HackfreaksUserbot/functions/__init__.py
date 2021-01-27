@@ -9,7 +9,7 @@ import time
 import webbrowser
 from os.path import basename
 from pathlib import Path
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Union
 
 import hachoir
 import requests
@@ -39,9 +39,12 @@ from youtube_dl.utils import (
 
 from HackfreaksUserbot.utils import load_module
 
+SIZE_UNITS = ["B", "KB", "MB", "GB", "TB", "PB"]
 BASE_URL = "https://isubtitles.org"
 import os
 import zipfile
+
+import aiohttp
 
 from HackfreaksUserbot.Configs import Config
 
@@ -51,6 +54,46 @@ from HackfreaksUserbot import logging
 logger = logging.getLogger("[--WARNING--]")
 if not os.path.isdir(sedpath):
     os.makedirs(sedpath)
+
+# Deethon // @aykxt
+session = aiohttp.ClientSession()
+
+
+async def fetch_json(link):
+    async with session.get(link) as resp:
+        return await resp.json()
+
+
+def get_readable_file_size(size_in_bytes: Union[int, float]) -> str:
+    if size_in_bytes is None:
+        return "0B"
+    index = 0
+    while size_in_bytes >= 1024:
+        size_in_bytes /= 1024
+        index += 1
+    try:
+        return f"{round(size_in_bytes, 2)}{SIZE_UNITS[index]}"
+    except IndexError:
+        return "File too large"
+
+
+def get_readable_time(secs: float) -> str:
+    result = ""
+    (days, remainder) = divmod(secs, 86400)
+    days = int(days)
+    if days != 0:
+        result += f"{days}d"
+    (hours, remainder) = divmod(remainder, 3600)
+    hours = int(hours)
+    if hours != 0:
+        result += f"{hours}h"
+    (minutes, seconds) = divmod(remainder, 60)
+    minutes = int(minutes)
+    if minutes != 0:
+        result += f"{minutes}m"
+    seconds = int(seconds)
+    result += f"{seconds}s"
+    return result
 
 
 # Thanks To Userge-X
@@ -184,8 +227,7 @@ def time_formatter(milliseconds: int) -> str:
 
 
 # Thanks To Userge-X
-
-
+# Ported By @STARKXD
 async def convert_to_image(event, borg):
     lmao = await event.get_reply_message()
     if not (
@@ -238,7 +280,7 @@ async def convert_to_image(event, borg):
         lmao_final = image_new_path
     elif lmao.audio:
         sed_p = downloaded_file_name
-        hmmyes = sedpath + "noobfreaks.mp3"
+        hmmyes = sedpath + "freak.mp3"
         imgpath = sedpath + "freaky.jpg"
         os.rename(sed_p, hmmyes)
         await runcmd(f"ffmpeg -i {hmmyes} -filter:v scale=500:500 -an {imgpath}")
@@ -436,10 +478,10 @@ async def apk_dl(app_name, path, event):
         for link in result:
             dl_link = link.get("href")
             r = requests.get(dl_link)
-            with open(f"{path}/{name}@HackfreaksUserbot.apk", "wb") as f:
+            with open(f"{path}/{name}@WhiteEyeDevs.apk", "wb") as f:
                 f.write(r.content)
     await event.edit("`Apk, Downloaded. Let me Upload It here.`")
-    final_path = f"{path}/{name}@HackfreaksUserbot.apk"
+    final_path = f"{path}/{name}@WhiteEyeDevs.apk"
     return final_path, name
 
 
@@ -456,9 +498,9 @@ async def check_if_subbed(channel_id, event, bot):
         return False
 
 
-async def _ytdl(url, is_it, event, hackfreaksbot):
+async def _ytdl(url, is_it, event, tgbot):
     await event.edit(
-        "`Ok Downloading This Video / Audio - Please Wait.` \n**Powered By @HackfreaksUserbot**"
+        "`Ok Downloading This Video / Audio - Please Wait.` \n**Powered By @WhiteEyeDevs**"
     )
     if is_it:
         opts = {
@@ -512,7 +554,7 @@ async def _ytdl(url, is_it, event, hackfreaksbot):
         \n**Title :** `{ytdl_data['title']}`\
         \n**Video Uploader :** `{ytdl_data['uploader']}`"
         )
-        lol_m = await hackfreaksbot.upload_file(
+        lol_m = await tgbot.upload_file(
             file=f"{ytdl_data['id']}.mp3",
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(
@@ -526,8 +568,7 @@ async def _ytdl(url, is_it, event, hackfreaksbot):
             ),
         )
         await event.edit(
-            file=lol_m,
-            text=f"{ytdl_data['title']} \n**Uploaded Using @HackfreaksUserbot**",
+            file=lol_m, text=f"{ytdl_data['title']} \n**Uploaded Using @WhiteEyeDevs**"
         )
         os.remove(f"{ytdl_data['id']}.mp3")
     elif video:
@@ -536,7 +577,7 @@ async def _ytdl(url, is_it, event, hackfreaksbot):
         \n**Title :** `{ytdl_data['title']}`\
         \n**Video Uploader :** `{ytdl_data['uploader']}`"
         )
-        hmmo = await hackfreaksbot.upload_file(
+        hmmo = await tgbot.upload_file(
             file=f"{ytdl_data['id']}.mp4",
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(
@@ -550,7 +591,28 @@ async def _ytdl(url, is_it, event, hackfreaksbot):
             ),
         )
         await event.edit(
-            file=hmmo,
-            text=f"{ytdl_data['title']} \n**Uploaded Using @HackfreaksUserbot**",
+            file=hmmo, text=f"{ytdl_data['title']} \n**Uploaded Using @WhiteEyeDevs**"
         )
         os.remove(f"{ytdl_data['id']}.mp4")
+
+
+async def get_all_admin_chats(event):
+    lul_freak = []
+    all_chats = [
+        d.entity
+        for d in await event.client.get_dialogs()
+        if (d.is_group or d.is_channel)
+    ]
+    for i in all_chats:
+        if i.creator or i.admin_rights:
+            lul_freak.append(i.id)
+    return lul_freak
+
+
+async def is_admin(event, user):
+    sed = await event.client.get_permissions(event.chat_id, user)
+    if sed.is_admin:
+        is_mod = True
+    else:
+        is_mod = False
+    return is_mod
