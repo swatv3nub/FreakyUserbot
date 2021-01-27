@@ -149,7 +149,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             reply_pop_up_alert = "Please Get Your Own HackfreaksUserbot And Dont Use Mine Need Any Support Ask [HackfreaksUserbot](https://t.me/HackfreaksUserbot)"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
+    @hackfreaksbot.on(
+        events.callbackquery.CallbackQuery(data=re.compile(b"terminator"))
+    )
     async def rip(event):
         if event.query.user_id == bot.uid:
             text = inlinestats
@@ -166,7 +168,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
         await borg.send_message(event.query.user_id, text1)
         await borg(functions.contacts.BlockRequest(event.query.user_id))
 
-    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"casualbitching")))
+    @hackfreaksbot.on(
+        events.callbackquery.CallbackQuery(data=re.compile(b"casualbitching"))
+    )
     async def rip(event):
         await event.get_chat()
         him_id = event.query.user_id
