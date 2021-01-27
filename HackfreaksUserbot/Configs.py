@@ -82,6 +82,7 @@ if ENV:
         GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
         GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
         NO_P_M_SPAM = bool(os.environ.get("NO_P_M_SPAM", False))
+        PMSECURITY = os.environ.get("PMSECURITY", "ON")
         # define "spam" in PMs
         NO_SONGS = bool(os.environ.get("NO_SONGS", False))
         MAX_FLOOD_IN_P_M_s = int(os.environ.get("MAX_FLOOD_IN_P_M_s", 3))
