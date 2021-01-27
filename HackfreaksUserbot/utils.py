@@ -138,7 +138,7 @@ def load_module(shortname):
         mod.am_i_admin = am_i_admin()
         mod.ignore_fwd = ignore_fwd()
         mod.borg = bot
-        mod.WhiteEye = bot
+        mod.Hackfreaks = bot
         # support for paperplaneextended
         sys.modules["HackfreaksUserbot.events"] = HackfreaksUserbot.utils
         spec.loader.exec_module(mod)
@@ -209,7 +209,7 @@ def admin_cmd(pattern=None, **args):
     return events.NewMessage(**args)
 
 
-def WhiteEye_on_cmd(pattern=None, **args):
+def Hackfreaks_on_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
 
     stack = inspect.stack()
@@ -326,7 +326,7 @@ def errors_handler(func):
 
             text = "**USERBOT CRASH REPORT**\n\n"
 
-            link = "[Here](https://t.me/WhiteEyeDevs)"
+            link = "[Here](https://t.me/HackfreaksSupport)"
             text += "If you wanna you can report it"
             text += f"- just forward this message {link}.\n"
             text += "Nothing is logged except the fact of error and date\n"
@@ -337,7 +337,7 @@ def errors_handler(func):
             ftext += "\nyou may not report this error if you've"
             ftext += "\nany confidential data here, no one will see your data\n\n"
 
-            ftext += "--------BEGIN WhiteEye USERBOT TRACEBACK LOG--------"
+            ftext += "--------BEGIN HACKFREAKS USERBOT TRACEBACK LOG--------"
             ftext += "\nDate: " + date
             ftext += "\nGroup ID: " + str(errors.chat_id)
             ftext += "\nSender ID: " + str(errors.sender_id)
