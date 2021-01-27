@@ -6,7 +6,6 @@ from pathlib import Path
 
 from telethon import events
 
-from var import Var
 from HackfreaksUserbot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from HackfreaksUserbot.Configs import Config
 from HackfreaksUserbot.wraptools import (
@@ -16,6 +15,7 @@ from HackfreaksUserbot.wraptools import (
     ignore_grp,
     ignore_pm,
 )
+from var import Var
 
 sedprint = logging.getLogger("PLUGINS")
 cmdhandler = Config.COMMAND_HAND_LER
@@ -480,7 +480,6 @@ async def edit_or_reply(event, text):
             return await reply_to.reply(text)
         return await event.reply(text)
     return await event.edit(text)
-
 
 
 def assistant_cmd(add_cmd, is_args=False):
