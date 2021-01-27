@@ -39,7 +39,9 @@ def get_readable_time(seconds: int) -> str:
 
 uptime = get_readable_time((time.time() - Lastupdate))
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
+
 PM_IMG = Config.ALIVE_IMAGE
+
 pm_caption = "**✗ Hackfreaks Userbot is Alive ✗**\n\n"
 pm_caption += "**✗ Owner **: {DEFAULTUSER}\n\n"
 pm_caption += "**✗ Telethon Version:** `Latest` \n"
@@ -54,19 +56,25 @@ pm_caption += "**[✗ GitHub Respiratory ✗](https://github.com/swatv3nub/Hackf
 pm_caption += "**[✗ Deploy Hackfreaks ✗](https://heroku.com/deploy?template=https://github.com/swatv3nub/HackfreaksTelethonUserbot)**"
 
 
+
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"alive"))
 @Hackfreaks.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 async def Hackfreaks(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
-    await alive.delete()
-    await alive.delete()
+    if PM_IMG == None
+        await borg.send_message(alive.chat_id, pm_caption)
+        await alive.delete()
+        await alive.delete()
+    else:
+        await both.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
+        await alive.delete()
+        await alive.delete()
 
 
 CMD_HELP.update(
     {
-        "alive": "**ALive**\
+        "alive": "**Alive**\
 \n\n**Syntax : **`.alive`\
 \n**Usage :** Check if UserBot is Alive"
     }
