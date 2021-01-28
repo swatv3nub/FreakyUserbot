@@ -61,14 +61,9 @@ pm_caption += "**[✗ Deploy Hackfreaks ✗](https://heroku.com/deploy?template=
 async def Hackfreaks(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
-    if Config.ALIVE_IMAGE != None
     await both.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
     await alive.delete()
     await alive.delete()
-    else:
-        await both.send_message(alive.chat_id, pm_caption)
-        await alive.delete()
-        await alive.delete()
 
 
 CMD_HELP.update(
