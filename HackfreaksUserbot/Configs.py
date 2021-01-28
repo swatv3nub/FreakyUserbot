@@ -161,7 +161,7 @@ if ENV:
         UPSTREAM_REPO = os.environ.get(
             "UPSTREAM_REPO", "https://github.com/swatv3nub/HackfreaksTelethonUserbot"
         )
-        ALIVE_IMAGE = os.environ.get("ALIVE_IMAGE", None)
+        ALIVE_IMAGE = os.environ.get("ALIVE_IMAGE", "https://telegra.ph/file/bb3741b7596bf90f47568.png")
         ASSISTANT_START_PIC = os.environ.get(
             "ASSISTANT_START_PIC",
             "https://telegra.ph/file/bb3741b7596bf90f47568.png",
