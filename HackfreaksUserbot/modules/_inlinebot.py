@@ -210,7 +210,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} {}".format("🇮🇳", x, "🇮🇳"), data="us_plugin_{}".format(x)
+            "{} {} {}".format("✗", x, "✗"), data="us_plugin_{}".format(x)
         )
         for x in helpable_modules
     ]
