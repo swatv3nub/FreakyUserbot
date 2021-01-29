@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 # credits to @AvinashReddy3108
-#
+# Re-Written by @swatv3nub for HackfreaksUserbot
 """
 This module updates the userbot based on upstream revision
 """
@@ -19,7 +19,7 @@ from HackfreaksUserbot import CMD_HELP
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd
 from var import Var
 
-UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
+UPSTREAM_REPO_URL = "https://github.com/swatv3nub/HackfreaksTelethonUserbot"
 UPSTREAM_REPO_BRANCH = "Alpha"
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 HEROKU_API_KEY = Var.HEROKU_API_KEY
@@ -124,7 +124,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     await event.edit(
-        "**⚜️Updating Hackfreaks⚜️\n\nYou Are The **✗ Freak ✗** !!\n\nPlease Wait 2min\nThen Try .alive To Check If I Am Online` \n\n**Powered by :-**\n©[HackfreaksUserbot](https://t.me/HackfreaksUserbot)**"
+        "**⚜️Updating Hackfreaks⚜️\n\nYou Are The **✗ Freak ✗** !!\n\nPlease Wait a bit\nThen Try .alive To Check If I Am Online` \n\n**Powered by :-**\n© [HackfreaksUserbot](https://t.me/HackfreaksUserbot)**"
     )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "HackfreaksUserbot"]
@@ -199,7 +199,7 @@ async def upstream(event):
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
         return await event.respond(
-            "**Do** `.update now` **or** `.update deploy` **to update.**"
+            "**Do** `.update now` **for Quick Update, or** `.update deploy` **for Deep update.**"
         )
 
     if force_update:
@@ -221,6 +221,6 @@ CMD_HELP.update(
         "\n\n>`.update now`"
         "\nUsage: Performs a quick update."
         "\n\n>`.update deploy`"
-        "\nUsage: Performs a full update (recommended)."
+        "\nUsage: Performs a full deep update (recommended)."
     }
 )

@@ -14,8 +14,7 @@ loggy_grp = Config.PRIVATE_GROUP_ID
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="sendto(?: |$)(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="sendto(?: |$)(.*)", allow_sudo=True))
-async def catbroadcast_send(event):
+async def freakbroadcast_send(event):
     if event.fwd_from:
         return
     catinput_str = event.pattern_match.group(1)
@@ -69,8 +68,7 @@ async def catbroadcast_send(event):
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="fwdto(?: |$)(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="fwdto(?: |$)(.*)", allow_sudo=True))
-async def catbroadcast_send(event):
+async def freakbroadcast_send(event):
     if event.fwd_from:
         return
     catinput_str = event.pattern_match.group(1)
@@ -124,8 +122,7 @@ async def catbroadcast_send(event):
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="addto(?: |$)(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="addto(?: |$)(.*)", allow_sudo=True))
-async def catbroadcast_add(event):
+async def freakbroadcast_add(event):
     if event.fwd_from:
         return
     catinput_str = event.pattern_match.group(1)
@@ -162,8 +159,7 @@ async def catbroadcast_add(event):
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="rmfrom(?: |$)(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="rmfrom(?: |$)(.*)", allow_sudo=True))
-async def catbroadcast_remove(event):
+async def freakbroadcast_remove(event):
     if event.fwd_from:
         return
     catinput_str = event.pattern_match.group(1)
@@ -200,8 +196,7 @@ async def catbroadcast_remove(event):
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="list(?: |$)(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="list(?: |$)(.*)", allow_sudo=True))
-async def catbroadcast_list(event):
+async def freakbroadcast_list(event):
     if event.fwd_from:
         return
     catinput_str = event.pattern_match.group(1)
@@ -243,8 +238,7 @@ async def catbroadcast_list(event):
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="listall$"))
-@Hackfreaks.on(sudo_cmd(pattern="listall$", allow_sudo=True))
-async def catbroadcast_list(event):
+async def freakbroadcast_list(event):
     if event.fwd_from:
         return
     if sql.num_broadcastlist_chats() == 0:
@@ -261,8 +255,7 @@ async def catbroadcast_list(event):
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="frmfrom(?: |$)(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="frmfrom(?: |$)(.*)", allow_sudo=True))
-async def catbroadcast_remove(event):
+async def freakbroadcast_remove(event):
     if event.fwd_from:
         return
     catinput_str = event.pattern_match.group(1)
@@ -321,8 +314,7 @@ async def catbroadcast_remove(event):
 
 
 @Hackfreaks.on(Hackfreaks_on_cmd(pattern="delc(?: |$)(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="delc(?: |$)(.*)", allow_sudo=True))
-async def catbroadcast_delete(event):
+async def freakbroadcast_delete(event):
     if event.fwd_from:
         return
     catinput_str = event.pattern_match.group(1)

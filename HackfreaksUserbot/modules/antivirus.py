@@ -6,7 +6,7 @@ from HackfreaksUserbot import CMD_HELP
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("scan ?(.*)", allow_sudo=True))
+@Hackfreaks.on(Hackfreaks_on_cmd("avscan ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -47,5 +47,5 @@ async def _(event):
 
 
 CMD_HELP.update(
-    {"antivirus": "➟ `.scan <reply to pic/doc>`\nUse - Scan the pic/doc for viruses."}
+    {"antivirus": "➟ `.avscan <reply to pic/doc>`\nUse - Scan the pic/doc for viruses."}
 )

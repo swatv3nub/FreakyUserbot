@@ -48,6 +48,8 @@ if ENV:
         NOSPAMPLUS_TOKEN = os.environ.get("NOSPAMPLUS_TOKEN", None)
         # Send .get_id in any group with all your administration bots (added)
         G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", -1001198699233))
+        # Tag Logger
+        TAG_LOG = int(os.environ.get("TAG_LOG", None))
         # TG API limit. An album can have atmost 10 media!
         GOOGLE_SEARCH_COUNT_LIMIT = int(os.environ.get("GOOGLE_SEARCH_COUNT_LIMIT", 9))
         TG_GLOBAL_ALBUM_LIMIT = int(os.environ.get("TG_GLOBAL_ALBUM_LIMIT", 9))
@@ -85,7 +87,7 @@ if ENV:
         PMSECURITY = os.environ.get("PMSECURITY", "ON")
         # define "spam" in PMs
         NO_SONGS = bool(os.environ.get("NO_SONGS", False))
-        MAX_FLOOD_IN_P_M_s = int(os.environ.get("MAX_FLOOD_IN_P_M_s", 3))
+        MAX_FLOOD = int(os.environ.get("MAX_FLOOD", 3))
         # set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
         NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
         # send .get_id in any channel to forward all your NEW PMs to this group
@@ -157,6 +159,7 @@ if ENV:
         ENABLE_ASSISTANTBOT = os.environ.get("ENABLE_ASSISTANTBOT", "ENABLE")
         TAG_FEATURE = os.environ.get("TAG_FEATURE", "DISABLE")
         ANTISPAM_FEATURE = os.environ.get("ANTISPAM_FEATURE", "ENABLE")
+        SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
         ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
         UPSTREAM_REPO = os.environ.get(
             "UPSTREAM_REPO", "https://github.com/swatv3nub/HackfreaksTelethonUserbot"

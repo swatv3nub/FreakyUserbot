@@ -2,20 +2,6 @@
 #    Copyright (C) 2020 Hackfreaks
 
 # 	 Written by @xditya
-
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 import asyncio
 import io
 import os
@@ -217,7 +203,7 @@ async def on_new_private_message(event):
 
 
 async def do_pm_permit_action(chat_id, event):
-    if Var.PMSECURITY.lower() == "off":
+    if Config.PMSECURITY.lower() == "off":
         return
     if chat_id not in PM_WARNS:
         PM_WARNS.update({chat_id: 0})

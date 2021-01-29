@@ -8,7 +8,7 @@ from HackfreaksUserbot import CMD_HELP
 from HackfreaksUserbot.utils import Hackfreaks_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("inflag"))
+@Hackfreaks.on(Hackfreaks_on_cmd("indflag"))
 async def _(event):
     if event.fwd_from:
         return
@@ -29,7 +29,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "indianflag": "**IndianFlag**\
-\n\n**Syntax : **`.inflag`\
+\n\n**Syntax : **`.indflag`\
 \n**Usage :** Indian Flag"
     }
 )

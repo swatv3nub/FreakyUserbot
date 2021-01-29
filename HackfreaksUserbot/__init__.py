@@ -99,8 +99,9 @@ if bool(ENV):
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 
     # Pm Permit Img
-    PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-    # PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", None)
+    PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", "https://telegra.ph/file/bb3741b7596bf90f47568.png")
+    PMSECURITY = os.environ.get("PMSECURITY", "ON")
+    PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", None)
     AUTONAME = os.environ.get("AUTONAME", None)
     CUSTOM_PMPERMIT = os.environ.get("CUSTOM_PMPERMIT", None)
 
@@ -108,11 +109,11 @@ if bool(ENV):
     OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
 
     # Anti Spambot Config
-    ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
+    ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "True"))
     # Log It
     PRIVATE_GROUP_BOT_API_ID = os.environ.get("PRIVATE_GROUP_BOT_API_ID", None)
 
-    ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
+    ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "True"))
 
     # Youtube API key
     YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
@@ -132,7 +133,7 @@ if bool(ENV):
 
     # Spamwatch Module
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
-    ANTISPAM_SYSTEM = os.environ.get("ANTISPAM_SYSTEM", "DISABLE")
+    ANTISPAM_SYSTEM = os.environ.get("ANTISPAM_SYSTEM", "ENABLE")
     WHITE_CHAT = PRIVATE_GROUP_ID = int(os.environ.get("WHITE_CHAT", False))
 
     # Last.fm Module

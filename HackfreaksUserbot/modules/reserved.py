@@ -7,7 +7,7 @@ from uniborg.util import Hackfreaks_on_cmd
 from HackfreaksUserbot import CMD_HELP
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("listmyusernames"))
+@Hackfreaks.on(Hackfreaks_on_cmd("reserved"))
 async def mine(event):
     """ For .reserved command, get a list of your reserved usernames. """
     result = await bot(GetAdminedPublicChannelsRequest())
@@ -19,8 +19,8 @@ async def mine(event):
 
 CMD_HELP.update(
     {
-        "listmyusernames": "**Listmyusernames**\
-\n\n**Syntax : **`.listmyusernames`\
+        "Reserved Usernames": "**List my reserved usernames**\
+\n\n**Syntax : **`.reserved`\
 \n**Usage :** it lists all your usernames you are holding"
     }
 )

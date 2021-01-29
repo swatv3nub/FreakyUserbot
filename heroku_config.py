@@ -28,7 +28,7 @@ class Var(object):
     G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", "root")
     AUTH_TOKEN_DATA = os.environ.get("AUTH_TOKEN_DATA", None)
-    MAX_FLOOD_IN_P_M_s = int(os.environ.get("MAX_FLOOD_IN_P_M_s", 3))
+    MAX_FLOOD = int(os.environ.get("MAX_FLOOD", 3))
     if AUTH_TOKEN_DATA is not None:
         if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
             os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
@@ -38,7 +38,9 @@ class Var(object):
     PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID", None))
     NEWS_CHANNEL_ID = int(os.environ.get("NEWS_CHANNEL_ID", -100))
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
-    ANTISPAM_SYSTEM = os.environ.get("ANTISPAM_SYSTEM", "DISABLE")
+    ANTISPAM_SYSTEM = os.environ.get("ANTISPAM_SYSTEM", "ENABLE")
+    ANTI_SPAMBOT = os.environ.get("ANTI_SPAMBOT", "True")
+    ANTI_SPAMBOT_SHOUT = os.environ.get("ANTI_SPAMBOT_SHOUT", "True")
     WHITE_CHAT = set(int(x) for x in os.environ.get("WHITE_CHAT", "").split())
 
 
