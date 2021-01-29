@@ -91,7 +91,7 @@ async def you_dm_niqq(event):
                     chat.first_name, chat.id
                 )
                 try:
-                    await borg.send_message(Var.PRIVATE_GROUP_ID, logit)
+                    await borg.send_message(Config.PRIVATE_GROUP_ID, logit)
                 except BaseException:
                     pass
 
@@ -177,7 +177,7 @@ async def on_new_private_message(event):
     if event.sender_id == bot.uid:
         return
 
-    if Var.PRIVATE_GROUP_ID is None:
+    if Config.PRIVATE_GROUP_ID is None:
         return
 
     if not event.is_private:
@@ -217,7 +217,7 @@ async def on_new_private_message(event):
 
 
 async def do_pm_permit_action(chat_id, event):
-    if Var.PMSECURITY.lower() == "off":
+    if Config.PMSECURITY.lower() == "off":
         return
     if chat_id not in PM_WARNS:
         PM_WARNS.update({chat_id: 0})
@@ -235,7 +235,7 @@ async def do_pm_permit_action(chat_id, event):
         # the_message += f"Media: {message_media}"
         try:
             await event.client.send_message(
-                entity=Var.PRIVATE_GROUP_ID,
+                entity=Config.PRIVATE_GROUP_ID,
                 message=the_message,
                 # reply_to=,
                 # parse_mode="html",
@@ -247,7 +247,7 @@ async def do_pm_permit_action(chat_id, event):
         except BaseException:
             return
     # inline pmpermit menu
-    mybot = Var.TG_BOT_USER_NAME_BF_HER
+    mybot = Config.TG_BOT_USER_NAME_BF_HER
     MSG = USER_BOT_NO_WARN.format(
         DEFAULTUSER, myid, MESAG, PM_WARNS[chat_id] + 1, Config.MAX_SPAM
     )
@@ -300,7 +300,7 @@ CMD_HELP.update(
         "pmsecurity": ".approve/.a\nUse - Approve PM\
         \n\n.disapprove/.da\nUse - DisApprove PM\
         \n\n.listapproved\nUse - Get all approved PMs.\
-        \n\nSet var PMPERMIT_PIC for custom PMPic, CUSTOM_PMPERMIT for custom text, PMSECURITY <on/off> to enable/disable, INSTANT_BLOCK <on/off>.\
+        \n\nSet Var PMPERMIT_PIC for custom PMPic, CUSTOM_PMPERMIT for custom text, PMSECURITY <on/off> to enable/disable, INSTANT_BLOCK <on/off>.\
         \nGet help from @HackfreaksUserbot."
     }
 )
