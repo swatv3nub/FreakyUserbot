@@ -25,7 +25,11 @@
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Enter Username Here ",
+      "description": "Enter Your Name Here ",
+      "value": ""
+    },
+    "ALIVE_IMAGE": {
+      "description": "Enter Your Alive Image Link Here, Keep Blank for Default. ",
       "value": ""
     },
     "APP_ID": {
@@ -46,11 +50,15 @@
       "required": false
     },
     "PRIVATE_GROUP_ID": {
-      "description": "A Group ID Where You Want Logging Feature",
+      "description": "Same as BOTLOG_CHATID",
+      "value": ""
+    },
+    "BOTLOG_CHATID": {
+      "description": "A Group ID Where You Want Bot Logs",
       "value": ""
     },
     "STRING_SESSION": {
-      "description": "Get From https://repl.it/@swatv3nub/UserbotSessionGenerator#main.py",
+      "description": "Get it From https://repl.it/@swatv3nub/UserbotSessionGenerator#main.py",
       "value": ""
     },
     "ANTI_SPAMBOT": {
