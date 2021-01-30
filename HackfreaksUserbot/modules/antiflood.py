@@ -1,19 +1,19 @@
 # import asyncio
-# 
+#
 # from telethon.tl.functions.channels import EditBannedRequest
 # from telethon.tl.types import ChatBannedRights
-# 
+#
 # import HackfreaksUserbot.modules.sql_helper.antiflood_sql as sql
 # from HackfreaksUserbot.events import register
 # from HackfreaksUserbot.utils import is_admin
-# 
+#
 # CHAT_FLOOD = sql.__load_flood_settings()
 # # warn mode for anti flood
 # ANTI_FLOOD_WARN_MODE = ChatBannedRights(
 #     until_date=None, view_messages=None, send_messages=True
 # )
-# 
-# 
+#
+#
 # @register(incoming=True, disable_edited=True, disable_errors=True)
 # async def _(event):
 #     # logger.info(CHAT_FLOOD)
@@ -38,7 +38,7 @@
 #             entity=event.chat_id,
 #             message="""@admins **Automatic AntiFlooder**
 # [User](tg://user?id={}) is flooding this chat.
-# 
+#
 # `{}`""".format(
 #                 event.message.from_id, str(e)
 #             ),
@@ -56,8 +56,8 @@
 #             ),
 #             reply_to=event.message.id,
 #         )
-# 
-# 
+#
+#
 # @register(outgoing=True, pattern="^.setflood(?: |$)(.*)")
 # async def _(event):
 #     if event.fwd_from:
@@ -71,4 +71,4 @@
 #         )
 #     except Exception as e:  # pylint:disable=C0103,W0703
 #         await event.edit(str(e))
-# 
+#
