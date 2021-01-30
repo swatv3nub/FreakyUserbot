@@ -4,7 +4,7 @@ import os
 import spamwatch
 from telethon.tl.functions.users import GetFullUserRequest
 
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
 
 swapi = os.environ.get("SPAMWATCH_API", None)
 
