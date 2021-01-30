@@ -8,7 +8,7 @@ from telethon import custom, events
 from telethon.tl.types import Channel
 from telethon.utils import get_display_name
 
-from HackfreaksUserbot.Config import Config
+from HackfreaksUserbot.Configs import Config
 
 if Config.TAG_LOG:
     NEEDTOLOG = int(Config.TAG_LOG)
