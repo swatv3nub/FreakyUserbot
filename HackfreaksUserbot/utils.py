@@ -142,6 +142,8 @@ def load_module(shortname):
         # support for paperplaneextended
         sys.modules["HackfreaksUserbot.events"] = HackfreaksUserbot.utils
         spec.loader.exec_module(mod)
+        # support for Telebot
+        sys.modules["HackfreaksUserbot.plugins"] = HackfreaksUserbot.modules
         # for imports
         sys.modules["HackfreaksUserbot.modules." + shortname] = mod
         sedprint.info("Successfully imported " + shortname)

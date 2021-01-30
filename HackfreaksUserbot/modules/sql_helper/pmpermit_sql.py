@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String
 
-from HackfreaksUserbot.plugins.sql_helper import BASE, SESSION
+from HackfreaksUserbot.modules.sql_helper import BASE, SESSION
 
 
 class PMPermit(BASE):
