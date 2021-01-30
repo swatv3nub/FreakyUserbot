@@ -5,7 +5,7 @@ from telethon.tl.types import ChatBannedRights
 
 import HackfreaksUserbot.modules.sql_helper.antiflood_sql as sql
 from HackfreaksUserbot.events import register
-from HackfreaksUserbot.utils.tools import is_admin
+from HackfreaksUserbot.utils import is_admin
 
 CHAT_FLOOD = sql.__load_flood_settings()
 # warn mode for anti flood
