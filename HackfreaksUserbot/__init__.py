@@ -99,7 +99,9 @@ if bool(ENV):
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 
     # Pm Permit Img
-    PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", "https://telegra.ph/file/bb3741b7596bf90f47568.png")
+    PMPERMIT_PIC = os.environ.get(
+        "PMPERMIT_PIC", "https://telegra.ph/file/bb3741b7596bf90f47568.png"
+    )
     PMSECURITY = os.environ.get("PMSECURITY", "ON")
     PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", None)
     AUTONAME = os.environ.get("AUTONAME", None)

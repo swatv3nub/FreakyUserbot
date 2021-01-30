@@ -6,7 +6,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from HackfreaksUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from HackfreaksUserbot.Configs import Config
 from HackfreaksUserbot.server import edit_delete, edit_or_reply, parse_pre
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from HackfreaksUserbot.utils import Hackfreaks_on_cmd
 
 from .sql_helper import broadcast_sql as sql
 

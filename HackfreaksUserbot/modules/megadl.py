@@ -13,11 +13,8 @@ from urllib.error import HTTPError
 from pySmartDL import SmartDL
 
 from HackfreaksUserbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from HackfreaksUserbot.utils import (
-    Hackfreaks_on_cmd,
-    humanbytes,
-    time_formatter,
-)
+from HackfreaksUserbot.utils import Hackfreaks_on_cmd, humanbytes, time_formatter
+
 # from HackfreaksUserbot.events import register if used @register
 
 
@@ -79,9 +76,7 @@ async def mega_downloader(megadl):
     file_path = TEMP_DOWNLOAD_DIRECTORY + file_name
     if os.path.isfile(file_path):
         try:
-            raise FileExistsError(
-                errno.EEXIST, os.strerror(
-                    errno.EEXIST), file_path)
+            raise FileExistsError(errno.EEXIST, os.strerror(errno.EEXIST), file_path)
         except FileExistsError as e:
             await megadl.edit(f"`{str(e)}`")
             return None
@@ -114,11 +109,11 @@ async def mega_downloader(megadl):
                 f"`Size:` {humanbytes(downloaded)} of {humanbytes(total_length)}\n"
                 f"`Speed:` {speed}\n"
                 f"`ETA:` {time_formatter(estimated_total_time)}\n"
-                f"`Duration:` {time_formatter(round(diff))}")
-            if round(
-                    diff %
-                    15.00) == 0 and (
-                    display_message != current_message or total_length == downloaded):
+                f"`Duration:` {time_formatter(round(diff))}"
+            )
+            if round(diff % 15.00) == 0 and (
+                display_message != current_message or total_length == downloaded
+            ):
                 await megadl.edit(current_message)
                 await asyncio.sleep(0.2)
                 display_message = current_message
@@ -165,9 +160,7 @@ async def decrypt_file(megadl, file_path, temp_file_path, hex_key, hex_raw_key):
     if await subprocess_run(megadl, cmd):
         os.remove(temp_file_path)
     else:
-        raise FileNotFoundError(
-            errno.ENOENT, os.strerror(
-                errno.ENOENT), file_path)
+        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), file_path)
     return
 
 
