@@ -3,11 +3,12 @@ import os
 
 import spamwatch
 from telethon.tl.functions.users import GetFullUserRequest
+from HackfreaksUserbot.Configs import Hackfreaks_on_cmd
 
 swapi = os.environ.get("SPAMWATCH_API", None)
 
 
-@Hackfreaks.on(admin_cmd(pattern=f"scan(?: |$)(.*)"))
+@Hackfreaks.on(Hackfreaks_on_cmd(pattern=f"scan(?: |$)(.*)"))
 @Hackfreaks.on(sudo_cmd(pattern=f"scan(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     sender = await event.get_sender()
