@@ -44,7 +44,7 @@ Simply clone the repository and run the main file:
 # Install Git First.
 git clone https://github.com/swatv3nub/HackfreaksTelethonUserbot
 # Open Git Cloned File
-cd HackfreaksUserbot
+cd HackfreaksTelethonUserbot
 # Config Virtual Env
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
