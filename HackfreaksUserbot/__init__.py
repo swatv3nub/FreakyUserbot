@@ -18,7 +18,7 @@ from telethon.sessions import StringSession
 
 from var import Var
 
-from .Configs import Config
+from HackfreaksUserbot.Configs import Config
 
 Lastupdate = time.time()
 sedprint = logging.getLogger("WARNING")
