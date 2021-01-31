@@ -3,10 +3,10 @@
 # © JAYANT KAGERI, ALL RIGHTS RESERVED
 
 
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="meadmin", outgoing=True))
+@Freaky.on(Freaky_on_cmd(pattern="meadmin", outgoing=True))
 async def _1(event):
     addall = [
         d.entity

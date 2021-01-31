@@ -130,8 +130,8 @@ def parse(message, old_entities=None):
     return del_surrogate(message), entities + old_entities
 
 
-@Hackfreaks.on(events.MessageEdited(outgoing=True))
-@Hackfreaks.on(events.NewMessage(outgoing=True))
+@Freaky.on(events.MessageEdited(outgoing=True))
+@Freaky.on(events.NewMessage(outgoing=True))
 async def reparse(event):
     old_entities = event.message.entities or []
     parser = partial(parse, old_entities=old_entities)

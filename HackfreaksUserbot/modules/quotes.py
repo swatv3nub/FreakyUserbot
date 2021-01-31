@@ -1,10 +1,10 @@
 import random
 
 import requests
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="quote ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="quote ?(.*)"))
 async def quote_search(event):
     if event.fwd_from:
         return

@@ -1,9 +1,9 @@
 """Get Poll Info on non supported clients
 Syntax: .get_poll"""
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="get_poll"))
+@Freaky.on(Freaky_on_cmd(pattern="get_poll"))
 async def _(event):
     reply_message = await event.get_reply_message()
     if reply_message.media is None:

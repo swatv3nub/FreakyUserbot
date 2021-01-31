@@ -8,8 +8,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 
-from HackfreaksUserbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
-from HackfreaksUserbot.utils import register
+from FreakyUserbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
+from FreakyUserbot.utils import register
 
 CARBONLANG = "auto"
 LANG = "en"
@@ -88,7 +88,7 @@ async def carbon_api(e):
         await e.client.send_file(
             e.chat_id,
             file,
-            caption="<< `Here's your carbon!` \n **Carbonised Using** [Hackfreaks](https://t.me/Hackfreaksbots)>>\n**Colour Scheme: **`{}`".format(
+            caption="<< `Here's your carbon!` \n **Carbonised Using** [Freaky](https://t.me/FreakyUserbot)>>\n**Colour Scheme: **`{}`".format(
                 color_name
             ),
             force_document=True,

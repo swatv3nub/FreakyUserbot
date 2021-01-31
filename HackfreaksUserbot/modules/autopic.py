@@ -7,19 +7,19 @@ from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.tl import functions
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 FONT_FILE_TO_USE = "resources/Fonts/digital.ttf"
 
 
 @command(pattern="^.autopic", outgoing=True)
 async def autopic(event):
-    downloaded_file_name = "HackfreaksUserbot/original_pic.png"
+    downloaded_file_name = "FreakyUserbot/original_pic.png"
     downloader = SmartDL(
         Var.DOWNLOAD_PFP_URL_CLOCK, downloaded_file_name, progress_bar=False
     )
     downloader.start(blocking=False)
-    photo = "HackfreaksUserbot/photo_pfp.png"
+    photo = "FreakyUserbot/photo_pfp.png"
     while not downloader.isFinished():
         pass
     counter = -30

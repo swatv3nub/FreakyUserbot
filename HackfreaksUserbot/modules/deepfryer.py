@@ -35,11 +35,11 @@ from random import randint, uniform
 from PIL import Image, ImageEnhance, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
+@Freaky.on(Freaky_on_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))

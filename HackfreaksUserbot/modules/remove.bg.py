@@ -7,10 +7,10 @@ from datetime import datetime
 
 import requests
 
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("rmbg ?(.*)"))
+@Freaky.on(Freaky_on_cmd("rmbg ?(.*)"))
 async def _(event):
     HELP_STR = (
         "`.rmbg` as reply to a media, or give a link as an argument to this command"
@@ -60,13 +60,13 @@ async def _(event):
         end = datetime.now()
         ms = (end - start).seconds
         await event.edit(
-            "Removed image's Background in {} seconds, powered by @HackfreaksUserbot".format(
+            "Removed image's Background in {} seconds, powered by @FreakyUserbot".format(
                 ms
             )
         )
     else:
         await event.edit(
-            "ReMove.BG API returned Errors. Please report to @HackfreaksUserbot\n`{}".format(
+            "ReMove.BG API returned Errors. Please report to @FreakyUserbot\n`{}".format(
                 output_file_name.content.decode("UTF-8")
             )
         )

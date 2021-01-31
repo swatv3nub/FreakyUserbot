@@ -5,11 +5,11 @@
 Syntax: .wikipedia Query"""
 import wikipedia
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="wikipedia (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="wikipedia (.*)"))
 async def _(event):
     if event.fwd_from:
         return

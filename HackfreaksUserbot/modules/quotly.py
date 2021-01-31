@@ -26,8 +26,8 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl import functions, types
 
-from HackfreaksUserbot import CMD_HELP, bot
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP, bot
+from FreakyUserbot.utils import Freaky_on_cmd
 
 COLORS = [
     "#F07975",
@@ -438,7 +438,7 @@ class Quote:
                 space += textfont.getsize(letter)[0]
 
 
-@borg.on(Hackfreaks_on_cmd(pattern="q(?: |$)(.*)"))
+@borg.on(Freaky_on_cmd(pattern="q(?: |$)(.*)"))
 async def create_sticker(message):
     if message.fwd_from:
         return
@@ -462,7 +462,7 @@ async def create_sticker(message):
     os.remove(".tmp/sticker.webp")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"qbot(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"qbot(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return

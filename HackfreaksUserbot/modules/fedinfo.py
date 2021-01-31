@@ -18,14 +18,14 @@ import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 bot = "@MissRose_bot"
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="fstat ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="fstat ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="fstat ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -53,10 +53,10 @@ async def _(event):
                     await audio.click(0)
                     await asyncio.sleep(2)
                     audio = await conv.get_response()
-                    await Hackfreaks.send_file(
+                    await Freaky.send_file(
                         event.chat_id,
                         audio,
-                        caption=f"List of feds {user} has been banned in.\n\nCollected using @HackfreaksUserbot.",
+                        caption=f"List of feds {user} has been banned in.\n\nCollected using @FreakyUserbot.",
                     )
                 else:
                     await borg.send_message(event.chat_id, audio.text)
@@ -65,8 +65,8 @@ async def _(event):
                 await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="fedinfo ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="fedinfo ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="fedinfo ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -78,7 +78,7 @@ async def _(event):
             await conv.get_response()
             await conv.send_message("/fedinfo " + sysarg)
             audio = await conv.get_response()
-            await ok.edit(audio.text + "\n\nFedInfo Excracted by @HackfreaksUserbot")
+            await ok.edit(audio.text + "\n\nFedInfo Excracted by @FreakyUserbot")
         except YouBlockedUserError:
             await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")
 

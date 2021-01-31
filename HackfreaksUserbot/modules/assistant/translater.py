@@ -25,7 +25,7 @@ async def _(event):
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
-        await hackfreaksbot.send_message(
+        await freakybot.send_message(
             event.chat_id, "`.tr LanguageCode` as reply to a message"
         )
         return
@@ -39,6 +39,6 @@ async def _(event):
         f"Source {translated.src} \nTranslation {lan} \nWhat I Can Translate From This {after_tr_text}"
     )
     try:
-        await hackfreaksbot.send_message(event.chat_id, output_str)
+        await freakybot.send_message(event.chat_id, output_str)
     except Exception:
-        await hackfreaksbot.send_message(event.chat_id, "Something Went Wrong 🤔")
+        await freakybot.send_message(event.chat_id, "Something Went Wrong 🤔")

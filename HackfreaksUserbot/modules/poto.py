@@ -5,8 +5,8 @@
 
 import logging
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 logger = logging.getLogger(__name__)
 
@@ -17,8 +17,8 @@ if 1 == 1:
 
     client = borg
 
-    @Hackfreaks.on(Hackfreaks_on_cmd(pattern="poto(.*)"))
-    @Hackfreaks.on(sudo_cmd(pattern="poto(.*)", allow_sudo=True))
+    @Freaky.on(Freaky_on_cmd(pattern="poto(.*)"))
+    @Freaky.on(sudo_cmd(pattern="poto(.*)", allow_sudo=True))
     async def potocmd(event):
 
         """Gets the profile photos of replied users, channels or chats"""

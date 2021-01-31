@@ -1,5 +1,5 @@
 <p align="center"><a href="https://t.me/ProjectHackfreaks"><img src="https://telegra.ph/file/bb3741b7596bf90f47568.png" width="5000"></a></p> 
-<h1 align="center"><b>HackfreaksUserbot </b></h1>
+<h1 align="center"><b>FreakyUserbot </b></h1>
 <h4 align="center">A Powerful, Smart And Simple Userbot In Telethon.</h4>
 
 
@@ -29,7 +29,7 @@ Get API_ID and API_HASH from [@HackfreaksScrapperRobot](https://telegram.dog/Hac
 
 # DEPLOY
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/swatv3nub/HackfreaksTelethonUserbot)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/swatv3nub/FreakyUserbot)
 # String
 
 [![Run on Repl.it](https://telegra.ph/file/1b2ca5fd16997b21b4b41.jpg)](https://repl.it/@swatv3nub/UserbotSessionGenerator#main.py)
@@ -42,9 +42,9 @@ Get API_ID and API_HASH from [@HackfreaksScrapperRobot](https://telegram.dog/Hac
 Simply clone the repository and run the main file:
 ```sh
 # Install Git First.
-git clone https://github.com/swatv3nub/HackfreaksTelethonUserbot
+git clone https://github.com/swatv3nub/FreakyUserbot
 # Open Git Cloned File
-cd HackfreaksTelethonUserbot
+cd FreakyUserbot
 # Config Virtual Env
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
@@ -52,7 +52,7 @@ virtualenv -p /usr/bin/python3 venv
 pip install -r requirements.txt
 # Create local_config.py with variables as given below
 # Start Bot 
-python3 -m HackfreaksUserbot
+python3 -m FreakyUserbot
 ```
 
 
@@ -71,7 +71,7 @@ python3 -m HackfreaksUserbot
     [-] APP_ID:   You can get this value from https://my.telegram.org
     [-] API_HASH :   You can get this value from https://my.telegram.org
     
-[+] The HackfreaksUserbot will not work without setting the mandatory vars.
+[+] The FreakyUserbot will not work without setting the mandatory vars.
 ```
 
 
@@ -94,7 +94,7 @@ LAST BUT NOT LEAST - "FRIDAY"
 # Licence
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 
-HackfreaksUserbot is Free Software: You can use, study share and improve it at your
+FreakyUserbot is Free Software: You can use, study share and improve it at your
 will. Specifically you can redistribute and/or modify it under the terms of the
 [GNU General Public License](https://www.gnu.org/licenses/gpl.html) as
 published by the Free Software Foundation, either version 3 of the License, or

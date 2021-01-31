@@ -2,10 +2,10 @@
 Syntax: .json"""
 import io
 
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("json"))
+@Freaky.on(Freaky_on_cmd("json"))
 async def _(event):
     if event.fwd_from:
         return

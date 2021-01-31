@@ -7,8 +7,8 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 COLLECTION_STRINGZ = [
     "star-wars-wallpaper-1080p",
@@ -47,7 +47,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="gamerdp ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="gamerdp ?(.*)"))
 async def main(event):
 
     await event.edit(

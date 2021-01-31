@@ -1,240 +1,197 @@
-from asyncio import sleep
+# From CatUserbot , And Yes I am Noob
 
 from requests import get
-from telethon.events import ChatAction
-from telethon.tl.types import ChannelParticipantsAdmins, Message
+from telethon import events
+from telethon.errors import ChatAdminRequiredError
+from telethon.tl.types import ChannelParticipantsAdmins
 
-from HackfreaksUserbot import (
-    ANTI_SPAMBOT,
-    ANTI_SPAMBOT_SHOUT,
-    CMD_HELP,
-    PRIVATE_GROUP_ID,
-    bot,
-)
+from FreakyUserbot.utils import is_admin, Freaky_on_cmd
+from FreakyUserbot import BOTLOG, BOTLOG_CHATID, LOGS, spamwatch
+from FreakyUserbot.sql_helper.gban_sql import get_gbanuser, is_gbanned
 
+if Config.ANTI_SPAMBOT:
 
-@bot.on(ChatAction)
-async def ANTI_SPAMBOTS(welcm):
-    try:
-        """Ban a recently joined user if it
-        matches the spammer checking algorithm."""
-        if not ANTI_SPAMBOT:
+    @Freaky.on(events.ChatAction())
+    async def anti_spambot(event):
+        if not event.user_joined and not event.user_added:
             return
-        if welcm.user_joined or welcm.user_added:
-            adder = None
-            ignore = False
-            users = None
-
-            if welcm.user_added:
-                ignore = False
+        chat = event.chat_id
+        user = await event.get_user()
+        freakadmin = await is_admin(bot, chat, bot.uid)
+        if not freakadmin:
+            return
+        freakbanned = None
+        adder = None
+        ignore = None
+        if event.user_added:
+            try:
+                adder = event.action_message.sender_id
+            except AttributeError:
+                return
+        async for admin in event.client.iter_participants(
+            event.chat_id, filter=ChannelParticipantsAdmins
+        ):
+            if admin.id == adder:
+                ignore = True
+                break
+        if ignore:
+            return
+        if is_gbanned(user.id):
+            freakgban = get_gbanuser(user.id)
+            if freakgban.reason:
+                hmm = await event.reply(
+                    f"[{user.first_name}](tg://user?id={user.id}) was gbanned by you for the reason `{freakgban.reason}`"
+                )
+            else:
+                hmm = await event.reply(
+                    f"[{user.first_name}](tg://user?id={user.id}) was gbanned by you"
+                )
+            try:
+                await bot.edit_permissions(chat, user.id, view_messages=False)
+                freakbanned = True
+            except Exception as e:
+                LOGS.info(e)
+        if spamwatch and not freakbanned:
+            ban = spamwatch.get_ban(user.id)
+            if ban:
+                hmm = await event.reply(
+                    f"[{user.first_name}](tg://user?id={user.id}) was banned by spamwatch for the reason `{ban.reason}`"
+                )
                 try:
-                    adder = welcm.action_message.from_id
-                except AttributeError:
-                    return
+                    await bot.edit_permissions(chat, user.id, view_messages=False)
+                    freakbanned = True
+                except Exception as e:
+                    LOGS.info(e)
+        if not freakbanned:
+            try:
+                casurl = "https://api.cas.chat/check?user_id={}".format(user.id)
+                data = get(casurl).json()
+            except Exception as e:
+                LOGS.info(e)
+                data = None
+            if data and data["ok"]:
+                reason = (
+                    f"[Banned by Combot Anti Spam](https://cas.chat/query?u={user.id})"
+                )
+                hmm = await event.reply(
+                    f"[{user.first_name}](tg://user?id={user.id}) was banned by Combat anti-spam service(CAS) for the reason check {reason}"
+                )
+                try:
+                    await bot.edit_permissions(chat, user.id, view_messages=False)
+                    freakbanned = True
+                except Exception as e:
+                    LOGS.info(e)
+        if BOTLOG and freakbanned:
+            await event.client.send_message(
+                BOTLOG_CHATID,
+                "#ANTISPAMBOT\n"
+                f"**User :** [{user.first_name}](tg://user?id={user.id})\n"
+                f"**Chat :** {event.chat.title} (`{event.chat_id}`)\n"
+                f"**Reason :** {hmm.text}",
+            )
 
-            async for admin in bot.iter_participants(
-                welcm.chat_id, filter=ChannelParticipantsAdmins
-            ):
-                if admin.id == adder:
-                    ignore = True
-                    break
 
-            if ignore:
-                return
-
-            elif welcm.user_joined:
-                users_list = hasattr(welcm.action_message.action, "users")
-                if users_list:
-                    users = welcm.action_message.action.users
+@Freaky.on(Freaky_on_cmd(pattern="cascheck$"))
+async def caschecker(cas):
+    freakevent = await edit_or_reply(
+        cas,
+        "`checking any cas(combot antispam service) banned users here, this may take several minutes too......`",
+    )
+    text = ""
+    chat = cas.chat_id
+    try:
+        info = await cas.client.get_entity(chat)
+    except (TypeError, ValueError) as err:
+        await cas.edit(str(err))
+        return
+    try:
+        cas_count, members_count = (0,) * 2
+        banned_users = ""
+        async for user in cas.client.iter_participants(info.id):
+            if banchecker(user.id):
+                cas_count += 1
+                if not user.deleted:
+                    banned_users += f"{user.first_name}-`{user.id}`\n"
                 else:
-                    users = [welcm.action_message.from_id]
+                    banned_users += f"Deleted Account `{user.id}`\n"
+            members_count += 1
+        text = "**Warning!** Found `{}` of `{}` users are CAS Banned:\n".format(
+            cas_count, members_count
+        )
+        text += banned_users
+        if not cas_count:
+            text = "No CAS Banned users found!"
+    except ChatAdminRequiredError as carerr:
+        await freakevent.edit("`CAS check failed: Admin privileges are required`")
+        return
+    except BaseException as be:
+        await freakevent.edit("`CAS check failed`")
+        return
+    await freakevent.edit(text)
 
-            await sleep(5)
-            spambot = False
 
-            if not users:
-                return
-
-            for user_id in users:
-                async for message in bot.iter_messages(
-                    welcm.chat_id, from_user=user_id
-                ):
-
-                    correct_type = isinstance(message, Message)
-                    if not message or not correct_type:
-                        break
-
-                    join_time = welcm.action_message.date
-                    message_date = message.date
-
-                    if message_date < join_time:
-                        continue  # The message was sent before the user joined, thus ignore it
-
-                    check_user = await welcm.client.get_entity(user_id)
-
-                    # DEBUGGING. LEAVING IT HERE FOR SOME TIME ###
-                    print(f"User Joined: {check_user.first_name} [ID: {check_user.id}]")
-                    print(f"Chat: {welcm.chat.title}")
-                    print(f"Time: {join_time}")
-                    print(f"Message Sent: {message.text}\n\n[Time: {message_date}]")
-                    ##############################################
-
-                    try:
-                        # https://t.me/combotnews/283
-                        cas_url = f"https://api.cas.chat/check?user_id={check_user.id}"
-                        r = get(cas_url, timeout=3)
-                        data = r.json()
-                    except BaseException:
-                        print(
-                            "CAS check failed, falling back to legacy Anti-Spambot behaviour."
-                        )
-                        data = None
-
-                    if data and data["ok"]:
-                        reason = f"[Banned by Combot Anti Spam](https://combot.org/cas/query?u={check_user.id})"
-                        spambot = True
-                    elif "Daily Money" in message.text:
-                        reason = "Potential Scam"
-                        spambot = True
-                    elif "Forex" in message.text:
-                        reason = "Potential Promotion Message"
-                        spambot = True
-                    elif "DM for Fun" in message.text:
-                        reason = "Thott Bot - Sex Bot v1"
-                        spambot = True
-                    elif "Sex Chat" in message.text:
-                        reason = "Thott Bot - Sex Bot v2"
-                        spambot = True
-                    elif "Doubling" in message.text:
-                        reason = "Doubling Scam"
-                        spambot = True
-                    elif message.fwd_from:
-                        reason = "Forwarded Message"
-                        spambot = True
-                    elif "?start=" in message.text:
-                        reason = "Telegram bot `start` link"
-                        spambot = True
-                    elif "bit.ly/" in message.text:
-                        reason = "Match on `bit.ly` URLs"
-                        spambot = True
-                    elif "Carding iPhones" in message.text:
-                        reason = "Match on Carding Scam"
-                        spambot = True
-                    elif "Trusted Carder" in message.text:
-                        reason = "Carding Scam"
-                        spambot = True
-                    elif "Trusted Carding" in message.text:
-                        reason = "Carding Scam"
-                        spambot = True
-                    elif "DM for Carded Products" in message.text:
-                        reason = "Carding Scam"
-                        spambot = True
-                    elif "Cheap Carded Products" in message.text:
-                        reason = "Scam[Carding]"
-                        spambot = True
-                    elif "Carded Products Available" in message.text:
-                        reason = "Scam[Carding]"
-                        spambot = True
-                    elif "Teaching Carding" in message.text:
-                        reason = "Scam[Carding]"
-                        spambot = True
-                    else:
-                        if check_user.first_name in (
-                            "Bitmex",
-                            "Promotion",
-                            "Information",
-                            "Dex",
-                            "Announcements",
-                            "Info",
-                            "Bitcoin",
-                            "Carding",
-                            "Money",
-                            "Daily",
-                            "Trusted",
-                        ):
-                            if check_user.last_name in (
-                                "Doubling",
-                                "Bot",
-                                "Bitcoin",
-                                "Free",
-                                "Money",
-                                "Carder",
-                            ):
-                                reason = "Known Spambot/Scam"
-                                spambot = True
-
-                    if spambot:
-                        print(f"Potential Spam Message: {message.text}")
-                        await message.delete()
-                        break
-
-                    continue  # Check the next messsage
-
-            if spambot:
-                chat = await welcm.get_chat()
-                admin = chat.admin_rights
-                creator = chat.creator
-                if not admin and not creator:
-                    if ANTI_SPAMBOT_SHOUT:
-                        await welcm.reply(
-                            "@admins\n\n"
-                            "`ANTI SPAMBOT DETECTOR!\n"
-                            "THIS USER MATCHES MY ALGORITHMS AS A SPAMBOT!`\n\n"
-                            f"REASON: {reason}\n\n"
-                            "@HackfreaksUserbot"
-                        )
-                        kicked = False
-                        reported = True
+@Freaky.on(Freaky_on_cmd(pattern="swcheck$"))
+async def caschecker(cas):
+    text = ""
+    chat = cas.chat_id
+    freakevent = await edit_or_reply(
+        cas,
+        "`checking any spamwatch banned users here, this may take several minutes too......`",
+    )
+    try:
+        info = await cas.client.get_entity(chat)
+    except (TypeError, ValueError) as err:
+        await cas.edit(str(err))
+        return
+    try:
+        cas_count, members_count = (0,) * 2
+        banned_users = ""
+        async for user in cas.client.iter_participants(info.id):
+            if spamchecker(user.id):
+                cas_count += 1
+                if not user.deleted:
+                    banned_users += f"{user.first_name}-`{user.id}`\n"
                 else:
-                    try:
+                    banned_users += f"Deleted Account `{user.id}`\n"
+            members_count += 1
+        text = "**Warning! **Found `{}` of `{}` users are spamwatch Banned:\n".format(
+            cas_count, members_count
+        )
+        text += banned_users
+        if not cas_count:
+            text = "No spamwatch Banned users found!"
+    except ChatAdminRequiredError as carerr:
+        await freakevent.edit("`spamwatch check failed: Admin privileges are required`")
+        return
+    except BaseException as be:
+        await freakevent.edit("`spamwatch check failed`")
+        return
+    await freakevent.edit(text)
 
-                        await welcm.reply(
-                            "`Potential Spambot Detected !!`\n\n"
-                            f"`REASON:` {reason}\n"
-                            "Kicking away for now, will log the ID for further purposes.\n"
-                            f"`USER:` [{check_user.first_name}](tg://user?id={check_user.id})\n\n"
-                            "@HackfreaksUserbot"
-                        )
 
-                        await welcm.client.kick_participant(
-                            welcm.chat_id, check_user.id
-                        )
-                        kicked = True
-                        reported = False
+def banchecker(user_id):
+    try:
+        casurl = "https://api.cas.chat/check?user_id={}".format(user_id)
+        data = get(casurl).json()
+    except Exception as e:
+        LOGS.info(e)
+        data = None
+    return bool(data and data["ok"])
 
-                    except BaseException:
-                        if ANTI_SPAMBOT_SHOUT:
-                            await welcm.reply(
-                                "@admins\n\n"
-                                "`ANTI SPAMBOT DETECTOR!\n"
-                                "THIS USER MATCHES MY ALGORITHMS AS A SPAMBOT!`\n\n"
-                                f"REASON: {reason}\n\n"
-                                "@HackfreaksUserbot"
-                            )
-                            kicked = False
-                            reported = True
 
-                if PRIVATE_GROUP_ID:
-                    if kicked or reported:
-                        await welcm.client.send_message(
-                            BOTLOG_CHATID,
-                            "#ANTI_SPAMBOT REPORT\n\n"
-                            f"USER: [{users.first_name}](tg://user?id={check_user.id})\n"
-                            f"USER ID: `{check_user.id}`\n"
-                            f"CHAT: {welcm.chat.title}\n"
-                            f"CHAT ID: `{welcm.chat_id}`\n"
-                            f"REASON: {reason}\n"
-                            f"MESSAGE:\n\n{message.text}\n\n",
-                            "@HackfreaksUserbot",
-                        )
-    except ValueError:
-        pass
+def spamchecker(user_id):
+    ban = None
+    if spamwatch:
+        ban = spamwatch.get_ban(user_id)
+    return bool(ban)
 
 
 CMD_HELP.update(
     {
-        "ANTI_SPAMBOT": "If enabled in Configs.py or env var,"
-        "\nthis module will ban(or inform the admins of the group about) the"
-        "\nspammer(s) if they match HackfreaksUserbot's anti-spam algorithm."
+        "antispambot": "**Plugin : **`antispambot`\
+        \n\n**Syntax : **`.cascheck`\
+        \n**Function : **__Searches for cas(combot antispam service) banned users in group and shows you the list__\
+        \n\n**Syntax : **`.swcheck`\
+        \n**Function : **__Searches for spamwatch banned users in group and shows you the list__"
     }
 )

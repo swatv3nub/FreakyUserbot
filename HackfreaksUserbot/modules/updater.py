@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 # credits to @AvinashReddy3108
-# Re-Written by @swatv3nub for HackfreaksUserbot
+# Re-Written by @swatv3nub for FreakyUserbot
 """
 This module updates the userbot based on upstream revision
 """
@@ -15,11 +15,11 @@ from os import environ, execle, path, remove
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 from var import Var
 
-UPSTREAM_REPO_URL = "https://github.com/swatv3nub/HackfreaksTelethonUserbot"
+UPSTREAM_REPO_URL = "https://github.com/swatv3nub/FreakyUserbot"
 UPSTREAM_REPO_BRANCH = "Alpha"
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 HEROKU_API_KEY = Var.HEROKU_API_KEY
@@ -124,15 +124,15 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     await event.edit(
-        "**⚜️Updating Hackfreaks⚜️\n\nYou Are The **✗ Freak ✗** !!\n\nPlease Wait a bit\nThen Try .alive To Check If I Am Online` \n\n**Powered by :-**\n© [HackfreaksUserbot](https://t.me/HackfreaksUserbot)**"
+        "**⚜️Updating Freaky⚜️\n\nYou Are The **✗ Freak ✗** !!\n\nPlease Wait a bit\nThen Try .alive To Check If I Am Online` \n\n**Powered by :-**\n© [FreakyUserbot](https://t.me/FreakyUserbot)**"
     )
     # Spin a new instance of bot
-    args = [sys.executable, "-m", "HackfreaksUserbot"]
+    args = [sys.executable, "-m", "FreakyUserbot"]
     execle(sys.executable, *args, environ)
     return
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"update( now| deploy|$)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"update( now| deploy|$)"))
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("**Checking for updates, please wait...**")

@@ -22,8 +22,8 @@ from telethon.tl.types import (
     MessageEntityMentionName,
 )
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.events import register
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.events import register
 
 
 def parse_arguments(message: str, valid: List[str]) -> (dict, str):

@@ -1,15 +1,15 @@
 import asyncio
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
 # @command(pattern="^.cmds", outgoing=True)
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"cmds"))
+@Freaky.on(Freaky_on_cmd(pattern=r"cmds"))
 async def install(event):
     if event.fwd_from:
         return
-    cmd = "ls HackfreaksUserbot/modules"
+    cmd = "ls FreakyUserbot/modules"
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
@@ -17,7 +17,7 @@ async def install(event):
     o = stdout.decode()
     _o = o.split("\n")
     o = "\n".join(_o)
-    OUTPUT = f"**List of Plugins:**\n - {o}\n\n**HELP:** __If you want to know the commands for a plugin, do:-__ \n `.help <plugin name>` **without the < > brackets.**\n__All modules might not work directly. Visit__ @HackfreaksUserbot __for assistance.__"
+    OUTPUT = f"**List of Plugins:**\n - {o}\n\n**HELP:** __If you want to know the commands for a plugin, do:-__ \n `.help <plugin name>` **without the < > brackets.**\n__All modules might not work directly. Visit__ @FreakyUserbot __for assistance.__"
     await event.edit(OUTPUT)
 
 

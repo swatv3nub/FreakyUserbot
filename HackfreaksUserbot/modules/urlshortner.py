@@ -1,11 +1,11 @@
 import pyshorteners
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="urlshort (.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="urlshort (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="urlshort (.*)"))
+@Freaky.on(sudo_cmd(pattern="urlshort (.*)", allow_sudo=True))
 async def vom(event):
     try:
         link = event.pattern_match.group(1)

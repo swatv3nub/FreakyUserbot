@@ -12,14 +12,14 @@ import re
 from telethon import utils
 from telethon.tl import types
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.modules.sql_helper.filter_sql import (
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.modules.sql_helper.filter_sql import (
     add_filter,
     get_all_filters,
     remove_all_filters,
     remove_filter,
 )
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 DELETE_TIMEOUT = 0
 TYPE_TEXT = 0
@@ -37,7 +37,7 @@ async def on_snip(event):
     name = event.raw_text
     if event.chat_id in last_triggered_filters:
         if name in last_triggered_filters[event.chat_id]:
-            # avoid HackfreaksUserbot spam
+            # avoid FreakyUserbot spam
             # "I demand rights for us bots, we are equal to you humans." -Henri Koivuneva (t.me/UserbotTesting/2698)
             return False
     snips = get_all_filters(event.chat_id)
@@ -70,8 +70,8 @@ async def on_snip(event):
                 last_triggered_filters[event.chat_id].remove(name)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="filter (.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="filter (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="filter (.*)"))
+@Freaky.on(sudo_cmd(pattern="filter (.*)", allow_sudo=True))
 async def on_snip_save(event):
     hitler = await edit_or_reply(event, "Processing....")
     name = event.pattern_match.group(1)
@@ -106,8 +106,8 @@ async def on_snip_save(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="filters$"))
-@Hackfreaks.on(sudo_cmd(pattern="filters$", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="filters$"))
+@Freaky.on(sudo_cmd(pattern="filters$", allow_sudo=True))
 async def on_snip_list(event):
     indiaislove = await edit_or_reply(event, "Processing....")
     all_snips = get_all_filters(event.chat_id)
@@ -133,8 +133,8 @@ async def on_snip_list(event):
         await indiaislove.edit(OUT_STR)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="stop (.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="stop (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="stop (.*)"))
+@Freaky.on(sudo_cmd(pattern="stop (.*)", allow_sudo=True))
 async def on_snip_delete(event):
     iloveindia = await edit_or_reply(event, "Processing...")
     name = event.pattern_match.group(1)
@@ -142,8 +142,8 @@ async def on_snip_delete(event):
     await iloveindia.edit(f"filter {name} deleted successfully")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="rmfilters$"))
-@Hackfreaks.on(sudo_cmd(pattern="rmfilters$", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="rmfilters$"))
+@Freaky.on(sudo_cmd(pattern="rmfilters$", allow_sudo=True))
 async def on_all_snip_delete(event):
     await edit_or_reply(event, "Processing....")
     remove_all_filters(event.chat_id)

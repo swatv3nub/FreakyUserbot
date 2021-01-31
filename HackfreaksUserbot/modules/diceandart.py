@@ -1,7 +1,7 @@
 from telethon.tl.types import InputMediaDice
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 # EMOJI CONSTANTS
 DART_E_MOJI = "🎯"
@@ -10,8 +10,8 @@ BALL_E_MOJI = "🏀"
 # EMOJI CONSTANTS
 
 
-@Hackfreaks.on(
-    Hackfreaks_on_cmd(pattern=f"({DART_E_MOJI}|{DICE_E_MOJI}|{BALL_E_MOJI}) ?(.*)")
+@Freaky.on(
+    Freaky_on_cmd(pattern=f"({DART_E_MOJI}|{DICE_E_MOJI}|{BALL_E_MOJI}) ?(.*)")
 )
 async def _(event):
     if event.fwd_from:

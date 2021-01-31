@@ -9,8 +9,8 @@ from asyncio import sleep
 
 from telethon.errors import rpcbaseerrors
 
-from HackfreaksUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from HackfreaksUserbot.utils import errors_handler, register
+from FreakyUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from FreakyUserbot.utils import errors_handler, register
 
 
 @register(outgoing=True, pattern="^.purge$")

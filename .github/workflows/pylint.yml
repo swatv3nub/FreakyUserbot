@@ -28,12 +28,12 @@ jobs:
           black .
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'pylint: Hackfreaks🇮🇳'
+          commit_message: 'pylint: Freaky🇮🇳'
           commit_options: '--no-verify'
           repository: .
           commit_user_name: swatv3nub
           commit_user_email: swatv3nub@gmail.com
-          commit_author: swatv3nub <swatv3nub@gmail.com>
+          commit_author: Swonit <swatv3nub@gmail.com>
 
 
 # Kangers Stay Away.

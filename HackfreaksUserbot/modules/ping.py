@@ -1,8 +1,8 @@
 import time
 from datetime import datetime
 
-from HackfreaksUserbot import CMD_HELP, Lastupdate
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP, Lastupdate
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
 def get_readable_time(seconds: int) -> str:
@@ -33,17 +33,17 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="ping$"))
-@Hackfreaks.on(sudo_cmd(pattern="ping$", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="ping$"))
+@Freaky.on(sudo_cmd(pattern="ping$", allow_sudo=True))
 async def _(event):
-    hackfreaksbot = await edit_or_reply(event, "`Pong !`")
+    freakybot = await edit_or_reply(event, "`Pong !`")
     if event.fwd_from:
         return
     start = datetime.now()
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - Lastupdate))
-    await hackfreaksbot.edit(
+    await freakybot.edit(
         f"""**PONG
 **\n ➲ `{ms}` \n ➲ `{uptime}`"""
     )

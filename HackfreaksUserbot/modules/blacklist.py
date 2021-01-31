@@ -10,12 +10,12 @@ import re
 
 from telethon import events
 
-import HackfreaksUserbot.modules.sql_helper.blacklist_sql as sql
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+import FreakyUserbot.modules.sql_helper.blacklist_sql as sql
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(events.NewMessage(incoming=True))
+@Freaky.on(events.NewMessage(incoming=True))
 async def on_new_message(event):
     # TODO: exempt admins from locks
     name = event.raw_text
@@ -31,8 +31,8 @@ async def on_new_message(event):
             break
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("textblacklist ((.|\n)*)"))
-@Hackfreaks.on(sudo_cmd("textblacklist ((.|\n)*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("textblacklist ((.|\n)*)"))
+@Freaky.on(sudo_cmd("textblacklist ((.|\n)*)", allow_sudo=True))
 async def on_add_black_list(event):
     noobfreaks = await edit_or_reply(event, "Trying To Set This Text As Blacklist xD")
     text = event.pattern_match.group(1)
@@ -48,8 +48,8 @@ async def on_add_black_list(event):
     )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("listblacklist"))
-@Hackfreaks.on(sudo_cmd("listblacklist", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("listblacklist"))
+@Freaky.on(sudo_cmd("listblacklist", allow_sudo=True))
 async def on_view_blacklist(event):
     sensibleleecher = await edit_or_reply(event, "Listing Blacklist xD")
     all_blacklisted = sql.get_chat_blacklist(event.chat_id)
@@ -75,8 +75,8 @@ async def on_view_blacklist(event):
         await sensibleleecher.edit(OUT_STR)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("rmblacklist ((.|\n)*)"))
-@Hackfreaks.on(sudo_cmd("rmblacklist ((.|\n)*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("rmblacklist ((.|\n)*)"))
+@Freaky.on(sudo_cmd("rmblacklist ((.|\n)*)", allow_sudo=True))
 async def on_delete_blacklist(event):
     sensibleisleecher = await edit_or_reply(event, "Ok Removing This Blacklist xD")
     text = event.pattern_match.group(1)

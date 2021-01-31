@@ -5,10 +5,10 @@ originaly from : @corsicanu_bot
 
 from telethon import events
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
-@Hackfreaks.on(events.NewMessage(pattern=r"\.shout", outgoing=True))
+@Freaky.on(events.NewMessage(pattern=r"\.shout", outgoing=True))
 async def shout(args):
     if args.fwd_from:
         return

@@ -8,11 +8,11 @@ import bs4
 import requests
 
 from .. import CMD_HELP
-from ..utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from ..utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="app (.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="app (.*)"))
+@Freaky.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
 async def apk(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event, "Searching!")
@@ -73,7 +73,7 @@ async def apk(event):
             + app_link
             + "'>View in Play Store</a>"
         )
-        app_details += "\n\n===> @HackfreaksUserbot <==="
+        app_details += "\n\n===> @FreakyUserbot <==="
         await event.edit(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await event.edit("No result found in search. Please enter **Valid app name**")
@@ -81,8 +81,8 @@ async def apk(event):
         await event.edit("Exception Occured:- " + str(err))
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="appr (.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="appr (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="appr (.*)"))
+@Freaky.on(sudo_cmd(pattern="appr (.*)", allow_sudo=True))
 async def apkr(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event, "searching!")
@@ -144,7 +144,7 @@ async def apkr(event):
             + "'>View in Play Store</a>"
         )
         app_details += "\n\n<b>Download : </b> <a href='https://t.me/joinchat/JCu-H1NikiYDgNjpjPYd4A'>Request_Here</a>"
-        app_details += "\n\n===> @HackfreaksUserbot <==="
+        app_details += "\n\n===> @FreakyUserbot <==="
         await event.edit(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await event.edit("No result found in search. Please enter **Valid app name**")

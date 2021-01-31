@@ -11,13 +11,13 @@ import re
 import bs4
 import requests
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 langi = "en"
 
 # kanged from Blank-x ;---;
-@Hackfreaks.on(Hackfreaks_on_cmd("imdb (.*)", outgoing=True))
+@Freaky.on(Freaky_on_cmd("imdb (.*)", outgoing=True))
 async def imdb(e):
     try:
         movie_name = e.pattern_match.group(1)

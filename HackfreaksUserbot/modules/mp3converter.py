@@ -6,11 +6,11 @@ import os
 import time
 from datetime import datetime
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, progress
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, progress
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="convert (.*)"))  # pylint:disable=E0602
+@Freaky.on(Freaky_on_cmd(pattern="convert (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

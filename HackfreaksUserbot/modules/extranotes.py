@@ -1,8 +1,8 @@
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"gaali"))
+@Freaky.on(Freaky_on_cmd(pattern=r"gaali"))
 async def test(event):
     if event.fwd_from:
         return

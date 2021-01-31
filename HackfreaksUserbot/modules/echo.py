@@ -1,5 +1,5 @@
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
+#    Freaky - Userbot
+#    Copyright (C) 2020 Freaky
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -18,17 +18,17 @@
 Echoes the message via your bot
 """
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"echo (.*)"))
-@Hackfreaks.on(sudo_cmd(pattern=r"echo ( .*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern=r"echo (.*)"))
+@Freaky.on(sudo_cmd(pattern=r"echo ( .*)", allow_sudo=True))
 async def _(event):
     bxt = Var.TG_BOT_USER_NAME_BF_HER
     try:
         tex = str(event.text[6:])
-        await hackfreaksbot.send_message(event.chat_id, tex)
+        await freakybot.send_message(event.chat_id, tex)
         await event.delete()
     except BaseException:
         await event.client.send_message(event.chat_id, f"Please add @{bxt} here first!")

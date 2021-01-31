@@ -2,8 +2,8 @@
 
 from telethon import events
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 PRINTABLE_ASCII = range(0x21, 0x7F)
 
@@ -18,8 +18,8 @@ def aesthetify(string):
         yield chr(c)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="ae\s+(.+)"))
-@Hackfreaks.on(events.MessageEdited(pattern=r".ae\s+(.+)", outgoing=True))
+@Freaky.on(Freaky_on_cmd(pattern="ae\s+(.+)"))
+@Freaky.on(events.MessageEdited(pattern=r".ae\s+(.+)", outgoing=True))
 async def _(event):
     text = event.pattern_match.group(1)
     text = "".join(aesthetify(text))

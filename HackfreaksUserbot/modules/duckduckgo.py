@@ -1,11 +1,11 @@
 """use command .ducduckgo"""
 
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("ducduckgo (.*)"))
+@Freaky.on(Freaky_on_cmd("ducduckgo (.*)"))
 async def _(event):
     if event.fwd_from:
         return

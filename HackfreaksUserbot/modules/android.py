@@ -10,8 +10,8 @@ import re
 from bs4 import BeautifulSoup
 from requests import get
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 GITHUB = "https://github.com"
 DEVICES_DATA = (
@@ -20,8 +20,8 @@ DEVICES_DATA = (
 )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(outgoing=True, pattern="magisk$"))
-@Hackfreaks.on(sudo_cmd(pattern="magisk$", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(outgoing=True, pattern="magisk$"))
+@Freaky.on(sudo_cmd(pattern="magisk$", allow_sudo=True))
 async def magisk(request):
     """ magisk latest releases """
     magisk_dict = {
@@ -41,8 +41,8 @@ async def magisk(request):
     await edit_or_reply(request, releases)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(outgoing=True, pattern=r"device(?: |$)(\S*)"))
-@Hackfreaks.on(sudo_cmd(pattern="device(?: |$)(\S*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(outgoing=True, pattern=r"device(?: |$)(\S*)"))
+@Freaky.on(sudo_cmd(pattern="device(?: |$)(\S*)", allow_sudo=True))
 async def device_info(request):
     """ get android device basic info from its codename """
     textx = await request.get_reply_message()
@@ -74,10 +74,10 @@ async def device_info(request):
     await edit_or_reply(request, reply)
 
 
-@Hackfreaks.on(
-    Hackfreaks_on_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)")
+@Freaky.on(
+    Freaky_on_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)")
 )
-@Hackfreaks.on(
+@Freaky.on(
     sudo_cmd(pattern="codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True)
 )
 async def codename_info(request):
@@ -123,10 +123,10 @@ async def codename_info(request):
     await edit_or_reply(request, reply)
 
 
-@Hackfreaks.on(
-    Hackfreaks_on_cmd(outgoing=True, pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)")
+@Freaky.on(
+    Freaky_on_cmd(outgoing=True, pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)")
 )
-@Hackfreaks.on(sudo_cmd(pattern="specs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
+@Freaky.on(sudo_cmd(pattern="specs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def devices_specifications(request):
     """ Mobile devices specifications """
     textx = await request.get_reply_message()
@@ -188,8 +188,8 @@ async def devices_specifications(request):
     await edit_or_reply(request, reply)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
-@Hackfreaks.on(sudo_cmd(pattern="twrp(?: |$)(\S*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
+@Freaky.on(sudo_cmd(pattern="twrp(?: |$)(\S*)", allow_sudo=True))
 async def twrp(request):
     """ get android device twrp """
     textx = await request.get_reply_message()

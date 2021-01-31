@@ -1,9 +1,9 @@
 from asyncio import wait
 
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("repeat ?(.*)"))
+@Freaky.on(Freaky_on_cmd("repeat ?(.*)"))
 async def _(event):
     message = event.text[10:]
     count = int(event.text[8:10])

@@ -17,7 +17,7 @@ import subprocess
 
 import requests
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
 @command(pattern="^.labstack ?(.*)")

@@ -4,8 +4,8 @@ import os
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from HackfreaksUserbot import CMD_HELP, bot
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP, bot
+from FreakyUserbot.utils import Freaky_on_cmd
 
 try:
     pass
@@ -21,7 +21,7 @@ def bruh(name):
     os.system("instantmusic -q -s " + name)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="songs ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="songs ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -46,7 +46,7 @@ async def _(event):
         await bot.forward_messages(event.chat_id, respond.message)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="netease ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="netease ?(.*)"))
 async def WooMai(netase):
     if netase.fwd_from:
         return
@@ -73,7 +73,7 @@ async def WooMai(netase):
     await netase.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="dzd ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="dzd ?(.*)"))
 async def DeezLoader(Deezlod):
     if Deezlod.fwd_from:
         return

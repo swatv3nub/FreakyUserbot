@@ -1,7 +1,7 @@
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="ftext ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="ftext ?(.*)"))
 async def payf(event):
     input_str = event.pattern_match.group(1)
     if input_str:

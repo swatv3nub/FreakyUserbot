@@ -2,11 +2,11 @@
 Syntax: .github USERNAME"""
 import requests
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@borg.on(Hackfreaks_on_cmd("github (.*)"))
+@borg.on(Freaky_on_cmd("github (.*)"))
 @borg.on(sudo_cmd("github (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

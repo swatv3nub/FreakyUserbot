@@ -2,10 +2,10 @@
 Syntax: .filext EXTENSION"""
 import requests
 from bs4 import BeautifulSoup
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="filext (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="filext (.*)"))
 async def _(event):
     if event.fwd_from:
         return

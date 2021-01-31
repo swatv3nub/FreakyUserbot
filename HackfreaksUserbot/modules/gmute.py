@@ -1,7 +1,7 @@
 import asyncio
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.modules.sql_helper.mute_sql import is_muted, mute, unmute
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.modules.sql_helper.mute_sql import is_muted, mute, unmute
 
 
 @command(outgoing=True, pattern=r"^.gmute ?(\d+)?")

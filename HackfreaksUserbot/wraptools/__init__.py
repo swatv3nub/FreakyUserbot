@@ -3,8 +3,8 @@ import re
 
 from telethon import events
 
-from HackfreaksUserbot import bot
-from HackfreaksUserbot.Configs import Config
+from FreakyUserbot import bot
+from FreakyUserbot.Configs import Config
 from var import Var
 
 

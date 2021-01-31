@@ -1,5 +1,5 @@
 """
-   Heroku manager for your HackfreaksUserbot
+   Heroku manager for your FreakyUserbot
 """
 
 import asyncio
@@ -10,22 +10,22 @@ import heroku3
 import requests
 from telegraph import Telegraph
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 telegraph = Telegraph()
-tgnoob = telegraph.create_account(short_name="Hackfreaks 🇮🇳")
+tgnoob = telegraph.create_account(short_name="Freaky 🇮🇳")
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
 
-@Hackfreaks.on(
-    Hackfreaks_on_cmd(
+@Freaky.on(
+    Freaky_on_cmd(
         pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True
     )
 )
-@Hackfreaks.on(
+@Freaky.on(
     sudo_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", allow_sudo=True)
 )
 async def variable(var):
@@ -116,8 +116,8 @@ async def variable(var):
             return await edit_or_reply(var, f"**{variable}**  `is not exists`")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="usage$", outgoing=True))
-@Hackfreaks.on(sudo_cmd(pattern="usage$", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="usage$", outgoing=True))
+@Freaky.on(sudo_cmd(pattern="usage$", allow_sudo=True))
 async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
@@ -202,8 +202,8 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     return indentitems(items, indent, level=0)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="logs$", outgoing=True))
-@Hackfreaks.on(sudo_cmd(pattern="logs$", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="logs$", outgoing=True))
+@Freaky.on(sudo_cmd(pattern="logs$", allow_sudo=True))
 async def _(givelogs):
     try:
         Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
@@ -217,7 +217,7 @@ async def _(givelogs):
         log.write(app.get_log())
     hmm = app.get_log()
     freaky = f"<code> {hmm} </code>"
-    title_of_page = "Hackfreaks UserBot Logs"
+    title_of_page = "Freaky Userbot Logs"
     response = telegraph.create_page(title_of_page, html_content=freaky)
     km = response["path"]
     suger = f"`Logs Can Be Found` [Here](https://telegra.ph/{km})"

@@ -15,10 +15,10 @@ from telethon.errors.rpcerrorlist import (
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
 
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("phd ?(.*)"))
+@Freaky.on(Freaky_on_cmd("phd ?(.*)"))
 async def _(event):
 
     if event.fwd_from:
@@ -103,7 +103,7 @@ async def _(event):
                 await borg.send_file(
                     event.chat_id,
                     video_hehe,
-                    caption="`🤤 Video Uploaded by` [HackfreaksUserbot](https://github.com/swatv3nub/HackfreaksTelethonUserbot)!🤤\n**Title:** `{}`".format(
+                    caption="`🤤 Video Uploaded by` [FreakyUserbot](https://github.com/swatv3nub/FreakyUserbot)!🤤\n**Title:** `{}`".format(
                         title
                     ),
                 )

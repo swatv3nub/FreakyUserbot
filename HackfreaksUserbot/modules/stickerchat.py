@@ -7,7 +7,7 @@ from io import BytesIO
 import requests
 import telethon
 from PIL import Image
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 logger = logging.getLogger(__name__)
 
@@ -52,7 +52,7 @@ if 1 == 1:
     )
     client = borg
 
-    @Hackfreaks.on(Hackfreaks_on_cmd(pattern="chat(.*)"))
+    @Freaky.on(Freaky_on_cmd(pattern="chat(.*)"))
     async def quotecmd(message):  # noqa: C901
         """Quote a message.
         Usage: .quote [template]

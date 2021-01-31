@@ -9,8 +9,8 @@ import time
 from asyncio import create_subprocess_exec as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 if not os.path.isdir("./SAVED"):
     os.makedirs("./SAVED")
@@ -18,7 +18,7 @@ if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
     os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(outgoing=True, pattern="pips(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(outgoing=True, pattern="pips(?: |$)(.*)"))
 async def pipcheck(pip):
     pipmodule = pip.pattern_match.group(1)
     if pipmodule:
@@ -65,7 +65,7 @@ async def pipcheck(pip):
         await pip.edit("`Use .helper system to see an example`")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="suicide$"))
+@Freaky.on(Freaky_on_cmd(pattern="suicide$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -85,12 +85,12 @@ async def _(event):
     stdout, stderr = await process.communicate()
     o = stdout.decode()
     OUTPUT = (
-        f"**[Hackfreaks's](tg://need_update_for_some_feature/) SUICIDE BOMB:**\n{o}"
+        f"**[Freaky's](tg://need_update_for_some_feature/) SUICIDE BOMB:**\n{o}"
     )
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
-            await Hackfreaks.send_file(
+            await Freaky.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -103,14 +103,14 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="plugins$"))
+@Freaky.on(Freaky_on_cmd(pattern="plugins$"))
 async def _(event):
     if event.fwd_from:
         return
     PROCESS_RUN_TIME = 100
     #    dirname = event.pattern_match.group(1)
     #    tempdir = "localdir"
-    cmd = "ls HackfreaksUserbotplugins"
+    cmd = "ls FreakyUserbotplugins"
     #    if dirname == tempdir:
 
     eply_to_id = event.message.id
@@ -122,11 +122,11 @@ async def _(event):
     )
     stdout, stderr = await process.communicate()
     o = stdout.decode()
-    OUTPUT = f"**[Hackfreaks's](tg://need_update_for_some_feature/) PLUGINS:**\n{o}\n\n**HELP:** __If you want to know the commands for a plugin, do:-__ \n `.help <plugin name>` **without the < > brackets.**\n__All plugins might not work directly. Visit @WhieEyeOT for assistance.__"
+    OUTPUT = f"**[Freaky's](tg://need_update_for_some_feature/) PLUGINS:**\n{o}\n\n**HELP:** __If you want to know the commands for a plugin, do:-__ \n `.help <plugin name>` **without the < > brackets.**\n__All plugins might not work directly. Visit @WhieEyeOT for assistance.__"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
-            await Hackfreaks.send_file(
+            await Freaky.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -139,7 +139,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="date$"))
+@Freaky.on(Freaky_on_cmd(pattern="date$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -162,7 +162,7 @@ async def _(event):
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
-            await Hackfreaks.send_file(
+            await Freaky.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -175,7 +175,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="env$"))
+@Freaky.on(Freaky_on_cmd(pattern="env$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -194,11 +194,11 @@ async def _(event):
     )
     stdout, stderr = await process.communicate()
     o = stdout.decode()
-    OUTPUT = f"**[Hackfreaks's](tg://need_update_for_some_feature/) Environment Module:**\n\n\n{o}"
+    OUTPUT = f"**[Freaky's](tg://need_update_for_some_feature/) Environment Module:**\n\n\n{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
-            await Hackfreaks.send_file(
+            await Freaky.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -211,7 +211,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="fast$"))
+@Freaky.on(Freaky_on_cmd(pattern="fast$"))
 async def _(event):
     await event.edit("calculating...")
     if event.fwd_from:
@@ -231,11 +231,11 @@ async def _(event):
     )
     stdout, stderr = await process.communicate()
     o = stdout.decode()
-    OUTPUT = f"**[Hackfreaks's](tg://need_update_for_some_feature/) , Server Speed Calculated:**\n{o}"
+    OUTPUT = f"**[Freaky's](tg://need_update_for_some_feature/) , Server Speed Calculated:**\n{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
-            await Hackfreaks.send_file(
+            await Freaky.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -248,7 +248,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="fortune$"))
+@Freaky.on(Freaky_on_cmd(pattern="fortune$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -271,7 +271,7 @@ async def _(event):
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
-            await Hackfreaks.send_file(
+            await Freaky.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -284,7 +284,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="qquote$"))
+@Freaky.on(Freaky_on_cmd(pattern="qquote$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -307,7 +307,7 @@ async def _(event):
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
-            await Hackfreaks.send_file(
+            await Freaky.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -320,7 +320,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="fakeid$"))
+@Freaky.on(Freaky_on_cmd(pattern="fakeid$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -343,7 +343,7 @@ async def _(event):
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
-            await Hackfreaks.send_file(
+            await Freaky.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -356,7 +356,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="kwot$"))
+@Freaky.on(Freaky_on_cmd(pattern="kwot$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -379,7 +379,7 @@ async def _(event):
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "kwot.text"
-            await Hackfreaks.send_file(
+            await Freaky.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -392,7 +392,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="qpro$"))
+@Freaky.on(Freaky_on_cmd(pattern="qpro$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -415,7 +415,7 @@ async def _(event):
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
-            await Hackfreaks.send_file(
+            await Freaky.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
@@ -432,6 +432,6 @@ CMD_HELP.update(
     {
         "execmod": "**ExecMod**\
 \n\n**Syntax : **`.pips, suicide, .plugins, .date, .env, .fast, .fortune, .qquote, .fakeid, .kwot, .qpro`\
-\n**Usage :** A Helpfull Plugin Made for @HackfreaksUserbot."
+\n**Usage :** A Helpfull Plugin Made for @FreakyUserbot."
     }
 )

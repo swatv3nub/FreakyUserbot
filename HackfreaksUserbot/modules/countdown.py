@@ -3,10 +3,10 @@
 import asyncio
 
 from telethon import events
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="(f?c)d "))
+@Freaky.on(Freaky_on_cmd(pattern="(f?c)d "))
 async def timer_blankx(e):
 
     txt = e.text[4:] + "\nDeleting in "
@@ -32,7 +32,7 @@ async def timer_blankx(e):
         await e.edit(txt + "NaN")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="(f?s)cd "))
+@Freaky.on(Freaky_on_cmd(pattern="(f?s)cd "))
 async def timer_blankx(e):
 
     txt = e.text[4:] + "\nDeleting in "
@@ -58,7 +58,7 @@ async def timer_blankx(e):
         await e.edit(txt + "NaN")
 
 
-@Hackfreaks.on(events.NewMessage(outgoing=True, pattern="^\.(f?p)an "))
+@Freaky.on(events.NewMessage(outgoing=True, pattern="^\.(f?p)an "))
 async def timer_blankx(e):
 
     txt = e.text[7:] + "\n\n`Promoting You As Admin In` "

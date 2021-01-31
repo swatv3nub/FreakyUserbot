@@ -4,15 +4,15 @@
 import re
 
 from telethon import custom
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
-# regex obtained from: https://github.com/PaulSonOfLars/hackfreaksbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
+# regex obtained from: https://github.com/PaulSonOfLars/freakybot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
 BTN_URL_REGEX = re.compile(r"(\{([^\[]+?)\}\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="cbutton"))  # pylint:disable=E0602
+@Freaky.on(Freaky_on_cmd(pattern="cbutton"))  # pylint:disable=E0602
 async def _(event):
-    if Config.TG_BOT_USER_NAME_BF_HER is None or hackfreaksbot is None:
+    if Config.TG_BOT_USER_NAME_BF_HER is None or freakybot is None:
         await event.edit("need to set up a @BotFather bot for this module to work")
         return
 
@@ -59,19 +59,19 @@ async def _(event):
     # logger.info(message_text)
     # logger.info(tl_ib_buttons)
 
-    hackfreaksbot_reply_message = None
+    freakybot_reply_message = None
     if reply_message.media is not None:
         message_id_in_channel = reply_message.id
-        hackfreaksbot_reply_message = await hackfreaksbot.get_messages(
+        freakybot_reply_message = await freakybot.get_messages(
             entity=Config.PRIVATE_CHANNEL_BOT_API_ID, ids=message_id_in_channel
         )
-        hackfreaksbot_reply_message = hackfreaksbot_reply_message.media
+        freakybot_reply_message = freakybot_reply_message.media
 
-    await hackfreaksbot.send_message(
+    await freakybot.send_message(
         entity=Config.PRIVATE_CHANNEL_BOT_API_ID,
         message=message_text,
         parse_mode="html",
-        file=hackfreaksbot_reply_message,
+        file=freakybot_reply_message,
         link_preview=False,
         buttons=tl_ib_buttons,
         silent=True,

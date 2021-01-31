@@ -4,11 +4,11 @@ from collections import deque
 
 from telethon.tl.functions.channels import LeaveChannelRequest
 
-from HackfreaksUserbot import CMD_HELP, bot
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP, bot
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("leave$"))
+@Freaky.on(Freaky_on_cmd("leave$"))
 async def leave(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`I iz Leaving dis Lol Group kek!`")
@@ -19,7 +19,7 @@ async def leave(e):
             await e.edit("`But Boss! This is Not A Chat`")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(";__;$"))
+@Freaky.on(Freaky_on_cmd(";__;$"))
 # @register(outgoing=True, pattern="^;__;$")
 async def fun(e):
     t = ";__;"
@@ -28,7 +28,7 @@ async def fun(e):
         await e.edit(t)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("yo$"))
+@Freaky.on(Freaky_on_cmd("yo$"))
 # @register(outgoing=True, pattern="^yo$")
 async def Ooo(e):
     t = "yo"
@@ -37,7 +37,7 @@ async def Ooo(e):
         await e.edit(t)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("Oof$"))
+@Freaky.on(Freaky_on_cmd("Oof$"))
 # @register(outgoing=True, pattern="^Oof$")
 async def Oof(e):
     t = "Oof"
@@ -46,21 +46,21 @@ async def Oof(e):
         await e.edit(t)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("ccry$"))
+@Freaky.on(Freaky_on_cmd("ccry$"))
 # @register(outgoing=True, pattern="^.cry$")
 async def cry(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("(;´༎ຶД༎ຶ)")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("fp$"))
+@Freaky.on(Freaky_on_cmd("fp$"))
 # @register(outgoing=True, pattern="^.fp$")
 async def facepalm(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("🤦‍♂")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("moon$"))
+@Freaky.on(Freaky_on_cmd("moon$"))
 # @register(outgoing=True, pattern="^.mmoon$")
 async def _(event):
     if event.fwd_from:
@@ -72,23 +72,23 @@ async def _(event):
         deq.rotate(1)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("source$"))
+@Freaky.on(Freaky_on_cmd("source$"))
 # @register(outgoing=True, pattern="^.source$")
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("https://github.com/swatv3nub/HackfreaksTelethonUserbot")
+        await e.edit("https://github.com/swatv3nub/FreakyUserbot")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("readme$"))
+@Freaky.on(Freaky_on_cmd("readme$"))
 # @register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
-            "https://github.com/swatv3nub/HackfreaksTelethonUserbot/blob/master/README.md"
+            "https://github.com/swatv3nub/FreakyUserbot/blob/master/README.md"
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("heart$"))
+@Freaky.on(Freaky_on_cmd("heart$"))
 # @register(outgoing=True, pattern="^.heart$")
 async def _(event):
     if event.fwd_from:
@@ -100,7 +100,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("fap$"))
+@Freaky.on(Freaky_on_cmd("fap$"))
 # @register(outgoing=True, pattern="^.fap$")
 async def _(event):
     if event.fwd_from:
@@ -118,7 +118,7 @@ CMD_HELP.update({"fp": "Send face palm emoji."})
 CMD_HELP.update({"moon": "Bot will send a cool moon animation."})
 CMD_HELP.update({"clock": "Bot will send a cool clock animation."})
 CMD_HELP.update({"readme": "Reedme."})
-CMD_HELP.update({"source": "Gives the source of your HackfreaksUserbot"})
+CMD_HELP.update({"source": "Gives the source of your FreakyUserbot"})
 CMD_HELP.update({"myusernames": "List of Usernames owned by you."})
 CMD_HELP.update({"oof": "Same as ;__; but ooof"})
 CMD_HELP.update({"earth": "Sends Kensar Earth animation"})

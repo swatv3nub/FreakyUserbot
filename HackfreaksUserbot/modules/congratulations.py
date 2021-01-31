@@ -1,8 +1,8 @@
 import random
 
-from uniborg.util import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from uniborg.util import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 RUNSREACTS = [
     "`Congratulations and BRAVO!`",
@@ -18,8 +18,8 @@ RUNSREACTS = [
 ]
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="congo"))
-@Hackfreaks.on(sudo_cmd(pattern="congo", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="congo"))
+@Freaky.on(sudo_cmd(pattern="congo", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

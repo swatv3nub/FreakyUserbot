@@ -22,15 +22,15 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from HackfreaksUserbot import ALIVE_NAME, CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import ALIVE_NAME, CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Who is this"
 FILLED_UP_DADDY = "Invalid pack selected."
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="kang ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="kang ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="kang ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="kang ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -53,26 +53,26 @@ async def _(event):
         user.username = user.id
     pack = 1
     userid = event.sender_id
-    # packname = f"Hackfreaks PACK"
+    # packname = f"Freaky PACK"
     # packshortname = f"Hackfreaks_{userid}_ns"  # format: Uni_Borg_userid
     if userid == 1228116248:
-        packname = f"@HackfreaksUserbot 🎭"
-        packshortname = "HackfreaksUserbotPack"
+        packname = f"@FreakyUserbot 🎭"
+        packshortname = "FreakyUserbotPack"
     else:
         packname = f"@{user.username} KangPack {pack}"
         packshortname = f"Hackfreaks_{userid}_Pack"
     await moods.edit("`This Sticker is Gonna Get Stolen.....`")
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "@HackfreaksUserbot.png"
+    file_ext_ns_ion = "@FreakyUserbot.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
         if userid == 813878981:
-            packname = f"HackfreaksUserbot Pack"
-            packshortname = "Hackfreaks"
+            packname = f"FreakyUserbot Pack"
+            packshortname = "Freaky"
         else:
             packname = f"@{user.username} KangPack {pack}"
             packshortname = f"Hackfreaks_{userid}"  # format: Uni_Borg_userid
@@ -222,8 +222,8 @@ async def _(event):
     )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="packinfo"))
-@Hackfreaks.on(sudo_cmd(pattern="packinfo ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="packinfo"))
+@Freaky.on(sudo_cmd(pattern="packinfo ?(.*)", allow_sudo=True))
 async def _(event):
     moods = await edit_or_reply(event, "`HeHe , Me Gonna Leech Pack Info`")
     if event.fwd_from:
@@ -262,7 +262,7 @@ async def _(event):
     )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="getsticker ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="getsticker ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

@@ -9,10 +9,10 @@ from datetime import datetime
 
 import aiohttp
 import requests
-from uniborg.util import Hackfreaks_on_cmd, progress
+from uniborg.util import Freaky_on_cmd, progress
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="ma ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="ma ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

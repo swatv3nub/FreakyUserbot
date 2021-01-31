@@ -6,9 +6,9 @@ from pathlib import Path
 
 from telethon import events
 
-from HackfreaksUserbot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
-from HackfreaksUserbot.Configs import Config
-from HackfreaksUserbot.wraptools import (
+from FreakyUserbot import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
+from FreakyUserbot.Configs import Config
+from FreakyUserbot.wraptools import (
     am_i_admin,
     ignore_bot,
     ignore_fwd,
@@ -18,7 +18,7 @@ from HackfreaksUserbot.wraptools import (
 from var import Var
 
 sedprint = logging.getLogger("PLUGINS")
-cmdhandler = Config.COMMAND_HAND_LER
+cmdhandler = Config.CMD_HNDLR
 bothandler = Config.BOT_HANDLER
 
 
@@ -98,11 +98,11 @@ def load_module(shortname):
         import sys
         from pathlib import Path
 
-        import HackfreaksUserbot.modules
-        import HackfreaksUserbot.utils
+        import FreakyUserbot.modules
+        import FreakyUserbot.utils
 
-        path = Path(f"HackfreaksUserbot/modules/{shortname}.py")
-        name = "HackfreaksUserbot.modules.{}".format(shortname)
+        path = Path(f"FreakyUserbot/modules/{shortname}.py")
+        name = "FreakyUserbot.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -112,25 +112,25 @@ def load_module(shortname):
         import sys
         from pathlib import Path
 
-        import HackfreaksUserbot.modules
-        import HackfreaksUserbot.utils
+        import FreakyUserbot.modules
+        import FreakyUserbot.utils
 
-        path = Path(f"HackfreaksUserbot/modules/{shortname}.py")
-        name = "HackfreaksUserbot.modules.{}".format(shortname)
+        path = Path(f"FreakyUserbot/modules/{shortname}.py")
+        name = "FreakyUserbot.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
-        mod.hackfreaksbot = bot.hackfreaksbot
+        mod.freakybot = bot.freakybot
         mod.Var = Var
         mod.command = command
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
-        sys.modules["uniborg.util"] = HackfreaksUserbot.utils
-        sys.modules["HackfreaksUserbot.util"] = HackfreaksUserbot.utils
-        sys.modules["userbot.utils"] = HackfreaksUserbot.utils
-        sys.modules["userbot.plugins"] = HackfreaksUserbot.modules
-        sys.modules["plugins"] = HackfreaksUserbot.modules
-        sys.modules["userbot"] = HackfreaksUserbot
+        sys.modules["uniborg.util"] = FreakyUserbot.utils
+        sys.modules["FreakyUserbot.util"] = FreakyUserbot.utils
+        sys.modules["userbot.utils"] = FreakyUserbot.utils
+        sys.modules["userbot.plugins"] = FreakyUserbot.modules
+        sys.modules["plugins"] = FreakyUserbot.modules
+        sys.modules["userbot"] = FreakyUserbot
         mod.Config = Config
         mod.ignore_grp = ignore_grp()
         mod.ignore_pm = ignore_pm()
@@ -138,14 +138,14 @@ def load_module(shortname):
         mod.am_i_admin = am_i_admin()
         mod.ignore_fwd = ignore_fwd()
         mod.borg = bot
-        mod.Hackfreaks = bot
+        mod.Freaky = bot
         # support for paperplaneextended
-        sys.modules["HackfreaksUserbot.events"] = HackfreaksUserbot.utils
+        sys.modules["FreakyUserbot.events"] = FreakyUserbot.utils
         spec.loader.exec_module(mod)
         # support for Telebot
-        sys.modules["HackfreaksUserbot.plugins"] = HackfreaksUserbot.modules
+        sys.modules["FreakyUserbot.plugins"] = FreakyUserbot.modules
         # for imports
-        sys.modules["HackfreaksUserbot.modules." + shortname] = mod
+        sys.modules["FreakyUserbot.modules." + shortname] = mod
         sedprint.info("Successfully imported " + shortname)
 
 
@@ -157,7 +157,7 @@ def remove_plugin(shortname):
             del LOAD_PLUG[shortname]
 
         except:
-            name = f"HackfreaksUserbot.modules.{shortname}"
+            name = f"FreakyUserbot.modules.{shortname}"
 
             for i in reversed(range(len(bot._event_builders))):
                 ev, cb = bot._event_builders[i]
@@ -211,7 +211,7 @@ def admin_cmd(pattern=None, **args):
     return events.NewMessage(**args)
 
 
-def Hackfreaks_on_cmd(pattern=None, **args):
+def Freaky_on_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
 
     stack = inspect.stack()
@@ -256,7 +256,7 @@ def Hackfreaks_on_cmd(pattern=None, **args):
 
 
 """ Userbot module for managing events.
- One of the main components of the HackfreaksUserbot. """
+ One of the main components of the FreakyUserbot. """
 
 import asyncio
 import datetime
@@ -267,7 +267,7 @@ from time import gmtime, strftime
 
 from telethon import events
 
-from HackfreaksUserbot import bot
+from FreakyUserbot import bot
 
 
 def register(**args):
@@ -339,7 +339,7 @@ def errors_handler(func):
             ftext += "\nyou may not report this error if you've"
             ftext += "\nany confidential data here, no one will see your data\n\n"
 
-            ftext += "--------BEGIN HACKFREAKS USERBOT TRACEBACK LOG--------"
+            ftext += "--------BEGIN Freaky Userbot TRACEBACK LOG--------"
             ftext += "\nDate: " + date
             ftext += "\nGroup ID: " + str(errors.chat_id)
             ftext += "\nSender ID: " + str(errors.sender_id)
@@ -445,8 +445,8 @@ def sudo_cmd(pattern=None, **args):
             # special fix for snip.py
             args["pattern"] = re.compile(pattern)
         else:
-            args["pattern"] = re.compile(Config.SUDO_COMMAND_HAND_LER + pattern)
-            reg = Config.SUDO_COMMAND_HAND_LER[1]
+            args["pattern"] = re.compile(Config.SUDO_HNDLR + pattern)
+            reg = Config.SUDO_HNDLR[1]
             cmd = (reg + pattern).replace("$", "").replace("\\", "").replace("^", "")
             try:
                 SUDO_LIST[file_test].append(cmd)
@@ -486,7 +486,7 @@ async def edit_or_reply(event, text):
 
 def assistant_cmd(add_cmd, is_args=False):
     def cmd(func):
-        mrhackfreaks = bot.hackfreaksbot
+        mrhackfreaks = bot.freakybot
         if is_args:
             pattern = bothandler + add_cmd + "(?: |$)(.*)"
         elif is_args == "freak":
@@ -508,7 +508,7 @@ def is_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            mrhackfreaks = bot.hackfreaksbot
+            mrhackfreaks = bot.freakybot
             sed = await mrhackfreaks.get_permissions(event.chat_id, event.sender_id)
             user = event.sender_id
             kek = bot.uid
@@ -530,7 +530,7 @@ def is_bot_admin():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            mrhackfreaks = bot.hackfreaksbot
+            mrhackfreaks = bot.freakybot
             pep = await mrhackfreaks.get_me()
             sed = await mrhackfreaks.get_permissions(event.chat_id, pep)
             if sed.is_admin:
@@ -644,8 +644,8 @@ def start_assistant(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"HackfreaksUserbot/modules/assistant/{shortname}.py")
-        name = "HackfreaksUserbot.modules.assistant.{}".format(shortname)
+        path = Path(f"FreakyUserbot/modules/assistant/{shortname}.py")
+        name = "FreakyUserbot.modules.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -656,12 +656,12 @@ def start_assistant(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"HackfreaksUserbot/modules/assistant/{shortname}.py")
-        name = "HackfreaksUserbot.modules.assistant.{}".format(shortname)
+        path = Path(f"FreakyUserbot/modules/assistant/{shortname}.py")
+        name = "FreakyUserbot.modules.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
-        mod.hackfreaksbot = bot.hackfreaksbot
-        mod.mrhackfreaks = bot.hackfreaksbot
+        mod.freakybot = bot.freakybot
+        mod.mrhackfreaks = bot.freakybot
         mod.assistant_cmd = assistant_cmd
         mod.god_only = god_only()
         mod.only_groups = only_groups()
@@ -673,5 +673,5 @@ def start_assistant(shortname):
         mod.peru_only = peru_only()
         mod.only_pvt = only_pvt()
         spec.loader.exec_module(mod)
-        sys.modules["HackfreaksUserbot.modules.assistant" + shortname] = mod
+        sys.modules["FreakyUserbot.modules.assistant" + shortname] = mod
         sedprint.info("Assistant Has imported " + shortname)

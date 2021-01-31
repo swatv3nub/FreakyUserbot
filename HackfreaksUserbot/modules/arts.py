@@ -1,10 +1,10 @@
-from HackfreaksUserbot import ALIVE_NAME, CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import ALIVE_NAME, CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 n = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 
 # @command(outgoing=True, pattern="^.ded$")
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"ded"))
+@Freaky.on(Freaky_on_cmd(pattern=r"ded"))
 async def freaksded(ded):
     await ded.edit(
         n + " ==             |\n　　　　　|"
@@ -81,32 +81,32 @@ H = (
 )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"monster"))
+@Freaky.on(Freaky_on_cmd(pattern=r"monster"))
 async def freaksmonster(monster):
     await monster.edit(M)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"pig"))
+@Freaky.on(Freaky_on_cmd(pattern=r"pig"))
 async def freakspig(pig):
     await pig.edit(P)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"kiler"))
+@Freaky.on(Freaky_on_cmd(pattern=r"kiler"))
 async def freakskiller(kiler):
     await kiler.edit(K)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"gun"))
+@Freaky.on(Freaky_on_cmd(pattern=r"gun"))
 async def freaksgun(gun):
     await gun.edit(G)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"dog"))
+@Freaky.on(Freaky_on_cmd(pattern=r"dog"))
 async def freaksdog(dog):
     await dog.edit(D)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"hmf"))
+@Freaky.on(Freaky_on_cmd(pattern=r"hmf"))
 async def freakshmf(hmf):
     await hmf.edit(H)
 

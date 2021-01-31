@@ -1,8 +1,8 @@
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, load_module, remove_plugin
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, load_module, remove_plugin
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="load ?(.*)", outgoing=True))
+@Freaky.on(Freaky_on_cmd(pattern="load ?(.*)", outgoing=True))
 async def load(event):
     if event.fwd_from:
         return
@@ -20,7 +20,7 @@ async def load(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="unload ?(.*)", outgoing=True))
+@Freaky.on(Freaky_on_cmd(pattern="unload ?(.*)", outgoing=True))
 async def unload(event):
     if event.fwd_from:
         return

@@ -6,12 +6,12 @@ Available Commands:
 .unshort <short url>"""
 import requests
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("dns (.*)"))
-@Hackfreaks.on(sudo_cmd("dns (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("dns (.*)"))
+@Freaky.on(sudo_cmd("dns (.*)", allow_sudo=True))
 async def _(event):
     freaky = await edit_or_reply(event, "Processing.....")
     if event.fwd_from:
@@ -25,8 +25,8 @@ async def _(event):
         await freaky.edit("i can't seem to find {} on the internet".format(input_str))
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("url (.*)"))
-@Hackfreaks.on(sudo_cmd("dns (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("url (.*)"))
+@Freaky.on(sudo_cmd("dns (.*)", allow_sudo=True))
 async def _(event):
     sofreaky = await edit_or_reply(event, "Processing....")
     if event.fwd_from:
@@ -40,7 +40,7 @@ async def _(event):
         await sofreaky.edit("something is wrong. please try again later.")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("unshort (.*)"))
+@Freaky.on(Freaky_on_cmd("unshort (.*)"))
 async def _(event):
     sadness = await edit_or_reply(event, "Processing...")
     if event.fwd_from:

@@ -5,14 +5,14 @@ import os
 import lyricsgenius
 from tswift import Song
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(outgoing=True, pattern="lyrics (.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="lyrics (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(outgoing=True, pattern="lyrics (.*)"))
+@Freaky.on(sudo_cmd(pattern="lyrics (.*)", allow_sudo=True))
 async def _(event):
     await edit_or_reply(event, "Searching For Lyrics.....")
     reply_to_id = event.message.id
@@ -53,7 +53,7 @@ async def _(event):
         await edit_or_reply(event, reply)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(outgoing=True, pattern="glyrics(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(outgoing=True, pattern="glyrics(?: |$)(.*)"))
 async def lyrics(lyric):
     if r"-" in lyric.text:
         pass

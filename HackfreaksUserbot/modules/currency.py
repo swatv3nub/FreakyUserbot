@@ -3,11 +3,11 @@ from datetime import datetime
 
 import requests
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="currency (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="currency (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -51,7 +51,7 @@ async def _(event):
     (end - start).seconds
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="currencies (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="currencies (.*)"))
 async def list(ups):
     if ups.fwd_from:
         return

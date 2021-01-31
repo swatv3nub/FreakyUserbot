@@ -2,12 +2,12 @@
 # (c) Shrimadhav U K
 
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("reserved"))
+@Freaky.on(Freaky_on_cmd("reserved"))
 async def mine(event):
     """ For .reserved command, get a list of your reserved usernames. """
     result = await bot(GetAdminedPublicChannelsRequest())

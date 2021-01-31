@@ -6,9 +6,9 @@ import os
 from datetime import datetime
 
 import requests
-from uniborg.util import Hackfreaks_on_cmd, sudo_cmd
+from uniborg.util import Freaky_on_cmd, sudo_cmd
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
@@ -23,8 +23,8 @@ def progress(current, total):
     )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("paste ?(.*)"))
-@Hackfreaks.on(sudo_cmd("paste ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("paste ?(.*)"))
+@Freaky.on(sudo_cmd("paste ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

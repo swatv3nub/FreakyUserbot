@@ -1,6 +1,6 @@
 from sqlalchemy import Boolean, Column, String
 
-from HackfreaksUserbot.modules.sql_helper import BASE, SESSION
+from FreakyUserbot.modules.sql_helper import BASE, SESSION
 
 
 class Locks(BASE):

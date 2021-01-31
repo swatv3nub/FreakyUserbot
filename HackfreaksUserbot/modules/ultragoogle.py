@@ -12,8 +12,8 @@ import requests
 from bs4 import BeautifulSoup
 from google_images_download import google_images_download
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
 def progress(current, total):
@@ -24,8 +24,8 @@ def progress(current, total):
     )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="search (.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="search (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="search (.*)"))
+@Freaky.on(sudo_cmd(pattern="search (.*)", allow_sudo=True))
 async def _(event):
     noobfreaks = await edit_or_reply(event, "`Processing Your Request`")
     if event.fwd_from:
@@ -58,7 +58,7 @@ async def _(event):
     )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="image (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="image (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -102,7 +102,7 @@ async def _(event):
     await event.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="grs"))
+@Freaky.on(Freaky_on_cmd(pattern="grs"))
 async def _(event):
     if event.fwd_from:
         return

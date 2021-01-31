@@ -7,8 +7,8 @@ from telethon.events import NewMessage
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
@@ -16,7 +16,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-# @Hackfreaks.on(Hackfreaks_on_cmd(pattern="count"))
+# @Freaky.on(Freaky_on_cmd(pattern="count"))
 # async def _(event):
 #     if event.fwd_from:
 #         return
@@ -52,7 +52,7 @@ logger = logging.getLogger(__name__)
 # Bots:\t{}""".format(ms, u, g, c, bc, b))
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="count"))
+@Freaky.on(Freaky_on_cmd(pattern="count"))
 async def stats(
     event: NewMessage.Event,
 ) -> None:  # pylint: disable = R0912, R0914, R0915

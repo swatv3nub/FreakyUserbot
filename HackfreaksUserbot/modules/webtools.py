@@ -5,12 +5,12 @@ from iplookup import iplookup
 from selenium import webdriver
 from youtube_search import YoutubeSearch
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="wshot ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="wshot ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="wshot ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="wshot ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -18,18 +18,18 @@ async def _(event):
     sedlyffreaky = await edit_or_reply(event, "Capturing Webshot, Stay Tuned.")
     driver = webdriver.Chrome()
     driver.get(urlissed)
-    driver.get_screenshot_as_file("Webshot-@HackfreaksUserbot.png")
-    imgpath = "Webshot-@HackfreaksUserbot.png"
+    driver.get_screenshot_as_file("Webshot-@FreakyUserbot.png")
+    imgpath = "Webshot-@FreakyUserbot.png"
     await sedlyffreaky.edit("Completed. Uploading in Telegram..")
     await borg.send_file(
         event.chat_id,
         file=imgpath,
-        caption=f"**WEBSHOT OF** `{urlissed}` \n**Powered By @HackfreaksUserbot**",
+        caption=f"**WEBSHOT OF** `{urlissed}` \n**Powered By @FreakyUserbot**",
     )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="lp ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="lp ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="lp ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="lp ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -56,8 +56,8 @@ async def _(event):
         await tfbro.edit(f"Something Went Wrong. MayBe Website Wrong.")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="bin ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="bin ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="bin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -79,8 +79,8 @@ async def _(event):
         await tfsir.edit("Not a Valid Bin Or Don't Have Enough Info.")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="iban ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="iban ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="iban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -104,8 +104,8 @@ async def _(event):
         await tfhm.edit(f"Invalid IBAN Or Doesn't Have Enough Info")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="gitdl ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="gitdl ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="gitdl ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="gitdl ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -129,8 +129,8 @@ async def _(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="yts ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="yts ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="yts ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="yts ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

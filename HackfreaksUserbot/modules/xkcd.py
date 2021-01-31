@@ -4,12 +4,12 @@ from urllib.parse import quote
 
 import requests
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="xkcd ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="xkcd ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="xkcd ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="xkcd ?(.*)", allow_sudo=True))
 async def _(event):
     livinglegend = await edit_or_reply(event, "Oh SeD Pls Wait")
     if event.fwd_from:

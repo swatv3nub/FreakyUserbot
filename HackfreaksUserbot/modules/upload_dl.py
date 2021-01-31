@@ -1,5 +1,5 @@
-# © By Hackfreaks™ And IndianBot™
-# For HackfreaksUserbot And Indianbot ™
+# © By Freaky™ And IndianBot™
+# For FreakyUserbot And Indianbot ™
 """ Userbot module which contains everything related to \
     downloading/uploading from/to the server. """
 
@@ -15,9 +15,9 @@ from hachoir.parser import createParser
 from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
 
-from HackfreaksUserbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from HackfreaksUserbot.events import register
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from FreakyUserbot.events import register
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
@@ -79,12 +79,12 @@ def time_formatter(milliseconds: int) -> str:
     return tmp[:-2]
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="download(?: |$)(.*)", outgoing=True))
-@Hackfreaks.on(sudo_cmd(pattern="download(?: |$)(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="download(?: |$)(.*)", outgoing=True))
+@Freaky.on(sudo_cmd(pattern="download(?: |$)(.*)", allow_sudo=True))
 async def download(target_file):
-    """ For .dl command, download files to the HackfreaksUserbot's server. """
-    Hackfreaks = await edit_or_reply(target_file, "`Processing ...`")
-    await Hackfreaks.edit("Processing using HackfreaksUserbot server ( ◜‿◝ )♡")
+    """ For .dl command, download files to the FreakyUserbot's server. """
+    Freaky = await edit_or_reply(target_file, "`Processing ...`")
+    await Freaky.edit("Processing using FreakyUserbot server ( ◜‿◝ )♡")
     input_str = target_file.pattern_match.group(1)
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
@@ -128,16 +128,16 @@ async def download(target_file):
                 \nETA: {estimated_total_time}"
 
                 if round(diff % 10.00) == 0 and current_message != display_message:
-                    await Hackfreaks.edit(current_message)
+                    await Freaky.edit(current_message)
                     display_message = current_message
             except Exception as e:
                 LOGS.info(str(e))
         if downloader.isSuccessful():
-            await Hackfreaks.edit(
+            await Freaky.edit(
                 "Downloaded to `{}` successfully !!".format(downloaded_file_name)
             )
         else:
-            await Hackfreaks.edit("Incorrect URL\n{}".format(url))
+            await Freaky.edit("Incorrect URL\n{}".format(url))
     elif target_file.reply_to_msg_id:
         try:
             c_time = time.time()
@@ -149,13 +149,13 @@ async def download(target_file):
                 ),
             )
         except Exception as e:  # pylint:disable=C0103,W0703
-            await Hackfreaks.edit(str(e))
+            await Freaky.edit(str(e))
         else:
-            await Hackfreaks.edit(
+            await Freaky.edit(
                 "Downloaded to `{}` successfully !!".format(downloaded_file_name)
             )
     else:
-        await Hackfreaks.edit("Reply to a message to download to my local server.")
+        await Freaky.edit("Reply to a message to download to my local server.")
 
 
 @register(pattern=r".uploadir (.*)", outgoing=True)
@@ -246,10 +246,10 @@ async def uploadir(udir_event):
 
 @register(pattern=r".upload (.*)", outgoing=True)
 async def upload(u_event):
-    """ For .upload command, allows you to upload a file from the HackfreaksUserbot's server """
+    """ For .upload command, allows you to upload a file from the FreakyUserbot's server """
     await u_event.edit("Processing ...")
     input_str = u_event.pattern_match.group(1)
-    if input_str in ("HackfreaksUserbot.session", "config.env"):
+    if input_str in ("FreakyUserbot.session", "config.env"):
         await u_event.edit("`That's a dangerous operation! Not Permitted!`")
         return
     if os.path.exists(input_str):

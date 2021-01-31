@@ -4,11 +4,11 @@ by @quiec
 """
 from PyLyrics import *
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="singer (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="singer (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -20,7 +20,7 @@ async def _(event):
         if len(song) == 1:
             await event.edit("Usage: .singer Duman - Haberin Yok Ölüyorum")
         else:
-            await event.edit("🔍︎Searching lyrics By Hackfreaks")
+            await event.edit("🔍︎Searching lyrics By Freaky")
             lyrics = PyLyrics.getLyrics(song[0].strip(), song[1].strip()).split("\n")
             lyric_message = f"Singing {song[0].strip()} from {song[1].strip()} 🎙"
             lyric_message += "\n\n" + "\n".join(lyrics)

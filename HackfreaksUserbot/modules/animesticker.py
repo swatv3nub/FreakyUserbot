@@ -3,8 +3,8 @@
 import random
 import re
 
-from HackfreaksUserbot import CMD_HELP, bot
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP, bot
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 EMOJI_PATTERN = re.compile(
     "["
@@ -29,8 +29,8 @@ def deEmojify(inputString: str) -> str:
 
 
 # @register(outgoing=True, pattern="^.waifu(?: |$)(.*)", allow_sudo=True))
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"waifu(?: |$)(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern=r"waifu(?: |$)(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern=r"waifu(?: |$)(.*)"))
+@Freaky.on(sudo_cmd(pattern=r"waifu(?: |$)(.*)", allow_sudo=True))
 async def waifu(animu):
     # """Creates random anime sticker!"""
 

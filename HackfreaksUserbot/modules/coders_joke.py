@@ -1,10 +1,10 @@
 import pyjokes
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"cjoke"))
+@Freaky.on(Freaky_on_cmd(pattern=r"cjoke"))
 async def hi(event):
     if event.fwd_from:
         return

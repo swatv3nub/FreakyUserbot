@@ -5,16 +5,16 @@ DB Options: bots, commands, email, forward, url"""
 
 from telethon import events, functions, types
 
-from HackfreaksUserbot.modules.sql_helper.locks_sql import (
+from FreakyUserbot.modules.sql_helper.locks_sql import (
     get_locks,
     is_locked,
     update_lock,
 )
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("lock( (?P<target>\S+)|$)"))
-@Hackfreaks.on(sudo_cmd("lock( (?P<target>\S+)|$)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("lock( (?P<target>\S+)|$)"))
+@Freaky.on(sudo_cmd("lock( (?P<target>\S+)|$)", allow_sudo=True))
 async def _(event):
     mrhackerguy = await edit_or_reply(event, "Processing")
     # Space weirdness in regex required because argument is optional and other
@@ -86,8 +86,8 @@ async def _(event):
             )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("unlock ?(.*)"))
-@Hackfreaks.on(sudo_cmd("unlock ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("unlock ?(.*)"))
+@Freaky.on(sudo_cmd("unlock ?(.*)", allow_sudo=True))
 async def _(event):
     Hackfreaksgang = await edit_or_reply(event, "Processing")
     if event.fwd_from:
@@ -103,8 +103,8 @@ async def _(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("curenabledlocks"))
-@Hackfreaks.on(Hackfreaks_on_cmd("curenabledlocks", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("curenabledlocks"))
+@Freaky.on(Freaky_on_cmd("curenabledlocks", allow_sudo=True))
 async def _(event):
     pikachu = await edit_or_reply(event, "Processing")
     if event.fwd_from:
@@ -140,8 +140,8 @@ async def _(event):
     await pikachu.edit(res)
 
 
-@Hackfreaks.on(events.MessageEdited())  # pylint:disable=E0602
-@Hackfreaks.on(events.NewMessage())  # pylint:disable=E0602
+@Freaky.on(events.MessageEdited())  # pylint:disable=E0602
+@Freaky.on(events.NewMessage())  # pylint:disable=E0602
 async def check_incoming_messages(event):
     # TODO: exempt admins from locks
     peer_id = event.chat_id
@@ -203,7 +203,7 @@ async def check_incoming_messages(event):
                 update_lock(peer_id, "url", False)
 
 
-@Hackfreaks.on(events.ChatAction())  # pylint:disable=E0602
+@Freaky.on(events.ChatAction())  # pylint:disable=E0602
 async def _(event):
     # TODO: exempt admins from locks
     # check for "lock" "bots"

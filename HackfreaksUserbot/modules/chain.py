@@ -4,12 +4,12 @@
 
 from telethon.tl.functions.messages import SaveDraftRequest
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="chain"))
-@Hackfreaks.on(sudo_cmd(pattern="chain", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="chain"))
+@Freaky.on(sudo_cmd(pattern="chain", allow_sudo=True))
 async def _(event):
     pokemonlub = await edit_or_reply(event, "Counting...")
     count = -1

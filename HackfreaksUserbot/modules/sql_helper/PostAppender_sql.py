@@ -1,6 +1,6 @@
 from sqlalchemy import Boolean, Column, String, UnicodeText
 
-from HackfreaksUserbot.modules.sql_helper import BASE, SESSION
+from FreakyUserbot.modules.sql_helper import BASE, SESSION
 
 
 class Pa(BASE):

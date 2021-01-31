@@ -8,8 +8,8 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
@@ -22,7 +22,7 @@ else:
     BOTLOG_CHATID = Config.PRIVATE_GROUP_ID
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="telegraph (media|text) ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="telegraph (media|text) ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

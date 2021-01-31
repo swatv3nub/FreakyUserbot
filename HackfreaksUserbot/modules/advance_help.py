@@ -1,9 +1,9 @@
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 
-@Hackfreaks.on(sudo_cmd(pattern="ahelp ?(.*)", allow_sudo=True))
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="ahelp ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="ahelp ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="ahelp ?(.*)"))
 async def _(event):
     args = event.pattern_match.group(1).lower()
     if args:

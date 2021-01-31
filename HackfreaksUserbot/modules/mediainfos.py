@@ -8,12 +8,12 @@ from typing import Tuple
 
 from telegraph import Telegraph
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.Configs import Config
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.Configs import Config
+from FreakyUserbot.utils import Freaky_on_cmd
 
 telegraph = Telegraph()
-tgnoob = telegraph.create_account(short_name="Hackfreaks 🇮🇳")
+tgnoob = telegraph.create_account(short_name="Freaky 🇮🇳")
 
 
 async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
@@ -31,7 +31,7 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
     )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="mediainfo$"))  # pylint:disable=E0602
+@Freaky.on(Freaky_on_cmd(pattern="mediainfo$"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

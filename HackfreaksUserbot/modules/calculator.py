@@ -3,11 +3,11 @@ import io
 import sys
 import traceback
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="calc"))
+@Freaky.on(Freaky_on_cmd(pattern="calc"))
 async def _(event):
     if event.fwd_from or event.via_bot_id:
         return

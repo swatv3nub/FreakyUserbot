@@ -1,12 +1,12 @@
 import requests
 from telethon.tl.types import MessageMediaPhoto
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"pcheck"))
-@Hackfreaks.on(sudo_cmd(pattern=r"pcheck", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern=r"pcheck"))
+@Freaky.on(sudo_cmd(pattern=r"pcheck", allow_sudo=True))
 async def pcheck(event):
     url = "https://nsfw-categorize.it/api/upload"
     await event.edit("`Processing..`")

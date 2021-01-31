@@ -12,10 +12,10 @@ from urllib.error import HTTPError
 
 from pySmartDL import SmartDL
 
-from HackfreaksUserbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, humanbytes, time_formatter
+from FreakyUserbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from FreakyUserbot.utils import Freaky_on_cmd, humanbytes, time_formatter
 
-# from HackfreaksUserbot.events import register if used @register
+# from FreakyUserbot.events import register if used @register
 
 
 async def subprocess_run(megadl, cmd):
@@ -33,7 +33,7 @@ async def subprocess_run(megadl, cmd):
     return stdout.decode().strip(), stderr.decode().strip(), exitCode
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"megadl(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"megadl(?: |$)(.*)"))
 # or @register(outgoing=True, pattern="^.megadl (.*)")
 async def mega_downloader(megadl):
     await megadl.edit("`Collecting information...`")

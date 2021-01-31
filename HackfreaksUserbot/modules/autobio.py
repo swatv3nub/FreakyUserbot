@@ -1,4 +1,4 @@
-# AutoBio plugin for Hackfreaks
+# AutoBio plugin for Freaky
 # Using this might lead to ban of your account, use at your own risk.
 # Re-Written by @swatv3nub
 
@@ -8,13 +8,13 @@ import time
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 DEL_TIME_OUT = 60
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="autobio"))  # pylint:disable=E0602
+@Freaky.on(Freaky_on_cmd(pattern="autobio"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

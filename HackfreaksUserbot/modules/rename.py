@@ -7,13 +7,13 @@ import os
 import time
 from datetime import datetime
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="rnupload (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="rnupload (.*)"))
 async def _(event):
     if event.fwd_from:
         return

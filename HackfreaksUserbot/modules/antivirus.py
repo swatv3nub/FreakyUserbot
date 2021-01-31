@@ -2,11 +2,11 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("avscan ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("avscan ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

@@ -1,5 +1,5 @@
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
+#    Freaky - Userbot
+#    Copyright (C) 2020 Freaky
 
 # 	 Written by @xditya
 import asyncio
@@ -9,9 +9,9 @@ import os
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-import HackfreaksUserbot.modules.sql_helper.pmpermit_sql as pmpermit_sql
-from HackfreaksUserbot import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+import FreakyUserbot.modules.sql_helper.pmpermit_sql as pmpermit_sql
+from FreakyUserbot import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
+from FreakyUserbot.utils import Freaky_on_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
@@ -25,20 +25,20 @@ myid = bot.uid
 MESAG = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
-    else "`Hackfreaks PM security! Please wait for me to approve you. 😊"
+    else "`Freaky PM security! Please wait for me to approve you. 😊"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hackfreaks Userbot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Freaky Userbot"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 USER_BOT_NO_WARN = (
-    "**PM Security ~ Hackfreaks**\n\nNice to see you here, but  "
+    "**PM Security ~ Freaky**\n\nNice to see you here, but  "
     "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
     "{}\n\n**You have** `{}/{}` **warnings...**"
     "\n\n   ~ Thank You."
 )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="a ?(.*)"))
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="approve ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="a ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="approve ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -82,7 +82,7 @@ async def you_dm_niqq(event):
                     pass
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="block ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="block ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -106,8 +106,8 @@ async def approve_p_m(event):
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="da ?(.*)"))
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="disapprove ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="da ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="disapprove ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -128,12 +128,12 @@ async def approve_p_m(event):
                 )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="listapproved"))
+@Freaky.on(Freaky_on_cmd(pattern="listapproved"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
     approved_users = pmpermit_sql.get_all_approved()
-    APPROVED_PMs = "[Hackfreaks] Currently Approved PMs\n"
+    APPROVED_PMs = "[Freaky] Currently Approved PMs\n"
     if len(approved_users) > 0:
         for a_user in approved_users:
             if a_user.reason:
@@ -150,7 +150,7 @@ async def approve_p_m(event):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="[Hackfreaks]Current Approved PMs",
+                caption="[Freaky]Current Approved PMs",
                 reply_to=event,
             )
             await event.delete()
@@ -248,7 +248,7 @@ async def do_pm_permit_action(chat_id, event):
 # Do not touch the below codes!
 
 
-@Hackfreaks.on(events.NewMessage(incoming=True, from_users=(1167145475, 1228116248)))
+@Freaky.on(events.NewMessage(incoming=True, from_users=(1167145475, 1228116248)))
 async def hehehe(event):
     if event.fwd_from:
         return
@@ -263,7 +263,7 @@ async def hehehe(event):
 NEEDIT = os.environ.get("INSTANT_BLOCK", None)
 if NEEDIT == "on":
 
-    @Hackfreaks.on(events.NewMessage(incoming=True))
+    @Freaky.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
         event.message.message
         event.message.media
@@ -287,7 +287,7 @@ CMD_HELP.update(
         \n\n.disapprove/.da\nUse - DisApprove PM\
         \n\n.listapproved\nUse - Get all approved PMs.\
         \n\nSet Var PMPERMIT_PIC for custom PMPic, CUSTOM_PMPERMIT for custom text, PMSECURITY <on/off> to enable/disable, INSTANT_BLOCK <on/off>.\
-        \nGet help from @HackfreaksUserbot."
+        \nGet help from @FreakyUserbot."
     }
 )
-# (c) HackfreaksUserbot
+# (c) FreakyUserbot

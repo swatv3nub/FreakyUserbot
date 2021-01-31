@@ -8,12 +8,12 @@ import io
 import sys
 import traceback
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("eval"))
-@Hackfreaks.on(sudo_cmd("eval", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("eval"))
+@Freaky.on(sudo_cmd("eval", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

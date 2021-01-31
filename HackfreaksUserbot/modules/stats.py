@@ -2,11 +2,11 @@ from datetime import datetime
 
 from telethon.tl.types import Channel, Chat, User
 
-from HackfreaksUserbot import CMD_HELP, bot
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP, bot
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"stats"))
+@Freaky.on(Freaky_on_cmd(pattern=r"stats"))
 async def _(event):
     if event.fwd_from:
         return

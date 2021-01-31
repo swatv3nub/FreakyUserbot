@@ -1,8 +1,8 @@
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
+#    Freaky - Userbot
+#    Copyright (C) 2020 Freaky
 
 """
-HackfreaksUserbot module to help you manage a group
+FreakyUserbot module to help you manage a group
 """
 
 from asyncio import sleep
@@ -30,9 +30,9 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from HackfreaksUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from HackfreaksUserbot.utils import (
-    Hackfreaks_on_cmd,
+from FreakyUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from FreakyUserbot.utils import (
+    Freaky_on_cmd,
     errors_handler,
     register,
     sudo_cmd,
@@ -82,8 +82,8 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"setgpic"))
-@Hackfreaks.on(sudo_cmd(pattern=r"setgpic", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern=r"setgpic"))
+@Freaky.on(sudo_cmd(pattern=r"setgpic", allow_sudo=True))
 async def set_group_photo(gpic):
     """ For .setgpic command, changes the picture of a group """
     if not gpic.is_group:
@@ -113,8 +113,8 @@ async def set_group_photo(gpic):
             await gpic.edit(PP_ERROR)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"promote(?: |$)(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern=r"promote(?: |$)(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern=r"promote(?: |$)(.*)"))
+@Freaky.on(sudo_cmd(pattern=r"promote(?: |$)(.*)", allow_sudo=True))
 async def promote(promt):
     """ For .promote command, promotes the replied/tagged person """
     # Get targeted chat
@@ -158,7 +158,7 @@ async def promote(promt):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"demote(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"demote(?: |$)(.*)"))
 async def demote(dmod):
     # If passing, declare that we're going to demote
     await dmod.edit("`Demoting...`")
@@ -200,7 +200,7 @@ async def demote(dmod):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"ban(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"ban(?: |$)(.*)"))
 async def ban(bon):
     user, reason = await get_user_from_event(bon)
     if user:
@@ -242,7 +242,7 @@ async def ban(bon):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"unban(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"unban(?: |$)(.*)"))
 async def nothanos(unbon):
     # If everything goes well...
     await unbon.edit("`Unbanning...`")
@@ -268,14 +268,14 @@ async def nothanos(unbon):
         await unbon.edit("`Uh oh my unban logic broke!`")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"mute(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"mute(?: |$)(.*)"))
 async def spider(spdr):
     """
     This function is basically muting peeps
     """
     # Check if the function running under SQL mode
     try:
-        from HackfreaksUserbot.modules.sql_helper.spam_mute_sql import mute
+        from FreakyUserbot.modules.sql_helper.spam_mute_sql import mute
     except AttributeError:
         await spdr.edit(NO_SQL)
         return
@@ -320,7 +320,7 @@ async def spider(spdr):
             return await spdr.edit("`Uh oh my mute logic broke!`")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"unmute(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"unmute(?: |$)(.*)"))
 async def unmoot(unmot):
     """ For .unmute command, unmute the replied/tagged person """
     # Admin or creator check
@@ -328,7 +328,7 @@ async def unmoot(unmot):
 
     # Check if the function running under SQL mode
     try:
-        from HackfreaksUserbot.modules.sql_helper.spam_mute_sql import unmute
+        from FreakyUserbot.modules.sql_helper.spam_mute_sql import unmute
     except AttributeError:
         await unmot.edit(NO_SQL)
         return
@@ -367,8 +367,8 @@ async def unmoot(unmot):
 async def muter(moot):
     """ Used for deleting the messages of muted people """
     try:
-        from HackfreaksUserbot.modules.sql_helper.gmute_sql import is_gmuted
-        from HackfreaksUserbot.modules.sql_helper.spam_mute_sql import is_muted
+        from FreakyUserbot.modules.sql_helper.gmute_sql import is_gmuted
+        from FreakyUserbot.modules.sql_helper.spam_mute_sql import is_muted
     except AttributeError:
         return
     muted = is_muted(moot.chat_id)
@@ -396,14 +396,14 @@ async def muter(moot):
 
 
 # @register(outgoing=True, pattern="^.ungmute(?: |$)(.*)")
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"ungmute(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"ungmute(?: |$)(.*)"))
 async def ungmoot(un_gmute):
-    """ For .ungmute command, ungmutes the target in the HackfreaksUserbot """
+    """ For .ungmute command, ungmutes the target in the FreakyUserbot """
     # Admin or creator check
     await un_gmute.get_chat()
     # Check if the function running under SQL mode
     try:
-        from HackfreaksUserbot.modules.sql_helper.gmute_sql import ungmute
+        from FreakyUserbot.modules.sql_helper.gmute_sql import ungmute
     except AttributeError:
         await un_gmute.edit(NO_SQL)
         return
@@ -433,12 +433,12 @@ async def ungmoot(un_gmute):
             )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"gmute(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"gmute(?: |$)(.*)"))
 async def gspider(gspdr):
     """ For .gmute command, globally mutes the replied/tagged person """
     await gspdr.get_chat()
     try:
-        from HackfreaksUserbot.modules.sql_helper.gmute_sql import gmute
+        from FreakyUserbot.modules.sql_helper.gmute_sql import gmute
     except AttributeError:
         await gspdr.edit(NO_SQL)
         return
@@ -468,7 +468,7 @@ async def gspider(gspdr):
             )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"delusers(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"delusers(?: |$)(.*)"))
 async def rm_deletedacc(show):
     """ For .delusers command, list all the ghost/deleted accounts in a chat. """
     if not show.is_group:
@@ -532,7 +532,7 @@ async def rm_deletedacc(show):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"adminlist"))
+@Freaky.on(Freaky_on_cmd(pattern=r"adminlist"))
 @errors_handler
 async def get_admin(show):
     """ For .admins command, list all of the admins of the chat. """
@@ -554,7 +554,7 @@ async def get_admin(show):
     await show.edit(mentions, parse_mode="html")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"pin(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"pin(?: |$)(.*)"))
 async def pin(msg):
     """ For .pin command, pins the replied/tagged message on the top the chat. """
     # Admin or creator check
@@ -592,7 +592,7 @@ async def pin(msg):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"kick(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"kick(?: |$)(.*)"))
 async def kick(usr):
     """ For .kick command, kicks the replied/tagged person from the group. """
     # Admin or creator check
@@ -627,7 +627,7 @@ async def kick(usr):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"users ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"users ?(.*)"))
 @errors_handler
 async def get_users(show):
     """ For .users command, list all of the users in a chat. """

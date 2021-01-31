@@ -2,7 +2,7 @@
 # And Thanks To The Creator Of Autopic This Script Was Made from Snippets From That Script
 # Usage .animedp I'm Not Responsible For Any Ban caused By This
 # Rewriten by @swatv3nub
-# Made for @HackfreaksUserbot
+# Made for @FreakyUserbot
 
 import asyncio
 import os
@@ -13,8 +13,8 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 COLLECTION_STRING = [
     "cute-anime-wallpapers-hd",
@@ -53,11 +53,11 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="animedp ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="animedp ?(.*)"))
 async def main(event):
 
     await event.edit(
-        "**Starting Anime Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. By [Hackfreaks](https://github.com/swatv3nub/HackfreaksTelethonUserbot)**"
+        "**Starting Anime Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. By [Freaky](https://github.com/swatv3nub/FreakyUserbot)**"
     )
 
     while True:

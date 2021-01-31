@@ -1,18 +1,18 @@
   
 {
-  "name": "Hackfreaks-Userbot",
+  "name": "Freaky Userbot",
   "description": "A Userbot Based On Telethon",
   "logo": "https://telegra.ph/file/bb3741b7596bf90f47568.png",
   "keywords": [
     "telegram",
-    "HackfreaksUserbot",
+    "FreakyUserbot",
     "plugin",
-    "telegram-HackfreaksUserbot",
+    "telegram-FreakyUserbot",
     "productivity"
   ],
-  "repository": "https://github.com/swatv3nub/HackfreaksTelethonUserbot",
+  "repository": "https://github.com/swatv3nub/FreakyUserbot",
   "website": "https://github.com/swatv3nub",
-  "success_url": "t.me/HackfreaksUserbot",
+  "success_url": "t.me/FreakyUserbot",
   "stack": "container",
   "env": {
     "ENV": {
@@ -21,7 +21,7 @@
     },
     "TEMP_DOWNLOAD_DIRECTORY": {
       "description": "Where downloaded files will go.",
-      "value": "./HackfreaksUserbot/DOWNLOADS/",
+      "value": "./FreakyUserbot/DOWNLOADS/",
       "required": false
     },
     "ALIVE_NAME": {
@@ -79,7 +79,7 @@
       "required": false
     },
     "GIT_REPO_NAME": {
-      "description": "Your repo name Example: swatv3nub/HackfreaksTelethonUserbot, but GITHUB_ACCESS_TOKEN must be setup first.",
+      "description": "Your repo name Example: swatv3nub/FreakyUserbot, but GITHUB_ACCESS_TOKEN must be setup first.",
       "value": "",
       "required": false
     },

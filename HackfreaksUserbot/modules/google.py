@@ -2,8 +2,8 @@ from re import findall
 
 from search_engine_parser import GoogleSearch
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import register
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import register
 
 
 @register(outgoing=True, pattern=r"^\.gs (.*)")

@@ -1,10 +1,10 @@
 import asyncio
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="undlt"))
+@Freaky.on(Freaky_on_cmd(pattern="undlt"))
 async def _(event):
     if event.fwd_from:
         return

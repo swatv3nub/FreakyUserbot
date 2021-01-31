@@ -4,8 +4,8 @@ for bot credits to @pureindialover
 
 from telethon.tl import functions
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.events import register
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.events import register
 
 
 @register(outgoing=True, pattern="^.create (b|g|c)(?: |$)(.*)")

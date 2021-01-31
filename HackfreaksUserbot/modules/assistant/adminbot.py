@@ -48,7 +48,7 @@ UNBAN_RIGHTS = ChatBannedRights(
 )
 
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
-mrhackfreaks = hackfreaksbot
+mrhackfreaks = freakybot
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 

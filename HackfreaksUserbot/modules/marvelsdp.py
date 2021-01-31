@@ -16,7 +16,7 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.utils import Freaky_on_cmd
 
 COLLECTION_STRING = [
     "avengers-logo-wallpaper",
@@ -75,7 +75,7 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="marveldp ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="marveldp ?(.*)"))
 async def main(event):
 
     await event.edit(

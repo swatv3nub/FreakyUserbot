@@ -3,20 +3,20 @@ import os
 from glitch_this import ImageGlitcher
 from telethon.tl.types import MessageMediaPhoto
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 glitcher = ImageGlitcher()
 DURATION = 200  # Set this to however many centiseconds each frame should be visible for
 LOOP = 0  # Set this to how many times the gif should loop
 # LOOP = 0 means infinite loop
-sedpath = "./hackfreaksuserbotz/"
+sedpath = "./FreakyUserbotz/"
 if not os.path.isdir(sedpath):
     os.makedirs(sedpath)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"glitch"))
-@Hackfreaks.on(sudo_cmd(pattern=r"glitch", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern=r"glitch"))
+@Freaky.on(sudo_cmd(pattern=r"glitch", allow_sudo=True))
 async def glitch(event):
     sed = await event.get_reply_message()
     okbruh = await event.edit("`Gli, Glitchiiingggg.....`")
@@ -28,7 +28,7 @@ async def glitch(event):
         await event.edit("`Reply To Image`")
         return
     fmt = "gif"
-    pathsn = f"./hackfreaksuserbotz/@HackfreaksUserbot.{fmt}"
+    pathsn = f"./FreakyUserbotz/@FreakyUserbot.{fmt}"
     glitch_imgs = glitcher.glitch_image(photolove, 2, gif=True, color_offset=True)
     glitch_imgs[0].save(
         pathsn,

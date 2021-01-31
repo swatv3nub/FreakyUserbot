@@ -1,10 +1,10 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("mask ?(.*)"))
+@Freaky.on(Freaky_on_cmd("mask ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

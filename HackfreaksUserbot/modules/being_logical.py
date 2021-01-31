@@ -10,10 +10,10 @@ import random
 
 from telethon import events
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
-@Hackfreaks.on(events.NewMessage(pattern=r"\.belo", outgoing=True))
+@Freaky.on(events.NewMessage(pattern=r"\.belo", outgoing=True))
 async def _(event):
 
     if event.fwd_from:

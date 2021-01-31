@@ -3,11 +3,11 @@ import asyncio
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=("sang ?(.*)")))
+@Freaky.on(Freaky_on_cmd(pattern=("sang ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return
@@ -42,7 +42,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=("fakemail ?(.*)")))
+@Freaky.on(Freaky_on_cmd(pattern=("fakemail ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return
@@ -63,7 +63,7 @@ async def _(event):
         await event.edit(mail)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=("mailid ?(.*)")))
+@Freaky.on(Freaky_on_cmd(pattern=("mailid ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return
@@ -84,7 +84,7 @@ async def _(event):
         await event.edit(mail)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=("ub ?(.*)")))
+@Freaky.on(Freaky_on_cmd(pattern=("ub ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return
@@ -119,7 +119,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=("gid ?(.*)")))
+@Freaky.on(Freaky_on_cmd(pattern=("gid ?(.*)")))
 async def _(event):
     if event.fwd_from:
         return

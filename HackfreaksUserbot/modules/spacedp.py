@@ -7,8 +7,8 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 # Space lovers
 COLLECTION_STRINGS = [
@@ -43,10 +43,10 @@ async def animepp():
             "f.ttf",
         )
 
-    urllib.request.urlretrieve(fy, "Hackfreaks.jpg")
+    urllib.request.urlretrieve(fy, "Freaky.jpg")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="spacedp ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="spacedp ?(.*)"))
 async def main(event):
 
     await event.edit(

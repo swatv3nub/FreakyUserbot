@@ -10,7 +10,7 @@ import subprocess
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from PIL import Image
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 
@@ -41,7 +41,7 @@ def get_video_thumb(file, output=None, width=320):
         return output
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="savethumbnail"))
+@Freaky.on(Freaky_on_cmd(pattern="savethumbnail"))
 async def _(event):
     if event.fwd_from:
         return
@@ -77,7 +77,7 @@ async def _(event):
         await event.edit("Reply to a photo to save custom thumbnail")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="clearthumbnail"))
+@Freaky.on(Freaky_on_cmd(pattern="clearthumbnail"))
 async def _(event):
     if event.fwd_from:
         return
@@ -86,7 +86,7 @@ async def _(event):
     await event.edit("✅ Custom thumbnail cleared succesfully.")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="getthumbnail"))
+@Freaky.on(Freaky_on_cmd(pattern="getthumbnail"))
 async def _(event):
     if event.fwd_from:
         return

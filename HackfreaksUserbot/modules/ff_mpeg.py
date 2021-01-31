@@ -5,13 +5,13 @@ import os
 import time
 from datetime import datetime
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, progress
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, progress
 
 FF_MPEG_DOWN_LOAD_MEDIA_PATH = "uniborg.media.ffmpeg"
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("ffmpegsave"))
+@Freaky.on(Freaky_on_cmd("ffmpegsave"))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
         return
@@ -46,7 +46,7 @@ async def ff_mpeg_trim_cmd(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("ffmpegtrim"))
+@Freaky.on(Freaky_on_cmd("ffmpegtrim"))
 async def ff_mpeg_trim_cmd(event):
     if event.fwd_from:
         return

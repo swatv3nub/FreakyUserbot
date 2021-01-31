@@ -1,16 +1,16 @@
 """
 Created by @Jisan7509
-plugin for @HackfreaksUserbot
+plugin for @FreakyUserbot
 """
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"score$"))
-@Hackfreaks.on(sudo_cmd(pattern=r"score$", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern=r"score$"))
+@Freaky.on(sudo_cmd(pattern=r"score$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -39,8 +39,8 @@ async def _(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"cric (.*)"))
-@Hackfreaks.on(sudo_cmd(pattern=r"cric (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern=r"cric (.*)"))
+@Freaky.on(sudo_cmd(pattern=r"cric (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

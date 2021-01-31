@@ -5,11 +5,11 @@ except ImportError:
 
 import os
 
-from HackfreaksUserbot.Configs import Config
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.Configs import Config
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="read$"))
+@Freaky.on(Freaky_on_cmd(pattern="read$"))
 async def _(event):
     global images
     if event.fwd_from:

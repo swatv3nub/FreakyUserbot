@@ -3,17 +3,17 @@ from asyncio import sleep
 
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from HackfreaksUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from HackfreaksUserbot.Configs import Config
-from HackfreaksUserbot.server import edit_delete, edit_or_reply, parse_pre
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from FreakyUserbot.Configs import Config
+from FreakyUserbot.server import edit_delete, edit_or_reply, parse_pre
+from FreakyUserbot.utils import Freaky_on_cmd
 
 from .sql_helper import broadcast_sql as sql
 
 loggy_grp = Config.PRIVATE_GROUP_ID
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="sendto(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="sendto(?: |$)(.*)"))
 async def freakbroadcast_send(event):
     if event.fwd_from:
         return
@@ -23,14 +23,14 @@ async def freakbroadcast_send(event):
             event, "To which category should i send this message", parse_mode=parse_pre
         )
     reply = await event.get_reply_message()
-    cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+    freak = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     if not reply:
         return await edit_delete(
             event, "what should i send to to this category ?", parse_mode=parse_pre
         )
     keyword = catinput_str.lower()
     no_of_chats = sql.num_broadcastlist_chat(keyword)
-    group_ = Get(cat)
+    group_ = Get(freak)
     if no_of_chats == 0:
         return await edit_delete(
             event,
@@ -67,7 +67,7 @@ async def freakbroadcast_send(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="fwdto(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="fwdto(?: |$)(.*)"))
 async def freakbroadcast_send(event):
     if event.fwd_from:
         return
@@ -77,14 +77,14 @@ async def freakbroadcast_send(event):
             event, "To which category should i send this message", parse_mode=parse_pre
         )
     reply = await event.get_reply_message()
-    cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+    freak = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     if not reply:
         return await edit_delete(
             event, "what should i send to to this category ?", parse_mode=parse_pre
         )
     keyword = catinput_str.lower()
     no_of_chats = sql.num_broadcastlist_chat(keyword)
-    group_ = Get(cat)
+    group_ = Get(freak)
     if no_of_chats == 0:
         return await edit_delete(
             event,
@@ -121,7 +121,7 @@ async def freakbroadcast_send(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="addto(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="addto(?: |$)(.*)"))
 async def freakbroadcast_add(event):
     if event.fwd_from:
         return
@@ -158,7 +158,7 @@ async def freakbroadcast_add(event):
             )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="rmfrom(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="rmfrom(?: |$)(.*)"))
 async def freakbroadcast_remove(event):
     if event.fwd_from:
         return
@@ -195,7 +195,7 @@ async def freakbroadcast_remove(event):
             )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="list(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="list(?: |$)(.*)"))
 async def freakbroadcast_list(event):
     if event.fwd_from:
         return
@@ -237,7 +237,7 @@ async def freakbroadcast_list(event):
     await edit_or_reply(catevent, finaloutput)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="listall$"))
+@Freaky.on(Freaky_on_cmd(pattern="listall$"))
 async def freakbroadcast_list(event):
     if event.fwd_from:
         return
@@ -254,7 +254,7 @@ async def freakbroadcast_list(event):
     await edit_or_reply(event, resultext)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="frmfrom(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="frmfrom(?: |$)(.*)"))
 async def freakbroadcast_remove(event):
     if event.fwd_from:
         return
@@ -313,7 +313,7 @@ async def freakbroadcast_remove(event):
             )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="delc(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="delc(?: |$)(.*)"))
 async def freakbroadcast_delete(event):
     if event.fwd_from:
         return

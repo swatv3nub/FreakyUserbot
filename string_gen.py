@@ -6,7 +6,7 @@ print(
 Login using your Telegram account
 Click on API Development Tools
 Create a new application, by entering the required details
-For HackfreaksUserbot"""
+For FreakyUserbot"""
 )
 print("")
 
@@ -16,7 +16,7 @@ API_HASH = input("Enter API HASH here: ")
 with TelegramClient(StringSession(), APP_ID, API_HASH) as client:
     tele = client.send_message("me", client.session.save())
     tele.reply(
-        "The above is the `STRING_SESSION` for your current session.\n@HackfreaksUserbot"
+        "The above is the `STRING_SESSION` for your current session.\n@FreakyUserbot"
     )
     print("")
     print("")

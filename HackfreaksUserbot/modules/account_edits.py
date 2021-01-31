@@ -2,11 +2,11 @@
 # Kangers, don't remove this line
 # @xditya
 # Rewriten by @swatv3nub
-# Made for @HackfreaksUserbot
+# Made for @FreakyUserbot
 # Knagers keep the credit
 
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
+#    Freaky - Userbot
+#    Copyright (C) 2020 Freaky
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -30,11 +30,11 @@ from telethon.tl import functions
 from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
 from telethon.tl.types import InputPhoto
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="pbio (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="pbio (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -46,7 +46,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="pname ((.|\n)*)"))
+@Freaky.on(Freaky_on_cmd(pattern="pname ((.|\n)*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -66,7 +66,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="ppic"))
+@Freaky.on(Freaky_on_cmd(pattern="ppic"))
 async def _(event):
     if event.fwd_from:
         return
@@ -97,7 +97,7 @@ async def _(event):
         logger.warn(str(e))
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="delpfp ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="delpfp ?(.*)"))
 async def remove_profilepic(delpfp):
     """ For .delpfp command, delete your current profile picture in Telegram. """
     group = delpfp.text[8:]

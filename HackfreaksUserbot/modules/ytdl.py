@@ -24,8 +24,8 @@ from youtube_dl.utils import (
     XAttrMetadataError,
 )
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
@@ -87,14 +87,14 @@ def time_formatter(milliseconds: int) -> str:
     return tmp[:-2]
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="yt(a|v) (.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="yt(a|v) (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="yt(a|v) (.*)"))
+@Freaky.on(sudo_cmd(pattern="yt(a|v) (.*)", allow_sudo=True))
 async def download_video(v_url):
     """ For .ytdl command, download media from YouTube and many other sites. """
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
-    hackfreaksuserbot = await edit_or_reply(v_url, "Trying To Download......")
-    await hackfreaksuserbot.edit("`Preparing to download...`")
+    FreakyUserbot = await edit_or_reply(v_url, "Trying To Download......")
+    await FreakyUserbot.edit("`Preparing to download...`")
 
     if type == "a":
         opts = {
@@ -138,41 +138,41 @@ async def download_video(v_url):
         video = True
 
     try:
-        await Hackfreaks.edit("`Fetching data, please wait..`")
+        await Freaky.edit("`Fetching data, please wait..`")
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url)
     except DownloadError as DE:
-        await hackfreaksuserbot.edit(f"`{str(DE)}`")
+        await FreakyUserbot.edit(f"`{str(DE)}`")
         return
     except ContentTooShortError:
-        await Hackfreaks.edit("`The download content was too short.`")
+        await Freaky.edit("`The download content was too short.`")
         return
     except GeoRestrictedError:
-        await hackfreaksuserbot.edit(
+        await FreakyUserbot.edit(
             "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
         )
         return
     except MaxDownloadsReached:
-        await Hackfreaks.edit("`Max-downloads limit has been reached.`")
+        await Freaky.edit("`Max-downloads limit has been reached.`")
         return
     except PostProcessingError:
-        await Hackfreaks.edit("`There was an error during post processing.`")
+        await Freaky.edit("`There was an error during post processing.`")
         return
     except UnavailableVideoError:
-        await Hackfreaks.edit("`Media is not available in the requested format.`")
+        await Freaky.edit("`Media is not available in the requested format.`")
         return
     except XAttrMetadataError as XAME:
-        await Hackfreaks.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
+        await Freaky.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
         return
     except ExtractorError:
-        await Hackfreaks.edit("`There was an error during info extraction.`")
+        await Freaky.edit("`There was an error during info extraction.`")
         return
     except Exception as e:
-        await Hackfreaks.edit(f"{str(type(e)): {str(e)}}")
+        await Freaky.edit(f"{str(type(e)): {str(e)}}")
         return
     c_time = time.time()
     if song:
-        await Hackfreaks.edit(
+        await Freaky.edit(
             f"`Preparing to upload song:`\
         \n**{ytdl_data['title']}**\
         \nby *{ytdl_data['uploader']}*"
@@ -197,7 +197,7 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await hackfreaksuserbot.edit(
+        await FreakyUserbot.edit(
             f"`Preparing to upload video:`\
         \n**{ytdl_data['title']}**\
         \nby *{ytdl_data['uploader']}*"

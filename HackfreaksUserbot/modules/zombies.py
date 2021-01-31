@@ -14,8 +14,8 @@ from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 #
 BOTLOG = True
@@ -48,7 +48,7 @@ UNBAN_RIGHTS = ChatBannedRights(
 )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=f"zombies ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=f"zombies ?(.*)"))
 async def rm_deletedacc(show):
     """ For .zombies command, list all the ghost/deleted/zombie accounts in a chat. """
 
@@ -118,7 +118,7 @@ async def rm_deletedacc(show):
         )
 
 
-@Hackfreaks.on(sudo_cmd(pattern="zombies ?(.*)", allow_sudo=True))
+@Freaky.on(sudo_cmd(pattern="zombies ?(.*)", allow_sudo=True))
 async def rm_deletedacc(show):
     if show.fwd_from:
         return

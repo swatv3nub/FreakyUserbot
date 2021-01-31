@@ -1,1 +1,1 @@
-HackfreaksUserbot: python -m HackfreaksUserbot
+FreakyUserbot: python -m FreakyUserbot

@@ -5,12 +5,12 @@ Syntax: .mashup <text>
 """
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="mashup ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="mashup ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -37,7 +37,7 @@ async def _(event):
             await borg.send_file(event.chat_id, response.message, reply_to=reply_to_id)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="mash ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="mash ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

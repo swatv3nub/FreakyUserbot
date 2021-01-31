@@ -13,19 +13,19 @@
 
 import asyncio
 
-from HackfreaksUserbot.functions import fetch_feds
-from HackfreaksUserbot.modules.sql_helper.feds_sql import (
+from FreakyUserbot.functions import fetch_feds
+from FreakyUserbot.modules.sql_helper.feds_sql import (
     add_fed,
     get_all_feds,
     is_fed_indb,
     rmfed,
 )
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.utils import Freaky_on_cmd
 
 chnnl_grp = Config.FBAN_GROUP
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="fadd ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="fadd ?(.*)"))
 async def _(event):
     nolol = 0
     yeslol = 0
@@ -54,7 +54,7 @@ async def _(event):
         await event.edit("`Done ! Added This Fed To DataBase`")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="frm ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="frm ?(.*)"))
 async def _(event):
     lol_s = event.pattern_match.group(1)
     await event.edit("`Processing..`")
@@ -76,7 +76,7 @@ async def _(event):
         await event.edit("`This Fed Not Found On Db.`")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="fban"))
+@Freaky.on(Freaky_on_cmd(pattern="fban"))
 async def _(event):
     lol_s = event.text.split(" ", maxsplit=1)[1]
     if lol_s == None:
@@ -109,7 +109,7 @@ async def _(event):
     )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="unfban ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="unfban ?(.*)"))
 async def _(event):
     lol_s = event.pattern_match.group(1)
     if lol_s == None:

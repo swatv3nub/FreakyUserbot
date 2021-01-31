@@ -1,9 +1,9 @@
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 from var import Var
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="stat$"))
+@Freaky.on(Freaky_on_cmd(pattern="stat$"))
 async def stats(event):
     if event.fwd_from:
         return
@@ -16,7 +16,7 @@ async def stats(event):
     await event.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="xogame$"))
+@Freaky.on(Freaky_on_cmd(pattern="xogame$"))
 async def gamez(event):
     if event.fwd_from:
         return
@@ -29,7 +29,7 @@ async def gamez(event):
     await event.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="wspr ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="wspr ?(.*)"))
 async def wspr(event):
     if event.fwd_from:
         return
@@ -42,7 +42,7 @@ async def wspr(event):
     await event.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="mod ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="mod ?(.*)"))
 async def mod(event):
     if event.fwd_from:
         return

@@ -7,11 +7,11 @@ import time
 
 import aiohttp
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="weathers (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="weathers (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -57,7 +57,7 @@ async def _(event):
         await event.edit(response_api["message"])
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="wttr (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="wttr (.*)"))
 async def _(event):
     if event.fwd_from:
         return

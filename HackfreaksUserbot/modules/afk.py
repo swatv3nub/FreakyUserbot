@@ -1,5 +1,5 @@
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 HackfreaksUserbot
+#    Freaky - Userbot
+#    Copyright (C) 2020 FreakyUserbot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -15,7 +15,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-"""AFK Plugin for @HackfreaksUserbot
+"""AFK Plugin for @FreakyUserbot
 Syntax: .afk REASON"""
 import asyncio
 import datetime
@@ -24,7 +24,7 @@ from datetime import datetime
 from telethon import events
 from telethon.tl import functions, types
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
@@ -37,7 +37,7 @@ last_afk_message = {}
 afk_start = {}
 
 
-@Hackfreaks.on(
+@Freaky.on(
     events.NewMessage(pattern=r"\.afk ?(.*)", outgoing=True)
 )  # pylint:disable=E0602
 async def _(event):
@@ -81,7 +81,7 @@ async def _(event):
             logger.warn(str(e))  # pylint:disable=E0602
 
 
-@Hackfreaks.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
+@Freaky.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
 async def set_not_afk(event):
     global USER_AFK  # pylint:disable=E0602
     global afk_time  # pylint:disable=E0602
@@ -110,7 +110,7 @@ async def set_not_afk(event):
                 event.chat_id,
                 "Please set `PRIVATE_GROUP_ID` "
                 + "for the proper functioning of afk functionality "
-                + "Please Seek Support in @HackfreaksUserbot\n\n `{}`".format(str(e)),
+                + "Please Seek Support in @FreakyUserbot\n\n `{}`".format(str(e)),
                 reply_to=event.message.id,
                 silent=True,
             )
@@ -120,7 +120,7 @@ async def set_not_afk(event):
         afk_time = None  # pylint:disable=E0602
 
 
-@Hackfreaks.on(
+@Freaky.on(
     events.NewMessage(  # pylint:disable=E0602
         incoming=True, func=lambda e: bool(e.mentioned or e.is_private)
     )
@@ -140,7 +140,7 @@ async def on_afk(event):
     afk_since = "**a while ago**"
     current_message_text = event.message.message.lower()
     if "afk" in current_message_text:
-        # HackfreaksBot's should not reply to other HackfreaksBot's
+        # FreakyUserbot should not reply to other Freak's
         # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
         return False
     if USER_AFK and not (await event.get_sender()).bot:  # pylint:disable=E0602

@@ -2,11 +2,11 @@
 Syntax: .get_bot"""
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("get_bot ?(.*)"))
+@Freaky.on(Freaky_on_cmd("get_bot ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

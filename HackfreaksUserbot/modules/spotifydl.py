@@ -7,11 +7,11 @@ from telethon.errors.rpcerrorlist import (
 )
 from telethon.tl.functions.messages import ImportChatInviteRequest
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("spdl ?(.*)"))
+@Freaky.on(Freaky_on_cmd("spdl ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -37,7 +37,7 @@ async def _(event):
             await borg.send_file(
                 event.chat_id,
                 songh,
-                caption="🔆**Here's the requested song!**🔆\n`Check out` [ HackfreaksUserbot](https://github.com/swatv3nub/HackfreaksTelethonUserbot)",
+                caption="🔆**Here's the requested song!**🔆\n`Check out` [ FreakyUserbot](https://github.com/swatv3nub/FreakyUserbot)",
             )
             await event.delete()
         except YouBlockedUserError:

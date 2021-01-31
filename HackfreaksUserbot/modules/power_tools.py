@@ -8,11 +8,11 @@ Available Commands:
 import os
 import sys
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("restart"))
+@Freaky.on(Freaky_on_cmd("restart"))
 async def _(event):
     if event.fwd_from:
         return
@@ -29,7 +29,7 @@ async def _(event):
     quit()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("shutdown"))
+@Freaky.on(Freaky_on_cmd("shutdown"))
 async def _(event):
     if event.fwd_from:
         return

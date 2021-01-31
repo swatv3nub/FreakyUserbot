@@ -1,5 +1,5 @@
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
+#    Freaky - Userbot
+#    Copyright (C) 2020 Freaky
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -20,19 +20,19 @@ Syntax: .invite <User(s)>"""
 
 from telethon import functions
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 """Invite the user(s) to the current chat
 Syntax: .invite <User(s)>"""
 
 from telethon import functions
 
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="invite ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="invite ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="invite ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="invite ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

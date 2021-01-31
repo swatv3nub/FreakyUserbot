@@ -2,12 +2,12 @@
 Syntax: .wikimedia Query"""
 import requests
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="wikimedia (.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="wikimedia (.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="wikimedia (.*)"))
+@Freaky.on(sudo_cmd(pattern="wikimedia (.*)", allow_sudo=True))
 async def _(event):
     wowsosmart = await edit_or_reply(event, "Wait Finding This Bleeding Media xD")
     if event.fwd_from:

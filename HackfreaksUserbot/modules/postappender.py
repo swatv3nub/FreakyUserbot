@@ -13,18 +13,18 @@
 
 from telethon import events
 
-from HackfreaksUserbot.modules.sql_helper.PostAppender_sql import (
+from FreakyUserbot.modules.sql_helper.PostAppender_sql import (
     add_new_datas_in_db,
     is_data_indbs,
     is_footer,
     remove_dataz,
 )
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.utils import Freaky_on_cmd
 
 lulfreaks = [".", ",", "!", "'"]
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="spf (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="spf (.*)"))
 async def mfreaks(event):
     await event.edit("`Processing..`")
     lul_id = event.chat_id
@@ -47,7 +47,7 @@ async def mfreaks(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="sph (.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="sph (.*)"))
 async def _freaky(event):
     await event.edit("`Processing..`")
     lul_id = event.chat_id
@@ -70,7 +70,7 @@ async def _freaky(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="rpd$"))
+@Freaky.on(Freaky_on_cmd(pattern="rpd$"))
 async def _m(event):
     await event.edit("`Processing..`")
     id_s = event.chat_id
@@ -97,7 +97,7 @@ async def luli(event):
         return
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="spad$"))
+@Freaky.on(Freaky_on_cmd(pattern="spad$"))
 async def _m(event):
     await event.edit("`Processing..`")
     id_s = event.chat_id

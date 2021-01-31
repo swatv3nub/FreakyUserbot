@@ -1,9 +1,9 @@
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
+#    Freaky - Userbot
+#    Copyright (C) 2020 Freaky
 
 
 """ Userbot module for managing events.
- One of the main components of the Hackfreaksbot. """
+ One of the main components of the FreakyUserbot. """
 
 import sys
 from asyncio import create_subprocess_shell as asyncsubshell
@@ -14,7 +14,7 @@ from traceback import format_exc
 
 from telethon import events
 
-from HackfreaksUserbot import LOGSPAMMER, PRIVATE_GROUP_ID, bot
+from FreakyUserbot import LOGSPAMMER, PRIVATE_GROUP_ID, bot
 
 
 def register(**args):
@@ -127,8 +127,8 @@ def register(**args):
 
                     if LOGSPAMMER:
                         await check.client.respond(
-                            "`Sorry, my HackfreaksUserbot has crashed.\
-                        \nThe error logs are stored in the HackfreaksUserbot's log chat.`"
+                            "`Sorry, my FreakyUserbot has crashed.\
+                        \nThe error logs are stored in the FreakyUserbot's log chat.`"
                         )
 
                     await check.client.send_file(send_to, "error.log", caption=text)

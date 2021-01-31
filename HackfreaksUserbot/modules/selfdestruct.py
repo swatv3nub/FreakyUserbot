@@ -7,11 +7,11 @@
 
 import time
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("sd", outgoing=True))
+@Freaky.on(Freaky_on_cmd("sd", outgoing=True))
 async def selfdestruct(destroy):
     """ For .sd command, make seflf-destructable messages. """
     if not destroy.text[0].isalpha() and destroy.text[0] not in ("/", "#", "@", "!"):

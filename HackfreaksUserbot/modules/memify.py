@@ -7,14 +7,14 @@ import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import MessageMediaPhoto
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("mmf ?(.*)"))
+@Freaky.on(Freaky_on_cmd("mmf ?(.*)"))
 async def _(event):
     hmm = event.chat_id
     if event.fwd_from:

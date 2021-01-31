@@ -5,14 +5,14 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
-from HackfreaksUserbot import CMD_HELP, sclient
-from HackfreaksUserbot.modules.sql_helper.gmute_sql import is_gmuted
-from HackfreaksUserbot.modules.sql_helper.mute_sql import is_muted
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP, sclient
+from FreakyUserbot.modules.sql_helper.gmute_sql import is_gmuted
+from FreakyUserbot.modules.sql_helper.mute_sql import is_muted
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("info ?(.*)"))
-@Hackfreaks.on(sudo_cmd("info ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("info ?(.*)"))
+@Freaky.on(sudo_cmd("info ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -140,8 +140,8 @@ async def get_full_user(event):
                 return None, e
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("cas ?(.*)"))
-@Hackfreaks.on(sudo_cmd("cas ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("cas ?(.*)"))
+@Freaky.on(sudo_cmd("cas ?(.*)", allow_sudo=True))
 async def gibinfo(event):
     if not event.pattern_match.group(1):
         user = (

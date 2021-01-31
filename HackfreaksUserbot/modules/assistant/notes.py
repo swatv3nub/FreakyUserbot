@@ -1,8 +1,8 @@
 from telethon import events, utils
 from telethon.tl import types
 
-from HackfreaksUserbot.Configs import Config
-from HackfreaksUserbot.modules.sql_helper.snips_sql import (
+from FreakyUserbot.Configs import Config
+from FreakyUserbot.modules.sql_helper.snips_sql import (
     add_snip,
     get_all_snips,
     get_snips,
@@ -14,7 +14,7 @@ TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
 
 
-@hackfreaksbot.on(events.NewMessage(pattern=r"\#(\S+)"))
+@freakybot.on(events.NewMessage(pattern=r"\#(\S+)"))
 async def on_snip(event):
     name = event.pattern_match.group(1)
     snip = get_snips(name)
@@ -36,7 +36,7 @@ async def on_snip(event):
         message_id = event.message.id
         if event.reply_to_msg_id:
             message_id = event.reply_to_msg_id
-        await hackfreaksbot.send_message(
+        await freakybot.send_message(
             event.chat_id, snip.reply, reply_to=message_id, file=media
         )
 

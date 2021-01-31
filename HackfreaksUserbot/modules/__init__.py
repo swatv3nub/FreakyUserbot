@@ -1,5 +1,5 @@
-from HackfreaksUserbot.Configs import Config
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.Configs import Config
+from FreakyUserbot.utils import Freaky_on_cmd
 from var import Var
 
 issudousing = Config.SUDO_USERS
@@ -52,7 +52,7 @@ else:
     dbstats = "Not Fine ❌"
 
 inlinestats = (
-    f"✘ SHOWING Hackfreaks STATS ✘\n"
+    f"✘ SHOWING Freaky STATS ✘\n"
     f"VERSION = {currentversion} \n"
     f"DATABASE = {dbstats} \n"
     f"SUDO = {amiusingsudo} \n"

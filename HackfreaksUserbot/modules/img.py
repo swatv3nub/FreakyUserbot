@@ -7,13 +7,13 @@ import os
 import shutil
 from re import findall
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.googol_images import googleimagesdownload
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.googol_images import googleimagesdownload
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="img ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="img ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="img ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="img ?(.*)", allow_sudo=True))
 async def img_sampler(event):
     await edit_or_reply(event, "`Processing...`")
     reply = await event.get_reply_message()

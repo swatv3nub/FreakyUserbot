@@ -2,7 +2,7 @@ import asyncio
 
 from telethon import events
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
@@ -23,8 +23,8 @@ async def _(event):
         await event.edit(input_str)
 
         animation_chars = [
-            "https://github.com/swatv3nub/HackfreaksTelethonUserbot",
-            "https://github.com/swatv3nub/HackfreaksTelethonUserbot",
+            "https://github.com/swatv3nub/FreakyUserbot",
+            "https://github.com/swatv3nub/FreakyUserbot",
         ]
 
         for i in animation_ttl:

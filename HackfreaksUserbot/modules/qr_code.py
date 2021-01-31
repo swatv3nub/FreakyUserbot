@@ -9,8 +9,8 @@ from datetime import datetime
 import qrcode
 from bs4 import BeautifulSoup
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
 def progress(current, total):
@@ -21,7 +21,7 @@ def progress(current, total):
     )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="getqr"))
+@Freaky.on(Freaky_on_cmd(pattern="getqr"))
 async def _(event):
     if event.fwd_from:
         return
@@ -69,7 +69,7 @@ async def _(event):
     await event.edit(qr_contents)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="makeqr ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="makeqr ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

@@ -8,11 +8,11 @@ from pathlib import Path
 
 from telethon.tl.types import InputMessagesFilterDocument
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, load_module
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, load_module
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("ipa (.*)"))
+@Freaky.on(Freaky_on_cmd("ipa (.*)"))
 async def install(event):
     if event.fwd_from:
         return
@@ -26,7 +26,7 @@ async def install(event):
     for ixo in total_doxx:
         mxo = documentss[ixo].id
         downloaded_file_name = await event.client.download_media(
-            await borg.get_messages(chat, ids=mxo), "HackfreaksUserbot/modules/"
+            await borg.get_messages(chat, ids=mxo), "FreakyUserbot/modules/"
         )
         if "(" not in downloaded_file_name:
             path1 = Path(downloaded_file_name)

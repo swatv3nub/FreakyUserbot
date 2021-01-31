@@ -37,7 +37,7 @@ from youtube_dl.utils import (
     XAttrMetadataError,
 )
 
-from HackfreaksUserbot.utils import load_module
+from FreakyUserbot.utils import load_module
 
 SIZE_UNITS = ["B", "KB", "MB", "GB", "TB", "PB"]
 BASE_URL = "https://isubtitles.org"
@@ -46,10 +46,10 @@ import zipfile
 
 import aiohttp
 
-from HackfreaksUserbot.Configs import Config
+from FreakyUserbot.Configs import Config
 
 sedpath = Config.TMP_DOWNLOAD_DIRECTORY
-from HackfreaksUserbot import logging
+from FreakyUserbot import logging
 
 logger = logging.getLogger("[--WARNING--]")
 if not os.path.isdir(sedpath):
@@ -178,7 +178,7 @@ async def get_all_modules(event, borg, channel_id):
     for sed in a_plugins:
         try:
             downloaded_file_name = await borg.download_media(
-                sed, "HackfreaksUserbot/modules/"
+                sed, "FreakyUserbot/modules/"
             )
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
@@ -498,7 +498,7 @@ async def check_if_subbed(channel_id, event, bot):
         return False
 
 
-async def _ytdl(url, is_it, event, hackfreaksbot):
+async def _ytdl(url, is_it, event, freakybot):
     await event.edit(
         "`Ok Downloading This Video / Audio - Please Wait.` \n**Powered By @WhiteEyeDevs**"
     )
@@ -554,7 +554,7 @@ async def _ytdl(url, is_it, event, hackfreaksbot):
         \n**Title :** `{ytdl_data['title']}`\
         \n**Video Uploader :** `{ytdl_data['uploader']}`"
         )
-        lol_m = await hackfreaksbot.upload_file(
+        lol_m = await freakybot.upload_file(
             file=f"{ytdl_data['id']}.mp3",
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(
@@ -577,7 +577,7 @@ async def _ytdl(url, is_it, event, hackfreaksbot):
         \n**Title :** `{ytdl_data['title']}`\
         \n**Video Uploader :** `{ytdl_data['uploader']}`"
         )
-        hmmo = await hackfreaksbot.upload_file(
+        hmmo = await freakybot.upload_file(
             file=f"{ytdl_data['id']}.mp4",
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(

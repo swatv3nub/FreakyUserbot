@@ -2,10 +2,10 @@
 Syntax: .schd <time_in_seconds> ;=; <message to send>"""
 import asyncio
 
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("schd ?(.*)"))
+@Freaky.on(Freaky_on_cmd("schd ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

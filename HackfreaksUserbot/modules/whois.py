@@ -1,5 +1,5 @@
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
+#    Freaky - Userbot
+#    Copyright (C) 2020 Freaky
 
 """
 Get detailed info about any user
@@ -11,13 +11,13 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 TMP_DOWNLOAD_DIRECTORY = "./"
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="whois(?: |$)(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="whois(?: |$)(.*)"))
 async def who(event):
     """ For .whois command, get info about a user. """
     if event.fwd_from:

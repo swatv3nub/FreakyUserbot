@@ -7,7 +7,7 @@ By: @Zero_cool7870
 import requests
 from telethon import events
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
 async def download_file_from_google_drive(id):
@@ -83,7 +83,7 @@ async def get_file_name(content):
     return file_name
 
 
-@Hackfreaks.on(events.NewMessage(pattern=r"\.gdl", outgoing=True))
+@Freaky.on(events.NewMessage(pattern=r"\.gdl", outgoing=True))
 async def g_download(event):
     if event.fwd_from:
         return

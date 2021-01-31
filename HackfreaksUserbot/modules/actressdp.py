@@ -1,7 +1,7 @@
 # Ported from other Telegram UserBots for TeleBot//Made for TeleBot
 # Kangers, don't remove this line
 # @xditya
-# For @HackfreaksUserbot
+# For @FreakyUserbot
 
 # Usage .actressdp Im Not Responsible For Any Ban caused By This
 
@@ -14,8 +14,8 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 COLLECTION_STRING = [
     "indian-actress-wallpapers",
@@ -54,11 +54,11 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="actressdp ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="actressdp ?(.*)"))
 async def main(event):
 
     await event.edit(
-        "**Starting Actress Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. \n By [Hackfreaks](https://github.com/swatv3nub/HackfreaksTelethonUserbot)**"
+        "**Starting Actress Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. \n By [Freaky](https://github.com/swatv3nub/FreakyUserbot)**"
     )
 
     while True:

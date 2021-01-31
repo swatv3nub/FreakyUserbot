@@ -1,5 +1,5 @@
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
+#    Freaky - Userbot
+#    Copyright (C) 2020 Freaky
 
 
 import os
@@ -40,7 +40,7 @@ if ENV:
             "HASH_TO_TORRENT_API", "https://example.com/torrent/{}"
         )
         # This is required for the @telegraph functionality.
-        TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "Hackfreaks")
+        TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "Freaky")
         # Get a Free API Key from OCR.Space
         OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
         DEEP_API_KEY = os.environ.get("DEEP_API_KEY", None)
@@ -104,8 +104,8 @@ if ENV:
         )
         # specify command handler that should be used for the modules
         # this should be a valid "regex" pattern
-        COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", "\.")
-        SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", "\.")
+        CMD_HNDLR = os.environ.get("CMD_HNDLR", "\.")
+        SUDO_HNDLR = os.environ.get("SUDO_HNDLR", "")
         BOT_HANDLER = os.environ.get("BOT_HANDLER", "^/")
         # specify list of users allowed to use bot
         # WARNING: be careful who you grant access to your bot.
@@ -162,7 +162,7 @@ if ENV:
         SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
         ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
         UPSTREAM_REPO = os.environ.get(
-            "UPSTREAM_REPO", "https://github.com/swatv3nub/HackfreaksTelethonUserbot"
+            "UPSTREAM_REPO", "https://github.com/swatv3nub/FreakyUserbot"
         )
         ALIVE_IMAGE = os.environ.get(
             "ALIVE_IMAGE", "https://telegra.ph/file/bb3741b7596bf90f47568.png"

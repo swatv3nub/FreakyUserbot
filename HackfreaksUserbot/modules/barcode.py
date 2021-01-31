@@ -9,13 +9,13 @@ from datetime import datetime
 
 import barcode
 from barcode.writer import ImageWriter
-from uniborg.util import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from uniborg.util import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="barcode ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="barcode ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="barcode ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="barcode ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

@@ -2,11 +2,11 @@ import asyncio
 
 from telethon.errors.rpcerrorlist import MessageIdInvalidError
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="dump ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="dump ?(.*)"))
 async def _(message):
     try:
         obj = message.pattern_match.group(1)

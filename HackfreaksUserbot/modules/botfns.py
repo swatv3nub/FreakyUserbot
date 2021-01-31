@@ -1,21 +1,21 @@
-#    Hackfreaks - UserBot
-#    Copyright (C) 2021 Hackfreaks
+#    Freaky - Userbot
+#    Copyright (C) 2021 Freaky
 #    written by @xditya
 
 from telegraph import Telegraph
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 from heroku_config import Var
 
 telegraph = Telegraph()
-mee = telegraph.create_account(short_name="Hackfreaks")
+mee = telegraph.create_account(short_name="Freaky")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="purl ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="purl ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="purl ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="purl ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -42,8 +42,8 @@ async def _(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="reader ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="reader ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="reader ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="reader ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -73,8 +73,8 @@ async def _(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="aud ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="aud ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="aud ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="aud ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -105,8 +105,8 @@ async def _(event):
         await event.client.send_file(event.chat_id, response.message.media)
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="instadl ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="instadl ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="instadl ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="instadl ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -133,8 +133,8 @@ async def _(event):
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="status$"))
-@Hackfreaks.on(sudo_cmd(pattern="stats$", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="status$"))
+@Freaky.on(sudo_cmd(pattern="stats$", allow_sudo=True))
 async def stats(event):
     if event.fwd_from:
         return
@@ -147,8 +147,8 @@ async def stats(event):
     await event.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="xogame$"))
-@Hackfreaks.on(sudo_cmd(pattern="xogame$", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="xogame$"))
+@Freaky.on(sudo_cmd(pattern="xogame$", allow_sudo=True))
 async def gamez(event):
     if event.fwd_from:
         return
@@ -161,8 +161,8 @@ async def gamez(event):
     await event.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="whisper ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="whisper ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="whisper ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="whisper ?(.*)", allow_sudo=True))
 async def wspr(event):
     if event.fwd_from:
         return
@@ -175,8 +175,8 @@ async def wspr(event):
     await event.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="crack ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="crack ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="crack ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="crack ?(.*)", allow_sudo=True))
 async def mod(event):
     if event.fwd_from:
         return
@@ -189,8 +189,8 @@ async def mod(event):
     await event.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="checkspam ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="checkspam ?(.*), allow_sudo=True"))
+@Freaky.on(Freaky_on_cmd(pattern="checkspam ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="checkspam ?(.*), allow_sudo=True"))
 async def _(event):
     bot = "@SpamBot"
     if event.fwd_from:
@@ -203,15 +203,15 @@ async def _(event):
                 await conv.get_response()
                 await conv.send_message("/start")
                 audio = await conv.get_response()
-                final = ("See if you are limited..\n(c)@HackfreaksUserbot", "")
+                final = ("See if you are limited..\n(c)@FreakyUserbot", "")
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
                 await eor(event, "**Error:** `unblock` @spambot `and retry!")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="gitdl ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="gitdl ?(.*), allow_sudo=True"))
+@Freaky.on(Freaky_on_cmd(pattern="gitdl ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="gitdl ?(.*), allow_sudo=True"))
 async def _(event):
     if event.fwd_from:
         return
@@ -237,12 +237,12 @@ async def _(event):
             event.chat_id, response.message, reply_to=reply_message
         )
         await x.edit(
-            "Downloaded by [Hackfreaks](t.me/HackfreaksUserbot), via @gitdownloadbot"
+            "Downloaded by [Freaky](t.me/FreakyUserbot), via @gitdownloadbot"
         )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="imusic ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="imusic ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="imusic ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="imusic ?(.*)", allow_sudo=True))
 async def tel(event):
     if event.fwd_from:
         return
@@ -255,8 +255,8 @@ async def tel(event):
     await event.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="font ?(.*)"))
-@Hackfreaks.on(sudo_cmd(pattern="font ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="font ?(.*)"))
+@Freaky.on(sudo_cmd(pattern="font ?(.*)", allow_sudo=True))
 async def _(event):
     bot = "@fontsgenbot"
     if event.fwd_from:
@@ -303,5 +303,5 @@ CMD_HELP.update(
 )
 
 
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
+#    Freaky - Userbot
+#    Copyright (C) 2020 Freaky

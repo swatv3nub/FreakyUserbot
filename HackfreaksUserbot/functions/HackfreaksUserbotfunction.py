@@ -5,7 +5,7 @@ import string
 
 
 # String Finder
-def hackfreaks_finder(s, first, last):
+def freaky_finder(s, first, last):
     try:
         start = s.index(first) + len(first)
         end = s.index(last, start)

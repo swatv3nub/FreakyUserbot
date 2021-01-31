@@ -4,8 +4,8 @@ from math import ceil
 
 from telethon import Button, custom, events, functions
 
-from HackfreaksUserbot import ALIVE_NAME, CMD_HELP, CMD_LIST
-from HackfreaksUserbot.modules import inlinestats
+from FreakyUserbot import ALIVE_NAME, CMD_HELP, CMD_LIST
+from FreakyUserbot.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
@@ -13,19 +13,19 @@ if PMPERMIT_PIC is None:
 else:
     WARN_PIC = PMPERMIT_PIC
 LOG_CHAT = Config.PRIVATE_GROUP_ID
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hackfreaks"
-if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Freaky"
+if Var.TG_BOT_USER_NAME_BF_HER is not None and freakybot is not None:
 
-    @hackfreaksbot.on(events.InlineQuery)  # pylint:disable=E0602
+    @freakybot.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query.startswith("Hackfreaks"):
+        if event.query.user_id == bot.uid and query.startswith("Freaky"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© Hackfreaks Help",
+                "© Freaky Help",
                 text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
@@ -33,16 +33,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
         if event.query.user_id == bot.uid and query == "stats":
             result = builder.article(
                 title="Stats",
-                text=f"**Showing Stats For {DEFAULTUSER}'s Hackfreaks** \nNote --> Only Owner Can Check This \n(C) @HackfreaksUserbot",
+                text=f"**Showing Stats For {DEFAULTUSER}'s Freaky** \nNote --> Only Owner Can Check This \n(C) @FreakyUserbot",
                 buttons=[
                     [custom.Button.inline("Show Stats ", data="terminator")],
                     [
                         Button.url(
                             "Repo ",
-                            "https://github.com/swatv3nub/HackfreaksTelethonUserbot",
+                            "https://github.com/swatv3nub/FreakyUserbot",
                         )
                     ],
-                    [Button.url("Join Channel", "t.me/HackfreaksUserbot")],
+                    [Button.url("Join Channel", "t.me/FreakyUserbot")],
                 ],
             )
         if event.query.user_id == bot.uid and query.startswith("**Hello"):
@@ -62,7 +62,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             )
         await event.answer([result] if result else None)
 
-    @hackfreaksbot.on(
+    @freakybot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"helpme_next\((.+?)\)")
         )
@@ -74,10 +74,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_popp_up_alert = "Please get your own HackfreaksUserbot, and don't use mine Any Support @HackfreaksUserbot"
+            reply_popp_up_alert = "Please get your own FreakyUserbot, and don't use mine Any Support @FreakyUserbot"
             await event.answer(reply_popp_up_alert, cache_time=0, alert=True)
 
-    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+    @freakybot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await event.edit(
@@ -85,11 +85,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             )
         else:
             reply_pop_up_alert = (
-                "Please get your own HackfreaksUserbot from @HackfreaksUserbot "
+                "Please get your own FreakyUserbot from @FreakyUserbot "
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @hackfreaksbot.on(
+    @freakybot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"helpme_prev\((.+?)\)")
         )
@@ -103,10 +103,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own HackfreaksUserbot, and don't use mine Any Support Ask [HackfreaksUserbot](https://t.me/HackfreaksUserbot)!"
+            reply_pop_up_alert = "Please get your own FreakyUserbot, and don't use mine Any Support Ask [FreakyUserbot](https://t.me/FreakyUserbot)!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @hackfreaksbot.on(
+    @freakybot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"us_plugin_(.*)")
         )
@@ -134,7 +134,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             else:
                 reply_pop_up_alert = help_string
             reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
-                © Hackfreaks".format(
+                © Freaky".format(
                 plugin_name
             )
             if len(help_string) >= 140:
@@ -148,10 +148,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             else:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
-            reply_pop_up_alert = "Please Get Your Own HackfreaksUserbot And Dont Use Mine Need Any Support Ask [HackfreaksUserbot](https://t.me/HackfreaksUserbot)"
+            reply_pop_up_alert = "Please Get Your Own FreakyUserbot And Dont Use Mine Need Any Support Ask [FreakyUserbot](https://t.me/FreakyUserbot)"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @hackfreaksbot.on(
+    @freakybot.on(
         events.callbackquery.CallbackQuery(data=re.compile(b"terminator"))
     )
     async def rip(event):
@@ -162,15 +162,15 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
             txt = "You Can't View My Masters Stats"
             await event.answer(txt, alert=True)
 
-    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"wannaspam")))
+    @freakybot.on(events.callbackquery.CallbackQuery(data=re.compile(b"wannaspam")))
     async def rip(event):
         await event.get_chat()
-        text1 = "You Have Chosed A Probhited Option. Therefore, You Have Been Blocked By Hackfreaks. 💢"
+        text1 = "You Have Chosed A Probhited Option. Therefore, You Have Been Blocked By Freaky. 💢"
         await event.edit("Choice Not Accepted ❌")
         await borg.send_message(event.query.user_id, text1)
         await borg(functions.contacts.BlockRequest(event.query.user_id))
 
-    @hackfreaksbot.on(
+    @freakybot.on(
         events.callbackquery.CallbackQuery(data=re.compile(b"casualbitching"))
     )
     async def rip(event):
@@ -179,20 +179,20 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and hackfreaksbot is not None:
         await event.edit("Choice Accepted ✔️")
         text2 = "Ok. Please Wait Until My Master Approves. Don't Spam Or Try Anything Stupid. \nThank You For Contacting Me."
         await borg.send_message(event.query.user_id, text2)
-        await hackfreaksbot.send_message(
+        await freakybot.send_message(
             LOG_CHAT,
             message=f"Hello, A [New User](tg://user?id={him_id}). Wants To Talk With You.",
             buttons=[Button.url("Contact Him", f"tg://user?id={him_id}")],
         )
 
-    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
+    @freakybot.on(events.callbackquery.CallbackQuery(data=re.compile(b"askme")))
     async def rip(event):
         await event.get_chat()
         await event.edit("Choice Accepted ✔️")
         text3 = "Ok, Wait. You can Ask After Master Approves You. Kindly, Wait."
         await borg.send_message(event.query.user_id, text3)
 
-    @hackfreaksbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"others")))
+    @freakybot.on(events.callbackquery.CallbackQuery(data=re.compile(b"others")))
     async def rip(event):
         await event.get_chat()
         await event.edit("Choice Accepted ✔️")

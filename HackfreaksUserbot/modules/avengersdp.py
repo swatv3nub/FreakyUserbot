@@ -1,4 +1,4 @@
-# @HackfreaksUserbot Keep Credits If You Are Goanna Kang This Lol
+# @FreakyUserbot Keep Credits If You Are Goanna Kang This Lol
 # And Thanks To The Creator Of Autopic This Script Was Made from Snippets From That Script
 # Usage .avengersdp Im Not Responsible For Any Ban caused By This
 
@@ -11,8 +11,8 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 COLLECTION_STRING = [
     "avengers-logo-wallpaper",
@@ -51,11 +51,11 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="avengersdp ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="avengersdp ?(.*)"))
 async def main(event):
 
     await event.edit(
-        "**Starting Avengers Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. By [Hackfreaks](https://github.com/swatv3nub/HackfreaksTelethonUserbot)**"
+        "**Starting Avengers Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. By [Freaky](https://github.com/swatv3nub/FreakyUserbot)**"
     )
 
     while True:

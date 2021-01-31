@@ -2,13 +2,13 @@ import asyncio
 import os
 from pathlib import Path
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, load_module
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, load_module
 
 DELETE_TIMEOUT = 5
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="install"))
+@Freaky.on(Freaky_on_cmd(pattern="install"))
 async def install(event):
     if event.fwd_from:
         return
@@ -17,14 +17,14 @@ async def install(event):
         try:
             downloaded_file_name = await event.client.download_media(
                 sedplugin,
-                "HackfreaksUserbot/modules/",
+                "FreakyUserbot/modules/",
             )
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
                 await event.edit(
-                    "Hackfreaks Has Installed `{}` Sucessfully.".format(
+                    "Freaky Has Installed `{}` Sucessfully.".format(
                         os.path.basename(downloaded_file_name)
                     )
                 )

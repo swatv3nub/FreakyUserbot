@@ -11,13 +11,13 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 # RegEx by https://t.me/c/1220993104/500653 ( @SnapDragon7410 )
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="stcr ?(?:(.*?) \| )?(.*)", outgoing=True))
+@Freaky.on(Freaky_on_cmd(pattern="stcr ?(?:(.*?) \| )?(.*)", outgoing=True))
 async def sticklet(event):
     R = random.randint(0, 256)
     G = random.randint(0, 256)
@@ -37,7 +37,7 @@ async def sticklet(event):
         return
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
-    # delete the HackfreaksUserbot command,
+    # delete the FreakyUserbot command,
     # i don't know why this is required
     await event.delete()
     # https://docs.python.org/3/library/textwrap.html#textwrap.wrap
@@ -57,14 +57,14 @@ async def sticklet(event):
         ((512 - width) / 2, (512 - height) / 2), sticktext, font=font, fill=(R, G, B)
     )
     image_stream = io.BytesIO()
-    image_stream.name = "@Hackfreaks.webp"
+    image_stream.name = "@Freaky.webp"
     image.save(image_stream, "WebP")
     image_stream.seek(0)
     # finally, reply the sticker
     await event.client.send_file(
         event.chat_id,
         image_stream,
-        caption="HackfreaksUserbot",
+        caption="FreakyUserbot",
         reply_to=event.message.reply_to_msg_id,
     )
     # cleanup
@@ -74,7 +74,7 @@ async def sticklet(event):
         pass
 
 
-@Hackfreaks.on(sudo_cmd(pattern="stcr ?(?:(.*?) \| )?(.*)", allow_sudo=True))
+@Freaky.on(sudo_cmd(pattern="stcr ?(?:(.*?) \| )?(.*)", allow_sudo=True))
 async def sticklet(event):
     R = random.randint(0, 256)
     G = random.randint(0, 256)
@@ -94,7 +94,7 @@ async def sticklet(event):
         return
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
-    # delete the HackfreaksUserbot command,
+    # delete the FreakyUserbot command,
     # i don't know why this is required
     await event.delete()
     # https://docs.python.org/3/library/textwrap.html#textwrap.wrap
@@ -114,14 +114,14 @@ async def sticklet(event):
         ((512 - width) / 2, (512 - height) / 2), sticktext, font=font, fill=(R, G, B)
     )
     image_stream = io.BytesIO()
-    image_stream.name = "@Hackfreaks.webp"
+    image_stream.name = "@Freaky.webp"
     image.save(image_stream, "WebP")
     image_stream.seek(0)
     # finally, reply the sticker
     await event.client.send_file(
         event.chat_id,
         image_stream,
-        caption="HackfreaksUserbot",
+        caption="FreakyUserbot",
         reply_to=event.message.reply_to_msg_id,
     )
     # cleanup

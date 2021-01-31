@@ -2,13 +2,13 @@
 # If you steal this without credits You will be the geyest gey ever in the world that you will suck cat's dick.
 import asyncio
 
-from HackfreaksUserbot import ALIVE_NAME, CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import ALIVE_NAME, CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="hbty$"))
+@Freaky.on(Freaky_on_cmd(pattern="hbty$"))
 async def _(event):
     if event.fwd_from:
         return

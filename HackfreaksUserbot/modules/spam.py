@@ -2,10 +2,10 @@ from asyncio import wait
 
 from telethon import events
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
-@Hackfreaks.on(events.NewMessage(pattern=r"\.spam", outgoing=True))
+@Freaky.on(events.NewMessage(pattern=r"\.spam", outgoing=True))
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text

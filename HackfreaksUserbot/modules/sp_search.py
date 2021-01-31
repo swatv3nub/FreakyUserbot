@@ -8,10 +8,10 @@ By: @Zero_cool7870
 import json
 import os
 
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="sch ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="sch ?(.*)", allow_sudo=True))
 async def sp_search(event):
     search_str = event.pattern_match.group(1)
 

@@ -8,14 +8,14 @@ from telethon import custom, events
 from telethon.tl.types import Channel
 from telethon.utils import get_display_name
 
-from HackfreaksUserbot.Configs import Config
+from FreakyUserbot.Configs import Config
 
 if Config.TAG_LOG:
     NEEDTOLOG = int(Config.TAG_LOG)
 
 if Config.TAG_LOG:
 
-    @Hackfreaks.on(
+    @Freaky.on(
         events.NewMessage(
             incoming=True,
             blacklist_chats=Config.UB_BLACK_LIST_CHAT,

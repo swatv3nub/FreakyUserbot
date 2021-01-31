@@ -7,10 +7,10 @@ Support Channel/Group
 
 import asyncio
 
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("Hackfreaks"))
+@Freaky.on(Freaky_on_cmd("Freaky"))
 async def _(event):
     if event.fwd_from:
         return
@@ -21,7 +21,7 @@ async def _(event):
     await event.edit("For Support")
     animation_chars = [
         "Click here",
-        "[Support](https://t.me/HackfreaksUserbot)",
+        "[Support](https://t.me/FreakyUserbot)",
     ]
 
     for i in animation_ttl:

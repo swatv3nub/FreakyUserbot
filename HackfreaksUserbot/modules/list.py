@@ -1,5 +1,5 @@
 """
-List Files plugin for Hackfreaksbot //Simple Module for people who dont wanna use shell executor for listing files.
+List Files plugin for FreakyUserbot //Simple Module for people who dont wanna use shell executor for listing files.
 cmd: .ls // will return files from current working directory
 	 .ls path // will return output according to path  
 
@@ -9,12 +9,12 @@ By:- @Zero_cool7870
 
 import os
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="ls ?(.*)"))
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="ls ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="ls ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="ls ?(.*)", allow_sudo=True))
 async def lst(event):
     genesis = await edit_or_reply(event, "Processing")
     if event.fwd_from:

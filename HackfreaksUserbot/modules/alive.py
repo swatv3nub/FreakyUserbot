@@ -1,11 +1,11 @@
-"""Check if HackfreaksUserbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
+"""Check if FreakyUserbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
 # CREDITS: @WhySooSerious, @Sur_vivor
 import time
 
-from HackfreaksUserbot import ALIVE_NAME, CMD_HELP, Lastupdate
-from HackfreaksUserbot.Configs import Config
-from HackfreaksUserbot.modules import currentversion
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import ALIVE_NAME, CMD_HELP, Lastupdate
+from FreakyUserbot.Configs import Config
+from FreakyUserbot.modules import currentversion
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 
 # Functions
@@ -42,25 +42,25 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 
 PM_IMG = Config.ALIVE_IMAGE
 
-pm_caption = "**✗ Hackfreaks Userbot is Alive ✗**\n\n"
+pm_caption = "**✗ Freaky Userbot is Alive ✗**\n\n"
 pm_caption += f"**✗ Owner **: {DEFAULTUSER}\n\n"
 pm_caption += "**✗ Telethon Version:** `Latest` \n"
-pm_caption += f"**✗ Hackfreaks Version**: `{currentversion} Alpha`\n"
-pm_caption += "**✗ Python:** `3.8.5` \n"
+pm_caption += f"**✗ Freaky Version**: `{currentversion} Alpha`\n"
+pm_caption += "**✗ Python:** `3.8.6` \n"
 pm_caption += f"**✗ Uptime** : `{uptime}` \n\n"
 pm_caption += (
     "**✗ Copyright** : [ProjectHackfreaks](https://t.me/ProjectHackfreaks)\n\n"
 )
-pm_caption += "**✗ License** : [GNU General Public License v3.0](https://github.com/swatv3nub/HackfreaksTelethonUserbot/blob/main/LICENSE)\n\n"
-pm_caption += "**[✗ Updates](https://t.me/HackfreaksUserbot)**\n"
+pm_caption += "**✗ License** : [GNU General Public License v3.0](https://github.com/swatv3nub/FreakyUserbot/blob/main/LICENSE)\n\n"
+pm_caption += "**[✗ Updates](https://t.me/FreakyUserbot)**\n"
 pm_caption += "**[✗ Support](https://t.meHackfreaksSupport)**\n\n"
-pm_caption += "**[✗ GitHub Respiratory ✗](https://github.com/swatv3nub/HackfreaksTelethonUserbot/)**\n"
-pm_caption += "**[✗ Deploy Hackfreaks ✗](https://heroku.com/deploy?template=https://github.com/swatv3nub/HackfreaksTelethonUserbot)**"
+pm_caption += "**[✗ GitHub Respiratory ✗](https://github.com/swatv3nub/FreakyUserbot/)**\n"
+pm_caption += "**[✗ Deploy Freaky ✗](https://heroku.com/deploy?template=https://github.com/swatv3nub/FreakyUserbot)**"
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"alive"))
-@Hackfreaks.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
-async def Hackfreaks(alive):
+@Freaky.on(Freaky_on_cmd(pattern=r"alive"))
+@Freaky.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
+async def Freaky(alive):
     await alive.get_chat()
     """ For .alive command, check if the bot is running.  """
     await borg.send_file(alive.chat_id, PM_IMG, caption=pm_caption)

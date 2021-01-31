@@ -16,7 +16,7 @@ from telegraph import Telegraph, exceptions, upload_file
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
-from HackfreaksUserbot.Configs import Config
+from FreakyUserbot.Configs import Config
 from var import Var
 
 Lastupdate = time.time()

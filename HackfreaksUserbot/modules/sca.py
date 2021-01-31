@@ -15,10 +15,10 @@ cancel"""
 
 import asyncio
 
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("scha ?(.*)"))
+@Freaky.on(Freaky_on_cmd("scha ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

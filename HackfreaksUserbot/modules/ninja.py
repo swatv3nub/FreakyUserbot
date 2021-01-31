@@ -7,8 +7,8 @@ import asyncio
 import telethon.utils
 from telethon import events
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
 async def get_target_message(event):
@@ -34,8 +34,8 @@ async def await_read(chat, message):
     await fut
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="(del)(?:ete)?$"))
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="(edit)(?:\s+(.*))?$"))
+@Freaky.on(Freaky_on_cmd(pattern="(del)(?:ete)?$"))
+@Freaky.on(Freaky_on_cmd(pattern="(edit)(?:\s+(.*))?$"))
 async def delete(event):
     await event.delete()
     command = event.pattern_match.group(1)

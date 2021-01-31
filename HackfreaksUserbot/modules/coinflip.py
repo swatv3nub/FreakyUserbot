@@ -2,12 +2,12 @@
 Syntax: .coinflip [optional_choice]"""
 import random
 
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="coin ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="coin ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

@@ -6,11 +6,11 @@ Available Commands:
 .unshort <short url>"""
 import requests
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("dns (.*)"))
+@Freaky.on(Freaky_on_cmd("dns (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -23,7 +23,7 @@ async def _(event):
         await event.edit("i can't seem to find {} on the internet".format(input_str))
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("url (.*)"))
+@Freaky.on(Freaky_on_cmd("url (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -36,7 +36,7 @@ async def _(event):
         await event.edit("something is wrong. please try again later.")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("unshort (.*)"))
+@Freaky.on(Freaky_on_cmd("unshort (.*)"))
 async def _(event):
     if event.fwd_from:
         return

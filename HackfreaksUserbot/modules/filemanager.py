@@ -10,7 +10,7 @@ import time
 
 from telethon import events
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 if not os.path.isdir("./SAVED"):
     os.makedirs("./SAVED")
@@ -18,7 +18,7 @@ if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
     os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
 
 
-@Hackfreaks.on(events.NewMessage(pattern=r"\.lslocal", outgoing=True))
+@Freaky.on(events.NewMessage(pattern=r"\.lslocal", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -35,7 +35,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**Files in [Hackfreaks](tg://HackfreaksUserbot/) DOWNLOADS Folder:**\n"
+    OUTPUT = f"**Files in [Freaky](tg://FreakyUserbot/) DOWNLOADS Folder:**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -59,7 +59,7 @@ async def _(event):
 #        await event.edit("Unknown Command")
 
 
-@Hackfreaks.on(events.NewMessage(pattern=r"\.lsroot", outgoing=True))
+@Freaky.on(events.NewMessage(pattern=r"\.lsroot", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -93,7 +93,7 @@ async def _(event):
     await event.edit(f"{OUTPUT}`{stdout.decode()}`")
 
 
-@Hackfreaks.on(events.NewMessage(pattern=r"\.lssaved", outgoing=True))
+@Freaky.on(events.NewMessage(pattern=r"\.lssaved", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -127,7 +127,7 @@ async def _(event):
     await event.edit(f"{OUTPUT}`{stdout.decode()}`")
 
 
-@Hackfreaks.on(events.NewMessage(pattern=r"\.rnsaved ?(.*)", outgoing=True))
+@Freaky.on(events.NewMessage(pattern=r"\.rnsaved ?(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -165,7 +165,7 @@ async def _(event):
     await event.edit(f"File renamed `{src}` to `{dst}`")
 
 
-@Hackfreaks.on(events.NewMessage(pattern=r"\.rnlocal ?(.*)", outgoing=True))
+@Freaky.on(events.NewMessage(pattern=r"\.rnlocal ?(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -203,7 +203,7 @@ async def _(event):
     await event.edit(f"File renamed `{src}` to `{dst}`")
 
 
-@Hackfreaks.on(events.NewMessage(pattern=r"\.delsave (.*)", outgoing=True))
+@Freaky.on(events.NewMessage(pattern=r"\.delsave (.*)", outgoing=True))
 async def handler(event):
     if event.fwd_from:
         return
@@ -218,7 +218,7 @@ async def handler(event):
         await event.edit("⛔️File Not Found സാധനം കയ്യിലില്ല😬")
 
 
-@Hackfreaks.on(events.NewMessage(pattern=r"\.delocal (.*)", outgoing=True))
+@Freaky.on(events.NewMessage(pattern=r"\.delocal (.*)", outgoing=True))
 async def handler(event):
     if event.fwd_from:
         return
@@ -234,5 +234,5 @@ async def handler(event):
 
 
 CMD_HELP.update(
-    {"file": ".ls <directory>" "\nUsage: File Manager plugin for HackfreaksUserbot."}
+    {"file": ".ls <directory>" "\nUsage: File Manager plugin for FreakyUserbot."}
 )

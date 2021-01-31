@@ -1,5 +1,5 @@
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
+#    Freaky - Userbot
+#    Copyright (C) 2020 Freaky
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -23,11 +23,11 @@ Available Commands:
 
 import asyncio
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("HackfreaksBot"))
+@Freaky.on(Freaky_on_cmd("FreakyUserbot"))
 async def _(event):
     if event.fwd_from:
         return
@@ -49,8 +49,8 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "HackfreaksBot": "HackfreaksBot\
+        "FreakyUserbot": "FreakyUserbot\
 \n\nSyntax : .support\
-\nUsage : Join @HackfreaksUserbot"
+\nUsage : Join @FreakyUserbot"
     }
 )

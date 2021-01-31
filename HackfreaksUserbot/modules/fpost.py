@@ -7,12 +7,12 @@ credit: @pureindialover"""
 
 import string
 
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 msg_cache = {}
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"fpost\s+(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"fpost\s+(.*)"))
 async def _(event):
     await event.delete()
     text = event.pattern_match.group(1)

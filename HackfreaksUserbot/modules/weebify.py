@@ -4,9 +4,9 @@ By :- @PhycoNinja13b
 Modified by :- @kirito6969
 .weeb <text> """
 
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 normiefont = [
     "a",
@@ -66,7 +66,7 @@ weebyfont = [
 ]
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="weeb ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="weeb ?(.*)"))
 async def weebify(event):
 
     args = event.pattern_match.group(1)

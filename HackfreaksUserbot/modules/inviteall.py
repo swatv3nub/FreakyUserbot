@@ -1,7 +1,7 @@
 import os
 
-from HackfreaksUserbot import *
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import *
+from FreakyUserbot.utils import Freaky_on_cmd
 
 FULL_SUDO = os.environ.get("FULL_SUDO", None)
 from pytz import country_names as c_n
@@ -97,7 +97,7 @@ def user_full_name(user):
     return full_name
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern=r"inviteem ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern=r"inviteem ?(.*)"))
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()

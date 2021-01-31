@@ -1,11 +1,11 @@
 """.admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="admins"))
+@Freaky.on(Freaky_on_cmd(pattern="admins"))
 async def _(event):
     if event.fwd_from:
         return

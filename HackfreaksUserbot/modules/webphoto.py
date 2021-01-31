@@ -5,8 +5,8 @@ from random import choice as c
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 # Important-vars
 CHROME_DRIVER = "/app/.chromedriver/bin/chromedriver"
@@ -59,7 +59,7 @@ def done_lago():
 
 
 # Main Commands
-@Hackfreaks.on(Hackfreaks_on_cmd("web ?(.*)"))
+@Freaky.on(Freaky_on_cmd("web ?(.*)"))
 async def WebData_By_Akash(webdata_credit_akash):
     link = webdata_credit_akash.pattern_match.group(1)
     await webdata_credit_akash.edit("**Deleting All** `.txt` **Files**")

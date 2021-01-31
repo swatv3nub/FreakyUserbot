@@ -7,8 +7,8 @@ import os
 
 import requests
 
-from HackfreaksUserbot import CMD_HELP, OCR_SPACE_API_KEY, TEMP_DOWNLOAD_DIRECTORY, bot
-from HackfreaksUserbot.utils import register
+from FreakyUserbot import CMD_HELP, OCR_SPACE_API_KEY, TEMP_DOWNLOAD_DIRECTORY, bot
+from FreakyUserbot.utils import register
 
 
 async def ocr_space_file(

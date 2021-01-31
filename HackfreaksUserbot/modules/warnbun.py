@@ -1,11 +1,11 @@
 """.admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("warn1"))
+@Freaky.on(Freaky_on_cmd("warn1"))
 async def _(event):
     if event.fwd_from:
         return
@@ -26,10 +26,10 @@ async def _(event):
 
 """.admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("warn2"))
+@Freaky.on(Freaky_on_cmd("warn2"))
 async def _(event):
     if event.fwd_from:
         return
@@ -50,10 +50,10 @@ async def _(event):
 
 """.admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("warn3"))
+@Freaky.on(Freaky_on_cmd("warn3"))
 async def _(event):
     if event.fwd_from:
         return
@@ -72,10 +72,10 @@ async def _(event):
 
 """.admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("warn0"))
+@Freaky.on(Freaky_on_cmd("warn0"))
 async def _(event):
     if event.fwd_from:
         return
@@ -94,10 +94,10 @@ async def _(event):
 
 """.admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import Hackfreaks_on_cmd
+from uniborg.util import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("ocb"))
+@Freaky.on(Freaky_on_cmd("ocb"))
 async def _(event):
     if event.fwd_from:
         return
@@ -114,7 +114,7 @@ async def _(event):
     await event.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("fw"))
+@Freaky.on(Freaky_on_cmd("fw"))
 async def _(event):
     if event.fwd_from:
         return

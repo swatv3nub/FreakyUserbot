@@ -18,11 +18,11 @@ from telethon.tl.types import (
     UserStatusRecently,
 )
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="unbanall ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="unbanall ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -52,7 +52,7 @@ async def _(event):
         await event.edit("{}: {} unbanned".format(event.chat_id, p))
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="ikick ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="ikick ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

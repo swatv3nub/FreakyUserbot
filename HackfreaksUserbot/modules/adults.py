@@ -1,5 +1,5 @@
 # credits to userge
-# ported to Hackfreaks by @swatv3nub
+# ported to Freaky by @swatv3nub
 # will be adding more soon
 
 import asyncio
@@ -8,12 +8,12 @@ import urllib
 
 import requests
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("boobs$"))
-@Hackfreaks.on(sudo_cmd(pattern="boobs$", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("boobs$"))
+@Freaky.on(sudo_cmd(pattern="boobs$", allow_sudo=True))
 async def boobs(event):
     if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)
@@ -29,8 +29,8 @@ async def boobs(event):
     await a.delete()
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("butts$"))
-@Hackfreaks.on(sudo_cmd(pattern="butts$", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("butts$"))
+@Freaky.on(sudo_cmd(pattern="butts$", allow_sudo=True))
 async def butts(event):
     if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)

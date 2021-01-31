@@ -1,4 +1,4 @@
 # Copyright (C) By @swatv3nub
-# HackfreaksUserbot 🇮🇳
-#    Hackfreaks - UserBot
-#    Copyright (C) 2020 Hackfreaks
+# FreakyUserbot 🇮🇳
+#    Freaky - Userbot
+#    Copyright (C) 2020 Freaky

@@ -4,13 +4,13 @@ Check https://t.me/tgbeta/3505"""
 
 import asyncio
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 NO_PM_LOG_USERS = []
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(incoming=True, func=lambda e: e.is_private))
+@Freaky.on(Freaky_on_cmd(incoming=True, func=lambda e: e.is_private))
 async def monito_p_m_s(event):
     sender = await event.get_sender()
     if Config.NC_LOG_P_M_S and not sender.bot:
@@ -23,7 +23,7 @@ async def monito_p_m_s(event):
                 logger.warn(str(e))
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="nolog ?(.*)"))
+@Freaky.on(Freaky_on_cmd(pattern="nolog ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return

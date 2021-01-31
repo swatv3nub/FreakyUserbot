@@ -5,16 +5,16 @@ import time
 
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
-from uniborg.util import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from uniborg.util import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
-from HackfreaksUserbot import ALIVE_NAME, CMD_HELP
+from FreakyUserbot import ALIVE_NAME, CMD_HELP
 
 DEL_TIME_OUT = 60
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "HackfreaksUserbot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "FreakyUserbot"
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="autoname"))  # pylint:disable=E0602
-@Hackfreaks.on(sudo_cmd(pattern="autoname", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd(pattern="autoname"))  # pylint:disable=E0602
+@Freaky.on(sudo_cmd(pattern="autoname", allow_sudo=True))
 async def _(event):
     sed = await edit_or_reply(event, "`Starting AutoName Please Wait`")
     if event.fwd_from:

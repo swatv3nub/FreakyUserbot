@@ -1,5 +1,5 @@
 """
-Telegram Channel Media Downloader Plugin for Hackfreaksbot.
+Telegram Channel Media Downloader Plugin for FreakyUserbot.
 usage: .geta channel_username [will  get all media from channel, tho there is limit of 3000 there to prevent API limits.]
        .getc number_of_messsages channel_username  
 By: @Zero_cool7870
@@ -7,11 +7,11 @@ By: @Zero_cool7870
 import os
 import subprocess
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="getc"))
+@Freaky.on(Freaky_on_cmd(pattern="getc"))
 async def get_media(event):
     if event.fwd_from:
         return
@@ -41,7 +41,7 @@ async def get_media(event):
     await event.edit("Downloaded " + output + " files.")
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="geta"))
+@Freaky.on(Freaky_on_cmd(pattern="geta"))
 async def get_media(event):
     if event.fwd_from:
         return

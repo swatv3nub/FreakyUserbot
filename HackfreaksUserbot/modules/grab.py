@@ -1,11 +1,11 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("grab ?(.*)"))
+@Freaky.on(Freaky_on_cmd("grab ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -22,12 +22,12 @@ async def _(event):
         await event.edit("```Reply to actual users message.```")
         return
     await event.edit("```Processing```")
-    async with Hackfreaks.conversation(chat) as conv:
+    async with Freaky.conversation(chat) as conv:
         try:
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=864838521)
             )
-            await Hackfreaks.forward_messages(chat, reply_message)
+            await Freaky.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
             await event.reply("```Please unblock @sangmatainfo_bot and try again```")
@@ -37,7 +37,7 @@ async def _(event):
                 "```can you kindly disable your forward privacy settings for good?```"
             )
         else:
-            await Hackfreaks.send_file(event.chat_id, response.message)
+            await Freaky.send_file(event.chat_id, response.message)
 
 
 CMD_HELP.update(

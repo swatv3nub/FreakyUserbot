@@ -1,8 +1,8 @@
 from telethon import events
 from telethon.utils import pack_bot_file_id
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.modules.sql_helper.welcome_sql import (
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.modules.sql_helper.welcome_sql import (
     add_welcome_setting,
     get_current_welcome_settings,
     rm_welcome_setting,

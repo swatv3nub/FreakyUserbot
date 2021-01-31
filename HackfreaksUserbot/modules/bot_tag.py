@@ -16,10 +16,10 @@ from telethon import custom, events
 from telethon.tl.types import Chat
 from telethon.utils import get_display_name
 
-from HackfreaksUserbot.Configs import Config
+from FreakyUserbot.Configs import Config
 
 
-@Hackfreaks.on(
+@Freaky.on(
     events.NewMessage(
         incoming=True,
         blacklist_chats=Config.UB_BLACK_LIST_CHAT,
@@ -57,7 +57,7 @@ async def all_messages_catcher(event):
 
     ammoca_message += f"User {who_m} Have Tagged You Here -> [{where_m}]({message_link}) \nCheck Message 👇 "
     log_chat = Config.PRIVATE_GROUP_ID
-    await hackfreaksbot.send_message(
+    await freakybot.send_message(
         log_chat,
         message=ammoca_message,
         link_preview=False,

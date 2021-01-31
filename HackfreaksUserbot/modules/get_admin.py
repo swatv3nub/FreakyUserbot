@@ -6,12 +6,12 @@ from telethon.tl.types import (
     ChannelParticipantsAdmins,
 )
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd, edit_or_reply, sudo_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Hackfreaks.on(Hackfreaks_on_cmd("get_ad?(m)in ?(.*)"))
-@Hackfreaks.on(sudo_cmd("get_ad?(m)in ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("get_ad?(m)in ?(.*)"))
+@Freaky.on(sudo_cmd("get_ad?(m)in ?(.*)", allow_sudo=True))
 async def _(event):
     admeme = await edit_or_reply(event, "Processing")
     if event.fwd_from:

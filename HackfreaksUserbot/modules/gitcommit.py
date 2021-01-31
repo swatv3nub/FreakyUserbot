@@ -11,9 +11,9 @@ from datetime import datetime
 
 from github import Github
 
-from HackfreaksUserbot import CMD_HELP
+from FreakyUserbot import CMD_HELP
 
-GIT_TEMP_DIR = "./HackfreaksBot/temp/"
+GIT_TEMP_DIR = "./FreakyUserbot/temp/"
 
 
 @command(pattern="^.commit", outgoing=True)
@@ -68,9 +68,9 @@ async def git_commit(file_name, mone):
         if i == 'ContentFile(path="' + file_name + '")':
             return await mone.edit("`File Already Exists`")
             create_file = False
-    file_name = "HackfreaksUserbotplugins/" + file_name
+    file_name = "FreakyUserbotplugins/" + file_name
     if create_file == True:
-        file_name = file_name.replace("./HackfreaksUserbottemp/", "")
+        file_name = file_name.replace("./FreakyUserbottemp/", "")
         print(file_name)
         try:
             repo.create_file(
@@ -80,7 +80,7 @@ async def git_commit(file_name, mone):
             ccess = Var.GIT_REPO_NAME
             ccess = ccess.strip()
             await mone.edit(
-                f"`Commited On Your Github Repo`\n\n[Your STDPLUGINS](https://github.com/{ccess}/tree/Alpha/HackfreaksTelethonUserbot/modules/)"
+                f"`Commited On Your Github Repo`\n\n[Your STDPLUGINS](https://github.com/{ccess}/tree/Alpha/FreakyUserbot/modules/)"
             )
         except:
             print("Cannot Create Plugin")

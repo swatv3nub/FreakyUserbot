@@ -2,9 +2,9 @@
 import time
 from datetime import datetime
 
-from HackfreaksUserbot import CMD_HELP
-from HackfreaksUserbot.__init__ import Lastupdate
-from HackfreaksUserbot.utils import Hackfreaks_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.__init__ import Lastupdate
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
 def get_readable_time(seconds: int) -> str:
@@ -36,7 +36,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 # @command(pattern="^.latestupdate")
-@Hackfreaks.on(Hackfreaks_on_cmd(pattern="latestupdate"))
+@Freaky.on(Freaky_on_cmd(pattern="latestupdate"))
 async def _(event):
     if event.fwd_from:
         return
@@ -46,7 +46,7 @@ async def _(event):
     (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - Lastupdate))
     await event.edit(
-        f"🔰 Hackfreaks Userbot Has Been Restarted Or Updated {uptime} Ago !"
+        f"🔰 Freaky Userbot Has Been Restarted Or Updated {uptime} Ago !"
     )
 
 
