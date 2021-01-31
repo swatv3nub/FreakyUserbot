@@ -12,7 +12,7 @@
   ],
   "repository": "https://github.com/swatv3nub/FreakyUserbot",
   "website": "https://github.com/swatv3nub",
-  "success_url": "t.me/FreakyUserbot",
+  "success_url": "https://t.me/FreakyUserbot",
   "stack": "container",
   "env": {
     "ENV": {

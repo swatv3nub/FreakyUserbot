@@ -16,7 +16,7 @@ API_HASH = input("Enter API HASH here: ")
 with TelegramClient(StringSession(), APP_ID, API_HASH) as client:
     tele = client.send_message("me", client.session.save())
     tele.reply(
-        "The above is the `STRING_SESSION` for your current session.\n@FreakyUserbot"
+        "The above is the `STRING_SESSION` for your current session.\n@ProjectHackfreaks"
     )
     print("")
     print("")
