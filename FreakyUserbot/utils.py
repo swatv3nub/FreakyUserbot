@@ -604,7 +604,7 @@ def only_group():
     return decorator
 
 
-def peru_only():
+def freaks_only():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
@@ -670,7 +670,7 @@ def start_assistant(shortname):
         mod.only_group = only_group()
         mod.is_bot_admin = is_bot_admin()
         mod.is_admin = is_admin()
-        mod.peru_only = peru_only()
+        mod.freaks_only = freaks_only()
         mod.only_pvt = only_pvt()
         spec.loader.exec_module(mod)
         sys.modules["FreakyUserbot.modules.assistant" + shortname] = mod

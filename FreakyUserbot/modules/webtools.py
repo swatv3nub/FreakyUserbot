@@ -1,4 +1,4 @@
-# @Fridayot
+# @ProjectHackfreaks // From Friday
 
 import requests
 from iplookup import iplookup

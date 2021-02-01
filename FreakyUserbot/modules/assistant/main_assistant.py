@@ -190,7 +190,7 @@ async def sedlyfsir(event):
 
 
 @assistant_cmd("stats", is_args=False)
-@peru_only
+@freaks_only
 async def freakispro(event):
     dayamispro = get_all_users()
     await event.reply(
@@ -199,7 +199,7 @@ async def freakispro(event):
 
 
 @assistant_cmd("help", is_args=False)
-@peru_only
+@freaks_only
 async def dayamislub(event):
     grabonx = "Hello Here Are Some Commands \n➤ /start - Check if I am Alive \n➤ /ping - Pong! \n➤ /tr <lang-code> \n➤ /broadcast - Sends Message To all Users In Bot \n➤ /id - Shows ID of User And Media. \n➤ /addnote - Add Note \n➤ /notes - Shows Notes \n➤ /rmnote - Remove Note \n➤ /alive - Am I Alive? \n➤ /bun - Works In Group , Bans A User. \n➤ /unbun - Unbans A User in Group \n➤ /prumote - Promotes A User \n➤ /demute - Demotes A User \n➤ /pin - Pins A Message \n➤ /stats - Shows Total Users In Bot"
     await event.reply(grabonx)

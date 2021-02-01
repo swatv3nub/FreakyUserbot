@@ -47,7 +47,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 @assistant_cmd("ping", is_args=False)
-@peru_only
+@freaks_only
 async def _(event):
     start = datetime.now()
     end = datetime.now()

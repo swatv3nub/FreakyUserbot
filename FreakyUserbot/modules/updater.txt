@@ -28,7 +28,6 @@ HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 GIT_REPO_NAME = "FreakyUserbot"
 UPSTREAM_REPO_URL = "https://github.com/swatv3nub/FreakyUserbot"
 
-xxxx = CMD_HNDLR if CMD_HNDLR else "."
 
 
 async def gen_chlog(repo, diff):
@@ -78,7 +77,7 @@ async def upstream(ups):
             await ups.edit(
                 f"**Unfortunately, the directory {error} does not seem to be a git repository.\
                 \nOr Maybe it just needs a sync verification with {GIT_REPO_NAME}\
-            \nBut we can fix that by force updating the userbot using** `{xxxx}update now`."
+            \nBut we can fix that by force updating the userbot using** `.update now`."
             )
             return
         repo = Repo.init()
@@ -90,7 +89,7 @@ async def upstream(ups):
         repo.heads.master.checkout(True)
 
     ac_br = repo.active_branch.name
-    if ac_br != "master":
+    if ac_br != "Alpha":
         await ups.edit(
             f"**[UPDATER]:**` Looks like you are using your own custom branch ({ac_br}). "
             "in that case, Updater is unable to identify "
@@ -136,7 +135,7 @@ async def upstream(ups):
             remove("output.txt")
         else:
             await ups.edit(changelog_str)
-        await ups.respond(f"Do `{xxxx}update now` to update")
+        await ups.respond(f"Do `.update now` to update")
         return
 
     if force_updateme:
@@ -194,9 +193,9 @@ async def upstream(ups):
             repo.git.reset("--hard", "FETCH_HEAD")
         await updateme_requirements()
         await ups.edit(
-            "`Successfully Updated!\n" "Bot is restarting... Wait for a second!`"
+            "`**⚜️Updating Freaky⚜️\n\nYou Are The ✗ Freak ✗ !!\n\nPlease Wait a bit\nThen Try .alive To Check If I Am Online` \n\nPowered by :-\n© [FreakyUserbot](https://t.me/FreakyUserbot)**`"
         )
         # Spin a new instance of bot
-        args = [sys.executable, "-m", "userbot"]
+        args = [sys.executable, "-m", "FreakyUserbot"]
         execle(sys.executable, *args, environ)
         return
