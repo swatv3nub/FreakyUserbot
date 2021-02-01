@@ -105,8 +105,8 @@ if ENV:
         )
         # specify command handler that should be used for the modules
         # this should be a valid "regex" pattern
-        CMD_HNDLR = os.environ.get("CMD_HNDLR", "\.")
-        SUDO_HNDLR = os.environ.get("SUDO_HNDLR", "\.")
+        CMD_HNDLR = os.environ.get("CMD_HNDLR", ".")
+        SUDO_HNDLR = os.environ.get("SUDO_HNDLR", ".")
         BOT_HANDLER = os.environ.get("BOT_HANDLER", "^/")
         # specify list of users allowed to use bot
         # WARNING: be careful who you grant access to your bot.
