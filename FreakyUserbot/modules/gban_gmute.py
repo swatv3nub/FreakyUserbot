@@ -161,9 +161,7 @@ async def gspider(FreakyUserbot):
         ]
         for i in testFreakyUserbot:
             try:
-                await FreakyUserbot.client.edit_permissions(
-                    i, user, send_messages=True
-                )
+                await FreakyUserbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
                 await Freaky.edit(f"**UNGBANNING // AFFECTED CHATS - {a} **")
             except:

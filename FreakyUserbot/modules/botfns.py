@@ -236,9 +236,7 @@ async def _(event):
         x = await event.client.send_message(
             event.chat_id, response.message, reply_to=reply_message
         )
-        await x.edit(
-            "Downloaded by [Freaky](t.me/FreakyUserbot), via @gitdownloadbot"
-        )
+        await x.edit("Downloaded by [Freaky](t.me/FreakyUserbot), via @gitdownloadbot")
 
 
 @Freaky.on(Freaky_on_cmd(pattern="imusic ?(.*)"))

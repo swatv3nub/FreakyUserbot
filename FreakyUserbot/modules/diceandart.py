@@ -10,9 +10,7 @@ BALL_E_MOJI = "🏀"
 # EMOJI CONSTANTS
 
 
-@Freaky.on(
-    Freaky_on_cmd(pattern=f"({DART_E_MOJI}|{DICE_E_MOJI}|{BALL_E_MOJI}) ?(.*)")
-)
+@Freaky.on(Freaky_on_cmd(pattern=f"({DART_E_MOJI}|{DICE_E_MOJI}|{BALL_E_MOJI}) ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

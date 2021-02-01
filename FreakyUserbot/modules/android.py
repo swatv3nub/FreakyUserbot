@@ -77,9 +77,7 @@ async def device_info(request):
 @Freaky.on(
     Freaky_on_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)")
 )
-@Freaky.on(
-    sudo_cmd(pattern="codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True)
-)
+@Freaky.on(sudo_cmd(pattern="codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def codename_info(request):
     """ search for android codename """
     textx = await request.get_reply_message()
@@ -123,9 +121,7 @@ async def codename_info(request):
     await edit_or_reply(request, reply)
 
 
-@Freaky.on(
-    Freaky_on_cmd(outgoing=True, pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)")
-)
+@Freaky.on(Freaky_on_cmd(outgoing=True, pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)"))
 @Freaky.on(sudo_cmd(pattern="specs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def devices_specifications(request):
     """ Mobile devices specifications """

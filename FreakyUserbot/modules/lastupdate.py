@@ -45,9 +45,7 @@ async def _(event):
     end = datetime.now()
     (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - Lastupdate))
-    await event.edit(
-        f"🔰 Freaky Userbot Has Been Restarted Or Updated {uptime} Ago !"
-    )
+    await event.edit(f"🔰 Freaky Userbot Has Been Restarted Or Updated {uptime} Ago !")
 
 
 CMD_HELP.update(

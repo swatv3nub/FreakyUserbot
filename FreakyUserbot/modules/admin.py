@@ -31,12 +31,7 @@ from telethon.tl.types import (
 )
 
 from FreakyUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from FreakyUserbot.utils import (
-    Freaky_on_cmd,
-    errors_handler,
-    register,
-    sudo_cmd,
-)
+from FreakyUserbot.utils import Freaky_on_cmd, errors_handler, register, sudo_cmd
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"

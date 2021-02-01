@@ -5,9 +5,9 @@ from telethon import events
 from telethon.errors import ChatAdminRequiredError
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from FreakyUserbot.utils import is_admin, Freaky_on_cmd
 from FreakyUserbot import BOTLOG, BOTLOG_CHATID, LOGS, spamwatch
 from FreakyUserbot.sql_helper.gban_sql import get_gbanuser, is_gbanned
+from FreakyUserbot.utils import Freaky_on_cmd, is_admin
 
 if Config.ANTI_SPAMBOT:
 
@@ -121,10 +121,10 @@ async def caschecker(cas):
         text += banned_users
         if not cas_count:
             text = "No CAS Banned users found!"
-    except ChatAdminRequiredError as carerr:
+    except ChatAdminRequiredError:
         await freakevent.edit("`CAS check failed: Admin privileges are required`")
         return
-    except BaseException as be:
+    except BaseException:
         await freakevent.edit("`CAS check failed`")
         return
     await freakevent.edit(text)
@@ -160,10 +160,10 @@ async def caschecker(cas):
         text += banned_users
         if not cas_count:
             text = "No spamwatch Banned users found!"
-    except ChatAdminRequiredError as carerr:
+    except ChatAdminRequiredError:
         await freakevent.edit("`spamwatch check failed: Admin privileges are required`")
         return
-    except BaseException as be:
+    except BaseException:
         await freakevent.edit("`spamwatch check failed`")
         return
     await freakevent.edit(text)

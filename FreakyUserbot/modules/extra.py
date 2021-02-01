@@ -83,9 +83,7 @@ async def source(e):
 # @register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit(
-            "https://github.com/swatv3nub/FreakyUserbot/blob/master/README.md"
-        )
+        await e.edit("https://github.com/swatv3nub/FreakyUserbot/blob/master/README.md")
 
 
 @Freaky.on(Freaky_on_cmd("heart$"))

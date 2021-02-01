@@ -5,11 +5,7 @@ DB Options: bots, commands, email, forward, url"""
 
 from telethon import events, functions, types
 
-from FreakyUserbot.modules.sql_helper.locks_sql import (
-    get_locks,
-    is_locked,
-    update_lock,
-)
+from FreakyUserbot.modules.sql_helper.locks_sql import get_locks, is_locked, update_lock
 from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 

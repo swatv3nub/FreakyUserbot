@@ -21,9 +21,7 @@ heroku_api = "https://api.heroku.com"
 
 
 @Freaky.on(
-    Freaky_on_cmd(
-        pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True
-    )
+    Freaky_on_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True)
 )
 @Freaky.on(
     sudo_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", allow_sudo=True)
