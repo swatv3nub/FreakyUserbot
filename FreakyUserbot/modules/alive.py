@@ -1,4 +1,4 @@
-"""Check if FreakyUserbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
+"""Check if FreakyUserbot alive."""
 # CREDITS: @WhySooSerious, @Sur_vivor
 import time
 

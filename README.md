@@ -64,12 +64,13 @@ python3 -m FreakyUserbot
 
 # MANDATORY VARS
 ```
-[+] Only two of the environment variables are mandatory.
+[+] Only three of the environment variables are mandatory.
 
 [+] This is because of telethon.errors.rpc_error_list.ApiIdPublishedFloodError
 
     [-] APP_ID:   You can get this value from https://my.telegram.org
     [-] API_HASH :   You can get this value from https://my.telegram.org
+    [-] STRING_SESSION :   You can get this value from https://repl.it/@swatv3nub/UserbotSessionGenerator#main.py or by running string_gen.py in your device
     
 [+] The FreakyUserbot will not work without setting the mandatory vars.
 ```
