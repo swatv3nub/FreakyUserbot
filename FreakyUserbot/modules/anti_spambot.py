@@ -4,8 +4,9 @@ from requests import get
 from telethon import events
 from telethon.errors import ChatAdminRequiredError
 from telethon.tl.types import ChannelParticipantsAdmins
+import spamwatch
 
-from FreakyUserbot import BOTLOG, BOTLOG_CHATID, LOGS, spamwatch
+from FreakyUserbot import BOTLOG, BOTLOG_CHATID, LOGS
 from FreakyUserbot.sql_helper.gban_sql import get_gbanuser, is_gbanned
 from FreakyUserbot.utils import Freaky_on_cmd, is_admin
 
