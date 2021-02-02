@@ -1,4 +1,4 @@
-<p align="center"><a href="https://t.me/ProjectHackfreaks"><img src="https://telegra.ph/file/bb3741b7596bf90f47568.png" width="5000"></a></p> 
+<p align="center"><a href="https://t.me/ProjectHackfreaks"><img src="https://telegra.ph/file/ab9f85afcdc4ec394f8f6.jpg" width="5000"></a></p> 
 <h1 align="center"><b>FreakyUserbot </b></h1>
 <h4 align="center">A Powerful, Smart And Simple Userbot In Telethon.</h4>
 

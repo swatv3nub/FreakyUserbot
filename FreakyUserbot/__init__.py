@@ -99,7 +99,7 @@ if bool(ENV):
 
     # Pm Permit Img
     PMPERMIT_PIC = os.environ.get(
-        "PMPERMIT_PIC", "https://telegra.ph/file/bb3741b7596bf90f47568.png"
+        "PMPERMIT_PIC", "https://telegra.ph/file/ab9f85afcdc4ec394f8f6.jpg"
     )
     PMSECURITY = os.environ.get("PMSECURITY", "ON")
     PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", None)

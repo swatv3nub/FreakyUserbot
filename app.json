@@ -2,7 +2,7 @@
 {
   "name": "Freaky Userbot",
   "description": "A Userbot Based On Telethon",
-  "logo": "https://telegra.ph/file/bb3741b7596bf90f47568.png",
+  "logo": "https://telegra.ph/file/ab9f85afcdc4ec394f8f6.jpg",
   "keywords": [
     "telegram",
     "FreakyUserbot",
@@ -63,10 +63,6 @@
     },
     "ANTI_SPAMBOT": {
       "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
-      "value": "True"
-    },
-    "ANTI_SPAMBOT_SHOUT": {
-      "description": "Report spambots to @admins in groups after they join, just in case when you don't have admin powers to kick that shit yourself.",
       "value": "True"
     },
     "TESSDATA_PREFIX": {

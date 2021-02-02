@@ -1,7 +1,7 @@
 from FreakyUserbot import ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "FreakyUserbot Admeme"
-PM_IMG = "https://telegra.ph/file/bb3741b7596bf90f47568.png"
+PM_IMG = "https://telegra.ph/file/ab9f85afcdc4ec394f8f6.jpg"
 pm_caption = "👑 Freaky's Assistant IS: WORKING 👑\n\n"
 pm_caption += "✗ **Freaky Stats**\n"
 pm_caption += "✗ **Telethon Version:** `Latest` \n"

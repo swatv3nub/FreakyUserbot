@@ -9,7 +9,7 @@ from FreakyUserbot.modules import inlinestats
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-    WARN_PIC = "https://telegra.ph/file/bb3741b7596bf90f47568.png"
+    WARN_PIC = "https://telegra.ph/file/ab9f85afcdc4ec394f8f6.jpg"
 else:
     WARN_PIC = PMPERMIT_PIC
 LOG_CHAT = Config.PRIVATE_GROUP_ID
