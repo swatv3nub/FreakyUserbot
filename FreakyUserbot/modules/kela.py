@@ -10,14 +10,14 @@ from FreakyUserbot.utils import Freaky_on_cmd
 
 
 @Freaky.on(Freaky_on_cmd("kela")
-async def kela(event):
+async def _(event):
     if event.fwd_from:
         return
     animation_interval = 1
     animation_ttl = range(0, 36)
     # input_str = event.pattern_match.group(1)
     # if input_str == "kela":
-    await event.edit("kela")
+    await event.edit("Kela O")
     animation_chars = [
         "Oi",
         "Kela",
