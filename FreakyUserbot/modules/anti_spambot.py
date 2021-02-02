@@ -1,12 +1,12 @@
 # From CatUserbot , And Yes I am Noob
 
+import spamwatch
 from requests import get
 from telethon import events
 from telethon.errors import ChatAdminRequiredError
 from telethon.tl.types import ChannelParticipantsAdmins
-import spamwatch
 
-from FreakyUserbot import BOTLOG, BOTLOG_CHATID, LOGS, CMD_HELP
+from FreakyUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, LOGS
 from FreakyUserbot.modules.sql_helper.gban_sql import get_gbanuser, is_gbanned
 from FreakyUserbot.utils import Freaky_on_cmd, is_admin
 

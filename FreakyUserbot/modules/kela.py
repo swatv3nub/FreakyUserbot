@@ -7,11 +7,9 @@ from FreakyUserbot import CMD_HELP
 from FreakyUserbot.utils import Freaky_on_cmd
 
 
-
-
 @Freaky.on(Freaky_on_cmd(pattern=r"kela"))
 async def _(event):
-           
+
     if event.fwd_from:
         return
     animation_interval = 1
@@ -35,7 +33,7 @@ async def _(event):
         "Maira Suda",
         "Laz nai ne kela",
         "Etiya u Porhi Aso",
-        "Bhag Chutia Kela"
+        "Bhag Chutia Kela",
     ]
 
     for i in animation_ttl:
