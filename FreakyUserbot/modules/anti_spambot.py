@@ -7,7 +7,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 import spamwatch
 
 from FreakyUserbot import BOTLOG, BOTLOG_CHATID, LOGS
-from FreakyUserbot.sql_helper.gban_sql import get_gbanuser, is_gbanned
+from FreakyUserbot.modules.sql_helper.gban_sql import get_gbanuser, is_gbanned
 from FreakyUserbot.utils import Freaky_on_cmd, is_admin
 
 if Config.ANTI_SPAMBOT:
