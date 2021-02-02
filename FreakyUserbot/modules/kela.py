@@ -9,8 +9,9 @@ from FreakyUserbot.utils import Freaky_on_cmd
 
 
 
-@Freaky.on(Freaky_on_cmd("kela")
+@Freaky.on(Freaky_on_cmd(pattern=r"kela")
 async def _(event):
+           
     if event.fwd_from:
         return
     animation_interval = 1
