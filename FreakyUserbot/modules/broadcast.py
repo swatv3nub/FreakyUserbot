@@ -38,7 +38,7 @@ async def freakbroadcast_send(event):
             parse_mode=parse_pre,
         )
     chats = sql.get_chat_broadcastlist(keyword)
-    catevent = await edit_or_reply(
+    freakevent = await edit_or_reply(
         event,
         "sending this message to all groups in the category",
         parse_mode=parse_pre,
@@ -58,7 +58,7 @@ async def freakbroadcast_send(event):
             pass
         await sleep(0.5)
     resultext = f"`The message was sent to {i} chats out of {no_of_chats} chats in category {keyword}.`"
-    await catevent.edit(resultext)
+    await freakevent.edit(resultext)
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
@@ -92,7 +92,7 @@ async def freakbroadcast_send(event):
             parse_mode=parse_pre,
         )
     chats = sql.get_chat_broadcastlist(keyword)
-    catevent = await edit_or_reply(
+    freakevent = await edit_or_reply(
         event,
         "sending this message to all groups in the category",
         parse_mode=parse_pre,
@@ -112,7 +112,7 @@ async def freakbroadcast_send(event):
             pass
         await sleep(0.5)
     resultext = f"`The message was sent to {i} chats out of {no_of_chats} chats in category {keyword}.`"
-    await catevent.edit(resultext)
+    await freakevent.edit(resultext)
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
@@ -215,7 +215,7 @@ async def freakbroadcast_list(event):
             parse_mode=parse_pre,
         )
     chats = sql.get_chat_broadcastlist(keyword)
-    catevent = await edit_or_reply(
+    freakevent = await edit_or_reply(
         event, f"Fetching info of the category {keyword}", parse_mode=parse_pre
     )
     resultlist = f"**The category '{keyword}' have '{no_of_chats}' chats and these are listed below :**\n\n"
@@ -234,7 +234,7 @@ async def freakbroadcast_list(event):
             errorlist += f" 👉 __This id {int(chat)} in database probably you may left the chat/channel or may be invalid id.\
                             \nRemove this id from the database by using this command__ `.frmfrom {keyword} {int(chat)}` \n\n"
     finaloutput = resultlist + errorlist
-    await edit_or_reply(catevent, finaloutput)
+    await edit_or_reply(freakevent, finaloutput)
 
 
 @Freaky.on(Freaky_on_cmd(pattern="listall$"))
