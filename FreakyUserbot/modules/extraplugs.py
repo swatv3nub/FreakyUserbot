@@ -1,7 +1,7 @@
 """Emoji
 Available Commands:
-.support
-Support Channel/Group
+.extraplugs
+GitLink + Channel Link
 """
 
 
@@ -10,18 +10,18 @@ import asyncio
 from FreakyUserbot.utils import Freaky_on_cmd
 
 
-@Freaky.on(Freaky_on_cmd("support"))
+@Freaky.on(Freaky_on_cmd("extraplugs"))
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 0.1
+    animation_interval = 1
     animation_ttl = range(0, 36)
     # input_str = event.pattern_match.group(1)
     # if input_str == "support":
-    await event.edit("For The Support//Or Anything")
+    await event.edit("Extra Plugins")
     animation_chars = [
         "Click here",
-        "[For The Whole Things](https://t.me/FreakyUserbot)",
+        "[Github](https://github.com/swatv3nub/FreakyPlugs) or Request External Plugins [Here](https://t.me/AskPlugins)",
     ]
 
     for i in animation_ttl:

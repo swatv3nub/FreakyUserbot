@@ -1,10 +1,6 @@
 # BY Swonit [@swatv3nub]
 # Some Of Moi Englis, Hindi, INGLIS and Den-Shit Mode Thoughts
-"""
-Some Of My Englis, Hindi, INGLIS and Den-Shit Mode Thoughts
-command .mts
-
-"""
+# command .mts
 
 import asyncio
 import random

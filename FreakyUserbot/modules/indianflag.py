@@ -30,6 +30,6 @@ CMD_HELP.update(
     {
         "indianflag": "**IndianFlag**\
 \n\n**Syntax : **`.indflag`\
-\n**Usage :** Indian Flag"
+\n**Usage :** Indian Flag // Use in Independence Day"
     }
 )

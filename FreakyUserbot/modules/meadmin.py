@@ -1,6 +1,7 @@
 # PLUGIN BY @JAYANTKAGERI
 # LEECH WITH CREDITS
 # © JAYANT KAGERI, ALL RIGHTS RESERVED
+# Edited for Freaky by Swonit
 
 
 from FreakyUserbot.utils import Freaky_on_cmd

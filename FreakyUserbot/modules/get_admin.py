@@ -1,5 +1,5 @@
 """Get Administrators of any Chat*
-Syntax: .get_admin"""
+Syntax: .adminlist"""
 from telethon.tl.types import (
     ChannelParticipantAdmin,
     ChannelParticipantCreator,
@@ -10,8 +10,8 @@ from FreakyUserbot import CMD_HELP
 from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Freaky.on(Freaky_on_cmd("get_ad?(m)in ?(.*)"))
-@Freaky.on(sudo_cmd("get_ad?(m)in ?(.*)", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("adminlist ?(.*)"))
+@Freaky.on(sudo_cmd("adminlist ?(.*)", allow_sudo=True))
 async def _(event):
     admeme = await edit_or_reply(event, "Processing")
     if event.fwd_from:
@@ -67,8 +67,8 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "get_admin": "**Get_admin**\
-\n\n**Syntax : **`.get_admin`\
+        "adminlist": "**adminlist**\
+\n\n**Syntax : **`.adminlist`\
 \n**Usage :** lists all the admins in a group."
     }
 )

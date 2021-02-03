@@ -1,4 +1,4 @@
-# Lel, Didn't Get Time To Make New One So Used Plugin Made by @mrconfused and @sandy1709 dont edit credits
+# Lel, Didn't Get Time To Make New One So Used Plugin Made by @mrconfused // @sandy1709 dont edit credits
 import io
 import os
 
@@ -39,7 +39,7 @@ async def _(event):
 
     if len(reply) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(reply)) as out_file:
-            out_file.name = "lyrics.text"
+            out_file.name = "FreakyLyricsyrics.text"
             await borg.send_file(
                 event.chat_id,
                 out_file,
@@ -94,14 +94,14 @@ async def lyrics(lyric):
         return
     if len(songs.lyrics) > 4096:
         await lyric.edit("`Lyrics is too big, view the file to see it.`")
-        with open("lyrics.txt", "w+") as f:
+        with open("FreakyLyrics.txt", "w+") as f:
             f.write(f"Search query: \n{artist} - {song}\n\n{songs.lyrics}")
         await lyric.client.send_file(
             lyric.chat_id,
-            "lyrics.txt",
+            "FreakyLyrics.txt",
             reply_to=lyric.id,
         )
-        os.remove("Hackfreakslyrics.txt")
+        os.remove("FreakyLyrics.txt")
     else:
         await lyric.edit(
             f"**Search query**: \n`{artist} - {song}`\n\n```{songs.lyrics}```"

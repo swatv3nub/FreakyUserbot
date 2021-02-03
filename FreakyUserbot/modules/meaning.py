@@ -51,6 +51,6 @@ CMD_HELP.update(
     {
         "meaning": "**Meaning**\
 \n\n**Syntax : **`.meaning <text>`\
-\n**Usage :** Gives Pronenciation."
+\n**Usage :** Gives Pronounciation."
     }
 )

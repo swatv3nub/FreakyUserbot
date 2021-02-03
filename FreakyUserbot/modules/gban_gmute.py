@@ -76,7 +76,7 @@ async def gspider(FreakyUserbot):
     except:
         return await Freaky.edit(f"**Something W3NT Wrong 🤔**")
     if user:
-        if user.id == 1228116248:
+        if user.id == 1228116248 or user.id == 1167145475:
             return await Freaky.edit(
                 f"**Didn't , Your Father Teach You ? That You Cant Gban Dev**"
             )
@@ -110,7 +110,7 @@ async def gspider(FreakyUserbot):
     except:
         pass
     return await Freaky.edit(
-        f"**Freaky Gbanned [{user.first_name}](tg://user?id={user.id}) And Added To SpamWatch In The Chats Where Me Is Admin/Owner : {a} **"
+        f"**Freaky Gbanned [{user.first_name}](tg://user?id={user.id}) And Added To GbanWatch In The Chats Where I am Admin : {a} **"
     )
 
 
@@ -144,8 +144,8 @@ async def gspider(FreakyUserbot):
     except:
         return await Freaky.edit("Someting Went Wrong 🤔")
     if user:
-        if user.id == 1228116248:
-            return await Freaky.edit("**You Cant Ungban A Dev !**")
+        if user.id == 1228116248 or user.id == 1167145475:
+            return await Freaky.edit("**A Dev is Never Gbanned // Why Trying To Ungban !**")
         try:
             from FreakyUserbot.modules.sql_helper.gmute_sql import ungmute
         except:

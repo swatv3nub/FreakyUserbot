@@ -131,6 +131,7 @@ def load_module(shortname):
         sys.modules["userbot.plugins"] = FreakyUserbot.modules
         sys.modules["plugins"] = FreakyUserbot.modules
         sys.modules["userbot"] = FreakyUserbot
+        sys.modules["userbot.plugins.sql_helper"] = FreakyUserbot.modules.sql_helper
         mod.Config = Config
         mod.ignore_grp = ignore_grp()
         mod.ignore_pm = ignore_pm()

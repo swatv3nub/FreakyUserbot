@@ -529,7 +529,7 @@ async def rm_deletedacc(show):
 
 @Freaky.on(Freaky_on_cmd(pattern=r"adminlist"))
 @errors_handler
-async def get_admin(show):
+async def adminlist(show):
     """ For .admins command, list all of the admins of the chat. """
     info = await show.client.get_entity(show.chat_id)
     title = info.title if info.title else "this chat"
