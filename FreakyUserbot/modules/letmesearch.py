@@ -4,6 +4,8 @@ from asyncio import sleep
 
 import requests
 
+from FreakyUserbot import CMD_HELP
+
 from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 
