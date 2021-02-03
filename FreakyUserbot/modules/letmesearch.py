@@ -1,7 +1,7 @@
 #credits : @catuserbot17
 
 from asyncio import sleep
-from FreakyUserbot.utils import Hackfreaks_on_cmd, sudo_cmd
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 import requests
 
 
