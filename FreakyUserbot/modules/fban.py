@@ -101,14 +101,14 @@ async def _(event):
 
     try:
         int(FBAN)
-        if int(FBAN)== "1228116248" or int(FBAN) == "1167145475":
+        if int(FBAN) == "1228116248" or int(FBAN) == "1167145475":
             await event.edit("Error, Can't Fban Dev.")
             return
     except BaseException:
         if FBAN == "@TheFuckErGuy" or FBAN == "@Swonit":
             await event.edit("Error, can't Fban Dev.")
             return
-    else:   
+    else:
         await event.edit("`Something Went Wrong.`")
         return
     all_fed = get_all_feds()

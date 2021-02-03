@@ -25,13 +25,13 @@ async def _(event):
 
     if x == 1:
 
-        await event.edit('`"Don\'t underestimate the Kid Who is Time Rich and Money Poor!"`')
+        await event.edit(
+            '`"Don\'t underestimate the Kid Who is Time Rich and Money Poor!"`'
+        )
 
     if x == 2:
 
-        await event.edit(
-            '`"An Angry Guy is More Dangerous than the Devil himself!"`'
-        )
+        await event.edit('`"An Angry Guy is More Dangerous than the Devil himself!"`')
 
     if x == 3:
 
@@ -45,9 +45,7 @@ async def _(event):
 
     if x == 5:
 
-        await event.edit(
-            '`"Learn First, then remove the L and Earn."`'
-        )
+        await event.edit('`"Learn First, then remove the L and Earn."`')
 
     if x == 6:
 
@@ -65,9 +63,7 @@ async def _(event):
 
     if x == 9:
 
-        await event.edit(
-            '`"Make Peace, Not War."`'
-        )
+        await event.edit('`"Make Peace, Not War."`')
 
     if x == 10:
 
@@ -83,9 +79,7 @@ async def _(event):
 
     if x == 13:
 
-        await event.edit(
-            '`"What, If you can\'t love yourself....Better Die."`'
-        )
+        await event.edit('`"What, If you can\'t love yourself....Better Die."`')
 
     if x == 14:
 
@@ -95,7 +89,9 @@ async def _(event):
 
     if x == 15:
 
-        await event.edit('`"I am.........Dying....wait NO..LOL No....I am.....Dyi----Fuck No wait.....I am a Shit...OK"`')
+        await event.edit(
+            '`"I am.........Dying....wait NO..LOL No....I am.....Dyi----Fuck No wait.....I am a Shit...OK"`'
+        )
 
     if x == 16:
 
@@ -131,27 +127,23 @@ async def _(event):
 
     if x == 24:
 
-        await event.edit(
-            '`"Ever Thought of Using Baby Drags in Place of Drags?"`'
-        )
+        await event.edit('`"Ever Thought of Using Baby Drags in Place of Drags?"`')
 
-#Hindi Time
+    # Hindi Time
 
     if x == 25:
 
-        await event.edit(
-            '`"Har Kutta Apne Gali ka Sher Hota he!"`'
-        )
+        await event.edit('`"Har Kutta Apne Gali ka Sher Hota he!"`')
 
     if x == 26:
 
-        await event.edit('`"Kya Be PilPili Gaand, Bohot Shauk he Apna Gaand Chudwane ka?"`')
+        await event.edit(
+            '`"Kya Be PilPili Gaand, Bohot Shauk he Apna Gaand Chudwane ka?"`'
+        )
 
     if x == 27:
 
-        await event.edit(
-            '`"Murgi Pehle Ayi ya Anda?."`'
-        )
+        await event.edit('`"Murgi Pehle Ayi ya Anda?."`')
 
     if x == 28:
 
@@ -161,11 +153,9 @@ async def _(event):
 
     if x == 29:
 
-        await event.edit(
-            '`"GirlFriend Banegi Meri?."`'
-        )
+        await event.edit('`"GirlFriend Banegi Meri?."`')
 
-#INGLIS MODE
+    # INGLIS MODE
 
     if x == 30:
 
@@ -173,7 +163,7 @@ async def _(event):
 
     if x == 31:
 
-        await event.edit("`\"U so Randi....Diye Soomn\"`")
+        await event.edit('`"U so Randi....Diye Soomn"`')
 
     if x == 32:
 
@@ -183,11 +173,13 @@ async def _(event):
 
         await event.edit('`"What Gunda Bonega re You?!"`')
 
-#Den-Shit Mode ON
+    # Den-Shit Mode ON
 
     if x == 34:
 
-        await event.edit('`"Boda Boda Groups ka Admeme Hu Moi\nPonga Nohi Leneka Else Tumhore Group Me Super Purn Spammers Bhej Dunga\nMere Hi alt IDs He waise\nFirbhi\nKorbo Lorbo Gend me Lobo Lagbo Re\n\n~ Some Denzid(Dense-SHIT) Things"`')
+        await event.edit(
+            '`"Boda Boda Groups ka Admeme Hu Moi\nPonga Nohi Leneka Else Tumhore Group Me Super Purn Spammers Bhej Dunga\nMere Hi alt IDs He waise\nFirbhi\nKorbo Lorbo Gend me Lobo Lagbo Re\n\n~ Some Denzid(Dense-SHIT) Things"`'
+        )
 
 
 CMD_HELP.update(

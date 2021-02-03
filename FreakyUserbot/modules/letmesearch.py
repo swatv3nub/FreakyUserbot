@@ -1,8 +1,10 @@
-#credits : @catuserbot17
+# credits : @catuserbot17
 
 from asyncio import sleep
-from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
+
 import requests
+
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
 
 @Freaky.on(Freaky_on_cmd(pattern="lmg (.*)"))

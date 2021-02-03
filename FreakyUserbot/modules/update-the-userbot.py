@@ -17,7 +17,6 @@ from os import environ, execle, path, remove
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from FreakyUserbot import CMD_HELP
 from FreakyUserbot.utils import Freaky_on_cmd
 
 requirements_path = path.join(
@@ -28,7 +27,6 @@ HEROKU_API_KEY = Var.HEROKU_API_KEY
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 GIT_REPO_NAME = "FreakyUserbot"
 UPSTREAM_REPO_URL = "https://github.com/swatv3nub/FreakyUserbot"
-
 
 
 async def gen_chlog(repo, diff):

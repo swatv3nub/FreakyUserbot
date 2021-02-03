@@ -145,7 +145,9 @@ async def gspider(FreakyUserbot):
         return await Freaky.edit("Someting Went Wrong 🤔")
     if user:
         if user.id == 1228116248 or user.id == 1167145475:
-            return await Freaky.edit("**A Dev is Never Gbanned // Why Trying To Ungban !**")
+            return await Freaky.edit(
+                "**A Dev is Never Gbanned // Why Trying To Ungban !**"
+            )
         try:
             from FreakyUserbot.modules.sql_helper.gmute_sql import ungmute
         except:
