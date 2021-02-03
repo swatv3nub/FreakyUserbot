@@ -30,7 +30,7 @@
     },
     "ALIVE_IMAGE": {
       "description": "Enter Your Alive Image Link Here, Keep Blank for Default. ",
-      "value": ""
+      "value": "https://telegra.ph/file/30e87a5598280dd32da55.jpg"
     },
     "APP_ID": {
       "description": "Get this value from my.telegram.org! Please do not steal",
