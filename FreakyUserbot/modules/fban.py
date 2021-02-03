@@ -90,8 +90,6 @@ async def _(event):
 
 @Freaky.on(Freaky_on_cmd(pattern="fban ?(.*)"))
 async def _(event):
-    if event.fwd_from
-        return
     await event.edit("Starting Fed Bans...")
     arg = event.text.split(" ", maxsplit=2)
     if len(arg) > 2:
