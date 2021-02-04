@@ -187,7 +187,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and freakybot is not None:
     async def rip(event):
         await event.get_chat()
         await event.edit("Choice Accepted ✔️")
-        text3 = "Ok, Wait. You can Ask After Master Approves You. Kindly, Wait."
+        text3 = "Ok, Wait.And drop your query in single message. You can Ask Again After Master Approves You. Kindly, Wait."
         await borg.send_message(event.query.user_id, text3)
 
     @freakybot.on(events.callbackquery.CallbackQuery(data=re.compile(b"others")))
