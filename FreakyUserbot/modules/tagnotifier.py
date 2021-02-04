@@ -46,7 +46,7 @@ if Config.TAG_LOG:
 
         ammoca_message += f"{who_m} tagged you in [{where_m}]({message_link})"
         if NEEDTOLOG is not None:
-            await tgbot.send_message(
+            await Freaky.send_message(
                 entity=NEEDTOLOG,
                 message=ammoca_message,
                 link_preview=False,
