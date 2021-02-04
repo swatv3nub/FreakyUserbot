@@ -6,7 +6,6 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
 from FreakyUserbot import CMD_HELP, sclient
-from FreakyUserbot.modules.sql_helper.gban_sql import is_gbanned
 from FreakyUserbot.modules.sql_helper.gmute_sql import is_gmuted
 from FreakyUserbot.modules.sql_helper.mute_sql import is_muted
 from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
