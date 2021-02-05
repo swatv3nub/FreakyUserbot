@@ -1,13 +1,11 @@
-  
 #    Copyright (C) @chsaiujwal 2020-2021
 
 
 import json
 import urllib.request
 
-from FreakyUserbot.utils import Freaky_on_cmd
-
 from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
 @Freaky.on(Freaky_on_cmd(pattern="scanip(.*)"))

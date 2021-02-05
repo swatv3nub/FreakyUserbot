@@ -25,7 +25,7 @@ from FreakyUserbot.modules.sql_helper.idadder_sql import (
 async def start(event):
     dayambot = await freakybot.get_me()
     bot_id = dayambot.first_name
-    bot_username = dayambot.username
+    dayambot.username
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
     devlop = await bot.get_me()
@@ -42,7 +42,8 @@ async def start(event):
                 [custom.Button.inline("Commands For Assistant", data="gibcmd")],
                 [
                     Button.url(
-                        "Add My Better Alternate to your Group 👥", f"t.me/MrHackfreaksRobot?startgroup=true"
+                        "Add My Better Alternate to your Group 👥",
+                        f"t.me/MrHackfreaksRobot?startgroup=true",
                     )
                 ],
             ],
