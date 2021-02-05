@@ -8,7 +8,7 @@ from datetime import datetime
 from FreakyUserbot import CMD_HELP
 from FreakyUserbot.utils import Freaky_on_cmd, progress
 
-FF_MPEG_DOWN_LOAD_MEDIA_PATH = "uniborg.media.ffmpeg"
+FF_MPEG_DOWN_LOAD_MEDIA_PATH = "FreakyUserbot.media.ffmpeg"
 
 
 @Freaky.on(Freaky_on_cmd("ffmpegsave"))

@@ -42,7 +42,7 @@ async def start(event):
                 [custom.Button.inline("Commands For Assistant", data="gibcmd")],
                 [
                     Button.url(
-                        "Add Me to Group 👥", f"t.me/{bot_username}?startgroup=true"
+                        "Add My Better Alternate to your Group 👥", f"t.me/MrHackfreaksRobot?startgroup=true"
                     )
                 ],
             ],
@@ -235,7 +235,7 @@ async def dayamisnoob(event):
         await event.reply("Not Even. Blacklisted 🤦🚶")
     elif is_he_added(user_id):
         removenibba(user_id)
-        await event.reply("DisBlacklisted This Dumb Person")
+        await event.reply("UnBlacklisted This Dumb Person")
         await freakybot.send_message(
             user_id, "Congo! You Have Been Unblacklisted By My Master."
         )

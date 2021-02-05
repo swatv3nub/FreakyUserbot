@@ -38,7 +38,7 @@ afk_start = {}
 
 
 @Freaky.on(
-    events.NewMessage(pattern=r"\.afk ?(.*)", outgoing=True)
+    events.NewMessage(pattern=r"afk ?(.*)", outgoing=True)
 )  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
