@@ -1,9 +1,9 @@
-# By @HeisenbergTheDanger
+# By @HeisenbergTheDanger for TeleBot
 # @xditya
-# Kangers keep credits - Omk Vro
+# Kangers keep credits
 
 from FreakyUserbot import CMD_HELP
-from FreakyUserbot.utils import Freaky_on_cmd
+from FreakyUserbot.utils import admin_cmd
 
 
 @Freaky.on(Freaky_on_cmd(pattern="pmto ?(.*)"))
@@ -24,7 +24,7 @@ async def pmto(event):
         await borg.send_message(chat_id, msg)
         await event.edit("Message sent!")
     except BaseException:
-        await event.edit("SOMETHING W3NT WRONG.")
+        await event.edit("Something went wrong.")
 
 
 CMD_HELP.update({"pmto": ".pmto <username> <message>"})
