@@ -14,8 +14,7 @@
 import requests
 
 from FreakyUserbot import CMD_HELP
-from FreakyUserbot.utils import admin_cmd
-from FreakyUserbot.utils import edit_or_reply, Freaky_on_cmd, sudo_cmd
+from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
 @Freaky.on(Freaky_on_cmd(pattern="pokemon ?(.*)"))
@@ -28,10 +27,10 @@ async def _(event):
     r = requests.get(url).json()
     pokemon = r
     if pokemon.get("error") is not None:
-          kk = f"""
+        kk = f"""
 Error:   {pokemon.get("error")}"""
-          ommhg = await edit_or_reply(event, kk)
-          return
+        await edit_or_reply(event, kk)
+        return
     name = str(pokemon.get("name"))
     number = str(pokemon.get("number"))
     species = str(pokemon.get("species"))
