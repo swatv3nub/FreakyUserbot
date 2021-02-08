@@ -17,7 +17,7 @@
 import asyncio
 
 from FreakyUserbot import CMD_HELP
-from FreakyUserbot.function import fetch_feds
+from FreakyUserbot.functions import fetch_feds
 from FreakyUserbot.modules.sql_helper.feds_sql import (
     add_fed,
     get_all_feds,
