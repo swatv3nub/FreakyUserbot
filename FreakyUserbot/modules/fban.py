@@ -14,6 +14,9 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import asyncio
+
+from FreakyUserbot import CMD_HELP
 from FreakyUserbot.function import fetch_feds
 from FreakyUserbot.modules.sql_helper.feds_sql import (
     add_fed,
@@ -21,9 +24,8 @@ from FreakyUserbot.modules.sql_helper.feds_sql import (
     is_fed_indb,
     rmfed,
 )
-import asyncio
 from FreakyUserbot.utils import Freaky_on_cmd
-from FreakyUserbot import CMD_HELP
+
 chnnl_grp = Config.FBAN_GROUP
 
 
@@ -94,11 +96,15 @@ async def _(event):
     errors = 0
     len_feds = len(all_fed)
     if len_feds == 0:
-        await event.edit("`No Fed IN DB, Add One To Do So. Please Do .fadd all to Add All Feds IN Database`")
+        await event.edit(
+            "`No Fed IN DB, Add One To Do So. Please Do .fadd all to Add All Feds IN Database`"
+        )
         return
     await event.edit(f"`FBanning in {len_feds} Feds.`")
     if not chnnl_grp:
-        await event.edit("Bruh, Atleast Set Fban Group Var, Do `.set var FBAN_GROUP <yourgroupidhere>`")
+        await event.edit(
+            "Bruh, Atleast Set Fban Group Var, Do `.set var FBAN_GROUP <yourgroupidhere>`"
+        )
         return
     try:
         await borg.send_message(chnnl_grp, "/start")
@@ -131,7 +137,9 @@ async def _(event):
     len_feds = len(all_fed)
     await event.edit(f"`UnFBanning in {len_feds} Feds.`")
     if not chnnl_grp:
-        await event.edit("Bruh, Atleast Set Fban Group Var, Do `.set var FBAN_GROUP <yourgroupidhere>`")
+        await event.edit(
+            "Bruh, Atleast Set Fban Group Var, Do `.set var FBAN_GROUP <yourgroupidhere>`"
+        )
         return
     try:
         await borg.send_message(chnnl_grp, "/start")
