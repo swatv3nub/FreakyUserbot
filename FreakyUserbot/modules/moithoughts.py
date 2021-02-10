@@ -10,7 +10,7 @@ from telethon import events
 from FreakyUserbot import CMD_HELP
 
 
-@Freaky.on(events.NewMessage(pattern=r"\.mts", outgoing=True))
+@Freaky.on(Freaky_on_cmd(pattern="mts (.*)"))
 async def _(event):
 
     if event.fwd_from:
