@@ -1,4 +1,3 @@
-  
 """Get Telegram Profile Picture and other information
 and set as own profile.
 Syntax: .clone @username"""
