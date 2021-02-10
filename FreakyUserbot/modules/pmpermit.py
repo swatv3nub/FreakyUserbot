@@ -9,7 +9,7 @@ from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 import FreakyUserbot.modules.sql_helper.pmpermit_sql as pmpermit_sql
-from FreakyUserbot import ALIVE_NAME, CUSTOM_PMPERMIT
+from FreakyUserbot import ALIVE_NAME, CUSTOM_PMPERMIT, CMD_HELP
 from FreakyUserbot.Configs import Config
 from FreakyUserbot.utils import Freaky_on_cmd
 
