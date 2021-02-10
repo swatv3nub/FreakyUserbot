@@ -114,9 +114,9 @@ async def _(event):
     for teamz in all_fed:
         try:
             await borg.send_message(chnnl_grp, "/joinfed " + teamz.feds)
-            await asyncio.sleep(2)
-            await borg.send_message(chnnl_grp, "/fban " + lol_s)
             await asyncio.sleep(5)
+            await borg.send_message(chnnl_grp, "/fban " + lol_s)
+            await asyncio.sleep(7)
         except:
             errors += 1
     await event.edit(
@@ -149,9 +149,9 @@ async def _(event):
     for teamz in all_fed:
         try:
             await borg.send_message(chnnl_grp, "/joinfed " + teamz.feds)
-            await asyncio.sleep(2)
-            await borg.send_message(chnnl_grp, "/unfban " + lol_s)
             await asyncio.sleep(5)
+            await borg.send_message(chnnl_grp, "/unfban " + lol_s)
+            await asyncio.sleep(7)
         except:
             errors += 1
     await event.edit(
