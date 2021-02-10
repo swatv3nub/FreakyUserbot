@@ -29,6 +29,6 @@ class HerokuHelper:
 
     def restart(self):
         return self.app.restart()
-    
+
     def shutdown(self):
         return self.app.process_formation()["worker.1"].scale(0)
