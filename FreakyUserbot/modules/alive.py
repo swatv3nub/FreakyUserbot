@@ -53,7 +53,7 @@ pm_caption += (
 )
 pm_caption += "**✗ License** : [GNU General Public License v3.0](https://github.com/swatv3nub/FreakyUserbot/blob/main/LICENSE)\n\n"
 pm_caption += "**[✗ Updates](https://t.me/FreakyUserbot)**\n"
-pm_caption += "**[✗ Support](https://t.meHackfreaksSupport)**\n\n"
+pm_caption += "**[✗ Support](https://t.me/HackfreaksSupport)**\n\n"
 pm_caption += (
     "**[✗ GitHub Repository ✗](https://github.com/swatv3nub/FreakyUserbot/)**\n"
 )
