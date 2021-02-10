@@ -79,6 +79,8 @@ python3 -m FreakyUserbot
 
 # CREDIT'S
 
+FRIDAY - :kissing_heart:
+
 TELEBOT
 
 CATUSERBOT
@@ -87,7 +89,6 @@ DARKCOBRA USERBOT
 
 PAPERPLANE REMIX USERBOT
 
-LAST BUT NOT LEAST - "FRIDAY"
 
 
 
