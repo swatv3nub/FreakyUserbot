@@ -122,3 +122,34 @@ Spam Protection : {spamprotection}
 
 """
 await ok.edit(LAST_MSG)
+
+
+@borg.on(admin_cmd(outgoing=True, pattern="anon (.*)"))
+@borg.on(sudo_cmd(outgoing=True, pattern="anon (.*)", allow_sudo=True))
+async def _(event):
+  ok = await event.edit("Searching...")
+  await ok.edit(anony)
+
+@borg.on(admin_cmd(outgoing=True, pattern="sw (.*)"))
+@borg.on(sudo_cmd(outgoing=True, pattern="sw (.*)", allow_sudo=True))
+async def _(event):
+  ok = await event.edit("Searching...")
+  await ok.edit(swban)
+
+@borg.on(admin_cmd(outgoing=True, pattern="cas (.*)"))
+@borg.on(sudo_cmd(outgoing=True, pattern="cas (.*)", allow_sudo=True))
+async def _(event):
+  ok = await event.edit("Searching...")
+  await ok.edit(cas)
+
+@borg.on(admin_cmd(outgoing=True, pattern="rose (.*)"))
+@borg.on(sudo_cmd(outgoing=True, pattern="rose (.*)", allow_sudo=True))
+async def _(event):
+  ok = await event.edit("Searching...")
+  ok = await event.edit(rosefed)
+
+@borg.on(admin_cmd(outgoing=True, pattern="spro (.*)"))
+@borg.on(sudo_cmd(outgoing=True, pattern="spro (.*)", allow_sudo=True))
+async def _(event):
+  ok = await event.edit("Searching...")
+  await ok.edit(spamprotection)
