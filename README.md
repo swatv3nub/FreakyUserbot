@@ -24,17 +24,18 @@
 Get API_ID and API_HASH from [@HackfreaksScrapperRobot](https://telegram.dog/HackfreaksScrapperRobot)
 
 
+# STRING_SESSION
 
+Get STRING_SESSION from [@FreakyStringGenBot](https://t.me/FreakyStringGenBot)
+
+OR
+
+[![Run on Repl.it](https://telegra.ph/file/1b2ca5fd16997b21b4b41.jpg)](https://repl.it/@swatv3nub/UserbotSessionGenerator#main.py)
 
 
 # DEPLOY
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/swatv3nub/FreakyUserbot)
-# String
-
-[![Run on Repl.it](https://telegra.ph/file/1b2ca5fd16997b21b4b41.jpg)](https://repl.it/@swatv3nub/UserbotSessionGenerator#main.py)
-
-
 
 
 # HARD WAY (For Devs)
@@ -100,3 +101,7 @@ will. Specifically you can redistribute and/or modify it under the terms of the
 [GNU General Public License](https://www.gnu.org/licenses/gpl.html) as
 published by the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version. 
+
+# IMPORTANT
+
+I am Not Responsible for Anything Happened to your Acc Using this Userbot
