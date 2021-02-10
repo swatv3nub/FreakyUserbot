@@ -6,6 +6,7 @@ import asyncio
 import random
 
 from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
 @Freaky.on(Freaky_on_cmd(pattern="mts (.*)"))
