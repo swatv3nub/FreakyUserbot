@@ -5,8 +5,6 @@
 import asyncio
 import random
 
-from telethon import events
-
 from FreakyUserbot import CMD_HELP
 
 
