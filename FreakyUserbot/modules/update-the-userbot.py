@@ -165,7 +165,7 @@ async def upstream(ups):
             repo.__del__()
             return
         await ups.edit(
-            "`Userbot dyno build in progress, please wait for it to complete.`"
+            "⚜️Updating Freaky⚜️\n\nYou Are The **✗ Freak ✗** !!\n\nPlease Wait a bit\nThen Try .alive To Check If I Am Online` \n\n**Powered by :-**\n© [FreakyUserbot](https://t.me/FreakyUserbot)"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
