@@ -12,7 +12,7 @@ from FreakyUserbot import ALIVE_NAME, CMD_HELP
 from FreakyUserbot.utils import Freaky_on_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Freaky"
-DEFAULTUSERBIO = "404: No bio found!"
+DEFAULTUSERBIO = "Join @ProjectHackfreaks // @FreakyUserbot"
 if Var.PRIVATE_GROUP_ID is None:
     BOTLOG = False
 else:
