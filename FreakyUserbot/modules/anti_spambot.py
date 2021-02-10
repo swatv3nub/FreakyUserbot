@@ -1,16 +1,16 @@
 ## From CatUserbot , And Yes I am Noob
 #
-#import spamwatch
-#from requests import get
-#from telethon import events
-#from telethon.errors import ChatAdminRequiredError
-#from telethon.tl.types import ChannelParticipantsAdmins
+# import spamwatch
+# from requests import get
+# from telethon import events
+# from telethon.errors import ChatAdminRequiredError
+# from telethon.tl.types import ChannelParticipantsAdmins
 #
-#from FreakyUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, LOGS
-#from FreakyUserbot.modules.sql_helper.gban_sql import get_gbanuser, is_gbanned
-#from FreakyUserbot.utils import Freaky_on_cmd, is_admin
+# from FreakyUserbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, LOGS
+# from FreakyUserbot.modules.sql_helper.gban_sql import get_gbanuser, is_gbanned
+# from FreakyUserbot.utils import Freaky_on_cmd, is_admin
 #
-#if Config.ANTI_SPAMBOT:
+# if Config.ANTI_SPAMBOT:
 #
 #    @Freaky.on(events.ChatAction())
 #    async def anti_spambot(event):
@@ -92,8 +92,8 @@
 #            )
 #
 #
-#@Freaky.on(Freaky_on_cmd(pattern="cascheck$"))
-#async def caschecker(cas):
+# @Freaky.on(Freaky_on_cmd(pattern="cascheck$"))
+# async def caschecker(cas):
 #    freakevent = await edit_or_reply(
 #        cas,
 #        "`checking any cas(combot antispam service) banned users here, this may take several minutes too......`",
@@ -131,8 +131,8 @@
 #    await freakevent.edit(text)
 #
 #
-#@Freaky.on(Freaky_on_cmd(pattern="swcheck$"))
-#async def caschecker(cas):
+# @Freaky.on(Freaky_on_cmd(pattern="swcheck$"))
+# async def caschecker(cas):
 #    text = ""
 #    chat = cas.chat_id
 #    freakevent = await edit_or_reply(
@@ -170,7 +170,7 @@
 #    await freakevent.edit(text)
 #
 #
-#def banchecker(user_id):
+# def banchecker(user_id):
 #    try:
 #        casurl = "https://api.cas.chat/check?user_id={}".format(user_id)
 #        data = get(casurl).json()
@@ -180,14 +180,14 @@
 #    return bool(data and data["ok"])
 #
 #
-#def spamchecker(user_id):
+# def spamchecker(user_id):
 #    ban = None
 #    if spamwatch:
 #        ban = spamwatch.get_ban(user_id)
 #    return bool(ban)
 #
 #
-#CMD_HELP.update(
+# CMD_HELP.update(
 #    {
 #        "antispambot": "**Plugin : **`antispambot`\
 #        \n\n**Syntax : **`.cascheck`\
@@ -195,5 +195,5 @@
 #        \n\n**Syntax : **`.swcheck`\
 #        \n**Function : **__Searches for spamwatch banned users in group and shows you the list__"
 #    }
-#)
+# )
 #
