@@ -57,6 +57,7 @@ hachoir
 heroku3
 httplib2
 humanize
+libmagic
 lxml
 lyricsgenius
 oauth2client
