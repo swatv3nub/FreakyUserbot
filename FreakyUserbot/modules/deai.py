@@ -78,7 +78,9 @@ async def _(event):
                 await conv.send_message("/start")
                 await conv.get_response()
                 await conv.send_message("/fcheck" + {sysarg} + "845d33d3-0961-4e44-b4b5-4c57775fbdac")
-Space For Rest Codes
+                audio = await conv.get_response()
+                await ok.edit(audio.text + "\n\nDEAI Info Excracted by @FreakyUserbot [[bancodes explaination]](https://t.me/DahuaEngine/11)")
+# Space For Rest Codes for direct bancode explaination
             except YouBlockedUserError:
                 await ok.edit("**Error**\n `Unblock` @rSophieBot `and try again!")
 CMD_HELP.update(
