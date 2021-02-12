@@ -1,14 +1,11 @@
- # Under Development
- # By Swonit for @FreakyUserbot
+# Under Development
+# By Swonit for @FreakyUserbot
 
-import html
-import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from FreakyUserbot.utils import Freaky_on_cmd
 from FreakyUserbot import CMD_HELP
-from FreakyUserbot.Configs import Config
+from FreakyUserbot.utils import Freaky_on_cmd
 
 bot = "@rSophieBot"
 
@@ -54,6 +51,7 @@ bot = "@rSophieBot"
 #     "X8": "Codename Gestapo"
 # }
 
+
 @Freaky.on(Freaky_on_cmd(pattern="deai ?(.*)"))
 async def _(event):
     if event.fwd_from:
@@ -65,7 +63,6 @@ async def _(event):
         user = f"[user](tg://user?id={sysarg})"
     else:
         sysarg = event.pattern_match.group(1)
-        user = sysarg
     if sysarg == "":
         await ok.edit(
             "`Give me someones id, or reply to somones message to check his/her deai stats.`"
@@ -76,14 +73,21 @@ async def _(event):
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
-                await conv.send_message(f"/fcheck {sysarg} 845d33d3-0961-4e44-b4b5-4c57775fbdac")
+                await conv.send_message(
+                    f"/fcheck {sysarg} 845d33d3-0961-4e44-b4b5-4c57775fbdac"
+                )
                 audio = await conv.get_response()
-                await ok.edit(audio.text + "\n\nDEAI Info Excracted by @FreakyUserbot [[bancodes explaination]](https://t.me/DahuaEngine/11)")
-# Space For Rest Codes for direct bancode explaination
+                await ok.edit(
+                    audio.text
+                    + "\n\nDEAI Info Excracted by @FreakyUserbot [[bancodes explaination]](https://t.me/DahuaEngine/11)"
+                )
+            # Space For Rest Codes for direct bancode explaination
             except YouBlockedUserError:
                 await ok.edit("**Error**\n `Unblock` @rSophieBot `and try again!")
+
+
 CMD_HELP.update(
-  {
-      "DEAI stats": ".deai <username/userid/reply to user>\nUse - To check the persons DEAI status in @rSophieBot."
-  }
+    {
+        "DEAI stats": ".deai <username/userid/reply to user>\nUse - To check the persons DEAI status in @rSophieBot."
+    }
 )
