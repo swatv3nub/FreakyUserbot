@@ -84,6 +84,6 @@ async def _(event):
                 await ok.edit("**Error**\n `Unblock` @rSophieBot `and try again!")
 CMD_HELP.update(
   {
-      "DEAI stats": ".deai <username/userid/reply to user>\nUse - To check the persons DEAI status in @rSophieBot.\"
+      "DEAI stats": ".deai <username/userid/reply to user>\nUse - To check the persons DEAI status in @rSophieBot."
   }
 )
