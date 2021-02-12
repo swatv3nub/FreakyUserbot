@@ -1,17 +1,16 @@
  # Under Development
  # By Swonit for @FreakyUserbot
 
+import html
+import asyncio
 
- import html
- import asyncio
+from telethon.errors.rpcerrorlist import YouBlockedUserError
 
- from telethon.errors.rpcerrorlist import YouBlockedUserError
+from FreakyUserbot.utils import Freaky_on_cmd
+from FreakyUserbot import CMD_HELP
+from FreakyUserbot.Configs import Config
 
- from FreakyUserbot.utils import Freaky_on_cmd
- from FreakyUserbot import CMD_HELP
- from FreakyUserbot.Configs import Config
-
- bot = "@rSophieBot"
+bot = "@rSophieBot"
 
 # DEAI_BAN_CODES = {
 #     "0x00": "Gban",
