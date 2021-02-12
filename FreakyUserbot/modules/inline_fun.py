@@ -3,7 +3,7 @@ from FreakyUserbot.utils import Freaky_on_cmd
 from var import Var
 
 
-@Freaky.on(Freaky_on_cmd(pattern="stat$"))
+@Freaky.on(Freaky_on_cmd(pattern="status$"))
 async def stats(event):
     if event.fwd_from:
         return
@@ -58,7 +58,7 @@ async def mod(event):
 CMD_HELP.update(
     {
         "inline_fun": "**Inline Fun**\
-\n\n**Syntax : **`.stat`\
+\n\n**Syntax : **`.status`\
 \n**Usage :** Shows inline stats of your assistant bot.\
 \n\n**Syntax : **`.xogame`\
 \n**Usage :** starts a multiplayer xo game.\
