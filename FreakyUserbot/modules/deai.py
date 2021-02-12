@@ -79,7 +79,7 @@ async def _(event):
                 audio = await conv.get_response()
                 await ok.edit(
                     audio.text
-                    + "\n\nDEAI Info Excracted by @FreakyUserbot [[bancodes explaination]](https://t.me/DahuaEngine/11)"
+                    + "\n\nDEAI Ban Info Extracted using FreakyUserbot [[bancodes explaination]](https://t.me/DahuaEngine/11)"
                 )
             # Space For Rest Codes for direct bancode explaination
             except YouBlockedUserError:
