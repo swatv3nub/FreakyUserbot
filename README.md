@@ -91,6 +91,19 @@ PAPERPLANE REMIX USERBOT
 
 
 
+# Simple Plugin Example
+
+```python3
+from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd, edit_or_reply
+from FreakyUserbot.Configs import Config
+@Freaky.on(Freaky_on_cmd(pattern="devs"))
+@Freaky.on(sudo_cmd(pattern="devs", allow_sudo=True))
+async def devs(event):
+    if event.fwd_from:
+        return
+    freaky = await edit_or_reply(event, "Listing My Devs....")
+    await freaky.edit("**MY DEVS**\n\n1. @Swonit\n2. @jayantkageri\n\nA Part of @PythonDevs")
+```
 
 
 
