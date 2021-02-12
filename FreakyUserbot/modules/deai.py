@@ -1,18 +1,18 @@
-# Under Development 
-# By Swonit for @FreakyUserbot 
-# 
+# Under Development
+# By Swonit for @FreakyUserbot
+#
 #
 # import html
 # import asyncio
-# 
+#
 # from telethon.errors.rpcerrorlist import YouBlockedUserError
-# 
+#
 # from FreakyUserbot.utils import Freaky_on_cmd
 # from FreakyUserbot import CMD_HELP
 # from FreakyUserbot.Configs import Config
-# 
+#
 # bot = "@rSophieBot"
-# 
+#
 # DEAI_BAN_CODES = {
 #     "00": "Gban",
 #     "01": "Joinspam",
@@ -54,8 +54,8 @@
 #     "7": "Codename Polizei",
 #     "8": "Codename Gestapo"
 # }
-# 
-# 
+#
+#
 # @Freaky.on(Freaky_on_cmd(pattern="deai ?(.*)"))
 # async def _(event):
 #     if event.fwd_from:
@@ -79,9 +79,9 @@
 #                 await conv.send_message("/start")
 #                 await conv.get_response()
 #                 await conv.send_message("/fcheck" + {sysarg} + "845d33d3-0961-4e44-b4b5-4c57775fbdac")
-#                 
+#
 # Space For Rest Codes
-#             
+#
 #             except YouBlockedUserError:
 #                 await ok.edit("**Error**\n `Unblock` @rSophieBot `and try again!")
 #
@@ -90,4 +90,4 @@
 #   {
 #       "DEAI stats": ".deai <username/userid/reply to user>\nUse - To check the persons DEAI status in @rSophieBot.\"
 #   }
-#)
+# )
