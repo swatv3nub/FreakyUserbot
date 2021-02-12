@@ -57,7 +57,8 @@ pm_caption += "**[✗ Support](https://t.me/HackfreaksSupport)**\n\n"
 pm_caption += (
     "**[✗ GitHub Repository ✗](https://github.com/swatv3nub/FreakyUserbot/)**\n"
 )
-pm_caption += "**[✗ Deploy Freaky ✗](https://heroku.com/deploy?template=https://github.com/swatv3nub/FreakyUserbot)**"
+pm_caption += "**[✗ Deploy Freaky ✗](https://heroku.com/deploy?template=https://github.com/swatv3nub/FreakyUserbot)**\n\n"
+pm_caption += "**A Part of @ScannerOverPowered // @PythonDevs**"
 
 
 @Freaky.on(Freaky_on_cmd(pattern=r"alive"))
