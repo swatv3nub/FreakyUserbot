@@ -110,40 +110,40 @@ async def _(event):
 
 # SpamProtection [Might Not Work]
 
-    spurl = f"https://api.intellivoid.net/spamprotection/v1/lookup?query={sysarg}"
-    r = request.get(spurl)
-    json = r.json
-    if json["success"]:
-      text = ""
-        if json["results"]["private_telegram_id"]:
-            
-                text += f"- <b>PTID:</b> " {json["results"]["private_telegram_id"]}
-        
-        if json["results"]["attributes"]["is_potential_spammer"]:
-            
-                text += "- <b>Potential Spammer:</b> Yes\n"
-        
-        if json["results"]["language_prediction"]["language"]:
-    
-                text += f"\n- <b>Language Prediction:</b> {json["results"]["language_prediction"]["language"]}
-    
-    - <b>Language Prediction Probability:</b> {json["results"]["language_prediction"]["probability"]}"
-        
-        if json["results"]["attributes"]["is_blacklisted"]:
-    
-                text += f"\n- <b>Blacklist Flag:</b> {json["results"]["attributes"]["blacklist_flag"]}
-    
-    - <b>Blacklist Reason:</b> {json["results"]["attributes"]["blacklist_reason"]}"
-    
-        if json["results"]["attributes"]["original_private_id"]:
-            
-                text += f"\n- <b>Original Private ID:</b> {json["results"]["attributes"]["original_private_id"]}"
-                
-        if json["results"]["spam_prediction"]["spam_prediction"]:
-            
-                text += f"\n- Spam Prediction:</br> {json["results"]["spam_prediction"]["spam_prediction"]}"
-    
-    spamprotection = text
+#   spurl = f"https://api.intellivoid.net/spamprotection/v1/lookup?query={sysarg}"
+#   r = request.get(spurl)
+#   json = r.json
+#   if json["success"]:
+#     text = ""
+#       if json["results"]["private_telegram_id"]:
+#           
+#               text += f"- <b>PTID:</b> " {json["results"]["private_telegram_id"]}
+#       
+#       if json["results"]["attributes"]["is_potential_spammer"]:
+#           
+#               text += "- <b>Potential Spammer:</b> Yes\n"
+#       
+#       if json["results"]["language_prediction"]["language"]:
+#   
+#               text += f"\n- <b>Language Prediction:</b> {json["results"]["language_prediction"]["language"]}
+#   
+#   - <b>Language Prediction Probability:</b> {json["results"]["language_prediction"]["probability"]}"
+#       
+#       if json["results"]["attributes"]["is_blacklisted"]:
+#   
+#               text += f"\n- <b>Blacklist Flag:</b> {json["results"]["attributes"]["blacklist_flag"]}
+#   
+#   - <b>Blacklist Reason:</b> {json["results"]["attributes"]["blacklist_reason"]}"
+#   
+#       if json["results"]["attributes"]["original_private_id"]:
+#           
+#               text += f"\n- <b>Original Private ID:</b> {json["results"]["attributes"]["original_private_id"]}"
+#               
+#       if json["results"]["spam_prediction"]["spam_prediction"]:
+#           
+#               text += f"\n- Spam Prediction:</br> {json["results"]["spam_prediction"]["spam_prediction"]}"
+#   
+#   spamprotection = text
     
     #End Of Checking
     
@@ -204,11 +204,11 @@ async def _(event):
   ok = await event.edit("Searching in Rose Support...")
   await ok.edit(rose)
   
-@Freaky.on(Freaky_on_cmd(pattern="spb (.*)"))
-@Freaky.on(sudo_cmd(pattern="spb (.*)", allow_sudo=True))
-async def _(event):
-  ok = await event.edit("Searching in @SpamProtectionLogs...")
-  await ok.edit(spamprotection)
+#@Freaky.on(Freaky_on_cmd(pattern="spb (.*)"))
+#@Freaky.on(sudo_cmd(pattern="spb (.*)", allow_sudo=True))
+#async def _(event):
+#  ok = await event.edit("Searching in @SpamProtectionLogs...")
+#  await ok.edit(spamprotection)
 
 CMD_HELP.update(
     {
