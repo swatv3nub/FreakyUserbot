@@ -12,8 +12,8 @@ from FreakyUserbot import CMD_HELP
 from FreakyUserbot.utils import Freaky_on_cmd, edit_or_reply, sudo_cmd
 
 
-@Freaky.on(Freaky_on_cmd("eval"))
-@Freaky.on(sudo_cmd("eval", allow_sudo=True))
+@Freaky.on(Freaky_on_cmd("py"))
+@Freaky.on(sudo_cmd("py", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -74,8 +74,8 @@ async def aexec(code, event):
 
 CMD_HELP.update(
     {
-        "eval": "**Eval**\
-\n\n**Syntax : **`.eval <python code>`\
+        "py": "**Pycodr**\
+\n\n**Syntax : **`.py <python code>`\
 \n**Usage :** Run python code using this plugin."
     }
 )
