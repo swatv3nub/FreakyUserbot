@@ -66,7 +66,7 @@ async def _(event):
         if reason:
             await borg.send_message(
                 event.chat_id,
-                f"**My Master Seems To Be Too Busy 👀.** \n__He Going Afk Because Of__ `{reason}`",
+                f"**Moi Master Seem Too Bussy 👀.** \n__He Going Afk Because Of__ `{reason}`",
             )
         else:
             await borg.send_message(event.chat_id, f"**I Am Busy And I Am Going Afk**.")
@@ -96,7 +96,7 @@ async def set_not_afk(event):
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         shite = await borg.send_message(
             event.chat_id,
-            "__Pro is Back Alive__\n**No Longer afk.**\n `I Was afk for:``"
+            "__Pro is Back Alive__\n**Moi Master Is Not Afk Now;).**\n `I Was afk for:``"
             + total_afk_time
             + "`",
         )
