@@ -24,8 +24,6 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from FreakyUserbot import CMD_HELP
 from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
 
-sophie = "@rSophieBot"
-rose = "@MissRose_Bot"
 
 @Freaky.on(Freaky_on_cmd(pattern="ubs ?(.*)"))
 @Freaky.on(sudo_cmd(pattern="ubs ?(.*)"), allow_sudo=True)
@@ -45,7 +43,7 @@ async def _(event):
         )
         return
     else:
-        async with borg.conversation(sophie) as conv:  #DEAI
+        async with borg.conversation('@rSophieBot') as conv:  #DEAI
          await conv.send_message("/start")
          await conv.get_response()
          await conv.send_message(
@@ -59,7 +57,7 @@ async def _(event):
         # Space For Rest Codes for direct bancode explaination
 
 
-        async with borg.conversation(rose) as conv: #AnonymousArmy
+        async with borg.conversation('@MissRose_Bot') as conv: #AnonymousArmy
          await conv.send_message("/start")
          await conv.get_response()
          await conv.send_message(
@@ -73,7 +71,7 @@ async def _(event):
             # Space For Rest Codes for direct bancode explaination
 
 
-        async with borg.conversation(rose) as conv: #PaperPlaneAntiSpam
+        async with borg.conversation('@MissRose_Bot') as conv: #PaperPlaneAntiSpam
          await conv.send_message("/start")
          await conv.get_response()
          await conv.send_message(
@@ -83,17 +81,17 @@ async def _(event):
          paperplane = await msg.text
 
 
-        async with borg.conversation(rose) as conv: #Rose Official
+        async with borg.conversation('@MissRose_Bot') as conv: #Rose Official
          await conv.send_message("/start")
          await conv.get_response()
          await conv.send_message(
              f"/fbanstat {sysarg} 86718661-6bfc-4bd0-9447-7c419eb08e69"
          )
          msg = await conv.get_response()
-         roseofficial = await msg.text
+         rose = await msg.text
 
 
-        async with borg.conversation(rose) as conv: #SibylSystemGbans
+        async with borg.conversation('@MissRose_Bot') as conv: #SibylSystemGbans
          await conv.send_message("/start")
          await conv.get_response()
          await conv.send_message(
@@ -101,22 +99,7 @@ async def _(event):
          )
          msg = await conv.get_response()
          sibyl = await msg.text
-                
-
-#CAS Check
-
-    casurl = f"https://cas.chat/query?u={sysarg}" 
-    r = request.get(casurl)
-    data = r.json()
-    except BaseException:
-        pass
-    data = None
-    if data and data["ok"]:
-        reason = f"<i>True</i>"
-    else:
-        reason = f"<i>False</i>"
-
-    cas = reason
+    
 
 #SpamWatch
 
@@ -164,13 +147,11 @@ REPLY_MSG = f"""
 
 **✗ @TheAnonymousArmy ✗** : {anon}
 
-**✗ Rose Support Official ✗** : {roseofficial}
+**✗ Rose Support Official ✗** : {rose}
 
 **✗ @SpamWatch ✗** : {swban}
 
 **✗ @DahuaEngine [DEAI] ✗** : {deai}
-
-**✗ Banned in Combot Anti Spam [CAS] ✗** : {cas}
 
 **✗ Gbanned by @SibylSystem ✗** : {sibyl}
 
@@ -216,7 +197,7 @@ async def _(event):
 @Freaky.on(sudo_cmd(pattern="rose (.*)", allow_sudo=True))
 async def _(event):
   ok = await event.edit("Searching in Rose Support...")
-  await ok.edit(roseofficial)
+  await ok.edit(rose)
   
 @Freaky.on(Freaky_on_cmd(pattern="spb (.*)"))
 @Freaky.on(sudo_cmd(pattern="spb (.*)", allow_sudo=True))
