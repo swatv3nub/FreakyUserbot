@@ -151,11 +151,9 @@ REPLY_MSG = f"""
 **✗ @PaperPlaneAntiSpam ✗** : {paperplane}
 
 """
+await ok.edit(REPLY_MSG)
 
 # **✗ Spam Protection ✗** : {spamprotection}
-
-
-await ok.edit(REPLY_MSG)
 
 
 @Freaky.on(Freaky_on_cmd(pattern="anon (.*)"))
