@@ -115,17 +115,20 @@ async def _(event):
     json = r.json
     if json["success"]:
       text = ""
-      if json["results"]["private_telegram_id"]:
-        text += f"- <b>PTID:</b> <code>"
-        +
-        json["results"]["private_telegram_id"] + "</code>\n"
+        if json["results"]["private_telegram_id"]:
+            
+                text += f"- <b>PTID:</b> " {json["results"]["private_telegram_id"]}
+        
         if json["results"]["attributes"]["is_potential_spammer"]:
-        text += '- <b>Potential Spammer:</b> Yes\n'
+            
+                text += "- <b>Potential Spammer:</b> Yes\n"
+        
         if json["results"]["language_prediction"]["language"]:
     
                 text += f"\n- <b>Language Prediction:</b> {json["results"]["language_prediction"]["language"]}
     
     - <b>Language Prediction Probability:</b> {json["results"]["language_prediction"]["probability"]}"
+        
         if json["results"]["attributes"]["is_blacklisted"]:
     
                 text += f"\n- <b>Blacklist Flag:</b> {json["results"]["attributes"]["blacklist_flag"]}
@@ -133,7 +136,9 @@ async def _(event):
     - <b>Blacklist Reason:</b> {json["results"]["attributes"]["blacklist_reason"]}"
     
         if json["results"]["attributes"]["original_private_id"]:
+            
                 text += f"\n- <b>Original Private ID:</b> {json["results"]["attributes"]["original_private_id"]}"
+                
         if json["results"]["spam_prediction"]["spam_prediction"]:
             
                 text += f"\n- Spam Prediction:</br> {json["results"]["spam_prediction"]["spam_prediction"]}"
