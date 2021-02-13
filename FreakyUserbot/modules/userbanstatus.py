@@ -45,73 +45,63 @@ async def _(event):
         )
         return
     else:
-        async with borg.conversation(sophie) as conv: 
-            try: #DEAI
-                await conv.send_message("/start")
-                await conv.get_response()
-                await conv.send_message(
-                    f"/fcheck {sysarg} 845d33d3-0961-4e44-b4b5-4c57775fbdac"
-                )
-                msg = await conv.get_response()
-                deai = await ok.edit(
-                    msg.text
-                    + "\n\nDEAI bancodes explaination [Here](https://t.me/DahuaEngine/11)"
-                )
+        async with borg.conversation(sophie) as conv:  #DEAI
+         await conv.send_message("/start")
+         await conv.get_response()
+         await conv.send_message(
+             f"/fcheck {sysarg} 845d33d3-0961-4e44-b4b5-4c57775fbdac"
+         )
+         msg = await conv.get_response()
+         deai = await ok.edit(
+             msg.text
+             + "\n\nDEAI bancodes explaination [Here](https://t.me/DahuaEngine/11)"
+         )
+        # Space For Rest Codes for direct bancode explaination
+
+
+        async with borg.conversation(rose) as conv: #AnonymousArmy
+         await conv.send_message("/start")
+         await conv.get_response()
+         await conv.send_message(
+              f"/fbanstat {sysarg} 21029270-28da-425c-9a4a-8f0514624ef0"
+         )
+         msg = await conv.get_response()
+         anon = await ok.edit(
+              msg.text
+              + "\n\nAnonymousArmy bancodes explaination [Here](https://t.me/TheAnonymousArmy/24)"
+          )
             # Space For Rest Codes for direct bancode explaination
-            except YouBlockedUserError
 
 
-        async with borg.conversation(rose) as conv: 
-            try: #AnonymousArmy
-                await conv.send_message("/start")
-                await conv.get_response()
-                await conv.send_message(
-                    f"/fbanstat {sysarg} 21029270-28da-425c-9a4a-8f0514624ef0"
-                )
-                msg = await conv.get_response()
-                anon = await ok.edit(
-                    msg.text
-                    + "\n\nAnonymousArmy bancodes explaination [Here](https://t.me/TheAnonymousArmy/24)"
-                )
-            # Space For Rest Codes for direct bancode explaination
-            except YouBlockedUserError
+        async with borg.conversation(rose) as conv: #PaperPlaneAntiSpam
+         await conv.send_message("/start")
+         await conv.get_response()
+         await conv.send_message(
+             f"/fbanstat {sysarg} 967c79d3-5924-42f0-860b-5cdb037586b5"
+         )
+         msg = await conv.get_response()
+         paperplane = await msg.text
 
 
-        async with borg.conversation(rose) as conv: 
-            try: #PaperPlaneAntiSpam
-                await conv.send_message("/start")
-                await conv.get_response()
-                await conv.send_message(
-                    f"/fbanstat {sysarg} 967c79d3-5924-42f0-860b-5cdb037586b5"
-                )
-                msg = await conv.get_response()
-                paperplane = await msg.text
+        async with borg.conversation(rose) as conv: #Rose Official
+         await conv.send_message("/start")
+         await conv.get_response()
+         await conv.send_message(
+             f"/fbanstat {sysarg} 86718661-6bfc-4bd0-9447-7c419eb08e69"
+         )
+         msg = await conv.get_response()
+         roseofficial = await msg.text
 
-            except YouBlockedUserError
 
-        async with borg.conversation(rose) as conv: 
-            try: #Rose Official
-                await conv.send_message("/start")
-                await conv.get_response()
-                await conv.send_message(
-                    f"/fbanstat {sysarg} 86718661-6bfc-4bd0-9447-7c419eb08e69"
-                )
-                msg = await conv.get_response()
-                roseofficial = await msg.text
-
-            except YouBlockedUserError
-
-        async with borg.conversation(rose) as conv: 
-            try: #SibylSystemGbans
-                await conv.send_message("/start")
-                await conv.get_response()
-                await conv.send_message(
-                    f"/fbanstat {sysarg} 5dcc7db0-0fbc-46c9-bbe7-5700ef47a0d5"
-                )
-                msg = await conv.get_response()
-                sibyl = await msg.text
+        async with borg.conversation(rose) as conv: #SibylSystemGbans
+         await conv.send_message("/start")
+         await conv.get_response()
+         await conv.send_message(
+             f"/fbanstat {sysarg} 5dcc7db0-0fbc-46c9-bbe7-5700ef47a0d5"
+         )
+         msg = await conv.get_response()
+         sibyl = await msg.text
                 
-            except YouBlockedUserError
 
 #CAS Check
 
@@ -136,33 +126,38 @@ async def _(event):
 
 # SpamProtection [Might Not Work]
 
-    spurl = f'https://api.intellivoid.net/spamprotection/v1/lookup?query={sysarg}'
+    spurl = f"https://api.intellivoid.net/spamprotection/v1/lookup?query={sysarg}"
     r = request.get(spurl)
     json = r.json
-    if json['success']:
-      text = ''
-      if json['results']['private_telegram_id']:
-        text += f'- <b>PTID:</b> <code>'
+    if json["success"]:
+      text = ""
+      if json["results"]["private_telegram_id"]:
+        text += f"- <b>PTID:</b> <code>"
         +
-        json['results']['private_telegram_id'] + "</code>\n"
-        if json['results']['attributes']['is_potential_spammer']:
+        json["results"]["private_telegram_id"] + "</code>\n"
+        if json["results"]["attributes"]["is_potential_spammer"]:
         text += '- <b>Potential Spammer:</b> Yes\n'
-        if json['results']['language_prediction']['language']:
+        if json["results"]["language_prediction"]["language"]:
     
-                text += f'''\n- <b>Language Prediction:</b> {json["results"]["language_prediction"]["language"]}
+                text += f"\n- <b>Language Prediction:</b> {json["results"]["language_prediction"]["language"]}
     
-    - <b>Language Prediction Probability:</b> {json["results"]["language_prediction"]["probability"]}'''
-        if json['results']['attributes']['is_blacklisted']:
+    - <b>Language Prediction Probability:</b> {json["results"]["language_prediction"]["probability"]}"
+        if json["results"]["attributes"]["is_blacklisted"]:
     
-                text += f'''\n- <b>Blacklist Flag:</b> {json["results"]["attributes"]["blacklist_flag"]}
+                text += f"\n- <b>Blacklist Flag:</b> {json["results"]["attributes"]["blacklist_flag"]}
     
-    - <b>Blacklist Reason:</b> {json["results"]["attributes"]["blacklist_reason"]}'''
+    - <b>Blacklist Reason:</b> {json["results"]["attributes"]["blacklist_reason"]}"
     
-        if json['results']['attributes']['original_private_id']:
-                text += f'\n- <b>Original Private ID:</b> {json["results"]["attributes"]["original_private_id"]}'
+        if json["results"]["attributes"]["original_private_id"]:
+                text += f"\n- <b>Original Private ID:</b> {json["results"]["attributes"]["original_private_id"]}"
+        if json["results"]["spam_prediction"]["spam_prediction"]:
+            
+                text += f"\n- Spam Prediction:</br> {json["results"]["spam_prediction"]["spam_prediction"]}"
     
     spamprotection = text
-
+    
+    #End Of Checking
+    
 REPLY_MSG = f"""
 **✗Checked User✗** : {sysarg}
 
