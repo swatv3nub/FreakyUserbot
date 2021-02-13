@@ -38,7 +38,7 @@ async def startmute(event):
         elif private is True:
             userid = event.chat_id
         else:
-            return await event.edit("Succesfully Muted The Person.")
+            return await event.edit("Succesfully Muted This Nibba Person.")
         chat_id = event.chat_id
         chat = await event.get_chat()
         if "admin_rights" in vars(chat) and vars(chat)["admin_rights"] is not None:
@@ -58,7 +58,7 @@ async def startmute(event):
             )
         if is_muted(userid, chat_id):
             return await event.edit(
-                "This user is already muted in this chat ~~lmfao sed rip~~"
+                "This Nibba is already muted in this chat ~~lmfao sed rip~~"
             )
         try:
             mute(userid, chat_id)
