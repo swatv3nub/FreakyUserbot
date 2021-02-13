@@ -105,17 +105,18 @@ async def _(event):
 
 #CAS Check
 
-    casurl = f"https://combot.org/api/cas/check?user_id={sysarg}" 
+    casurl = f"https://cas.chat/query?u={sysarg}" 
     r = request.get(casurl)
     data = r.json()
-    except:
-        data = None
+    except BaseException:
+        pass
+    data = None
     if data and data["ok"]:
         reason = f"<i>True</i>"
     else:
         reason = f"<i>False</i>"
 
-    cas = f"Banned with the Following Reason : {reason}
+    cas = reason
 
 #SpamWatch
 
@@ -169,7 +170,7 @@ REPLY_MSG = f"""
 
 **✗ @DahuaEngine [DEAI] ✗** : {deai}
 
-**✗ Combot Anti Spam [CAS] ✗** : {cas}
+**✗ Banned in Combot Anti Spam [CAS] ✗** : {cas}
 
 **✗ Gbanned by @SibylSystem ✗** : {sibyl}
 
