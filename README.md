@@ -26,7 +26,7 @@ Get API_ID and API_HASH from [@HackfreaksScrapperRobot](https://telegram.dog/Hac
 
 # STRING_SESSION
 
-Get STRING_SESSION from [@FreakyStringGenBot](https://t.me/FreakyStringGenBot)
+Get STRING_SESSION from [@SessionStringBot](https://t.me/SessionStringBot) From [@TelebotHelp](https://t.me/Telebothelp)
 
 OR
 
