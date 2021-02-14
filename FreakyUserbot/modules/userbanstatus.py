@@ -12,14 +12,11 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import html
-import asyncio
-import os
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from FreakyUserbot.utils import Freaky_on_cmd
 from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
 
 
 @Freaky.on(Freaky_on_cmd(pattern="deai ?(.*)"))
@@ -33,21 +30,25 @@ async def _(event):
         user = f"[user](tg://user?id={sysarg})"
     else:
         sysarg = event.pattern_match.group(1)
-        user = sysarg
     if sysarg == "":
         await ok.edit(
             "`Give me someones id, or reply to somones message to check his/her deai stats.`"
         )
         return
     else:
-        async with borg.conversation("@rSophieBot") as conv: #DEAI
+        async with borg.conversation("@rSophieBot") as conv:  # DEAI
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
-                await conv.send_message(f"/fcheck {sysarg} 845d33d3-0961-4e44-b4b5-4c57775fbdac")
+                await conv.send_message(
+                    f"/fcheck {sysarg} 845d33d3-0961-4e44-b4b5-4c57775fbdac"
+                )
                 audio = await conv.get_response()
-                await ok.edit(audio.text + "\n\nDEAI bancodes explaination [here](https://t.me/DahuaEngine/11)")
-# Direct bancodes explaination later
+                await ok.edit(
+                    audio.text
+                    + "\n\nDEAI bancodes explaination [here](https://t.me/DahuaEngine/11)"
+                )
+            # Direct bancodes explaination later
             except YouBlockedUserError:
                 await ok.edit("**Error**\n `Unblock` @rSophieBot `and try again!")
 
@@ -63,7 +64,6 @@ async def _(event):
         user = f"[user](tg://user?id={sysarg})"
     else:
         sysarg = event.pattern_match.group(1)
-        user = sysarg
     if sysarg == "":
         await ok.edit(
             "`Give me someones id, or reply to somones message to check his/her stats.`"
@@ -74,10 +74,15 @@ async def _(event):
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
-                await conv.send_message(f"/fbanstat {sysarg} 21029270-28da-425c-9a4a-8f0514624ef0")
+                await conv.send_message(
+                    f"/fbanstat {sysarg} 21029270-28da-425c-9a4a-8f0514624ef0"
+                )
                 msg = await conv.get_response()
-                await ok.edit(msg.text + "\n\nAnonymousArmy bancodes explaination [Here](https://t.me/TheAnonymousArmy/24)")
-# Direct bancodes explaination later
+                await ok.edit(
+                    msg.text
+                    + "\n\nAnonymousArmy bancodes explaination [Here](https://t.me/TheAnonymousArmy/24)"
+                )
+            # Direct bancodes explaination later
             except YouBlockedUserError:
                 await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")
 
@@ -93,7 +98,6 @@ async def _(event):
         user = f"[user](tg://user?id={sysarg})"
     else:
         sysarg = event.pattern_match.group(1)
-        user = sysarg
     if sysarg == "":
         await ok.edit(
             "`Give me someones id, or reply to somones message to check his/her stats.`"
@@ -105,7 +109,7 @@ async def _(event):
                 await conv.send_message("/start")
                 await conv.get_response()
                 await conv.send_message(
-                f"/fbanstat {sysarg} 967c79d3-5924-42f0-860b-5cdb037586b5"
+                    f"/fbanstat {sysarg} 967c79d3-5924-42f0-860b-5cdb037586b5"
                 )
                 msg = await conv.get_response()
                 await ok.edit(msg.text)
@@ -113,7 +117,6 @@ async def _(event):
                 await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")
 
 
-            
 @Freaky.on(Freaky_on_cmd(pattern="sibyl ?(.*)"))
 async def _(event):
     if event.fwd_from:
@@ -125,19 +128,20 @@ async def _(event):
         user = f"[user](tg://user?id={sysarg})"
     else:
         sysarg = event.pattern_match.group(1)
-        user = sysarg
     if sysarg == "":
         await ok.edit(
             "`Give me someones id, or reply to somones message to check his/her stats.`"
         )
         return
     else:
-        async with borg.conversation("@MissRose_Bot") as conv:  # Sibyl System // Using their Fed
+        async with borg.conversation(
+            "@MissRose_Bot"
+        ) as conv:  # Sibyl System // Using their Fed
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
                 await conv.send_message(
-                f"/fbanstat {sysarg} 5dcc7db0-0fbc-46c9-bbe7-5700ef47a0d5"
+                    f"/fbanstat {sysarg} 5dcc7db0-0fbc-46c9-bbe7-5700ef47a0d5"
                 )
                 msg = await conv.get_response()
                 await ok.edit(msg.text)
@@ -156,7 +160,6 @@ async def _(event):
         user = f"[user](tg://user?id={sysarg})"
     else:
         sysarg = event.pattern_match.group(1)
-        user = sysarg
     if sysarg == "":
         await ok.edit(
             "`Give me someones id, or reply to somones message to check his/her stats.`"
@@ -168,15 +171,16 @@ async def _(event):
                 await conv.send_message("/start")
                 await conv.get_response()
                 await conv.send_message(
-                f"/fbanstat {sysarg} 86718661-6bfc-4bd0-9447-7c419eb08e69"
+                    f"/fbanstat {sysarg} 86718661-6bfc-4bd0-9447-7c419eb08e69"
                 )
                 msg = await conv.get_response()
                 await ok.edit(msg.text)
             except YouBlockedUserError:
                 await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")
 
-#@Freaky.on(Freaky_on_cmd(pattern="spb ?(.*)"))
-#async def _(event):
+
+# @Freaky.on(Freaky_on_cmd(pattern="spb ?(.*)"))
+# async def _(event):
 #    if event.fwd_from:
 #        return
 #    ok = await event.edit("`Checking For Blacklist in SpamProtection`")
@@ -199,13 +203,13 @@ async def _(event):
 #        if jsonn["success"]:
 #            text = ""
 #            if jsonn["results"]["attributes"]["is_potential_spammer"]:
-#        
+#
 #               text += "\n- <b>Potential Spammer:</b> Yes\n"
-#        
+#
 #            if jsonn["results"]["private_telegram_id"]:
 #                sed = jsonn['results']['private_telegram_id']
 #                text += f"\n- <b>PTID:</b>  {sed}"
-#        
+#
 #            if json["results"]["language_prediction"]["language"]:
 #                text += f'\n- <b>Language Prediction:</b> {json["results"]["language_prediction"]["language"]}   - <b>Language Prediction Probability:</b> {jsonn["results"]["language_prediction"]["probability"]}'
 #            if json["results"]["attributes"]["is_blacklisted"]:
@@ -214,7 +218,7 @@ async def _(event):
 #                text += f'\n- <b>Original Private ID:</b> {json["results"]["attributes"]["original_private_id"]}'
 #            if json["results"]["spam_prediction"]["spam_prediction"]:
 #                   text += f'\n- Spam Prediction:</br> {json["results"]["spam_prediction"]["spam_prediction"]}'
-#            
+#
 #            spamprotection = text
 #        await ok.edit(spamprotection)
 
@@ -227,5 +231,4 @@ CMD_HELP.update(
     }
 )
 
-# (C) Swonit 
-            
+# (C) Swonit
