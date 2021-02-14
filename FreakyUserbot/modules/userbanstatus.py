@@ -13,11 +13,11 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # import os
-# 
+#
 # from FreakyUserbot import CMD_HELP
 # from FreakyUserbot.utils import Freaky_on_cmd, sudo_cmd
-# 
-# 
+#
+#
 # @Freaky.on(Freaky_on_cmd(pattern="ubs ?(.*)"))
 # @Freaky.on(sudo_cmd(pattern="ubs ?(.*)"), allow_sudo=True)
 # async def _(event):
@@ -46,7 +46,7 @@
 #                 + "\n\nDEAI bancodes explaination [Here](https://t.me/DahuaEngine/11)"
 #             )
 #         # Space For Rest Codes for direct bancode explaination
-# 
+#
 #         async with borg.conversation("@MissRose_Bot") as conv:  # AnonymousArmy
 #             await conv.send_message("/start")
 #             await conv.get_response()
@@ -59,7 +59,7 @@
 #                 + "\n\nAnonymousArmy bancodes explaination [Here](https://t.me/TheAnonymousArmy/24)"
 #             )
 #             # Space For Rest Codes for direct bancode explaination
-# 
+#
 #         async with borg.conversation("@MissRose_Bot") as conv:  # PaperPlaneAntiSpam
 #             await conv.send_message("/start")
 #             await conv.get_response()
@@ -68,7 +68,7 @@
 #             )
 #             msg = await conv.get_response()
 #             await msg.text
-# 
+#
 #         async with borg.conversation("@MissRose_Bot") as conv:  # Rose Official
 #             await conv.send_message("/start")
 #             await conv.get_response()
@@ -77,7 +77,7 @@
 #             )
 #             msg = await conv.get_response()
 #             await msg.text
-# 
+#
 #         async with borg.conversation("@MissRose_Bot") as conv:  # SibylSystemGbans
 #             await conv.send_message("/start")
 #             await conv.get_response()
@@ -86,31 +86,31 @@
 #             )
 #             msg = await conv.get_response()
 #             await msg.text
-# 
+#
 #     # SpamWatch
-# 
+#
 #     import spamwatch
-# 
+#
 #     SPAMWATCH_API = os.environ.get("SPAMWATCH_API")
 #     client = spamwatch.Client(SPAMWATCH_API)
 #     client.get_ban(sysarg)
-# 
-# 
+#
+#
 #         # SpamProtection [Might Not Work]
-# 
+#
 #    spurl = f"https://api.intellivoid.net/spamprotection/v1/lookup?query={sysarg}"
 #    r = requests.get(spurl)
 #    jsonn = r.json()
 #    if jsonn["success"]:
 #         text = ""
 #         if jsonn["results"]["attributes"]["is_potential_spammer"]:
-# 
+#
 #            text += "\n- <b>Potential Spammer:</b> Yes\n"
-# 
+#
 #         if jsonn["results"]["private_telegram_id"]:
 #             sed = jsonn['results']['private_telegram_id']
 #             text += f"\n- <b>PTID:</b>  {sed}"
-# 
+#
 #         if json["results"]["language_prediction"]["language"]:
 #             text += f'\n- <b>Language Prediction:</b> {jsonn["results"]["language_prediction"]["language"]}   - <b>Language Prediction Probability:</b> {jsonn["results"]["language_prediction"]["probability"]}'
 #         if json["results"]["attributes"]["is_blacklisted"]:
@@ -120,80 +120,80 @@
 #         if json["results"]["spam_prediction"]["spam_prediction"]:
 #                text += f'\n- Spam Prediction:</br> {jsonn["results"]["spam_prediction"]["spam_prediction"]}'
 #         spamprotection = text
-# 
+#
 #         # End Of Checking
-# 
+#
 # REPLY_MSG = f"""
 # **✗Checked User✗** : {sysarg}
-# 
+#
 # **✗ @TheAnonymousArmy ✗** : {anon}
-# 
+#
 # **✗ Rose Support Official ✗** : {rose}
-# 
+#
 # **✗ @SpamWatch ✗** : {swban}
-# 
+#
 # **✗ @DahuaEngine [DEAI] ✗** : {deai}
-# 
+#
 # **✗ Gbanned by @SibylSystem ✗** : {sibyl}
-# 
+#
 # **✗ @PaperPlaneAntiSpam ✗** : {paperplane}
-# 
+#
 # **✗ Spam Protection ✗** : {spamprotection}
-# 
+#
 # """
 # await ok.edit(REPLY_MSG)
-# 
-# 
-# 
-# 
+#
+#
+#
+#
 # @Freaky.on(Freaky_on_cmd(pattern="anon (.*)"))
 # @Freaky.on(sudo_cmd(pattern="anon (.*)", allow_sudo=True))
 # async def _(event):
 #     ok = await event.edit("Searching in @TheAnonymousArmy...")
 #     await ok.edit(anon)
-# 
-# 
+#
+#
 # @Freaky.on(Freaky_on_cmd(pattern="deai (.*)"))
 # @Freaky.on(sudo_cmd(pattern="deai (.*)", allow_sudo=True))
 # async def _(event):
 #     ok = await event.edit("Searching in @DahuaEngine...")
 #     await ok.edit(deai)
-# 
-# 
+#
+#
 # @Freaky.on(Freaky_on_cmd(pattern="sw (.*)"))
 # @Freaky.on(sudo_cmd(pattern="sw (.*)", allow_sudo=True))
 # async def _(event):
 #     ok = await event.edit("Searching in @SpamWatch...")
 #     await ok.edit(swban)
-# 
-# 
+#
+#
 # @Freaky.on(Freaky_on_cmd(pattern="ppln (.*)"))
 # @Freaky.on(sudo_cmd(pattern="ppln (.*)", allow_sudo=True))
 # async def _(event):
 #     ok = await event.edit("Searching in @PaperPlaneAntiSpam...")
 #     await ok.edit(paperplane)
-# 
-# 
+#
+#
 # @Freaky.on(Freaky_on_cmd(pattern="sibyl (.*)"))
 # @Freaky.on(sudo_cmd(pattern="sibyl (.*)", allow_sudo=True))
 # async def _(event):
 #     ok = await event.edit("Searching for Gbans in @SibylSystem...")
 #     await ok.edit(sibyl)
-# 
-# 
+#
+#
 # @Freaky.on(Freaky_on_cmd(pattern="rose (.*)"))
 # @Freaky.on(sudo_cmd(pattern="rose (.*)", allow_sudo=True))
 # async def _(event):
 #     ok = await event.edit("Searching in Rose Support...")
 #     await ok.edit(rose)
-# 
-# 
+#
+#
 # @Freaky.on(Freaky_on_cmd(pattern="spb (.*)"))
 # @Freaky.on(sudo_cmd(pattern="spb (.*)", allow_sudo=True))
 # async def _(event):
 #  ok = await event.edit("Searching in @SpamProtectionLogs...")
 #  await ok.edit(spamprotection)
-# 
+#
 # CMD_HELP.update(
 #     {
 #         "userbanstatus": "**UserBanStatus**\
@@ -203,5 +203,5 @@
 # \n**Usage :** Checks his Status in Indivisual Systems."
 #     }
 # )
-# 
+#
 # (C) Swonit // Kang With Credits
