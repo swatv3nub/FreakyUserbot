@@ -35,7 +35,7 @@ OR
 
 # DEPLOY
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/swatv3nub/FreakyUserbot)
+[<img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" height="40"/>](https://heroku.com/deploy?template=https://github.com/swatv3nub/FreakyUserbot/ "Heroku")
 
 
 # HARD WAY (For Devs)
