@@ -40,7 +40,7 @@ async def _(event):
         )
         return
     else:
-        async with borg.conversation(@rSophieBot) as conv: #DEAI
+        async with borg.conversation("@rSophieBot") as conv: #DEAI
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
