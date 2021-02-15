@@ -196,3 +196,13 @@ else:
     except Exception as e:
         sclient = None
         sedprint.info("[Warning] - " + str(e))
+        
+if Config.ANONDEV_TOKEN == None:
+    anonclient = None
+    sedprint.info("[Warning] - Anon Army Dev Token is Missing")
+else:
+    try:
+        anonclient = Connect(Config.ANONDEV_TOKEN)
+    except Exception as e:
+        sclient = None
+        sedprint.info("[Warning] - " + str(e))
