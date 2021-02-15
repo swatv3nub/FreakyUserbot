@@ -1,9 +1,7 @@
 from telethon.events import ChatAction
-from telethon import events
-from telethon.tl.functions.users import GetFullUserRequest
+
 from FreakyUserbot import sclient
 from FreakyUserbot.Configs import Config
-
 
 """Bans Spammers/Scammer At time Of Arrival 
 If You Add Him The Bot Won't Restrict."""
