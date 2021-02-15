@@ -8,7 +8,7 @@ import asyncio
 from FreakyUserbot import ALIVE_NAME, CMD_HELP
 from FreakyUserbot.utils import Freaky_on_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "unknown"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Freak"
 
 
 @Freaky.on(Freaky_on_cmd(pattern=r"deploy"))
@@ -28,15 +28,15 @@ async def _(event):
 
     animation_chars = [
         "**Heroku Connecting To Latest Github Build (swatv3nub/FreakyUserbot)**",
-        "**Build started by user** **{DEFAULTUSER}**",
-        "**Deploy** `535a74f0` **by user** **{MY BOSS}**",
+        f"**Build started by user** **{DEFAULTUSER}**",
+        f"**Deploy** `535a74f0` **by user** **{DEFAULTUSER}**",
         "**Restarting Heroku Server...**",
         "**State changed from up to starting**",
         "**Stopping all processes with SIGTERM**",
         "**Process exited with** `status 143`",
         "**Starting process with command** `python3 -m FreakyUserbot`",
         "**State changed from starting to up**",
-        "__INFO:FreakyUserbot:Logged in as 557667062__",
+        f"__INFO:FreakyUserbot:Logged in as {DEFAULTUSER}",
         "__INFO:FreakyUserbot:Successfully loaded all plugins__",
         "**Build Succeeded**",
     ]
