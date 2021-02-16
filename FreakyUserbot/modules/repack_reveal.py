@@ -26,7 +26,7 @@ async def _(event):
     await event.client.send_file(event.chat_id, input_str)
     await a.delete()
     os.remove(input_str)
-    
+
 
 @Freaky.on(Freaky_on_cmd(pattern="reveal ?(.*)", outgoing=True))
 @Freaky.on(sudo_cmd(pattern="reveal ?(.*)", allow_sudo=True))

@@ -1,7 +1,8 @@
 import asyncio
-from datetime import datetime
 import os
-from FreakyUserbot import CMD_HELP, ALIVE_NAME
+from datetime import datetime
+
+from FreakyUserbot import ALIVE_NAME, CMD_HELP
 from FreakyUserbot.utils import Freaky_on_cmd
 
 freakythumb = "./resources/FreakyUserbot.jpg"
@@ -21,7 +22,7 @@ async def send(event):
         the_plugin_file = "./FreakyUserbot/modules/{}.py".format(input_str)
     end = datetime.now()
     (end - start).seconds
-    men = f"**► Plugin Name:** `{input_str}`\n**► Uploaded in {time_taken_in_ms} seconds.**\n**► Uploaded by:** [{DEFAULTUSER}](tg://user?id={hmm})\n\n© @FreakyUserbot" #String From Telebot
+    men = f"**► Plugin Name:** `{input_str}`\n**► Uploaded in {time_taken_in_ms} seconds.**\n**► Uploaded by:** [{DEFAULTUSER}](tg://user?id={hmm})\n\n© @FreakyUserbot"  # String From Telebot
     if not os.path.exists(the_plugin_file):
         await event.edit(f"Error 404: **{input_str}** Not Found")
         return

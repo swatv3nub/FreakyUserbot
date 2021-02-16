@@ -11,7 +11,8 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
+from sqlalchemy import Column, String
+
 from FreakyUserbot.modules.sql_helper import BASE, SESSION
 
 
