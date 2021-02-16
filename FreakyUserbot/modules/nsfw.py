@@ -12,7 +12,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from telethon import Button, custom, events, functions
-from FreakyUserbot.function import get_all_admin_chats, is_admin, is_nsfw
+from FreakyUserbot.functions import get_all_admin_chats, is_admin, is_nsfw
 import requests
 import string 
 import random 
