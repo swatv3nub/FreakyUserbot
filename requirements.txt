@@ -43,6 +43,7 @@ pyshorteners
 aiohttp
 bs4
 coffeehouse
+nospamplus
 cowpy
 emoji
 gTTS-token>=1.1.3
