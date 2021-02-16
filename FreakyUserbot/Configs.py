@@ -85,6 +85,7 @@ if ENV:
         GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
         GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
         NO_P_M_SPAM = bool(os.environ.get("NO_P_M_SPAM", False))
+        ANONDEV_TOKEN = os.environ.get("ANONDEV_TOKEN", None)
         PMSECURITY = os.environ.get("PMSECURITY", "ON")
         # define "spam" in PMs
         NO_SONGS = bool(os.environ.get("NO_SONGS", False))
