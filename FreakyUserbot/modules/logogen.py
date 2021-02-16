@@ -1,5 +1,5 @@
 from FreakyUserbot.utils import edit_or_reply, Freaky_on_cmd, sudo_cmd
-from FreakyUserbot.function import convert_to_image
+from FreakyUserbot.functions import convert_to_image
 from bs4 import *
 from FreakyUserbot import CMD_HELP, sclient
 import shutil
