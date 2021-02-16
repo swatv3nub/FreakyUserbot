@@ -46,7 +46,10 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "repack": ".repack <filename.extension> <reply to text>\nUse - Pack the text and send as a file."
-        "reveal": ".reveal <reply to a file>\nUse - Read contents of file and send as a telegram message."
+        "repack_reveak": "**Repack_Reveal**\
+\n\n**Syntax : **`.repack <filename.extension> <reply to text>`\
+\n**Usage :** Pack the text and send as a file.\
+\n\n**Syntax : **`.reveal <reply to a file>`\
+\n**Usage :** Read contents of file and send as a telegram message."
     }
 )
