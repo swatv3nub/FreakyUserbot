@@ -14,10 +14,12 @@
 
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+from nospamplus.connect import Connect
 
 from FreakyUserbot import CMD_HELP
 from FreakyUserbot.utils import Freaky_on_cmd
 
+mytoken = os.environ.get("NOSPAMPLUS_TOKEN")
 
 @Freaky.on(Freaky_on_cmd(pattern="deai ?(.*)"))
 async def _(event):
@@ -177,7 +179,33 @@ async def _(event):
                 await ok.edit(msg.text)
             except YouBlockedUserError:
                 await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")
+  
+#NoSpamPlus
+                
+# @Freaky.on(Freaky_on_cmd(pattern="nsp ?(.*)"))
+# async def _(event):
+#     if event.fwd_from:
+#         return
+#     ok = await event.edit("`Checking For NoSpamPlus Bans`")
+#     if event.reply_to_msg_id:
+#         previous_message = await event.get_reply_message()
+#         sysarg = str(previous_message.sender_id)
+#         user = f"[user](tg://user?id={sysarg})"
+#     else:
+#         sysarg = event.pattern_match.group(1)
+#     if sysarg == "":
+#         await ok.edit(
+#             "`Give me someones id, or reply to somones message to check his/her stats.`"
+#         )
+#         return
+#     else:
+#         token_connect = Connect(mytoken)
+#         user = token_connect.is_banned({sysarg})
+#         msgx = user.ban_code
+#         msgz = user.reason
+#         ok.edit(f"**Banned with Ban Code**: {msgx} with reason: {msgz}")
 
+# SpamProtection
 
 # @Freaky.on(Freaky_on_cmd(pattern="spb ?(.*)"))
 # async def _(event):
