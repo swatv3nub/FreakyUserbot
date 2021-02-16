@@ -61,7 +61,7 @@
       "description": "Get it From https://repl.it/@swatv3nub/UserbotSessionGenerator#main.py",
       "value": ""
     },
-    "ANTI_SPAMBOT": {
+    "ANTISPAM_FEATURE": {
       "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
       "value": "True"
     },
