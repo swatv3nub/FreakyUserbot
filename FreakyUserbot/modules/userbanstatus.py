@@ -14,12 +14,12 @@
 
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from nospamplus.connect import Connect
 
 from FreakyUserbot import CMD_HELP
 from FreakyUserbot.utils import Freaky_on_cmd
 
 mytoken = os.environ.get("NOSPAMPLUS_TOKEN")
+
 
 @Freaky.on(Freaky_on_cmd(pattern="deai ?(.*)"))
 async def _(event):
@@ -179,9 +179,10 @@ async def _(event):
                 await ok.edit(msg.text)
             except YouBlockedUserError:
                 await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")
-  
-#NoSpamPlus
-                
+
+
+# NoSpamPlus
+
 # @Freaky.on(Freaky_on_cmd(pattern="nsp ?(.*)"))
 # async def _(event):
 #     if event.fwd_from:
