@@ -13,6 +13,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
+import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from FreakyUserbot import CMD_HELP
