@@ -26,8 +26,8 @@ from telethon import Button, events
 from telethon.tl import functions, types
 
 from FreakyUserbot import CMD_HELP
-from FreakyUserbot.utils import Freaky_on_cmd
 from FreakyUserbot.Configs import Config, Var
+from FreakyUserbot.utils import Freaky_on_cmd
 
 # --=============================================--#
 global USER_AFK  # pylint:disable=E0602
