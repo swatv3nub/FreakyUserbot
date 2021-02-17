@@ -1,5 +1,5 @@
-#    Freaky - Userbot
-#    Copyright (C) 2020 FreakyUserbot
+#    FreakyUserbot
+#    [ Copyright (C) 2020 TeleBot ]
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -14,182 +14,241 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# Based of AFK by @SpEcHIDe
+# Media Afk, Time, by @xditya
 
-"""AFK Plugin for @FreakyUserbot
-Syntax: .afk REASON"""
 import asyncio
-import datetime
+import os
 from datetime import datetime
 
-from telethon import events
+from telegraph import Telegraph, upload_file
+from telethon import Button, events
 from telethon.tl import functions, types
 
 from FreakyUserbot import CMD_HELP
+from FreakyUserbot.utils import Freaky_on_cmd
+from FreakyUserbot.Configs import Config, Var
 
+# --=============================================--#
 global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
 global last_afk_message  # pylint:disable=E0602
-global afk_start
-global afk_end
+global afk_start  # pylint:disable=E0602
+global afk_end  # pylint:disable=E0602
+# --=============================================--#
 USER_AFK = {}
 afk_time = None
 last_afk_message = {}
 afk_start = {}
+BOTLOG = True
+CUSTOM_AFK = Var.CUSTOM_AFK if Var.CUSTOM_AFK else "My Master is Currently AFK!"
+botname = Var.TG_BOT_USER_NAME_BF_HER
+if botname.startswith("@"):
+    MYBOT = botname
+else:
+    MYBOT = f"@{botname}"
+path = Config.TMP_DOWNLOAD_DIRECTORY
+if not os.path.isdir(path):
+    os.makedirs(path)
+telegraph = Telegraph()
+r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
+auth_url = r["auth_url"]
+# --=============================================--#
 
 
 @Freaky.on(
-    events.NewMessage(pattern=r"afk ?(.*)", outgoing=True)
-)  # pylint:disable=E0602
-async def _(event):
-    if event.fwd_from:
-        return
-    global USER_AFK  # pylint:disable=E0602
-    global afk_time  # pylint:disable=E0602
-    global last_afk_message  # pylint:disable=E0602
-    global afk_start
-    global afk_end
-    global reason
-    USER_AFK = {}
-    afk_time = None
-    last_afk_message = {}
-    afk_end = {}
-    start_1 = datetime.now()
-    afk_start = start_1.replace(microsecond=0)
-    reason = event.pattern_match.group(1)
-    if not USER_AFK:  # pylint:disable=E0602
-        last_seen_status = await borg(  # pylint:disable=E0602
-            functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
-        )
-        if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
-            afk_time = datetime.datetime.now()  # pylint:disable=E0602
-        USER_AFK = f"yes: {reason}"  # pylint:disable=E0602
-        if reason:
-            await borg.send_message(
-                event.chat_id,
-                f"**Moi Master Seem Too Bussy 👀.** \n__He Going Afk Because Of__ `{reason}`",
-            )
-        else:
-            await borg.send_message(event.chat_id, f"**I Am Busy And I Am Going Afk**.")
-        await asyncio.sleep(5)
-        await event.delete()
-        try:
-            await borg.send_message(  # pylint:disable=E0602
-                Config.PRIVATE_GROUP_ID,  # pylint:disable=E0602
-                f"#AfkLogger Afk Is Active And Reason is {reason}",
-            )
-        except Exception as e:  # pylint:disable=C0103,W0703
-            logger.warn(str(e))  # pylint:disable=E0602
-
-
-@Freaky.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
-async def set_not_afk(event):
-    global USER_AFK  # pylint:disable=E0602
-    global afk_time  # pylint:disable=E0602
-    global last_afk_message  # pylint:disable=E0602
-    global afk_start
-    global afk_end
-    back_alive = datetime.now()
-    afk_end = back_alive.replace(microsecond=0)
-    if afk_start != {}:
-        total_afk_time = str((afk_end - afk_start))
-    current_message = event.message.message
-    if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
-        shite = await borg.send_message(
-            event.chat_id,
-            "__Pro is Back Alive__\n**Moi Master Is Not Afk Now;).**\n `I Was afk for:``"
-            + total_afk_time
-            + "`",
-        )
-        try:
-            await borg.send_message(  # pylint:disable=E0602
-                Config.PRIVATE_GROUP_ID,  # pylint:disable=E0602
-                "#AfkLogger User is Back Alive ! No Longer Afk ",
-            )
-        except Exception as e:  # pylint:disable=C0103,W0703
-            await borg.send_message(  # pylint:disable=E0602
-                event.chat_id,
-                "Please set `PRIVATE_GROUP_ID` "
-                + "for the proper functioning of afk functionality "
-                + "Please Seek Support in @FreakyUserbot\n\n `{}`".format(str(e)),
-                reply_to=event.message.id,
-                silent=True,
-            )
-        await asyncio.sleep(5)
-        await shite.delete()
-        USER_AFK = {}  # pylint:disable=E0602
-        afk_time = None  # pylint:disable=E0602
-
-
-@Freaky.on(
-    events.NewMessage(  # pylint:disable=E0602
-        incoming=True, func=lambda e: bool(e.mentioned or e.is_private)
-    )
+    events.NewMessage(incoming=True, func=lambda e: bool(e.mentioned or e.is_private))
 )
 async def on_afk(event):
     if event.fwd_from:
         return
-    global USER_AFK  # pylint:disable=E0602
-    global afk_time  # pylint:disable=E0602
-    global last_afk_message  # pylint:disable=E0602
+    global USER_AFK
+    global afk_time
+    global last_afk_message
     global afk_start
     global afk_end
     back_alivee = datetime.now()
     afk_end = back_alivee.replace(microsecond=0)
     if afk_start != {}:
-        total_afk_time = str((afk_end - afk_start))
-    afk_since = "**a while ago**"
+        total_afk_time = afk_end - afk_start
+        time = int(total_afk_time.seconds)
+        d = time // (24 * 3600)
+        time %= 24 * 3600
+        h = time // 3600
+        time %= 3600
+        m = time // 60
+        time %= 60
+        s = time
+        endtime = ""
+        if d > 0:
+            endtime += f"{d}d {h}h {m}m {s}s"
+        else:
+            if h > 0:
+                endtime += f"{h}h {m}m {s}s"
+            else:
+                endtime += f"{m}m {s}s" if m > 0 else f"{s}s"
     current_message_text = event.message.message.lower()
     if "afk" in current_message_text:
-        # FreakyUserbot should not reply to other Freak's
+        # userbot's should not reply to other userbot's
         # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
         return False
-    if USER_AFK and not (await event.get_sender()).bot:  # pylint:disable=E0602
-        if afk_time:  # pylint:disable=E0602
-            now = datetime.datetime.now()
-            datime_since_afk = now - afk_time  # pylint:disable=E0602
-            time = float(datime_since_afk.seconds)
-            days = time // (24 * 3600)
-            time = time % (24 * 3600)
-            hours = time // 3600
-            time %= 3600
-            minutes = time // 60
-            time %= 60
-            seconds = time
-            if days == 1:
-                afk_since = "**Yesterday**"
-            elif days > 1:
-                if days > 6:
-                    date = now + datetime.timedelta(
-                        days=-days, hours=-hours, minutes=-minutes
-                    )
-                    afk_since = date.strftime("%A, %Y %B %m, %H:%I")
-                else:
-                    wday = now + datetime.timedelta(days=-days)
-                    wday.strftime("%A")
-            elif hours > 1:
-                f"`{int(hours)}h{int(minutes)}m` **ago**"
-            elif minutes > 0:
-                f"`{int(minutes)}m{int(seconds)}s` **ago**"
-            else:
-                f"`{int(seconds)}s` **ago**"
+    if USER_AFK and not (await event.get_sender()).bot:
         msg = None
-        message_to_reply = (
-            f"**My Boss is Afk**  \n**AFKT** : `{total_afk_time}`\n**Reason** : `{reason}`"
-            + f"\n\nHe Will Reply To You Soon!"
-            if reason
-            else f"**My Master is Afk**\n AFK : `{total_afk_time}` He Will Comeback Soon"
+        if reason is not None and tele == "True":
+            message_to_reply = "**AFK**\n{}\n\n**Last active** `{}` **ago.**\n\n**Reason** : {}".format(
+                CUSTOM_AFK, endtime, reason
+            )
+        elif tele == "False":
+            message_to_reply = "**AFK**\n{}\n\n**Last active** `{}` **ago.**\n\n**Reason** - {}".format(
+                CUSTOM_AFK, endtime, reason
+            )
+        else:
+            message_to_reply = "**AFK**\n{}\n\n**Last active** {} **ago.**".format(
+                CUSTOM_AFK, endtime
+            )
+        if event.chat_id not in Config.UB_BLACK_LIST_CHAT:
+            msg = await event.reply(message_to_reply)
+        if event.chat_id in last_afk_message:
+            await last_afk_message[event.chat_id].delete()
+        last_afk_message[event.chat_id] = msg
+        chat = await event.get_chat()
+        if Var.PRIVATE_GROUP_ID:
+            await asyncio.sleep(5)
+            if not event.is_private:
+                mssgtosend = f"#AFK \nYou were tagged in `{chat.title}`"
+                try:
+                    await tgbot.send_message(
+                        Var.PRIVATE_GROUP_ID,
+                        mssgtosend,
+                        buttons=[
+                            Button.url(
+                                "Go to Message",
+                                url=f"https://t.me/c/{chat.id}/{event.message.id}",
+                            )
+                        ],
+                    )
+                except BaseException:
+                    await FreakyUserbot.send_message(
+                        Var.PRIVATE_GROUP_ID,
+                        f"Please add {MYBOT} here for afk tags to work.",
+                    )
+
+
+@Freaky.on(Freaky_on_cmd(pattern=r"afk ?(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    global USER_AFK
+    global afk_time
+    global last_afk_message
+    global afk_start
+    global afk_end
+    global reason
+    global tele
+    USER_AFK = {}
+    afk_time = None
+    last_afk_message = {}
+    afk_end = {}
+    tele = "False"
+    start_1 = datetime.now()
+    afk_start = start_1.replace(microsecond=0)
+    if not USER_AFK:
+        if event.reply_to_msg_id:
+            reply_message = await event.get_reply_message()
+            media = await FreakyUserbot.download_media(reply_message, "AFK_media")
+            try:
+                url = upload_file(media)
+                os.remove(media)
+            except BaseException:
+                pass
+            input_str = event.pattern_match.group(1)
+            if url:
+                if input_str is not None:
+                    tele = "True"
+                    reason = f"`{input_str}`[‎‏‏‎ ‎](https://telegra.ph/{url[0]})"
+                else:
+                    tele = "False"
+                    reason = f"[‎‏‏‎ ‎](https://telegra.ph/{url[0]})"
+            else:
+                if input_str is not None:
+                    reason = f"`{input_str}`"
+        else:
+            input_str = event.pattern_match.group(1)
+            reason = f"`{input_str}`"
+        last_seen_status = await event.client(
+            functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
         )
-        msg = await event.reply(message_to_reply)
+        if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
+            afk_time = datetime.now()
+        USER_AFK = f"on: {reason}"
+        if reason:
+            await event.edit(
+                f"`Your status has been set to AFK.`\n**Reason** - {reason}"
+            )
+            await asyncio.sleep(5)
+            await event.delete()
+        else:
+            await event.edit("`Your status has been set to AFK.`")
+            await asyncio.sleep(5)
+            await event.delete()
+        if BOTLOG:
+            if reason:
+                await event.client.send_message(
+                    Var.PRIVATE_GROUP_ID,
+                    f"#AFK \nAFK - Active\nReason - {reason}",
+                )
+            else:
+                await event.client.send_message(
+                    Var.PRIVATE_GROUP_ID,
+                    f"#AFK \nAFK - Active\nReason - None Specified.",
+                )
+
+
+@FreakyUserbot.on(events.NewMessage(outgoing=True))
+async def set_not_afk(event):
+    global USER_AFK
+    global afk_time
+    global last_afk_message
+    global afk_start
+    global afk_end
+    back_alive = datetime.now()
+    afk_end = back_alive.replace(microsecond=0)
+    if afk_start != {}:
+        total_afk_time = afk_end - afk_start
+        time = int(total_afk_time.seconds)
+        d = time // (24 * 3600)
+        time %= 24 * 3600
+        h = time // 3600
+        time %= 3600
+        m = time // 60
+        time %= 60
+        s = time
+        endtime = ""
+        if d > 0:
+            endtime += f"{d}d {h}h {m}m {s}s"
+        else:
+            if h > 0:
+                endtime += f"{h}h {m}m {s}s"
+            else:
+                endtime += f"{m}m {s}s" if m > 0 else f"{s}s"
+    current_message = event.message.message
+    if "afk" not in current_message and "on" in USER_AFK:
+        shite = await event.client.send_message(
+            event.chat_id,
+            f"`My Master is Back!\n\nWas afk for {endtime}`",
+        )
+        USER_AFK = {}
+        afk_time = None
         await asyncio.sleep(5)
-        if event.chat_id in last_afk_message:  # pylint:disable=E0602
-            await last_afk_message[event.chat_id].delete()  # pylint:disable=E0602
-        last_afk_message[event.chat_id] = msg  # pylint:disable=E0602
+        await shite.delete()
+        if BOTLOG:
+            await event.client.send_message(
+                Var.PRIVATE_GROUP_ID, f"#AFK \n`AFK - Disabled\nAFK for {endtime}`"
+            )
 
 
 CMD_HELP.update(
     {
-        "afk": "Afk\
-\n\nSyntax : .afk <reason>\
-\nUsage : Lets You Go Offline For Long With Notification to others if they wanna talk you"
+        "afk": "➟ `.afk` <optional reason>\nUse - Sets your status to AwayFromKeyboard. The bot will reply when you are tagged in groups. Will be auto turned off when you message again!"
     }
 )
