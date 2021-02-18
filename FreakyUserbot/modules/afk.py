@@ -17,49 +17,49 @@
 # Based of AFK by @SpEcHIDe
 # Media Afk, Time, by @xditya
 
-#import asyncio
-#import os
-#from datetime import datetime
+# import asyncio
+# import os
+# from datetime import datetime
 #
-#from telegraph import Telegraph, upload_file
-#from telethon import Button, events
-#from telethon.tl import functions, types
+# from telegraph import Telegraph, upload_file
+# from telethon import Button, events
+# from telethon.tl import functions, types
 #
-#from FreakyUserbot import CMD_HELP
-#from FreakyUserbot.Configs import Config
-#from FreakyUserbot.utils import Freaky_on_cmd
+# from FreakyUserbot import CMD_HELP
+# from FreakyUserbot.Configs import Config
+# from FreakyUserbot.utils import Freaky_on_cmd
 #
 ## --=============================================--#
-#global USER_AFK  # pylint:disable=E0602
-#global afk_time  # pylint:disable=E0602
-#global last_afk_message  # pylint:disable=E0602
-#global afk_start  # pylint:disable=E0602
-#global afk_end  # pylint:disable=E0602
+# global USER_AFK  # pylint:disable=E0602
+# global afk_time  # pylint:disable=E0602
+# global last_afk_message  # pylint:disable=E0602
+# global afk_start  # pylint:disable=E0602
+# global afk_end  # pylint:disable=E0602
 ## --=============================================--#
-#USER_AFK = {}
-#afk_time = None
-#last_afk_message = {}
-#afk_start = {}
-#BOTLOG = True
-#CUSTOM_AFK = Config.CUSTOM_AFK if Config.CUSTOM_AFK else "My Master is Currently AFK!"
-#botname = Config.TG_BOT_USER_NAME_BF_HER
-#if botname.startswith("@"):
+# USER_AFK = {}
+# afk_time = None
+# last_afk_message = {}
+# afk_start = {}
+# BOTLOG = True
+# CUSTOM_AFK = Config.CUSTOM_AFK if Config.CUSTOM_AFK else "My Master is Currently AFK!"
+# botname = Config.TG_BOT_USER_NAME_BF_HER
+# if botname.startswith("@"):
 #    MYBOT = botname
-#else:
+# else:
 #    MYBOT = f"@{botname}"
-#path = Config.TMP_DOWNLOAD_DIRECTORY
-#if not os.path.isdir(path):
+# path = Config.TMP_DOWNLOAD_DIRECTORY
+# if not os.path.isdir(path):
 #    os.makedirs(path)
-#telegraph = Telegraph()
-#r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
-#auth_url = r["auth_url"]
+# telegraph = Telegraph()
+# r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
+# auth_url = r["auth_url"]
 ## --=============================================--#
 #
 #
-#@Freaky.on(
+# @Freaky.on(
 #    events.NewMessage(incoming=True, func=lambda e: bool(e.mentioned or e.is_private))
-#)
-#async def on_afk(event):
+# )
+# async def on_afk(event):
 #    if event.fwd_from:
 #        return
 #    global USER_AFK
@@ -134,8 +134,8 @@
 #                    )
 #
 #
-#@Freaky.on(Freaky_on_cmd(pattern=r"afk ?(.*)"))
-#async def _(event):
+# @Freaky.on(Freaky_on_cmd(pattern=r"afk ?(.*)"))
+# async def _(event):
 #    if event.fwd_from:
 #        return
 #    global USER_AFK
@@ -204,8 +204,8 @@
 #                )
 #
 #
-#@FreakyUserbot.on(events.NewMessage(outgoing=True))
-#async def set_not_afk(event):
+# @FreakyUserbot.on(events.NewMessage(outgoing=True))
+# async def set_not_afk(event):
 #    global USER_AFK
 #    global afk_time
 #    global last_afk_message
@@ -247,9 +247,9 @@
 #            )
 #
 #
-#CMD_HELP.update(
+# CMD_HELP.update(
 #    {
 #        "afk": "➟ `.afk` <optional reason>\nUse - Sets your status to AwayFromKeyboard. The bot will reply when you are tagged in groups. Will be auto turned off when you message again!"
 #    }
-#)
+# )
 #
