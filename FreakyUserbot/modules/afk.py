@@ -26,7 +26,7 @@ from telethon import Button, events
 from telethon.tl import functions, types
 
 from FreakyUserbot import CMD_HELP
-from FreakyUserbot.Configs import Config, Var
+from FreakyUserbot.Configs import Config
 from FreakyUserbot.utils import Freaky_on_cmd
 
 # --=============================================--#
@@ -41,8 +41,8 @@ afk_time = None
 last_afk_message = {}
 afk_start = {}
 BOTLOG = True
-CUSTOM_AFK = Var.CUSTOM_AFK if Var.CUSTOM_AFK else "My Master is Currently AFK!"
-botname = Var.TG_BOT_USER_NAME_BF_HER
+CUSTOM_AFK = Config.CUSTOM_AFK if Config.CUSTOM_AFK else "My Master is Currently AFK!"
+botname = Config.TG_BOT_USER_NAME_BF_HER
 if botname.startswith("@"):
     MYBOT = botname
 else:
@@ -112,13 +112,13 @@ async def on_afk(event):
             await last_afk_message[event.chat_id].delete()
         last_afk_message[event.chat_id] = msg
         chat = await event.get_chat()
-        if Var.PRIVATE_GROUP_ID:
+        if Config.PRIVATE_GROUP_ID:
             await asyncio.sleep(5)
             if not event.is_private:
                 mssgtosend = f"#AFK \nYou were tagged in `{chat.title}`"
                 try:
                     await tgbot.send_message(
-                        Var.PRIVATE_GROUP_ID,
+                        Config.PRIVATE_GROUP_ID,
                         mssgtosend,
                         buttons=[
                             Button.url(
@@ -129,7 +129,7 @@ async def on_afk(event):
                     )
                 except BaseException:
                     await FreakyUserbot.send_message(
-                        Var.PRIVATE_GROUP_ID,
+                        Config.PRIVATE_GROUP_ID,
                         f"Please add {MYBOT} here for afk tags to work.",
                     )
 
@@ -194,12 +194,12 @@ async def _(event):
         if BOTLOG:
             if reason:
                 await event.client.send_message(
-                    Var.PRIVATE_GROUP_ID,
+                    Config.PRIVATE_GROUP_ID,
                     f"#AFK \nAFK - Active\nReason - {reason}",
                 )
             else:
                 await event.client.send_message(
-                    Var.PRIVATE_GROUP_ID,
+                    Config.PRIVATE_GROUP_ID,
                     f"#AFK \nAFK - Active\nReason - None Specified.",
                 )
 
@@ -243,7 +243,7 @@ async def set_not_afk(event):
         await shite.delete()
         if BOTLOG:
             await event.client.send_message(
-                Var.PRIVATE_GROUP_ID, f"#AFK \n`AFK - Disabled\nAFK for {endtime}`"
+                Config.PRIVATE_GROUP_ID, f"#AFK \n`AFK - Disabled\nAFK for {endtime}`"
             )
 
 
