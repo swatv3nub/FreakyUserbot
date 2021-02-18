@@ -44,6 +44,7 @@ if ENV:
         # Get a Free API Key from OCR.Space
         OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
         DEEP_API_KEY = os.environ.get("DEEP_API_KEY", None)
+        CUSTOM_AFK = os.environ.get("CUSTOM_AFK", None)
         DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
         NOSPAMPLUS_TOKEN = os.environ.get("NOSPAMPLUS_TOKEN", None)
         # Send .get_id in any group with all your administration bots (added)
