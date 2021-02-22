@@ -37,8 +37,8 @@ async def _(event):
     # if input_str == "Read This Telegraph Whole info here":
     await event.edit("Thanks")
     animation_chars = [
-        "Click here to Go to Telegram Tutorial",
-        "[Click Here For Guide](https://telegram.dog/)",
+        "Go to @HackfreaksSupport For support Chat",
+        "[Click Here For Guide](https://t.me/FreakyUserbot/14)",
     ]
 
     for i in animation_ttl:

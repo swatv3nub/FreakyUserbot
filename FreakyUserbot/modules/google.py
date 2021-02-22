@@ -6,7 +6,7 @@ from FreakyUserbot import CMD_HELP
 from FreakyUserbot.utils import register
 
 
-@register(outgoing=True, pattern=r"^\.goo (.*)")
+@register(outgoing=True, pattern=r"^\.go (.*)")
 async def gsearch(q_event):
     """ For .google command, do a Google search. """
     match = q_event.pattern_match.group(1)
@@ -37,7 +37,7 @@ async def gsearch(q_event):
 CMD_HELP.update(
     {
         "google": "**Google**\
-\n\n**Syntax : **`.goo <text to search>`\
+\n\n**Syntax : **`.go <text to search>`\
 \n**Usage :** Get the Google search result for given text."
     }
 )
