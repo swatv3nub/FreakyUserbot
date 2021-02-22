@@ -4,7 +4,8 @@
 <h1 align="center"><b>FreakyUserbot </b></h1>
 <h4 align="center">A Powerful, Smart And Simple Userbot In Telethon.</h4>
 
-Want More Plugins? Take From [@FreakyPlygs](https://t.me/FreakyPlugs)
+Want More Plugins? Take From [@FreakyPlugs](https://t.me/FreakyPlugs) 
+or FreakyPlugs' [github](https://github.com/swatv3nub/FreakyPlugs)
 
 
 
