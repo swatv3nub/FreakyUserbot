@@ -1,7 +1,6 @@
 Pillow
 telethon-session-sqlalchemy
 google-trans-new
-pymediainfo
 apscheduler
 git+https://github.com/gleitz/howdoi
 pyseoanalyzer
@@ -9,8 +8,6 @@ pokedex.py
 faker
 deep_translator
 countryinfo
-mal-api
-youtube-search-python
 emoji-country-flag
 langdetect
 PyProxyToolkit
@@ -42,7 +39,6 @@ numpy
 pyshorteners
 aiohttp
 bs4
-coffeehouse
 nospamplus
 cowpy
 emoji
@@ -82,10 +78,8 @@ telegraph
 tswift
 urbandict>=0.5
 wikipedia>=1.4.0
-youtube-search
 password_strength
 pyjokes
-cryptocompare
 googletrans
 PyDictionary
 pdf2docx
