@@ -1,6 +1,10 @@
+# Freaky Userbot - A Better One
+
 <p align="center"><a href="https://t.me/ProjectHackfreaks"><img src="https://telegra.ph/file/ab9f85afcdc4ec394f8f6.jpg" width="5000"></a></p> 
 <h1 align="center"><b>FreakyUserbot </b></h1>
 <h4 align="center">A Powerful, Smart And Simple Userbot In Telethon.</h4>
+
+Want More Plugins? Take From [@FreakyPlygs](https://t.me/FreakyPlugs)
 
 
 
@@ -26,11 +30,15 @@ Get API_ID and API_HASH from [@HackfreaksScrapperRobot](https://telegram.dog/Hac
 
 # STRING_SESSION
 
-Get STRING_SESSION from [@SessionStringBot](https://t.me/SessionStringBot) From [@TelebotHelp](https://t.me/Telebothelp)
+Get STRING_SESSION from [@SessionStringBot](https://t.me/SessionStringBot) 
 
 OR
 
 [![Run on Repl.it](https://telegra.ph/file/1b2ca5fd16997b21b4b41.jpg)](https://repl.it/@swatv3nub/UserbotSessionGenerator#main.py)
+
+OR
+
+By Running [string_gen.py](https://github.com/swatv3nub/FreakyUserbot/blob/Alpha/string_gen.py) Locally.
 
 
 # DEPLOY
